@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8. input elemen ep.2</title>
+</head>
+<body>
+    <form>
+        <!-- name berfungsi agar hanya 1 pilihan yg dipilih -->
+
+        jenis kelamin: <br>
+        <div> <!-- membuat input kolam isian yg hanya bisa dipilih 1 pilihan -->
+            <input id="laki" type="radio" name="jenis_kelamin">
+            <label for="laki">laki laki</label>
+        </div>
+        <div>
+            <input id="perempuan" type="radio" name="jenis_kelamin">
+            <label for="perempuan">perempuan</label>
+        </div>
+
+        anime fav: <br>
+        <div> <!-- membuat input kolam isian yg bisa memilih lebih dari satu -->
+            <input id="op" type="checkbox" name="anime fav">
+            <label for="op">one piece</label>
+        </div>
+        <div>
+            <input id="naruto" type="checkbox" name="anime fav">
+            <label for="naruto">naruto</label>
+        </div>
+        <div>
+            <input id="bleach" type="checkbox" name="anime fav">
+            <label for="bleach">bleach</label>
+        </div>
+
+    </form> <br><br>
+    
+    <form>
+
+        <label for="file">file: </label> <!-- untuk mengupload file -->
+        <input id="file" type="file">
+        <br>
+
+        <label for="file">foto: </label> <!-- untuk mengupload foto -->
+        <input
+         id="foto" 
+         type="file"
+         accept="image/png,image/jpg,image/jpeg" /* .pdf, .doc, .docx, .ppt, .pptx dll sebagai pemilih folder */
+         >
+
+        <label for="volume">volume: </label> <!-- untuk input range/panjang -->
+        <input id="volume" type="range" min="1" max="5">
+        <br>
+
+        <label for="warna">color: </label> <!-- untuk menginput warna -->
+        <input id="warna" type="color" name="warna">
+        <br>
+
+        <label for="key">cari sesuatu: </label> <!-- untuk mencari sesuatu -->
+        <input id="key" type="search" name="keyword">
+        <br>
+
+    </form>
+</body>
+</html>

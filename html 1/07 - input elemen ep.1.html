@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7. input elemen ep.1</title>
+</head>
+<body>
+    <form> <!-- untuk membuat elemen form halaman web -->
+
+        <!-- placeholder untuk di dalam input -->
+        <!-- label untuk di luar input -->
+        <!-- type untuk menentukan type input -->
+        <!-- for and id untuk menyambungkan label dgn input -->
+
+        <label for="name">name: </label> <!-- sebagai keterangan pelengkap objek form -->
+        <input id="name" type="text" placeholder="username"> <!-- type untuk membuat input teks seperti kata, angka, dll -->
+        <br><br>
+
+        <label for="email">email: </label>
+        <input id="email" type="email"> <!-- type untuk membuat input teks email yg wajib ada @ -->
+        <br>
+
+        <label for="pass">password: </label>
+        <input id="pass" type="password"> <!-- type untuk membuat input teks yg karakternya ***** -->
+        <br><br>
+        
+        <label for="number">masukan umur anda: </label> <!-- type untuk membuat input angka -->
+        <input
+        id="number"
+        type="number"
+        step="1" /*  menentukan angka kelipatan */
+        min="0" /* menentukan angka minimal */
+        max="10" /* menentukan angka maksimal */
+        > 
+        <br>
+
+        <label for="date">tanggal lahir: </label>
+        <input
+         id="date" 
+         type="date" 
+         name="tanggal lahir"
+         min="2021-01-01"
+         max="2021-02-20"
+         value="2021-01-05" /* mengatur tanggal tampilan awal */
+         > <!-- type untuk membuat input tanggal -->
+         <br>
+
+         <label for="waktu">time: </label>
+         <input 
+         id="waktu" 
+         type="time" 
+         name="waktu"
+         > <!-- type untuk membuat input time-->
+         <br>
+         
+         <label for="bulan">month: </label>
+         <input 
+         id="bulan" 
+         type="month" 
+         name="waktu"
+         > <!-- type untuk membuat input bulan-->
+         <br>
+
+         <label for="tanggalwaktu">date and time: </label>
+         <input 
+          id="tanggalwaktu" 
+          type="datetime-local" 
+          name="waktu"
+          value="2021-08-17t01:00"> <!-- type untuk membuat input date and time-->
+         <br><br>
+         
+        <label for="url">masukan ig anda: </label>
+        <input id="url" type="url" name="instragam"> <!-- type untuk membuat input link website -->
+        <br>
+        
+        <label for="tel">no telp: </label>
+        <input 
+         id="tel"
+         type="tel"
+         pattern="[0-9]{4} [0-9]{4} [0-9]{4} [0-9]{4}" /* contoh kode: 0896-7582-6009 */
+         > <!-- type untuk membuat input untuk memasukan no telp-->
+        <br>
+        
+    </form>
+</body>
+</html>
