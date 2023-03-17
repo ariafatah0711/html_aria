@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>table html</title>
+    <style>
+        table, th, td {
+            border: 1px solid; /* untuk menambahkan border/garis */
+            
+        }
+    </style>
+</head>
+<body>
+    <nav><a href="00 - html dasar.html">back to 00 - html dasar</a></nav>
+
+    <div class="table">
+        <p>table untuk mendefinisikan sebuah table</p>
+        <table>
+            <tr>
+                <td>tr: </td>
+                <td>table row(-----)</td>
+            </tr>
+            <tr>
+                <td>td: </td>
+                <td>table data(|-|-|)</td>
+            </tr>
+        </table>
+    </div><hr />
+
+    <div class="table2">
+        <table>
+            <p>thead: table head(table paling atas)</p>
+            <p>tbody: table body(table tengah sampai bawah)</p>
+            <p>tfoot: table foot(table paling bawah</p>
+            <p>th: table head(untuk judul dari sel</p>
+            <thead>
+                <tr>
+                    <th>th:</th>
+                    <th>table head</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>td1</td>
+                    <td>sel 1</td>
+                </tr>
+                <tr>
+                    <td>td2</td>
+                    <td>sel 2</td>
+                </tr>
+                <tr>
+                    <td>td3</td>
+                    <td>sel 3</td>
+                </tr>
+                <tr>
+                    <td>td4</td>
+                    <td>sel 4</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td>td5</td>
+                    <td>sel last</td>
+                </tr>
+            </tfoot>
+        </table>
+    </div><hr />
+
+    <div class="atribut">
+        <p>border: mengatur besar garis</p>
+        <p>cellpadding: mengatur jarak text dengan sel</p>
+        <p>style="text-align: center;</p>
+        <table border="2px solid" cellpadding="10px">
+            <tr>
+                <td>border="2px"</td>
+                <td>cellpadding="10px</td>
+            </tr>
+        </table>
+    </div><hr />
+
+    <div class="atribut2">
+        <p>rowspan: menggabungkan baris dari atas ke bawah(vertikal)</p>
+        <p>colspan: menggabungkan baris dari kiri ke kanan(horizontal)</p>
+        <table>
+            <tr> <!-- baris pertama -->
+                <th rowspan="2px">rowspan</th>
+                <th colspan="2px">colspan</th>
+            </tr>
+            <tr> <!-- baris kedua -->
+                <th>no</th>
+                <th>angka</th>
+            </tr>
+            
+            <tr>
+                <td>nomer:</td>
+                <td>1</td>
+                <td>satu</td>
+            </tr>
+            <tr>
+                <td>nomer:</td>
+                <td>2</td>
+                <td>dua</td>
+            </tr>
+        </table>
+    </div><hr />
+
+    <div class="table3">
+        <p>background-color: tr, th, td(warna sel)</p>
+        <table style="text-align: center;">
+            <colgroup>
+                <col style="background-color: blue;">
+                <col style="background-color: red;">
+                <col style="background-color: green;">
+            </colgroup>
+            <tr style="background-color: white;"><td colspan="3px">style= bg-color:white;</td></tr>
+            <tr style="background-color: yellow;">
+                <th>nama</th>
+                <th>umur</th>
+                <th>hobi</th>
+            </tr>
+            <tr>
+                <td style="background-color: cyan;">aria</td>
+                <td style="background-color: orange;">15</td>
+                <td style="background-color: rgb(1, 46, 1);">nonton anime</td>
+            </tr>
+            <tr style="background-color: white;"><td colspan="3px">colgroup: col</td></tr>
+            <tr>
+                <th>nama</th>
+                <th>umur</th>
+                <th>hobi</th>
+            </tr>
+            <tr>
+                <td>aria</td>
+                <td>16</td>
+                <td>nonton anime</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
