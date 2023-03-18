@@ -55,7 +55,6 @@ $ git revert #membuat commit baru yang mengembalikan perubahan pada commit terte
 $ git cherry-pick
 $ git tag
 $ git stashh
-
 ```
 
 # **Catatan:**
