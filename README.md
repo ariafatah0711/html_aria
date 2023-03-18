@@ -14,6 +14,8 @@
 ```
 
 - Baca Intruksi Terlebih Dahulu, Sebelum Menjalankan alat🌸😀
+- ini adalah situs yang ku buat menggunakan branch main
+<a href="https://ariafatah0711.github.io/html_aria/" target="blank">disini</a>
 
 # **Catatan:**
 - pastikan anda memiliki index.html agar brnach dapat dibuat menjadi situs online
