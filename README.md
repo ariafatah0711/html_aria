@@ -1,54 +1,64 @@
-<pre>
-# html_aria
-learn html, css, js.
-====================
+# **1. membuat branch dan menjadikan situs**
 
-1. langkah untuk menambahkan branch dan menjadikan situs pada github
-  # buka repositori anda di github
-  # klik pada menu "Branch" yang terletak di sebelah kiri nama repositori
-  # beri nama branch baru anda
-  # dan klik tombol "Create Branch"
-
-  # pastikan anda memiliki index.html agar brnach dapat dibuat menjadi situs online
-  # klik menu "setting" yang terletak di sebelah kanan
-  # gulir kebawah hingga menemukan "GitHub Pages"
-  # pilih branch anda "main" : default
-  # "/root" diamkan saja, dan klik save
-  
-  # refresh page dan liat ada link menuju websitenya
-  # salin dan gunakan
-  
-  # disarankan untuk default branch aja agar tidak ribet saat mengubah filenya jika anda menggunakan branch selain main,
-  # anda harus menggabungkan nya agar branch yang dibuat sama dengan branch main.
-</pre>
-
-# **1. Install folder on terminal / vscode**
 ```
-$ git clone url_link
+- buka resipotori anda di github, klik menu branch di sebelah kiri nama resipotori anda
+- dan tulis nama branchnya, dan klik "create branch"
+
+- klik menu "setting" yang terletak di sebelah kanan
+- gulir kebawah hingga menemukan "GitHub Pages"
+- pilih branch anda "main" : default
+- "/root" diamkan saja, dan klik save
+  
+- refresh page dan liat ada link menuju websitenya
+- salin dan gunakan
 ```
-- Baca Intruksi Terlebih Dahulu, Sebelum Menjalankan Alat🌸😀
+
+- Baca Intruksi Terlebih Dahulu, Sebelum Menjalankan alat🌸😀
 
 # **Catatan:**
-- jika anda ingin mengunduh folder dari github, anda dapat melakukan dengan terminal dengan cara mengklik tombol "code" di kanan atas,
-- kemudian salin tautan HTTPS atau SSH. setelah itu buka terminal masuk ke directory tempat anda dan jalankan perintah "git clone"
+- pastikan anda memiliki index.html agar brnach dapat dibuat menjadi situs online
+- disarankan untuk default branch aja agar tidak ribet saat mengubah filenya jika anda menggunakan branch selain main,
+- anda harus menggabungkan nya agar branch yang dibuat sama dengan branch main.
 
 
-# **2. membuat dan mengaktifkan env pada terminal / vs code**
-- pergi ke terminal lalu Ketik
+# **2. git pada vs code**
+- git untuk mengambil resipotori, mengirim resipotori, dan mencheck perubahan
 ```
-$ python3 -m venv nama_env
-$ pip list #untuk menampilkan list dari module yang terinstal
-$ pip install nama_module #untuk menginstall module
+$ git clone #membuat salinan dari resipotory git yang sudah ada di server
+
+$ git pull #mengambil resipotori server ke lokal
+$ git push #mengirim perubahan resipotori lokal ke dalam resipotori server
+$ git commit #menyimpan perubahan yang sudah dilakukan pada resipotori lokal(belum terkirim hanya sudah disiapkan)
+$ git reset #mengembalikan resipotori ke commit tertentu
+
+$ git init #membuat resipotori git baru di directory yang sedang aktif
+$ git add #menambahkan file yang sudah di modifikasi ke dalam staging area
+
+$ git status #menampilkan status dari resipotori lokal, seperti file yang sudah dimodifikasi
+$ git log #menampilkan riwayat log commit
+$ git remote #menampilkan daftar resipotori git remote yang terhubung dengan resipotori lokal
 ```
-Jika anda ingin menggunakan environmentmya, Ketik
+
+- git yang berhubungan dengan branch
 ```
-$ source nama_env/bin.activate
-$ deactivate #keluar dari mode environment
+$ git branch #menampilkan daftar branch
+$ git checkout #berpindah dari satu branch ke branch lain
+$ git merge #menggabungkan perubahan satu branch dengan branch lain
+$ git fetch #mengambil perubahan dari server pusat tanpa menggabungkan dengan branch lokal kita
+```
+
+- git lainya
+```
+$ git revert #membuat commit baru yang mengembalikan perubahan pada commit tertentu
+$ git cherry-pick
+$ git tag
+$ git stashh
+
 ```
 
 # **Catatan:**
-- pastikan anda telah masuk kedalam folder directory yang ingin di gunakan
-- untuk mengaktifkanya tinggal ketik "source nama_env/bin.activate"
+- Baca Intruksi Terlebih Dahulu, Sebelum Menjalankan alat🌸😀
+- jika ada kesalahan anda bisa lihat di goggle, youtube, atau bertanya dengan aku <a href="https://wa.me/6289509221496?text=Halo+Bang+Aria" target="blank">disini</a>
 
 # **Example**
 - None (Mungkin Menyusul)
