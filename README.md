@@ -1,30 +1,31 @@
 # **1. membuat branch dan menjadikan situs**
 
-```
-- buka resipotori anda di github, klik menu branch di sebelah kiri nama resipotori anda
-- dan tulis nama branchnya, dan klik "create branch"
-
-- klik menu "setting" yang terletak di sebelah kanan
-- gulir kebawah hingga menemukan "GitHub Pages"
-- pilih branch anda "main" : default
-- "/root" diamkan saja, dan klik save
+1. buka resipotori anda di github, klik menu <b>branch</b> di sebelah kiri nama resipotori anda
+2. dan tulis nama branchnya, dan klik <b>"create branch"</b>
+3. klik menu <b>"setting"</b> yang terletak di sebelah kanan
+4. gulir kebawah hingga menemukan <b>"GitHub Pages"</b>
+5. pilih branch anda <b>"main"</b> (default)
+6. setlah itu akan ada <i>"/root"</i> diamkan saja, dan klik <b>save</b>
   
-- refresh page dan liat ada link menuju websitenya
-- salin dan gunakan
-```
-
-- Baca Intruksi Terlebih Dahulu, Sebelum Menjalankan alat🌸😀
-- ini adalah situs yang ku buat menggunakan branch main
-<a href="https://ariafatah0711.github.io/html_aria/" target="blank">disini</a>
+# **Refresh page:**
+- refresh page dan liat ada link menuju websitenya biasanya ada di atas nya
+- salin dan gunakan di browser anda
 
 # **Catatan:**
-- pastikan anda memiliki index.html agar brnach dapat dibuat menjadi situs online
-- disarankan untuk default branch aja agar tidak ribet saat mengubah filenya jika anda menggunakan branch selain main,
+- pastikan anda memiliki index.html agar branch dapat dibuat menjadi situs online
+- disarankan untuk default branch aja agar tidak ribet saat mengubah filenya, karena jika anda menggunakan branch selain main,
 - anda harus menggabungkan nya agar branch yang dibuat sama dengan branch main.
 
+# **Example**
+- hasil situs nya dapat di check <b><a href="https://ariafatah0711.github.io/html_aria/" target="blank">disini</a></b>
+- cara penggunaanya
+
+  <img float="left" src="https://i.imgur.com/Vyl8cA6.jpeg">
+
+<hr />
 
 # **2. git pada vs code**
-- git untuk mengambil resipotori, mengirim resipotori, dan mencheck perubahan
+- git untuk mengambil resipotori, mengirim resipotori, dan mengecheck perubahan commit, dll
 ```
 $ git clone #membuat salinan dari resipotory git yang sudah ada di server
 
@@ -60,9 +61,6 @@ $ git stashh
 # **Catatan:**
 - Baca Intruksi Terlebih Dahulu, Sebelum Menjalankan alat🌸😀
 - jika ada kesalahan anda bisa lihat di goggle, youtube, atau bertanya dengan aku <a href="https://wa.me/6289509221496?text=Halo+Bang+Aria" target="blank">disini</a>
-
-# **Example**
-- None (Mungkin Menyusul)
 
 # **Contact Me🔥☕**
 <p align="left">
