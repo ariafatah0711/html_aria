@@ -6,5 +6,59 @@
 <body>
     <nav><a href="00 - html dasar.html">back to 00 - html dasar</a></nav>
     
+    <nav><br>
+        <a href="06 - form_1 html.html">form_1</a>
+        <a href="07 - form_2 html.html">form_2</a>
+        <a href="08 - form_3 html.html">form_3</a>
+        <a href="09 - form_4 html.html">form_4</a>
+    </nav>
+
+    <div class="form1">
+        <p>action: menentukan aksi yang akan dilakukan</p>
+        <p>metode: pengiriman data</p><br />
+
+        <p>fieldselt: mengelmopokan berbagai inputan</p>
+        <p>legend: membuat text dari fieldset</p>
+
+        <p>id: untuk menghubungkan label dengan input</p>
+        <p>for: for digunakan pada label sedangkan input digunakan oleh id</p><br />
+
+        <p>label: memberi kan text di sebelah kiri/kanan dari input</p>
+        <p>type: memberikan type dari inputan</p>
+        <p>name: untuk memasukan nama input</p>
+        <p>placeholder: menampilkan text sementara</p>
+        <p>value memberikan nilai default pada input</p>
+        <p></p>
+        <!-- <form action="proses.php" method="get"> -->
+            <form action="" method="">
+            <fieldset>
+                <legend>legend</legend>
+
+                <p>
+                    <label for="">username</label>
+                    <input type="text" name="username" placeholder="username">
+                </p>  
+                <p>
+                    <label for="">password</label>
+                    <input type="text" name="password" placeholder="password">
+                </p>
+                <p>
+                    <label for=""><input type="checkbox" name="remember" value="remember"> Remember me</label>
+                </p>
+                <p>
+                    <label for="">search</label>
+                    <input type="search" value="cara jadi animeh">
+                </p>
+                <p>
+                    <label for="coment"></label>
+                    <textarea name="coment" id="coment" cols="50" rows="4">...</textarea>
+                </p>
+                <p>
+                    <input type="submit" name="submit" value="login">
+                    <input type="reset" value="reset">
+                </p>
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>

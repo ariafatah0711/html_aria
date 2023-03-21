@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_3 html</title>
+</head>
+<body>
+    <nav><a href="00 - html dasar.html">back to 00 - html dasar</a></nav>
+    
+    <nav><br>
+        <a href="06 - form_1 html.html">form_1</a>
+        <a href="07 - form_2 html.html">form_2</a>
+        <a href="08 - form_3 html.html">form_3</a>
+        <a href="09 - form_4 html.html">form_4</a>
+    </nav>
+
+    <div class="form1">
+        <p>for: menghubungkan ke id input</p>
+        <p>id: kode id dari input yg dpt dihubungkan ke label</p><br>
+        <p>name: nama dari suatu input biasanya digunakan untuk radio
+        <form>
+            <fieldset>
+                <legend>form3</legend>
+                    <!-- radio untuk membuat kolam isian 1 opsi -->
+                    <div class="jenis_kelamin">
+                        <label>radio</label><br>
+                        <input type="radio"
+                        id="laki laki" name="jenis kelamin"
+                        >
+                        <label for="laki laki">laki laki</label>
+                        <input type="radio"
+                        id="perempuan" name="jenis kelamin"
+                        >
+                        <label for="perempuan">perempuan</label>
+                    </div><br>
+
+                    <!-- checkbox untuk membuat kolam isian multi opsi -->
+                    <div class="hobi">
+                        <label>checkbox</label><br>
+                        <input type="checkbox"
+                        id="menonton anime" name="hobi"
+                        >
+                        <label for="menonton anime">menonton anime</label><br>
+                        <input type="checkbox"
+                        id="bermain game" name="hobi"
+                        ><b></b>
+                        <label for="bermain game">bermain game</label><br>
+                        <input type="checkbox"
+                        id="menonton drakor" name="hobi"
+                        ><b></b>
+                        <label for="menonton drakor">menonton drakor</label><br>
+                    </div>
+            </fieldset>
+    </div>
+
+    <div class="form2">
+        <p>accept: menerima file menggunakan format apa</p>
+        <p>accept: image/jpg, image/png</p>
+        <form>
+            <fieldset>
+                <legend>form4</legend>
+                <!-- file memasukan file -->
+                <label>file</label>
+                <input type="file"
+                    accept="image/png,image/jpg"    
+                ><br>
+
+                <!-- range input dengan panjang -->
+                <label>range</label>
+                <input type="range"
+                    min="0" max="10" step="2"
+                ><br>
+
+                <!-- color atur warna -->
+                <label>color</label>
+                <input type="color"><br>
+
+                <!-- submit untuk menyumbit form -->
+                <label>submit</label>
+                <input type="submit" value="simpan"><br>
+
+                <!-- reset untuk mereset form ke value/default -->
+                <label>reset</label>
+                <input type="reset" value="reset"><br>
+
+                <!-- hidden tidak ada apapun -->
+                <input type="hidden">
+            </fieldset>
+        </form>
+    </div>
+</body>
+</html>

@@ -6,5 +6,92 @@
 <body>
     <nav><a href="00 - html dasar.html">back to 00 - html dasar</a></nav>
     
+    <nav><br>
+        <a href="06 - form_1 html.html">form_1</a>
+        <a href="07 - form_2 html.html">form_2</a>
+        <a href="08 - form_3 html.html">form_3</a>
+        <a href="09 - form_4 html.html">form_4</a>
+    </nav>
+
+    <div class="form_1">
+        <form>
+                <p>type: type text</p>
+                <p>min: minimum angka</p>
+                <p>max: maximal angka</p>
+                <p>step: step angka</p>
+                <p>pattern: kode untuk no telp: [0-9]{4)- 3kali</p>
+
+            <fieldset>
+                <legend>form1</legend>
+
+                <!-- text memasukan text-->
+                <label>text</label>
+                <input type="text" value="bisa text apa aja"><br>
+    
+                <!-- email memasukan email-->
+                <label>email</label>
+                <input type="email" value="ariafatah999@gmail.com"><br>
+    
+                <!-- number memasukan nomer-->
+                <label>number</label>
+                <input type="number" value="10"
+                    min="0" max="10" step="1"
+                ><br>
+                
+                <!-- url memasukan url-->
+                <label>url</label>
+                <input type="url" value="https://www.goggle.com"><br>
+    
+                <!-- tel memasukan no telp seusuai format-->
+                <label>tel</label>
+                <input type="tel" value="0896-7582-6009"
+                pattern="[0-9]{4}-[0-9]{4}-[0-9]{4}"
+                ><br>
+
+                <!-- search untuk mencari sesuatu -->
+                <label>search</label>
+                <input type="search" value="cara jadi animeh">
+                
+                <input type="submit" value="simpan"> 
+                <input type="reset" value="reset">
+            </fieldset>
+        </form>
+    </div><hr>
+    <div class="form_2">
+        <form>
+            <p>Y: year, M: month, D: date, T: time, h: hour, m: minute</p>
+            <p>date: YYYY-MM_DD</p>
+            <p>datetime-local: YYYY-MM_DDThh:mm/p>
+
+            <fieldset>
+                <legend>form2</legend>
+
+                <!-- date memasukan tanggal tahun, bulan, tanggal-->
+                <label>date</label>
+                <input type="date"
+                min="2006-11-07" max="2020-12-31" value="2006-11-07"
+                >
+
+                <!-- datetime-local masukan ahun, bulan, tanggal, jam, menit -->
+                <label>datetime-local</label>
+                <input type="datetime-local" value="2006-11-07T12:30">
+
+                <!-- time memasukan jam -->
+                <label>time</label>
+                <input type="time" value="12:30">
+
+                <!-- month memasukan bulan -->
+                <label>month</label>
+                <input type="month" value="11">
+
+                <!-- week memasukan minggu -->
+                <label>week</label>
+                <input type="week" value="52">
+
+                <input type="submit" value="simpan"> 
+                <input type="reset" value="reset">
+            </fieldset>
+        </form>
+    </div>
 </body>
 </html>

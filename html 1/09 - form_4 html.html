@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>form_4 html</title>
+</head>
+<body>
+    <nav><a href="00 - html dasar.html">back to 00 - html dasar</a></nav>
+    
+    <nav><br>
+        <a href="06 - form_1 html.html">form_1</a>
+        <a href="07 - form_2 html.html">form_2</a>
+        <a href="08 - form_3 html.html">form_3</a>
+        <a href="09 - form_4 html.html">form_4</a>
+    </nav>
+
+    <div class="form1">
+        <p>select: untuk select</p>
+        <p>name: judul option</p><br>
+
+        <p>option: opsi pilihan</p>
+        <p>value: value opsi</p>
+        <p>selected; menselect</p>
+        <p>disable: tidak menselect</p><br>
+
+        <p>meter: data dengan panjang</p>
+
+        <form action="">
+            <fieldset>
+                <legend>form5</legend>
+
+                <!-- select memilih opsi -->
+                <select name="makanan" id="makanan">
+                    <option select value="nasi goreng">nasi goreng</option>
+                    <option disable value="kebab">kebab</option>
+                    <option disable value="roti">roti</option>
+                </select><br><br>
+        
+                <!-- textarea untuk membuat komentar -->
+                <textarea name="comment" id="comment" cols="50" rows="5">masukan text comment...</textarea><br>
+
+                <!-- meter mengukur data dengan panjang -->
+                <label for="disk">disk usage C</label>
+                <meter id="disk" value="0.6">60%</meter><br>
+
+                <label for="disk">disk usage C</label>
+                <meter id="disk" value="2"
+                    min="0" max="10"
+                >2 out of 10%</meter><br>
+            </fieldset>
+        </form>
+    </div>
+    
+</body>
+</html>
