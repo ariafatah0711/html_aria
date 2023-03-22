@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>video html</title>
+</head>
+<body>
+    <nav><a href="00 - html dasar.html">back to 00 - html dasar</a></nav><br />
+
+    <div class="video">
+        <small>video: untuk memulai video</small><br>
+        <small>controls: mengaktifkan controls video</small><br>
+        <small>autoplay: video diputar otomatis</small><br>
+        <small>loop: untuk memutar video terus menerus</small><br>
+        <small>muted: untuk mematikan audio</small><br>
+        <small>poster: menentukan gambar cofer</small><br>
+        <small>playsinline: untuk memuatar video secara inline</small><br>
+        <small>width height: ukuran</small><br><br>
+        
+        <small>source: untuk path video</small><br>
+        <small>type: video/webm type: video/mp4</small><br><br>
+
+        <small>track: untuk subtitle</small><br>
+        <small>kind: tipe subtitle</small><br>
+        <small>srclang: kode bahasa</small><br>
+        <small>label: label yg ditampilkan</small><br>
+        
+
+        <div class="video1">
+            <p>atribut controls autoplay</p>
+            <video controls autoplay>
+                <source src="assets/video1.mp4" type="video/mp4">
+                jika video tidak mendukung teks disini akan muncul
+            </video>
+        </div>
+
+        <div class="video2">
+            <p>atribut autoplay loop muted</p><br>
+            <video autoplay loop muted>
+                <source src="assets/video1.mp4">
+            </video>
+        </div>
+
+        <div class="video3">
+            <p>controls dan track pada source</p><br>
+            <video controls>
+                <source src="assets/video1.mp4">
+                <track src="assets/video1-id.vtt"
+                    kind="subtitles"
+                    srclang="id"
+                    label="indonesia"
+                >
+            </video>
+        </div>
+ 
+        <div class="video4">
+            <p>salin video unik yt dengan cara klik bagikan video lalu klik embed atau sematkan</p>
+
+            <h1>video dari youtube</h1>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/Q3rYaxuWHmU"></iframe>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/E-d68Wf6ebs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+    </div>
+
+</body>
+</html>
