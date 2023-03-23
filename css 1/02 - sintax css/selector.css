@@ -1,0 +1,34 @@
+/* selector {
+    properti1: value;
+    properti2: value;
+} */
+
+/* selector dengan nama tag */
+h2 {
+    color: blue;
+}
+
+/* selector dengan class */
+.class-warna {
+    color: green;
+}
+
+/* selector dengan id elemen */
+#idwarna {
+    color: red;
+}
+
+/* selector dengan atribut */
+input[type=text]{
+    background-color: yellow;
+}
+
+i {
+    background-color: black;
+    color: white;
+}
+
+/* deklarasi block */
+body, h2, h3, .class-warna, #idwarna, input[type=text]{
+    margin: 5px;
+}

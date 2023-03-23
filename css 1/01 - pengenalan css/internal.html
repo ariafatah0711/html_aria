@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 01 - internal css</title>
+    <style>
+        p {
+            font-family: serif;
+            line-height: 1.75em;
+            font-size: 18px;
+        }
+        i {
+            font-family: sans-serif;
+            color: orange;
+        }
+        .internal {
+            text-align: center;
+        }
+        .internal #kiri {
+            text-align: left;
+            font-size: small;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css 01...</a><br />
+
+    <nav><br>
+        <a href="internal.html">internal css</a>
+        <a href="external.html">external css</a>
+        <a href="inline.html">inline css</a>
+    </nav>
+    
+    <div class="internal">
+        <p id="kiri">id#kiri: left = internal css adalah mengatur css di internal atau didalam header atau langsung di teksnya</p>
+
+        <style type="text/css">
+            h2 {
+                font-family: sans-serif;
+                color: #333;
+            }   
+        </style>
+
+        <h2>style internal di body h2{}: sans-serif = ini adalah judull artikel yang menggunakan internal css</h2>
+        <p>
+            style di dalam head p{}: sans-serif = 
+            ini adalah paragraph yang memuat isi artikel dan menggunakan style
+            paragraph ini hanya untuk memcoba <i>internal css</i>
+        </p>
+    </div>
+</body>
+</html>

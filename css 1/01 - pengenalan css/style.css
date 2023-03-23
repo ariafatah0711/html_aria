@@ -1,0 +1,23 @@
+.external {
+    text-align: center;
+}
+
+h2 {
+    font-family: 'Times New Roman', Times, serif;
+    color: #444;
+}
+
+p {
+    font-family: 'Times New Roman', Times, serif;
+    line-height: 1.75em;
+    font-size: 18px;
+}
+
+i {
+    font-family: 'Times New Roman', Times, serif;
+    color: yellow;
+}
+
+.external #kanan {
+    text-align: right;
+}
