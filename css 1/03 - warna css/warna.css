@@ -1,0 +1,34 @@
+/* nama warna */
+.warna1 {
+    color: blue;
+}
+
+/* kode warna */
+.warna2 #satu {
+    color: #008080;
+}
+
+.warna2 #dua {
+    color: #000800;
+}
+
+/* warna rgb, rgba */
+.warna3 #satu {
+    color: rgb(255, 128, 255);
+}
+
+.warna3 #dua {
+    color: rgba(40, 23, 111, 0.7)
+}
+
+/* warna hsla */
+.warna4 #satu {
+    color: hsl(267, 80%, 45%, 0.6);
+}
+
+/* warna gradient */
+.warna5 #satu {
+    background: linear-gradient(90deg, rgba(34, 193,195, 1) 0%, rgba(240, 45, 253, 1) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}

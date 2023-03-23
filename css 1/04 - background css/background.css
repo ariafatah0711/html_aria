@@ -1,0 +1,24 @@
+body {
+    background-image: url(anime5.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    backdrop-filter: blur(2px);
+}
+
+header {
+    background-color: violet;
+}
+
+main {
+    background: rgba(34, 193,195, 0.2);
+    background: linear-gradient(90deg, rgba(34, 193,195, 1) 0%, rgba(240, 45, 253, 1) 20%);
+}
+
+footer {
+    background-image: url(anime5.jpg);
+    backdrop-filter: opacity(5px);
+}
+
+small {
+    font-weight: bold;
+}
