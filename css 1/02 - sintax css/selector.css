@@ -3,6 +3,11 @@
     properti2: value;
 } */
 
+/* selector universal */
+* {
+    padding: 0;
+}
+
 /* selector dengan nama tag */
 h2 {
     color: blue;
@@ -30,5 +35,5 @@ i {
 
 /* deklarasi block */
 body, h2, h3, .class-warna, #idwarna, input[type=text]{
-    margin: 5px;
+    font-size: normal;
 }
