@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 02 - pseudo-selector</title>
+    <style>
+        i {background-color: black;color: white;}
+        /* 
+        selector:pseudo-class {
+            definisi property
+        } */
+
+        /* pseudo class */
+        a:hover {
+            color: green;
+        }
+
+        /* pseudo elemen */
+        p::first-line {
+            color: magenta;
+        }
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+
+    <nav><br>
+        <a href="selector.html">selector css</a>
+        <a href="pseudo-selector.html">pseudo selector</a>
+    </nav><br>
+
+
+    <div>
+        <h1>pseudo-class</h1>
+        <small>:hover memilih link yang belum dikinjungi</small><br>
+        <small>:visited memilih link yang sudah dikunjungi</small><br>
+        <small>:actived memilih elemen yang sedang aktif, seperti saat di klik</small><br>
+        <small>:focus memilih elemen yang sedang fokus misal sedang diinput</small><br>
+        <small>:checked memilih elemen yang sedang dicentang pada checkbox</small><br><br>
+        
+        <small>list lengkap ada di <a href="https://developer.mozila.org/en-US/docs/Web/CSS/Pseudo-classes">MDN doc</a></small><br>
+        <a href="#">pseudo class <i>a:hover {}</i></a><br><br>    
+    </div>
+
+    <div>
+        <h1>pseudo-elemen</h1>
+        <small>::before memilih elemen semu sebelum elemen</small><br>
+        <small>::after memilih elemen semu setelah elemen</small><br>
+        <small>::marker memilih marker pada list</small><br>
+        <small>::placeholder memilih text placeholder pada text input</small><br>
+    
+        <small>list lengkap ada di <a href="https://developer.mozila.org/en-US/docs/Web/CSS/Pseudo-classes">MDN doc</a></small><br>
+        <a>pseudo elemen <i>p::first-line</i></a>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Provident quia temporibus quidem
+            dolorum rem natus hic voluptates voluptas, cum explicabo Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Sunt eaque earum velit quia laborum. Eligendi officiis impedit repellat magnet excepturi.
+        </p>
+    </div>
+
+</body>
+</html>

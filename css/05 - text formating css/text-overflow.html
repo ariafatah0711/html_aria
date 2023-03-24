@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 05 - text-overflow</title>
+    <style>
+        .all {
+            width: 500px;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+        }
+        
+        .text-overflow {
+            width: 500px;
+            text-overflow: ellipsis;
+
+        }
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+
+    <nav><br>
+        <a href="text-align.html">text-align</a>
+        <a href="direction.html">direction</a>
+        <a href="text-decoration.html">text-decoration</a>
+        <a href="text-transform.html">text-transform</a>
+        <a href="text-spacing.html">text-spacing</a>
+        <a href="text-overflow.html">text-overflow</a>
+        <a href="text-shadow.html">text-shadow</a>
+    </nav><br>
+
+    <small>text-overflow: mengatur panjang text yang melebihi ukuran;</small><br>
+    <small>text-overflow: ellipsis(text...);</small><br>
+    <small>text-overflow: clip(text);</small><br><br>
+
+    <div>
+        <small>width: 500(lebar text 500);</small><br>
+        <small>text-overflow: ellipsis(akan otomatis mengenter agar tidak melibihi width);</small><br>
+        <small>white-space: nowrap(text yang melebihi tidak akan di spasi);</small><br>
+        <small>overflow: hidden(karena text yang di overdlow tidak di spasi namun masihh terhitung melebihi akan di hidden);</small><br>    
+            <p class="all">
+                Text-overflow, white-space, overflow.
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam fuga inventore distinctio libero, praesentium id ad quidem. Ullam, iure adipisci?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam fuga inventore distinctio libero, praesentium id ad quidem. Ullam, iure adipisci?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam fuga inventore distinctio libero, praesentium id ad quidem. Ullam, iure adipisci?
+            </p>
+        <small>width: 500(lebar text 500);</small><br>
+        <small>text-overflow: ellipsis(akan otomatis mengenter agar tidak melibihi width);</small><br>
+            <p class="text-overflow">
+                text-overflow
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam fuga inventore distinctio libero, praesentium id ad quidem. Ullam, iure adipisci?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam fuga inventore distinctio libero, praesentium id ad quidem. Ullam, iure adipisci?
+                Lorem ipsum dolor, sit amet consectetur adipisicing elit. Nam fuga inventore distinctio libero, praesentium id ad quidem. Ullam, iure adipisci?
+            </p>
+    </div>
+    
+</body>
+</html>
