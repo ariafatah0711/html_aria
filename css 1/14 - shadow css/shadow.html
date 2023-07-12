@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 14 - shadow css</title>
+    <style>
+        h2 {
+            text-shadow: 3px 2px 1px grey;
+            font-size: 40px;
+        }
+        .kotak {
+            box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8); 
+            padding: 10px;
+            border: 1px dashed grey;
+            width: max-content;
+        }
+        .kotak_inset {
+            box-shadow: inset 3px 3px 4px rgba(0,0,0,0.4);
+            padding: 10px;
+            border: 1px solid grey;
+            width: max-content;
+        }
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+    
+    <small>shadow: membuat bayangan</small><br>
+
+    <small>text-shadow: 3px 2px 1px grey;</small><br>
+    <small>box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.8); </small><br><br>
+
+    <small>shadow: x y z warna;</small><br>
+    <small>nilai x menentukan arah horizontal</small><br>
+    <small>nilai y menentukan arah vertikal</small><br>
+    <small>nilai z menentukan keburaman(blur) bayangan</small><br>
+    <small>nilai warna, bisa menggunakan kode warna, rgb, rgba, dll</small><br><br>
+
+    <small>box-shadow: inset 3px 3px 4px rgba(0,0,0,0.4);</small><br>
+    <small>inset untuk membuat bayangan masuk kedalam</small><br>
+
+    <main>
+        <h2>text-shadow</h2>
+
+        <p>shadow keluar</p><br>
+        <div class="kotak">Ini Adalah Kotak yagesya</div><br><br>
+    
+        <p>shadow kedalam</p><br>
+        <div class="kotak_inset">Ini Adalah Kotak Yang Menggunakan Inset</div>
+    </main>
+
+</body>
+</html>
