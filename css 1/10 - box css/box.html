@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 10 - box css</title>
+    <style>
+        .box1 {
+            height: 100px;
+            width: 300px;
+            background-color: #bbbbaa;
+        }
+        .box2 {
+            height: 200px;
+            width: 400px;
+            background-color: aqua;
+        }
+        div.box1 p {
+            height: 75%;
+            width: 75%;
+            background-color: blue;
+        }
+        div.box2 h2 {
+            width: 50%;
+            background-color: bisque;
+        }
+        .box2 p {
+            width: 90%;
+            background-color: coral;
+        }
+        
+        /* ukuran minimum dan maximum dari box */
+
+        td {background-color: dodgerblue;}
+        td.td2 {
+            min-width: 500px;
+            max-width: 500px;
+            background-color: orange;
+        }
+
+        /* overflow */
+
+        h2,h3 {
+            font-family: arial;
+            color: dodgerblue;
+        }
+        p.satu {
+            height: 100px;
+            width: 200px;
+            overflow: hidden;
+        }
+        p.dua {
+            height: 100px;
+            width: 100px;
+            overflow: scroll;
+        }
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+
+    <nav><br>
+        <a href="box.html">box</a>
+        <a href="box_model.html">box model</a>
+    </nav><br>
+    
+    <small></small><br>
+
+    <div class="box1">
+        <p>
+            ini adalah percobaan tentang box dan bagaimana kita membuat box
+        </p>
+    </div>
+
+    <div class="box2">
+        <h2>ini judul</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus consequatur numquam voluptatibus odio. Eveniet hic error labore eligendi voluptatem numquam commodi beatae. Dolorum eum labore nihil natus distinctio voluptate inventore!
+        </p>
+    </div>
+
+    <table>
+        <td class="td1">No </td>
+        <td class="td2">td2 Sebagai Deskripsi: Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde, mollitia?</td>
+        <td class="td3">td3</td>
+    </table>
+
+    <div class="box3">
+        <h2>judul</h2>
+        <p class="satu">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.</p>
+
+        <h3>subjudul</h3>
+        <p class="dua">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Vitae, sed. Lorem ipsum dolor sit, amet consectetur adipisicing elit. Libero necessitatibus adipisci reprehenderit eos voluptate earum!</p>
+    </div>
+
+</body>
+</html>
