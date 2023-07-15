@@ -1,0 +1,104 @@
+.box1 {
+    height: 100px;
+    width: 300px;
+    background-color: #bbbbaa;
+}
+
+div.box1 p {
+    height: 75%;
+    width: 75%;
+    background-color: #0008dd;
+}
+
+.box2 {
+    height: 200px;
+    width: 400px;
+    background-color: aqua;
+}
+
+.box2 h2 {
+    width: 25%;
+    background-color: bisque;
+}
+
+.box2 p {
+    width: 80%;
+    background-color: coral;
+}
+
+/* ukuran minimum dan maximum dari box */
+td {
+    background-color: aqua;
+}
+
+td.deskripsi {
+    min-width: 600px;
+    max-width: 500px;
+    background-color: orange;
+}
+
+/* overflow */
+h2,h3 {
+    font-family: arial;
+    color: dodgerblue;
+}
+
+p.satu {
+    height: 100px;
+    width: 200px;
+    overflow: hidden;
+}
+
+p.dua {
+    height: 100px;
+    width: 200px;
+    overflow: scroll;
+}
+
+/* border, padding, margin */
+
+div.box4 {
+    width: fit-content;
+    height: fit-content;
+    background-color: gainsboro;
+    font-size: 30px;
+
+    /* margin */
+    margin-top: 100px;
+    margin-left: 100px;
+    margin-bottom: 100px;
+
+    /* padding */
+    padding-top: 10px; 
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+
+    /* border */
+    border: 4px solid black;
+}
+
+p.hello b {
+    font-family: arial;
+    font-weight: bold;
+    background-color: black;
+    color: white;
+    border: 4px solid papayawhip;
+}
+
+p.hello {
+    background-color: coral;
+    width: fit-content;
+
+    /* padding */
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-bottom: 20px;
+
+    /* margin: atas, kanan, bawah, kiri */
+    margin: 0px 0px 10px 0px;
+
+    /* border */
+    border: 4px solid palevioletred;
+}
