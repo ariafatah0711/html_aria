@@ -5,11 +5,72 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css 11 - list style css</title>
+    <style>
+        * {font-family: arial;}
+        h1 {font-size: 25px; color: crimson;}
+        ol {
+            list-style-type: none;
+            list-style-type: disc;
+            list-style-type: decimal;
+            list-style-type: square;
+            list-style-type: lower-roman;
+            list-style-type: upper-latin;
+        }
+        ul.outside {
+            list-style-position: outside;
+        }
+        ul.inside {
+            list-style-position: inside;
+        }
+    </style>
 </head>
 <body>
     <a href="../00 - main.html">back css...</a><br />
     
-    <small></small><br>
+    <small>list-style-type: decimal; mengatur jenis simbol list</small><br>
+    <small>none(tidak ada), disc(bulatan), circle(lingkaran), square(persegi)</small><br>
+    <small>decimal(angka decimal), decimal-leading-zero(angka decimal yang dimulai dari 0)</small><br>
+    <small>lower-roman(angka romawi kecil), upper-roman(angka romawi besar)</small><br>
+    <small>lower-alpha(huruf kecil), upper-alpha(huruf besar)</small><br><br>
+
+    <small>list-style-position: outside; mengatur posisi simbol ke luar (default)</small><br>
+    <small>list-style-position: inside; posisi simbol list didalam text</small><br><br>
+
+    <small>list-style: decimal inside; dapat disingkat</small><br>
+
+    <div>
+        <h1>Balado</h1>
+        <p>bumbu bumbu balado</p>
+
+        <ol>
+            <li>tomat</li>
+            <li>cabai merah</li>
+            <li>bawang putih</li>
+            <li>bawang merah</li>
+            <li>gula</li>
+            <li>garam</li>
+        </ol>
+    </div>
+
+    <div>
+        <h1>list-style-position: outside;</h1>
+
+        <ul class="outside">
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum blanditiis numquam nemo, sequi quam autem suscipit! Sint dolor exercitationem odit ipsum veritatis, sapiente perferendis optio, rerum blanditiis tenetur fugiat repellat!</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non nihil aliquam quam incidunt eaque ipsum ipsam, velit maxime ut saepe, nesciunt porro! Modi, esse! Dolores et earum quas maxime explicabo?</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur necessitatibus cupiditate quidem totam atque dolor officiis voluptates sequi consectetur minus velit recusandae, asperiores cum repellendus sit animi iusto illo alias!</li>
+        </ul>
+    </div>
+    
+    <div>
+        <h1>list-style-position: inside;</h1>
+
+        <ul class="inside">
+            <li>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum blanditiis numquam nemo, sequi quam autem suscipit! Sint dolor exercitationem odit ipsum veritatis, sapiente perferendis optio, rerum blanditiis tenetur fugiat repellat!</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non nihil aliquam quam incidunt eaque ipsum ipsam, velit maxime ut saepe, nesciunt porro! Modi, esse! Dolores et earum quas maxime explicabo?</li>
+            <li>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tenetur necessitatibus cupiditate quidem totam atque dolor officiis voluptates sequi consectetur minus velit recusandae, asperiores cum repellendus sit animi iusto illo alias!</li>
+        </ul>
+    </div>
 
 </body>
 </html>
