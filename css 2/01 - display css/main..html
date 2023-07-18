@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 11 - list style css</title>
+    <style>
+        details {display: flex; justify-content: center; text-align: left;}
+        ol li {display: inline-block; text-align: left; list-style-position: inside;}
+        .information {display: flex; justify-content: center;}
+
+        .block {
+            background-color: red;
+            display: block;
+        }
+        .inline_block {
+            background-color: pink;
+            display: inline-block;
+        }
+        .inline {
+            background-color: yellow;
+            display: inline;
+        }
+        .flex {
+            background-color: aquamarine;
+            display: flex;
+            justify-content: center;
+        }
+        .grid {
+            background-color: crimson;
+            display: grid;
+        }
+    </style>
+</head>
+<body style="text-align: center;">
+    <a style="text-align: left; display:flex;" href="../00 - main.html">back css...</a>
+
+    <div class="block">Block</div>
+    <ul>
+        <li>width Height : ✅ Bisa ditentukan</li>
+        <li>Margin Padding : ✅ Bisa ditentukan</li>
+        <li>Arah : Vertikal</li>
+    </ul>
+
+    <div class="inline_block">inline Block</div>
+    <ul>
+        <li>width Height : ✅ Bisa ditentukan</li>
+        <li>Margin Padding : ✅ Bisa ditentukan</li>
+        <li>Arah : Horizontal</li>
+    </ul>
+    
+    <div class="inline">inline</div>
+    <ul>
+        <li>width Height : ❌ Tidak Bisa ditentukan</li>
+        <li>Margin Padding : ⚠️ Hanya Kiri dan Kanan</li>
+        <li>Arah : Horizontal</li>
+    </ul>
+    
+    <div class="flex">flex</div>
+    <ul>
+        <li>width Height : ✅ Bisa ditentukan</li>
+        <li>Margin Padding : ✅ Bisa ditentukan</li>
+        <li>Arah : ✅ Bisa ditentukan</li>
+        <div class="information">
+            <details>
+                <summary style="text-align: center;">Information</summary>
+                <p>1. <b>flex-direction:</b> dapat mengontrol arah penempatan elemen</p>
+                <ul type="none">
+                    <li>flex-direction: <b>row</b>; elemen ditempatkan secara horizontal, dari kiri ke kanan (nilai default)</li>
+                    <li>flex-direction: <b>row-reverse</b>; elemen ditempatkan secara horizontal, dari kanan ke kiri</li>
+                    <li>flex-direction: <b>column</b>; elemen ditempatkan secara vertikal dari atas ke bawah</li>
+                    <li>flex-direction: <b>column-reverse</b>; elemen ditempatkan secara vertikal dari bawah ke atas</li>
+                </ul>
+    
+                <p>2. <b>justify-content:</b> mengatur penempatan elemen dalam container secara horizontal (kiri ke kanan)</p>
+                <ul type="none">
+                    <li>justify-content: <b>flex-start</b>; elemen ditempatkan di awal/kiri container (nilai default pada sumbu utama)</li>
+                    <li>justify-content: <b>flex-end</b>; elemen ditempatkan di akhir/kanan container pada sumbu utama</li>
+                    <li>justify-content: <b>center</b>; elemen ditempatkan ditengah container secara horizontal</li>
+                    <li>justify-content: <b>space-between</b>; elemen-elemen ditempatkan dengan jarak yang merata di antara mereka pada sumbu utama</li>
+                    <li>justify-content: <b>space-around</b>; elemen-elemen ditempatkan dengan jarak yang merata di sekitar mereka pada sumbu utama</li>
+                </ul>
+    
+                <p>3. <b>align-items:</b> mengatur penempatan elemen dalam container secara vertikal (atas ke bawah)</p>
+                <ul type="none">
+                    <li>align-items: <b>flex-start</b>; elemen ditempatkan di atas container (nilai default)</li>
+                    <li>align-items: <b>flex-end</b>; elemen ditempatkan di bagian bawah container</li>
+                    <li>align-items: <b>center</b>; elemen ditempatkan di tengah container secara vertikal</li>
+                    <li>align-items: <b>baseline</b>; elemen-elemen ditempatkan pada garis dasar yang sama/merata</li>
+                    <li>align-items: <b>stretch</b>; elemen-elemen diperluas agar mencakup tinggi container</li>
+                </ul>
+
+                <p>4. <b>flex-wrap:</b> mengatur apakah elemen dalam kontainer flex akan melingkari (wrap) ke baris baru jika tidak cukup ruang</p>
+                <ul type="none">
+                    <li>flex-wrap: <b>nowrap</b>; elemen-elemen tetap dalam satu baris (nilai default)</li>
+                    <li>flex-wrap: <b>wrap</b>; elemen-elemen melingkari (wrap) ke baris baru jika tidak cukup ruang</li>
+                </ul>
+
+                <p>5. <b>align-content:</b> memiliki efek ketika elemen dalam container flex melingkari ke baris baru</p>
+                <ul type="none">
+                    <li>align-content: <b>flex-start</b>; jika elemen dalam container melingkari garis baru maka elemen akan di peratakan di awal baris pertama</li>
+                    <li>align-content: <b>flex-end</b>;</li>
+                    <li>align-content: <b>center</b>;</li>
+                    <li>align-content: <b>space-between</b>;</li>
+                    <li>align-content: <b>space-around</b>;</li>
+                </ul>
+            </details>
+        </div>
+    </ul>
+
+    <div class="grid">grid</div>
+    <ul>
+        <li>width Height : ✅ Bisa ditentukan</li>
+        <li>Margin Padding : ✅ Bisa ditentukan</li>
+        <li>Arah : ✅ Bisa ditentukan</li>
+        <div class="information">
+            <details>
+                <summary style="text-align: center;">Information</summary>
+                <p>tata letak dalam bentuk grid atau kisi kisi</p>
+            </details>
+        </div>
+    </ul>
+
+</body>
+</html>
