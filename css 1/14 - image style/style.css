@@ -1,0 +1,43 @@
+h1 {
+    font-size: 36px;
+    font-family: arial;
+}
+
+div {
+    height: 300px;
+    margin: 10px;
+    border: 1px solid;
+}
+
+/* image pertama */
+img.large {
+    width: 300px;
+    height: 300px;
+}
+
+.align-right {
+    float: right;
+    margin-left: 10px;
+}
+
+/* image ke-2 */
+img.medium {
+    width: 200px;
+    height: 200px;
+}
+
+.align-left {
+    float: left;
+    margin-right: 10px;
+}
+
+/* image ke-3 */
+img.small {
+    width: 100px;
+    height: 100px;
+}
+
+.align-center {
+    display: block;
+    margin: 0px auto;
+}
