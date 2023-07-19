@@ -1,0 +1,53 @@
+input {
+    font-size: 120%;
+    color: darkslategray;
+    background-color: #efefef;
+    border: 1px solid #bdbdbd;
+    border-radius: 5px;
+
+    display: block;
+    padding: 5px 5px 5px 35px;
+    margin: 0 0 10px 0;
+
+    background-repeat: no-repeat;
+    background-size: 20px;
+    background-position: 8px;
+}
+
+/* saat input ingin diketik */
+input:focus {
+    background-color: #ffffff;
+}
+
+input#email {
+    background-image: url("image/email.png");
+}
+
+input#instagram {
+    background-image: url("image/instagram.png");
+}
+
+input#web {
+    background-image: url("image/web.png");
+}
+
+/* input submit */
+input#submit {
+    color: #efefef;
+    text-shadow: 1px 1px 5px #ffffff;
+    background-color: darkslategray;
+    padding: 5px 10px 5px 10px;
+}
+
+/* saat arahkan */
+input#submit:hover {
+    color: grey;
+    background-color: orange;
+    cursor: pointer;
+}
+
+/* saat di kelik */
+input#submit:active {
+    color: lawngreen;
+    background-color: lightcoral;
+}
