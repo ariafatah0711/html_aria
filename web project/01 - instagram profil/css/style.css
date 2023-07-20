@@ -1,0 +1,183 @@
+* {
+    font-family: 'Times New Roman';
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    
+    /* border: 1px solid; */
+}
+
+.android {
+    border: 1px solid black;
+    border-radius: 20px;
+    height: 700px;
+    width: 480px;
+
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+}
+
+.android-bar {
+    display: flex;
+    height: 25px;
+    width: 480px;
+    align-items: center;    
+
+    border-bottom: 1px solid;
+}
+
+/* header */
+.header-username {
+    display: flex;
+    align-items: center;
+    width: 480px;
+    background-color: whitesmoke;
+
+    /* border: 1px solid; */
+}
+
+.header-image-1 {
+    height: 45px;
+    margin-left: 10px;
+
+    /* border: 1px solid; */
+}
+
+.header-username h2 {
+    margin: auto 0 auto 15px;
+    font-size: 30px;
+
+    /* border: 1px solid; */
+}
+
+/* header right */
+.header-right {
+    display: flex;
+    width: 100%;
+    justify-content: right;
+    margin-right: 10px;
+
+    /* border: 1px solid; */
+}
+
+.header-image-2 {
+    height: 35px;
+    padding-left: 10px;
+}
+
+.header-image-3 {
+    height: 35px;
+    padding-left: 20px;
+}
+
+/* profil */
+.profil {
+    width: 480px;
+    height: 300px;
+
+    /* border: 1px solid; */
+}
+
+/* profil-header */
+.profil-header {
+    width: auto;
+    display: flex;
+    padding: 20px 10px 10px 20px;
+
+    /* border: 1px solid; */
+}
+
+.profil-image {
+    width: 100px;
+    border-radius: 50%;
+}
+
+.profil-folowers {
+    width: 100%;
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    /* border: 1px solid; */
+}
+
+.profil-folowers td {
+    padding: 0 12px;
+    font-size: 20px;
+    
+    /* border: 1px solid; */
+}
+
+/* profil-deskripsi */
+.profil-deskripsi {
+    width: 100%;
+    display: block;
+    padding: 0 10px 10px 10px;
+}
+
+.profil-button {
+    height: 50px;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 1px solid; */
+}
+
+.profil-button button {
+    height: 35px;
+    margin: 5px;
+    font-size: 18px;
+    padding: 5px 20px;
+}
+
+/* nav */
+.nav {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+
+    /* border: 1px solid; */
+}
+
+.nav-image {
+    width: 33%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* border: 1px solid; */
+}
+
+.nav img {
+    width: 30px;
+    height: 30px;
+    padding: 5px 25px;
+
+    /* border: 1px solid; */
+}
+
+/* konten */
+.konten {
+    width: 100%;
+    height: 33%;
+
+    border: 1px solid;
+}
+
+/* foot */
+.foot {
+    width: 100%;
+    height: 5.2%;
+
+    border: 1px solid;
+}
