@@ -1,0 +1,53 @@
+* {
+    font-family: arial;
+}
+
+/* header */
+.header {
+    display: flex;
+    background-color: beige;
+    padding: 10px;
+}
+
+.header-logo {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header-logo img {
+    height: 70px;
+}
+
+.header-title {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.header-title a {
+    text-decoration: none;
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+/* nav bar */
+.nav {
+    background-color: black;
+    padding: 10px;
+    margin-top: 0px;
+}
+
+.nav-item {
+    display: inline-block;
+    margin-left: 20px;
+    height: 20px;
+}
+
+.nav-item a {
+    color: white;
+    text-decoration: none;
+}
+
+.nav-item a:hover {
+    color: cadetblue;
+}
