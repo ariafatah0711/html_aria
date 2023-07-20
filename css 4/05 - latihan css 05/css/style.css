@@ -51,3 +51,100 @@
 .nav-item a:hover {
     color: cadetblue;
 }
+
+/* konten */
+.konten {
+    width: 80%;
+    margin: auto;
+}
+
+.konten h1 {
+    color: darkolivegreen;
+    font-size: 35px;
+}
+
+.konten h2 {
+    font-size: 22px;
+    color: darkgreen;
+}
+
+/* tabel */
+.tabel {
+    border-spacing: 4px;
+}
+
+/* header */
+.tabel-header {
+    background-color: beige;
+}
+
+.tabel-header th {
+    padding: 10px;
+    text-align: left;
+}
+
+/* tabel-konten */
+.tabel-konten {
+    background-color: azure;
+}
+
+.genap {
+    background-color: aliceblue;
+}
+
+.tabel-konten td {
+    padding: 10px;
+}
+
+td>img {
+    width: 100px;
+}
+
+.tabel-konten:hover {
+    background-color: bisque;
+}
+
+/* form */
+.form-group {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 20px;
+    color: rgb(135, 135, 135);
+}
+
+.form-group input {
+    display: block;
+    margin-top: 10px;
+    width: 60%;
+}
+
+.form-group textarea {
+    display: block;
+    margin-top: 10px;
+    height: 200px;
+    width: 60%;
+}
+
+.button {
+    width: 150px;
+    height: 50px;
+    font-size: 20px;
+    font-weight: bold;
+    color: aliceblue;
+    background-color: darkgreen;
+    border: 0px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: black;
+}
+
+.button:active {
+    background-color: pink;
+}
