@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 02 - position-relativ</title>
+    <style>
+        p {
+            border: 1px solid;
+            background-color: aqua;
+        }
+
+        p.relativ {
+            background-color: coral;
+            position: relative;
+            left: 20px;
+            top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+
+    <nav><br>
+        <a href="main.html">position-static</a>
+        <a href="relativ.html">position-relativ</a>
+        <a href="absolute.html">position-absolute</a>
+        <a href="fixed.html">position-fixed</a>
+        <a href="sticky.html">position-sticky</a>
+    </nav><br>
+
+    <small>position: relativ; elemen relativ terhadap posisinya yang berarti dapat menggunakan propeti
+         top, right, left, bottom, dll. tetapi tidak mempengaruhi tata letak elemen di sekitarnya
+    </small><br>
+    <small>left: 20px; mengatur jarak elemen di bagian kiri</small><br>
+    <small>top: 10px; </small><br>
+    <small>right: 0px; </small><br>
+    <small>bottom: 0px; </small><br>
+    <small>z-index: 10; mengatur tingkat tumpukan elemen. elemen z-index lebih tinggi akan berada di depan elemen dengan z-index lebih rendah</small><br>
+
+    <h1>Relativ Position</h1>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem voluptate, accusantium error maxime sit porro consequuntur tempore unde natus assumenda ratione magnam odio velit repellendus numquam! Debitis autem laboriosam ducimus!</p>
+
+    <p class="relativ">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eveniet ipsam animi dolorum optio corrupti tenetur accusamus rerum, itaque quia excepturi sapiente eaque recusandae nulla magni explicabo dolor adipisci velit nemo.</p>
+
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quod porro ratione, natus, molestias corrupti, unde ex quia vel nulla laboriosam dolore numquam adipisci fugiat quas debitis cum expedita quibusdam velit!</p>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 02 - position-static</title>
+    <style>
+        p {
+            border: 1px solid;
+            background-color: aquamarine;
+        }
+
+        p.static {
+            position: static;
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+
+    <nav><br>
+        <a href="main.html">position-static</a>
+        <a href="relativ.html">position-relativ</a>
+        <a href="absolute.html">position-absolute</a>
+        <a href="fixed.html">position-fixed</a>
+        <a href="sticky.html">position-sticky</a>
+    </nav><br>
+
+    <small>position: static; selalu mengikuti posisi tag sebelumnya (nilai default)</small><br>
+    <small>
+        position: relativ; elemen relativ terhadap posisinya yang berarti dapat menggunakan propeti
+        top, right, left, bottom, dll. tetapi tidak mempengaruhi tata letak elemen di sekitarnya
+   </small><br>
+    <small>
+        position: absolute; elemen diposisikan relativ terhadap elemen induk yang berposisi tidak statis 
+        (bukan posisi default)/ elemen setelahnya akan dapat menempati posisi elemen
+    </small><br>
+    <small>
+        position: fixed; elemen tersebut akan ditempatkan relativ terhadap viewport (area tampilan pada layar), 
+        dan posisinya akan tetap tidak berubah saat pengguna menggulir halaman (mirip absolute namun dia akan tetap tampil meski di srcoll)
+    </small><br>
+    <small>
+        position: sticky; memungkinkan mengikuti alur dokumen mormal sampai batas tertentu, 
+        dan setelah itu akan berperilaku seperti elemen fixed hingga mencapai batas akhir
+    </small><br>
+
+   <h1>Static Position</h1>
+
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nulla doloremque natus rem expedita eaque, rerum similique perspiciatis modi veritatis placeat dolores, commodi ea obcaecati adipisci repellat eligendi laboriosam! Consectetur?</p>
+   <p class="static">Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nulla doloremque natus rem expedita eaque, rerum similique perspiciatis modi veritatis placeat dolores, commodi ea obcaecati adipisci repellat eligendi laboriosam! Consectetur?</p>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nulla doloremque natus rem expedita eaque, rerum similique perspiciatis modi veritatis placeat dolores, commodi ea obcaecati adipisci repellat eligendi laboriosam! Consectetur?</p>
+
+</body>
+</html>
