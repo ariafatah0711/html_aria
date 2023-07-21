@@ -12,7 +12,7 @@ main {
 .android {
     border: 1px solid black;
     border-radius: 20px;
-    height: 700px;
+    height: 848px;
     width: 480px;
 
     display: flex;
@@ -169,15 +169,33 @@ main {
 /* konten */
 .konten {
     width: 100%;
-    height: 33%;
+    height: 44.5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    overflow-y: scroll;
 
-    border: 1px solid;
+    /* border: 1px solid; */
+}
+
+.konten-image {
+    width: 32%;
+    display: flex;
+    justify-content: center;
+    padding: 3px;
+
+    /* border: 1px solid; */
+}
+
+.konten-image img {
+    width: 100%;
 }
 
 /* foot */
 .foot {
     width: 100%;
     height: 5.2%;
+    border-top: 2px solid grey;
 
-    border: 1px solid;
+    /* border: 1px solid; */
 }
