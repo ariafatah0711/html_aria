@@ -6,7 +6,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css 02 - position-absolute</title>
     <style>
+        p {
+            border: 1px solid;
+            background-color: aqua;
+        }
 
+        p.absolute {
+            background-color: coral;
+            position: absolute;
+            top: 130px;
+            left: 100px;
+        }
     </style>
 </head>
 <body>
@@ -24,9 +34,18 @@
         position: absolute; elemen diposisikan relativ terhadap elemen induk yang berposisi tidak statis 
         (bukan posisi default)/ elemen setelahnya akan dapat menempati posisi elemen
     </small><br>
-    <small></small><br>
+    <small>perbedaan dari position relativ adalah elemen ini di hitung dari view port kita jadi jika top 0px dia akan di hitung dari atas berbeda dengan relativ yang di hitung dari posisi nya</small><br>
+    <small>top: 130px; mengatur jarak elemen dari bagian atas namun dihtiung dari view port</small><br>
+    <small>left: 100px; </small><br>
+    <small>right: 0px; </small><br>
+    <small>bottom: 0px; </small><br>
     
    <h1>Absolute Position</h1>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Corporis sed nihil totam id? Quis magni nesciunt perspiciatis error voluptas quidem optio consectetur cumque, asperiores, debitis sunt facere eligendi nulla natus.</p>
+
+   <p class="absolute">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quos inventore nemo sunt, rerum magnam ea dignissimos animi corporis autem laudantium commodi repellat! Totam tenetur assumenda iure! Culpa perspiciatis provident enim!</p>
+
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Temporibus ullam ipsam provident repellat consequatur porro debitis? Quas laborum repudiandae ipsum voluptate reprehenderit. Harum temporibus laborum optio illo fugit, tenetur in?</p>
 
 </body>
 </html>
