@@ -6,7 +6,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css 02 - z-index</title>
     <style>
-   
+        h1 {
+            font-family: tahoma;
+            background-color: coral;
+            width: 100%;
+        }
+
+        .z-index-1 {
+            position: sticky;
+            top: 0px;
+            z-index: 1;
+        }    
+        .z-index-2 {
+            position: sticky;
+            top: 0px;
+            z-index: 2;
+        }   
+        .z-index-3 {
+            position: sticky;
+            top: 0px;
+            z-index: 3;
+        }
+        .z-index-0 {
+            position: sticky;
+            top: 0px;
+            z-index: 0;
+        }
+        .z-index-10 {
+            position: relative;
+            z-index: 10;
+        }
+        .z-index-11 {
+            position: fixed;
+            z-index: 11;
+            bottom: 0px;
+        }
+
     </style>
 </head>
 <body>
@@ -21,15 +56,102 @@
         <a href="z-index.html">z-index</a>
     </nav><br>
 
-    <small></small><br>
-    <small></small><br>
-    <small></small><br>
+    <small>z-index: 1; mengendalikan tumpukan stacking elemen yang tumpah tindih di atas satu sama lain pada halaman web</small><br>
+    <small>nilai dari z-index adalah bilangan positif, negatif, atau nol</small><br>
+    <small>elemen dengan nilai z-index lebih <b>tinggi</b> akan tampil di atas elemen dengan nilai z-index lebih <b>rendah</b></small><br>
     <small></small><br>
     <small></small><br>
 
-    <h1>z-index</h1>
+    <div class="z-index-1">
+        <h1>z-index: 1;</h1>
+    </div>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius labore ullam in. Eius perspiciatis nihil in, vero dicta porro officia quam doloremque veniam debitis vitae labore earum dolorum eveniet? Repellat?
+        Est beatae quibusdam id! Reprehenderit amet ullam magnam molestiae rerum eligendi, impedit vel aliquam excepturi blanditiis officia maiores consequuntur. Nisi dolores laudantium eveniet incidunt explicabo esse, praesentium neque fugit doloremque.
+        Modi vitae repellat, quasi est soluta quisquam? Ullam, iste! Vitae libero asperiores tenetur doloremque sunt sapiente aperiam voluptas repellendus assumenda delectus aspernatur perspiciatis accusamus nostrum, maiores, consequatur veritatis iure placeat.
+        Quod totam fuga in qui voluptatem, necessitatibus quidem eius deleniti ipsum. Ratione cupiditate alias saepe corporis, reprehenderit harum fugiat tempore voluptates, recusandae tenetur, voluptas aut sequi officia maiores quidem similique.
+        Fugit, quaerat quo sit necessitatibus, optio laborum dolor magni explicabo exercitationem rem corporis iste quod consequuntur iusto tempora repudiandae, est dolores eaque fugiat et aut itaque rerum! Molestias, ex similique!
+        Reprehenderit maxime, quia omnis fugiat eligendi, expedita saepe beatae voluptatem officia repellendus assumenda vitae rem sunt ex velit reiciendis ipsum. Laudantium dolorem eaque, hic voluptate provident eveniet nobis molestiae iusto.
+        Quis laudantium tempore aut, fuga corporis libero omnis? Dolor, fuga mollitia. Sed similique, accusamus repellat quis animi, saepe nam doloremque adipisci maxime earum consectetur dolorum laborum fugiat vel harum culpa.
+        Assumenda doloribus rerum architecto aliquam ullam deserunt cupiditate velit vel consequuntur expedita tempore eligendi, corrupti ad eos nesciunt dolore! Cupiditate, fugiat repellendus ratione a qui tenetur voluptatem ab quod quaerat?
+    </p>   
 
+    <div class="z-index-2">
+        <h1>z-index: 2;</h1>
+    </div>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius labore ullam in. Eius perspiciatis nihil in, vero dicta porro officia quam doloremque veniam debitis vitae labore earum dolorum eveniet? Repellat?
+        Est beatae quibusdam id! Reprehenderit amet ullam magnam molestiae rerum eligendi, impedit vel aliquam excepturi blanditiis officia maiores consequuntur. Nisi dolores laudantium eveniet incidunt explicabo esse, praesentium neque fugit doloremque.
+        Modi vitae repellat, quasi est soluta quisquam? Ullam, iste! Vitae libero asperiores tenetur doloremque sunt sapiente aperiam voluptas repellendus assumenda delectus aspernatur perspiciatis accusamus nostrum, maiores, consequatur veritatis iure placeat.
+        Quod totam fuga in qui voluptatem, necessitatibus quidem eius deleniti ipsum. Ratione cupiditate alias saepe corporis, reprehenderit harum fugiat tempore voluptates, recusandae tenetur, voluptas aut sequi officia maiores quidem similique.
+        Fugit, quaerat quo sit necessitatibus, optio laborum dolor magni explicabo exercitationem rem corporis iste quod consequuntur iusto tempora repudiandae, est dolores eaque fugiat et aut itaque rerum! Molestias, ex similique!
+        Reprehenderit maxime, quia omnis fugiat eligendi, expedita saepe beatae voluptatem officia repellendus assumenda vitae rem sunt ex velit reiciendis ipsum. Laudantium dolorem eaque, hic voluptate provident eveniet nobis molestiae iusto.
+        Quis laudantium tempore aut, fuga corporis libero omnis? Dolor, fuga mollitia. Sed similique, accusamus repellat quis animi, saepe nam doloremque adipisci maxime earum consectetur dolorum laborum fugiat vel harum culpa.
+        Assumenda doloribus rerum architecto aliquam ullam deserunt cupiditate velit vel consequuntur expedita tempore eligendi, corrupti ad eos nesciunt dolore! Cupiditate, fugiat repellendus ratione a qui tenetur voluptatem ab quod quaerat?
+    </p>   
 
+    <div class="z-index-3">
+        <h1>z-index: 3;</h1>
+    </div>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius labore ullam in. Eius perspiciatis nihil in, vero dicta porro officia quam doloremque veniam debitis vitae labore earum dolorum eveniet? Repellat?
+        Est beatae quibusdam id! Reprehenderit amet ullam magnam molestiae rerum eligendi, impedit vel aliquam excepturi blanditiis officia maiores consequuntur. Nisi dolores laudantium eveniet incidunt explicabo esse, praesentium neque fugit doloremque.
+        Modi vitae repellat, quasi est soluta quisquam? Ullam, iste! Vitae libero asperiores tenetur doloremque sunt sapiente aperiam voluptas repellendus assumenda delectus aspernatur perspiciatis accusamus nostrum, maiores, consequatur veritatis iure placeat.
+        Quod totam fuga in qui voluptatem, necessitatibus quidem eius deleniti ipsum. Ratione cupiditate alias saepe corporis, reprehenderit harum fugiat tempore voluptates, recusandae tenetur, voluptas aut sequi officia maiores quidem similique.
+        Fugit, quaerat quo sit necessitatibus, optio laborum dolor magni explicabo exercitationem rem corporis iste quod consequuntur iusto tempora repudiandae, est dolores eaque fugiat et aut itaque rerum! Molestias, ex similique!
+        Reprehenderit maxime, quia omnis fugiat eligendi, expedita saepe beatae voluptatem officia repellendus assumenda vitae rem sunt ex velit reiciendis ipsum. Laudantium dolorem eaque, hic voluptate provident eveniet nobis molestiae iusto.
+        Quis laudantium tempore aut, fuga corporis libero omnis? Dolor, fuga mollitia. Sed similique, accusamus repellat quis animi, saepe nam doloremque adipisci maxime earum consectetur dolorum laborum fugiat vel harum culpa.
+        Assumenda doloribus rerum architecto aliquam ullam deserunt cupiditate velit vel consequuntur expedita tempore eligendi, corrupti ad eos nesciunt dolore! Cupiditate, fugiat repellendus ratione a qui tenetur voluptatem ab quod quaerat?
+    </p>   
+
+    <div class="z-index-0">
+        <h1>z-index: 0;</h1>
+    </div>
+    <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eius labore ullam in. Eius perspiciatis nihil in, vero dicta porro officia quam doloremque veniam debitis vitae labore earum dolorum eveniet? Repellat?
+        Est beatae quibusdam id! Reprehenderit amet ullam magnam molestiae rerum eligendi, impedit vel aliquam excepturi blanditiis officia maiores consequuntur. Nisi dolores laudantium eveniet incidunt explicabo esse, praesentium neque fugit doloremque.
+        Modi vitae repellat, quasi est soluta quisquam? Ullam, iste! Vitae libero asperiores tenetur doloremque sunt sapiente aperiam voluptas repellendus assumenda delectus aspernatur perspiciatis accusamus nostrum, maiores, consequatur veritatis iure placeat.
+        Quod totam fuga in qui voluptatem, necessitatibus quidem eius deleniti ipsum. Ratione cupiditate alias saepe corporis, reprehenderit harum fugiat tempore voluptates, recusandae tenetur, voluptas aut sequi officia maiores quidem similique.
+        Fugit, quaerat quo sit necessitatibus, optio laborum dolor magni explicabo exercitationem rem corporis iste quod consequuntur iusto tempora repudiandae, est dolores eaque fugiat et aut itaque rerum! Molestias, ex similique!
+        Reprehenderit maxime, quia omnis fugiat eligendi, expedita saepe beatae voluptatem officia repellendus assumenda vitae rem sunt ex velit reiciendis ipsum. Laudantium dolorem eaque, hic voluptate provident eveniet nobis molestiae iusto.
+        Quis laudantium tempore aut, fuga corporis libero omnis? Dolor, fuga mollitia. Sed similique, accusamus repellat quis animi, saepe nam doloremque adipisci maxime earum consectetur dolorum laborum fugiat vel harum culpa.
+        Assumenda doloribus rerum architecto aliquam ullam deserunt cupiditate velit vel consequuntur expedita tempore eligendi, corrupti ad eos nesciunt dolore! Cupiditate, fugiat repellendus ratione a qui tenetur voluptatem ab quod quaerat?
+    </p>
+    
+    <div class="z-index-10">
+        <p>
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+            z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10;z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; z-index: 10; 
+        </p>
+    </div>
+
+    <div class="z-index-11">
+        <h1>z-index: 11;</h1>
+    </div>
 
 </body>
 </html>
