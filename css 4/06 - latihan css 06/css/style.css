@@ -3,6 +3,11 @@
     box-sizing: border-box; /* agar ukuran padding dan margin dihitung total dan ukuran elemen tidak bertambah */
 }
 
+a {
+    position: relative;
+    z-index: 100;
+}
+
 /* header */
 .header {
     background-color: burlywood;
