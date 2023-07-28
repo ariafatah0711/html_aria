@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 03 - float</title>
+    <style>
+        .small-1 {display: block; width: 100%;}    
+        p {text-align: justify;}
+
+        header {border: 1px solid;}
+        ul {list-style-type: none;}
+        li {color: black; padding: 5px 10px;}
+        .float-none {
+            border: 1px ;
+        }
+        .li-none {
+            float: none;
+        }
+
+        .float-left {
+            border: 1px ;
+        }
+        .li-left {
+            float: left;
+        }
+    
+        main {
+            margin-top: 20px;
+            border: 1px solid;
+            height: 100%;
+            width: 100%;
+        }
+        img {
+            height: 100px;
+            margin: 10px;
+        }
+        .img-1 {
+            float: none;
+        }
+        .img-2 {
+            float: left;
+        }
+        .img-3 {
+            float: right;
+        }
+
+        .container {
+            width: 600px;
+            margin: auto;
+            padding: 5px;
+            border: 1px solid;
+        }
+
+        .box {
+            width: 80px; height: 80px;
+            background-color: salmon; color: white;
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+            margin: 2px;
+
+            float: left;
+        }
+
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+
+    <nav><br>
+        <a href="float.html">float</a>
+        <a href="clear.html">clear</a>
+    </nav><br>
+
+    <small>float: none; elemen tidak akan mengapung (nilai default)</small><br>
+    <small>float: left; elemen akan mengambang di sebelah kiri dan elemen lain akan mengalir di sebelah kanan</small><br>
+    <small>float: right; elemen akan mengambang di sebelah kanan dan elemen lain akan mengalir di sebelah kiri</small><br>
+    <small>float: inherit; elemen akan mewarisi sifat "float" elemen induknya</small><br>
+
+    <br>
+    <header>
+        <small class="small-1">float: none;</small>
+
+        <div class="float-none">
+            <ul>
+                <li class="li-none">Home</li>
+                <li class="li-none">Shop</li>
+                <li class="li-none">About Us</li>
+                <li class="li-none">Contact</li>
+            </ul>
+        </div><hr>
+    
+        <small class="small-1">float: left;</small>
+        
+        <div class="float-left">
+            <ul>
+                <li class="li-left">Home</li>
+                <li class="li-left">Shop</li>
+                <li class="li-left">About Us</li>
+                <li class="li-left">Contact</li>
+            </ul>
+        </div><br><br><br>
+    </header>
+
+    <main>
+        <small class="small-1">float: none;</small>
+        <img src="image/profil.png" alt="profil" class="img-1">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sit provident odit molestias laudantium est dolor facilis ut autem ipsum accusantium a nihil repudiandae cupiditate, consequatur esse quaerat nulla magni?
+        Ipsa est aliquam quod nam voluptas iure molestiae! Voluptatibus qui totam deleniti illum nihil expedita, hic ipsum sunt ut, officiis omnis, fuga inventore pariatur atque consequuntur eos culpa! Beatae, consequatur!
+        Illum ipsam amet quod earum placeat iste beatae tempora dolorum, repellendus, provident ut quia vero quos consequuntur temporibus blanditiis debitis nostrum soluta quis. Labore voluptatem tenetur architecto, illum asperiores corrupti.
+        Autem fugiat natus maxime mollitia ea veritatis, ullam saepe non hic amet quasi, enim quo earum magni aspernatur quas, ducimus animi delectus fugit? Voluptate nam voluptatum omnis minus at? Impedit?
+        Consectetur esse repudiandae veritatis, sunt voluptatibus labore, excepturi modi iure tempore enim, aut nemo. Veritatis quibusdam aliquid neque sint quas, culpa, quaerat delectus aut voluptas non magnam repudiandae sequi illum.</p>
+        <hr>
+
+        <small class="small-1">float: left;</small>
+        <img src="image/profil.png" alt="profil" class="img-2">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sit provident odit molestias laudantium est dolor facilis ut autem ipsum accusantium a nihil repudiandae cupiditate, consequatur esse quaerat nulla magni?
+        Ipsa est aliquam quod nam voluptas iure molestiae! Voluptatibus qui totam deleniti illum nihil expedita, hic ipsum sunt ut, officiis omnis, fuga inventore pariatur atque consequuntur eos culpa! Beatae, consequatur!
+        Illum ipsam amet quod earum placeat iste beatae tempora dolorum, repellendus, provident ut quia vero quos consequuntur temporibus blanditiis debitis nostrum soluta quis. Labore voluptatem tenetur architecto, illum asperiores corrupti.
+        Autem fugiat natus maxime mollitia ea veritatis, ullam saepe non hic amet quasi, enim quo earum magni aspernatur quas, ducimus animi delectus fugit? Voluptate nam voluptatum omnis minus at? Impedit?
+        Consectetur esse repudiandae veritatis, sunt voluptatibus labore, excepturi modi iure tempore enim, aut nemo. Veritatis quibusdam aliquid neque sint quas, culpa, quaerat delectus aut voluptas non magnam repudiandae sequi illum.</p>
+        <hr>
+
+        <small class="small-1">float: right;</small>
+        <img src="image/profil.png" alt="profil" class="img-3">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero sit provident odit molestias laudantium est dolor facilis ut autem ipsum accusantium a nihil repudiandae cupiditate, consequatur esse quaerat nulla magni?
+        Ipsa est aliquam quod nam voluptas iure molestiae! Voluptatibus qui totam deleniti illum nihil expedita, hic ipsum sunt ut, officiis omnis, fuga inventore pariatur atque consequuntur eos culpa! Beatae, consequatur!
+        Illum ipsam amet quod earum placeat iste beatae tempora dolorum, repellendus, provident ut quia vero quos consequuntur temporibus blanditiis debitis nostrum soluta quis. Labore voluptatem tenetur architecto, illum asperiores corrupti.
+        Autem fugiat natus maxime mollitia ea veritatis, ullam saepe non hic amet quasi, enim quo earum magni aspernatur quas, ducimus animi delectus fugit? Voluptate nam voluptatum omnis minus at? Impedit?
+        Consectetur esse repudiandae veritatis, sunt voluptatibus labore, excepturi modi iure tempore enim, aut nemo. Veritatis quibusdam aliquid neque sint quas, culpa, quaerat delectus aut voluptas non magnam repudiandae sequi illum.</p>
+    </main><br>
+
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+        <div class="box">11</div>
+        <div class="box">12</div>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius impedit similique natus pariatur qui quo consequatur eos explicabo deserunt rem laborum ex ea necessitatibus quasi quia, magnam consequuntur, dignissimos mollitia?</p>
+    </div>
+
+</body>
+</html>

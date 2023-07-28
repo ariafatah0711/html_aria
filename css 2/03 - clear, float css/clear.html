@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 02 - clear</title>
+    <style>
+        hr {clear: both;}
+        .container {
+            width: 800px;
+            margin: 0px auto 200px auto;
+            padding: 5px;
+            border: 1px solid;
+        }
+
+        /* none */
+        img.img-1{
+            width: 350px;
+            margin: 5px;
+            float: left;
+        }
+        
+        /* overflow */
+        .container-2 {
+            overflow: auto;
+        }
+        img.img-2{
+            width: 350px;
+            margin: 5px;
+            float: left;
+        }
+
+        /* clear */
+        img.img-3{
+            width: 350px;
+            margin: 5px;
+            float: left;
+        }
+        .clear {
+            clear: left;
+        }
+
+        /* micro clearfix */
+        img.img-4{
+            width: 350px;
+            margin: 5px;
+            float: left;
+        }
+        .cf:before, .cf:after {
+            content: " intinya sebelumdan setelah container cf ini adalah clear"; /* 2 */
+            display: table; /* 2 */
+            clear: both;
+        }
+
+        /* kotak */
+        .container {
+            width: 600px;
+            margin: auto;
+            padding: 5px;
+            border: 1px solid;
+        }
+
+        .box {
+            width: 80px; height: 80px;
+            background-color: salmon; color: white;
+            text-align: center;
+            line-height: 80px;
+            font-size: 30px;
+            margin: 2px;
+
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+
+    <nav><br>
+        <a href="float.html">float</a>
+        <a href="clear.html">clear</a>
+    </nav><br>
+    
+    <small>clear: left; clear: right; elemen tidak akan muncul di sebelah kiri atau kanan elemen yang memilki float</small><br>
+    <small>clear: both; elemen tidak akan muncul di kiri dan kanan dan akan berada di bawah</small><br>
+
+    <h2>cara membersihkan/clear float</h2>
+    <ul>
+        <li>menggunakan propety overflow</li>
+            <small>container {overflow: auto;}</small><br>
+        <li>menggunakan &lt;div&gt; kosong</li>
+            <pre>
+                misal div 1 memilki float di kiri yang menyebabkan div 2 berada di samping div 1
+                dan cara mengatasinya adalah dengan cara menabahkan div yag memilki class clear dan di class tersebut
+                ditambahkan propety clear: [left]; maka elemen yang di atas div yang memilki efek float akan dihapus oleh div kosong tsb    
+            </pre>
+        <li>menggunakan teknik micro clearfix</li>
+            <pre>
+                .cf:before, .cf:after {
+                    content: " "; #ini adalah konten kosong(dapat berisitext juga)
+                    display: table; 
+                    clear: both;
+                }
+            </pre>
+    </ul>
+
+    <hr>
+    <div class="container">
+        <img src="image/profil.png" alt="profil" class="img-1">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nobis ea temporibus quia dignissimos adipisci illum fugiat repellendus eligendi ducimus non nulla eos sed perspiciatis mollitia accusamus, odio, consequuntur fugit?
+        </p>
+    </div>
+
+    <hr>
+    <div class="container container-2">
+        <img src="image/profil.png" alt="profil" class="img-2">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nobis ea temporibus quia dignissimos adipisci illum fugiat repellendus eligendi ducimus non nulla eos sed perspiciatis mollitia accusamus, odio, consequuntur fugit?
+        </p>
+    </div>
+    
+    <hr>
+    <div class="container">
+        <img src="image/profil.png" alt="profil" class="img-3">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nobis ea temporibus quia dignissimos adipisci illum fugiat repellendus eligendi ducimus non nulla eos sed perspiciatis mollitia accusamus, odio, consequuntur fugit?
+        </p>
+        <div class="clear"></div>
+    </div>
+
+    <hr>
+    <div class="container cf">
+        <img src="image/profil.png" alt="profil" class="img-4">
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Totam nobis ea temporibus quia dignissimos adipisci illum fugiat repellendus eligendi ducimus non nulla eos sed perspiciatis mollitia accusamus, odio, consequuntur fugit?
+        </p>
+    </div>
+
+    <hr>
+    <div class="container">
+        <div class="box">1</div>
+        <div class="box">2</div>
+        <div class="box">3</div>
+        <div class="box">4</div>
+        <div class="box">5</div>
+        <div class="box">6</div>
+        <div class="box">7</div>
+        <div class="box">8</div>
+        <div class="box">9</div>
+        <div class="box">10</div>
+        <div class="box">11</div>
+        <div class="box">12</div>
+        
+        <div class="clear"></div>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius impedit similique natus pariatur qui quo consequatur eos explicabo deserunt rem laborum ex ea necessitatibus quasi quia, magnam consequuntur, dignissimos mollitia?</p>
+    </div>
+
+</body>
+</html>
