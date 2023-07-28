@@ -1,0 +1,52 @@
+* {
+    font-family: Tahoma;
+    box-sizing: border-box; /* agar ukuran padding dan margin dihitung total dan ukuran elemen tidak bertambah */
+}
+
+/* header */
+.header {
+    background-color: burlywood;
+    position: fixed;
+    top: 0px;
+    left: opx;
+    width: 100%;
+    padding: 10px;
+    height: 100px;
+    z-index: 2;
+}
+
+.header h1 {
+    margin-left: 50px;
+}
+
+/* container */
+.container {
+    position: relative;
+    z-index: 1;
+    top: 100px;
+    max-width: 700px;
+    margin: 0px auto;
+}
+
+.container h2 {
+    font-size: 24px;
+}
+
+/* kolom-konten */
+.kolom-konten {
+    width: 500px;
+    float: left;
+}
+
+/* kolom-menu */
+.kolom-menu {
+    background-color: aquamarine;
+    width: 190px;
+    margin-left: 10px;
+    padding: 10px;
+    float: left;
+}
+
+.kolom-menu ul {
+    list-style-type: none
+}
