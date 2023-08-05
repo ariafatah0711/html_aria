@@ -26,6 +26,11 @@ li {
     /* justify-content: space-evenly; ngasih space kiri dan kanan */
     grid-template-columns: 30% auto 30%;
     grid-template-rows: 100px 300px auto ;
+    /* grid-template-areas: 
+        "header header header"
+        "sidebar main main"
+        "footer footer footer"
+    ; */
     gap: 10px;
 }
 

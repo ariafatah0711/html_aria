@@ -124,7 +124,75 @@
             <details>
                 <summary style="text-align: center;">Information</summary>
                 <p>tata letak dalam bentuk grid atau kisi kisi</p>
-                <p>1. </p>
+                <p>1. <b>grid-template: </b>menentukan kolom pada grid</p>
+                <ul type="none">
+                    <li><b>grid-template-columns: </b>20px 100px 20px; mengatur lebar kolam pada grid</li>
+                    <li><b>grid-template-rows: </b>50px 200px 10px; mengatur tinggi baris dalam grid</li>
+                    <li>
+                        <b>grid-template-areas: </b>
+                        <pre>
+                            body {
+                                <b>grid-template-areas: </b> 
+                                    "header header header"
+                                    "sidebar main main"
+                                    "footer footer footer";
+                            }
+ 
+                            .header {
+                                <b>grid-area: </b>header; elemen akan mengisi dengan nama header
+                            }
+                            .main {
+                                <b>grid-area: </b>main; elemen akan mengrisi dengan nama main
+                            }
+                        </pre>
+                        mengatur susunan area dalam grid dengan menyediakan nama-nama area
+                    </li>
+                </ul>
+
+                <p>2. <b>grid-gap: </b>menentukan jarak dan baris dalam grid</p>
+                <ul type="none">
+                    <li><b>grid-gap: </b>10px; menentukan jarak antara kolam dan baris dalam grid (mirip margin)</li>
+                    <li><b>gap: </b>10px; menentukan jarak antara kolam dan baris dalam grid (mirip margin)</li>
+                </ul>
+
+                <p>3. <b>grid-starf and grid-end: </b>mengatur dimana elemen harus mulai dan berakhir dalam grid</p>
+                <ul type="none">
+                    <li><b>grid-column-start: </b>1; elemen dimulai pada kolam pertama</li>
+                    <li><b>grid-column-end: </b>3; elemen berakhir pada kolam ketiga</li>
+                    <li><b>grid-row-start: </b>2; elemen dimulai pada baris pertama</li>
+                    <li><b>grid-row-end: </b>3; elemen berakhir pada baris ketiga</li>
+                    <br>
+                    <li><b>grid-column/row-start: </b>2;</li>
+                    <li><b>grid-column/row-end: </b>span 3; elemen akan mencakup 3 kolam dari kolam kedua</li>
+                    <li>jadi elemen akan mencakup kolam <b>kedua, ketiga, dan keempat</b></li>
+                </ul>
+
+                <p>4. <b>grid-auto: </b>menentukan ukuran kolam dan baris pada grid untuk elemen yang secara otomatis ditambahkan</p>
+                <ul type="none">
+                    <li><b>grid-template-columns: </b>100px;</li>
+                    <li><b>grid-auto-columns: </b>50px; elemen baru akan memilki lebar 50px</li>
+                    <br>
+                    <li><b>grid-template-rows: </b>100px;</li>
+                    <li><b>grid-auto-rows: </b>50px; elemen baru akan memilki tinggi baris 50px</li>
+                </ul>
+
+                <p>5. <b>items dan content: </b>mengatur posisi</p>
+                <ul type="none">
+                    <li><b>justify-items: </b>start; mengatur posisi konten dalam sel grid secara horizontal(justify)</li>
+                    <li><b>align-items: </b>center; mengatur posisi konten dalam sel grid secara vertikal(align)</li>
+                    <br>
+                    <li><b>justify-content: </b>center; mengatur posisi grid container secara horizontal(justify) dalam grid area</li>
+                    <li><b>align-content: </b>end; mengatur posisi grid secara vertikal(align) dalam grid area</li>
+                    <br>
+                    <li><b>place-items: </b>start center; menggabungkan <b>justify-items ,dan align-items</b> dalam satu deklarasi</li>
+                    <li><b>place-content: </b>center center;  menggabungkan <b>justify-content ,dan align-content</b> dalam satu deklarasi</li>
+                </ul>
+
+                <p>6. <b>grid-auto-flow: </b>elemen akan ditambahkan secara otomatis</p>
+                <ul type="none">
+                    <li><b>grid-auto-flow: </b>column; elemen akan ditambahkan secara otomatis akan di atur dalam urutan kolam <b>(secara vertikal) dari atas ke bawah</b></li>
+                    <li><b>grid-auto-flow: </b>row; elemen akan ditambahkan secara otomatis akan di atur dalam urutan baris <b>(secara horizontal)</b></li>
+                </ul>
             </details>
         </div>
     </ul>
