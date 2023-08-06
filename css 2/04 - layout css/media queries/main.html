@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 04 - layout css - media queries</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="back" style="text-align: left; margin: 10px;">
+        <a href="../../00 - main.html">back css...</a><br />
+    
+        <nav><br>
+            <a href="../fixed width/main.html">fixed width</a>
+            <a href="../liquid/main.html">liquid</a>
+            <a href="../responsive layout/main.html">responsive layout</a>
+            <a href="../media queries/main.html">media queries</a>
+        </nav><br>
+    
+        <small>&copy;media <b>screen and (max-width:600px)</b>{ }</small><br>
+        <small>berfungsi sebagai css untuk yang memiliki media/device dengan maksimal 600px</small><br>
+
+        <hr>
+        <details>
+            <summary>jenis media</summary>
+            <small>&copy;media <b>all</b>{ }</small><br>
+            <small>media query akan berlaku untuk semua jenis media</small><br><br>
+            
+            <small>&copy;media <b>screen</b>{ }</small><br>
+            <small>media query akan berlaku ketika halaman ditampilkan pada perangkat layar monitor, ponsel, atau tablet</small><br><br>
+            
+            <small>&copy;media <b>print</b>{ }</small><br>
+            <small>media query akan berlaku ketika halaman dicetak</small><br><br>
+            
+            <small>&copy;media <b>speech</b>{ }</small><br>
+            <small>media query akan berlaku ketika halaman dibaca oleh teknologi pembaca layar atau proga, text-to-speech</small><br>
+        </details>
+
+        <hr>
+        <details>
+            <summary>propety media</summary>
+            <small><b>max-width: </b>500px; menentukan lebar maksimum elemen untuk menerapkan aturan css</small><br>
+            <small><b>min-width: </b>100px; menentukan lebar minimum</small><br>
+            <small><b>max-height: </b>1000px; menentukan tinggi maksimum elemen untuk menerapkan aturan css</small><br>
+            <small><b>max-height: </b>500px; menentukan tinggi minimun</small><br><br>
+
+            <small>orientasi: <b>portrait; </b>menentukan apakah perangkat memilki tampilan dalam mode <b>potrait(vertikal) atau lanscape(horizontal)</b></small><br>
+            <small>orientasi: <b>landscape; </b>media query akan berlaku untuk tampilan landscape</small><br><br>
+
+            <small><b>min-resolution: </b>300dpi; media query akan berlaku untuk kepadatan pixel per inch atau dpi dengan resolusi tertentu</small><br>
+        </details>
+        <hr>
+ 
+    </div>
+
+    <div class="container">
+        <div class="box-1 box">
+            <img src="../image.png" alt="profil">
+
+            <div class="btn">
+                <button>html</button>
+                <button>css</button>
+                <button>js</button>
+            </div>
+          
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod consequuntur voluptate praesentium saepe, nulla nisi dignissimos, veniam impedit, unde delectus soluta pariatur. Laborum impedit veritatis, laudantium quod odio ullam provident.</p>
+        </div>
+        <div class="box-2 box">
+            <img src="../image.png" alt="profil">
+
+            <div class="btn">
+                <button>html</button>
+                <button>css</button>
+                <button>js</button>
+            </div>
+          
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod consequuntur voluptate praesentium saepe, nulla nisi dignissimos, veniam impedit, unde delectus soluta pariatur. Laborum impedit veritatis, laudantium quod odio ullam provident.</p>
+        </div>
+        <div class="box-3 box">
+            <img src="../image.png" alt="profil">
+
+            <div class="btn">
+                <button>html</button>
+                <button>css</button>
+                <button>js</button>
+            </div>
+          
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quod consequuntur voluptate praesentium saepe, nulla nisi dignissimos, veniam impedit, unde delectus soluta pariatur. Laborum impedit veritatis, laudantium quod odio ullam provident.</p>
+        </div>
+    </div>
+    <p>Aria Fatah Anom</p>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+/* untuk semua screen (default) */
+img {width: 50%;}
+
+.container {
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: auto;
+}
+
+.box {
+    border: 1px solid;
+    margin: 20px auto;
+}
+
+button {
+    width: 10%;
+}
+
+/* media queries */
+
+/* untuk dekstop */
+/* untuk media yang memilki screen max width 601 - 2000px */
+@media only screen and (max-width:2000px){
+    .box img {
+        float: left;
+    }
+    .box {
+        background-color: cornflowerblue;
+    }
+    .btn {
+        display: inline;                
+    }
+    button {
+        width: 15%;
+    }
+}
+
+/* untuk mobile */
+/* untuk media yang memilki screen max-width 0 - 600px */
+@media only screen and (max-width:600px){
+    .box img {
+        float: none;
+    }
+    .box {
+        background-color: aqua;
+    }
+    .btn {
+        display: flex;
+        width: 50%;
+        justify-content: space-around;
+    }
+    button {
+        width: 30%;
+    }
+}
