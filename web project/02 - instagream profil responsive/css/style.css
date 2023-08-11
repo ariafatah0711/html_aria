@@ -84,6 +84,8 @@ body {
 /* content */
 /* *********************** */
 
+
+
 /* ###################################################################################################### */
 /* footer */
 /* ###################################################################################################### */
@@ -143,6 +145,29 @@ body {
     .nav-active {
         border-bottom: 3px solid grey;
     }
+
+    /* content */
+    .content {
+        height: 480px;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        overflow-y: scroll;
+    }
+
+    .content-image {
+        width: 33%;
+        height: 33%;
+        padding: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .content-image img {
+        max-width: 100%;
+        height: 100%;
+    }
 }
 
 @media only screen and (min-width:701px){
@@ -158,7 +183,7 @@ body {
         display: grid;
         width: 100%;
         grid-template-columns: 40% 4% auto;
-        grid-template-rows: 100%;
+        grid-template-rows: 550px;
 
     }
 
@@ -213,6 +238,35 @@ body {
 
     .nav-active {
         border-right: 3px solid grey;
+    }
+
+    /* content */
+    .content {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: flex-start;
+        overflow-y: scroll;
+
+        border: 1px solid;
+
+    }
+
+    .content-image {
+        width: 33%;
+        height: 33%;
+        padding: 1%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        border: 1px solid;
+    }
+
+    .content-image img {
+        width: 80%;
+        height: 100%;
     }
 }
 
