@@ -21,23 +21,51 @@ body {
 header {
     background-color: #0a8f85;
     height: 100%;
+    padding: 0px 2%;
     margin-top: 0px;
     position: sticky;
     top: 0px;
+    display: grid;
+    align-items: center;
+    grid-auto-flow: column;
+}
+
+.header-back {
+    width: 15%;
+    height: 70%;
+    padding: 10px;
+    position: absolute;
+    text-align: center;
+    left: 2%;
+}
+
+.header-title{
+    width: 100%;
+    height: 70%;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
 }
 
-header img {
-    height: 40px;
-
-    border: 1px solid black;
-
-}
-
-header h2{
+.header-back, .header-back a, .header-title {
     color: white;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
 }
 
+.header-back a {
+    font-size: 30px;
+    font-weight: bold;
+    padding: 0px 20%;
+    border-radius: 20px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
+
+    background-color: #008081;
+}
 
 /* ###################################################################################################### */
 /* main */
@@ -120,13 +148,32 @@ main {
 .span-2 img {
     height: 300px;
     float: left;
-
-    /* border: 1px solid; */
 }
 
 /* span-4 */
 .span-4 {
     grid-column: span 4;
+}
+
+.span-4 .container-image {
+    width: 30%;
+    height: 100%;
+    float: left;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid;
+}
+
+.span-4 img {
+    height: 100%;
+}
+
+.span-4 .container-text h1 {
+    height: 100%;
+    font-size: 100px;
+    text-align: center;
 }
 
 /* main-padding */
@@ -146,24 +193,39 @@ footer {
 
 /* ###################################################################################################### */
 /* sudo */
-.container {transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);} /* agar lebih halus */
+.container, .header-back {transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);} /* agar lebih halus */
 .container:hover {
     background-color: darkgrey;
     transform: scale(0.9); /* mengubah ukuran div menjadi lebih kecil */
 }
 
+.header-back a:hover {
+    background-color: #008081;
+    transform: scale(0.9);
+}
 
 
 @media only screen and (max-width:700px) {
-    body {
-        width: 100%;
-        height: auto;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: auto auto auto;
 
-        border: 1px solid;
+}
+
+
+@media only screen and (max-width:1200px) {
+    .span-1 {
+        grid-column: span 2;
     }
+    .span-2 {
+        grid-column: span 4;
+    }
+}
 
+@media only screen and (max-width:900px) {
+    .span-1, .span2, .span-4 {
+        grid-column: span 4;
+    }
     
+    .span-1 img {
+        height: 300px;
+        float: left;
+    }
 }
