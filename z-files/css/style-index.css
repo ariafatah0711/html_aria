@@ -103,10 +103,10 @@ main {
 }
 
 .container-text {
-    width: 100%;
+    width: auto;
     height: 100%;
 
-    /* border: 1px solid; */
+    border: 1px solid;
 }
 
 .container-text h1, .container-text h4 {
@@ -116,7 +116,7 @@ main {
     align-items: center;
     justify-content: center;
 
-    /* border: 1px solid; */
+    border: 1px solid;
 }
 
 .container-text h4 {
@@ -163,7 +163,7 @@ main {
     justify-content: center;
     align-items: center;
 
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 .span-4 img {
@@ -194,10 +194,11 @@ footer {
 /* ###################################################################################################### */
 /* sudo */
 .container, .header-back {transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);} /* agar lebih halus */
-.container:hover {
+/* .container:hover {
     background-color: darkgrey;
     transform: scale(0.9); /* mengubah ukuran div menjadi lebih kecil */
-}
+} 
+*/
 
 .header-back a:hover {
     background-color: #008081;
@@ -222,10 +223,66 @@ footer {
 @media only screen and (max-width:900px) {
     .span-1, .span2, .span-4 {
         grid-column: span 4;
+        overflow: scroll;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
     }
     
-    .span-1 img {
-        height: 300px;
-        float: left;
+    .span-1 .container-image {
+        height: auto;
     }
+
+    .span-1 .container-image img, .span-4 .container-image img {
+        height: 300px;
+        padding: 8%;
+        float: left;
+
+        border: 1px solid;
+    }
+
+    .span-1 .container-image, .span-4 .container-image {
+        display: flex;
+        justify-content: flex-start;
+    }
+
+    .span-1 .container-text, .span-4 .container-text {
+        min-width: 10%;
+        max-width: 63.5%;
+
+        /* width: auto;
+        height: 20%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        flex-direction: row; */
+
+        border: 1px solid;
+    }
+
+    .span-1 .container-text p {display: flex; width:}
+
+    .span-4 .container-image {
+        width: auto;
+    
+        border: 1px solid;
+    }
+
+    .span-4 .container-image img {
+        padding: 8%;
+    }
+
+    .span-4 .container-text h1 {
+        width: auto;
+        height: 20%;
+        font-size: 2em;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    
+        border: 1px solid;
+    }
+
+
 }
