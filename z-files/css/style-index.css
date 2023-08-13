@@ -207,6 +207,12 @@ footer {
         grid-column: span 4;
     }
 
+    .span-1 .container-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
     .span-4 {grid-column: span 4;overflow: scroll;display: flex;flex-wrap: wrap;flex-direction: column;}
     .span-4 .container-image img {height: 300px;padding: 8%;float: left;}
     .span-4 .container-text {width: 100%;}
