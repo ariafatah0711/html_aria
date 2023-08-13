@@ -6,46 +6,10 @@
     font-family: 'Times New Roman', Times, serif;
 }
 
-/* body {
-    width: 100%;
-    height: 620px;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 10% 80%;
-} */
-
-/* body {
-    width: 100%;
-    height: auto;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 60px 100% auto;
-} */
-
 body {
     width: 100%;
     height: auto;
     display: flexbox;
-}
-
-main {
-    background-color: #efefef;
-    width: 100%;
-    height: auto;
-    padding-top: 50px;
-    padding-bottom: 50px;
-    margin-top: 50px;
-    display: grid;
-    grid-template-columns: 20% 20% 20% 20%;
-    grid-template-rows: auto;
-    grid-auto-flow: row;
-    row-gap: 50px;
-    justify-content: space-evenly;
-    align-items: stretch;
-    overflow-y: scroll;
-    overflow-x: hidden;
-
-    /* border: 10px solid red; */
 }
 
 /* ###################################################################################################### */
@@ -97,26 +61,28 @@ header {
     border-radius: 20px;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
     text-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
-
     background-color: #008081;
 }
 
 /* ###################################################################################################### */
 /* main */
-/* main {
+main {
     background-color: #efefef;
     width: 100%;
-    height: 100%;
-    padding-top: 5%;
+    height: auto;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    margin-top: 50px;
     display: grid;
     grid-template-columns: 20% 20% 20% 20%;
-    grid-template-rows: 70%;
+    grid-template-rows: auto;
     grid-auto-flow: row;
-    row-gap: 10%;
+    row-gap: 50px;
     justify-content: space-evenly;
     align-items: stretch;
     overflow-y: scroll;
-} */
+    overflow-x: hidden;
+}
 
 /* container */
 .container {
@@ -125,8 +91,6 @@ header {
     overflow: hidden;
     border-radius: 20px;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
-
-    /* border: 1px solid; */
 }
 
 .container-image img {
@@ -148,7 +112,6 @@ header {
 
 .container-text h4 {
     height: 10%;
-
     justify-content: left;
 }
 
@@ -189,8 +152,6 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
-
-    /* border: 1px solid; */
 }
 
 .span-4 img {
@@ -205,7 +166,6 @@ header {
 }
 
 .project {
-    /* background-color: blue; */
     display: flex;
     justify-content: center;
     align-items: center;
@@ -223,7 +183,6 @@ footer {
 /* sudo */
 .container, .header-back {
     transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1); /* agar lebih halus */
-    /* transition: width 0.3s ease-in-out, height 0.3s ease-in-out; */
 } 
 .container:hover {
     background-color: darkgrey;
@@ -233,7 +192,6 @@ footer {
     background-color: darkgrey;
     transform: scale(0.9); /* mengubah ukuran div menjadi lebih kecil */
 }
-
 
 .header-back a:hover {
     background-color: #0081818c;
@@ -256,6 +214,10 @@ footer {
     .span-4 .container-image img {padding: 8%;width: 300px;}
     .container {display: grid;grid-template-columns: auto auto;justify-content: flex-start;overflow: hidden;}
     .span-4 .container-text h1 {width: auto;height: 20%;font-size: 2em;display: flex;align-items: center;justify-content: center;}
+
+    .span-1 .container-text p {
+        display: block;
+    }
 }
 
 @media only screen and (max-width:900px) {
@@ -309,8 +271,6 @@ footer {
     .span-4 .container-image img {
         padding: 8%;
         width: 300px;
-
-        /* border: 1px solid; */
     }
 
     .span-4 .container-text h1 {
@@ -333,17 +293,13 @@ footer {
         height: 100%;
         width: 100%;
         display: flex;
-        justify-content: center;
+        justify-content: flex-end;
         align-items: center;
-
-        /* border: 1px solid; */
     }
 
     .span-1 .container-image img, .span-2 .container-image img, .span-4 .container-image img {
         width: 100px;
         height: 100px;
-
-        /* border: 1px solid; */
     }
 
     .container-text {
@@ -353,14 +309,16 @@ footer {
         align-items: center;
         flex-wrap: wrap;
         flex-direction: row;
-
-        /* border: 1px solid; */
     }
 
     .container-text h1, #h1 {
         width: 100%;
         height: 50px;
-        font-size: 40px;
+        font-size: 28px;
+    }
+
+    #h1 {
+        font-size: 24px;
     }
 
     .container-text h4 {
@@ -369,22 +327,16 @@ footer {
         display: flex;
         justify-content: center;
         text-align: center;
-
-        /* border: 1px solid red; */
     }
 
     .container-text p, .span-1 .container-text p {
         display: none;
     }
 
-    /* .container-text h1, h4, p {border: 1px solid;}  */
-
     .container {
         display: grid;
-        grid-template-columns: 20% 80%;
+        grid-template-columns: 30% 70%;
         padding: 0px;
     }
 
-
-    
 }
