@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 04 - layout css - grid view</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="../../00 - main.html">back css...</a><br /><br>
+
+    <details>
+        <summary>menyimpan variable</summary>
+        
+        <small><pre>
+            :root tersedia secara global
+            :root {
+                --nama_var: value;
+                --col-1: red;
+                --col-2: orange;
+                --col-3: yellow;
+                --col-4: green;
+                --col-5: blue;
+                --col-6: indigo;
+                --col-7: violet;
+            
+                --col-t: teal;
+                --col-b: black;
+                --col-g: darkgrey;
+            }
+
+            .header hanya dapat dipakai oleh item atau content di dalam header
+            .header {
+                --col-1: violet;
+                --col-2: indigo;
+            }
+        </pre></small><br>
+    </details>
+
+    <details>
+        <small><pre>
+            .class {
+                propety: var(--nama_var);
+                .col-1 {color: var(--col-1);}
+                .col-2 {color: var(--col-2);}
+                .col-3 {color: var(--col-3);}
+                .col-4 {color: var(--col-4);}
+                .col-5 {color: var(--col-5);}
+                .col-6 {color: var(--col-6);}
+                .col-7 {color: var(--col-7);}
+            }
+        </pre></small><br>
+    </details><br>
+
+    <main>
+
+        <div class="header">
+            <h1>css variable</h1>
+        </div>
+
+        <div class="side">
+            <ul>
+                <li class="col-1">col-1</li>
+                <li class="col-2">col-2</li>
+                <li class="col-3">col-3</li>
+                <li class="col-4">col-4</li>
+                <li class="col-5">col-5</li>
+                <li class="col-6">col-6</li>
+                <li class="col-7">col-7</li>
+            </ul>
+        </div>
+
+        <div class="container">
+            <h3 class="content-1">content-1</h3>
+            <h3 class="content-2">content-2</h3>
+            <h3 class="content-3">content-3</h3>
+            <h3 class="content-4">content-4</h3>
+            <h3 class="content-5">content-5</h3>
+            <h3 class="content-6">content-6</h3>
+            <h3 class="content-7">content-7</h3>
+        </div>
+
+        <div class="footer">
+            <h4>&copy;Copyright 2023</h4>
+        </div>
+    </main>
+    
+</body>
+</html>
