@@ -21,6 +21,7 @@
 .container-text h1 {
     height: 40%;
     border-bottom: 1px solid;
+    /* background-color: snow; */
 }
 
 .container-text h4 {
@@ -30,7 +31,12 @@
     text-align: center;
 }
 
-/* footer */
+.block-hidden {
+    display: block;
+    visibility: hidden;
+}
+
+/* main */
 body {
     min-height: 100vh;
     margin: 0;

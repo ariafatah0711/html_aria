@@ -115,6 +115,10 @@ main {
     justify-content: left;
 }
 
+.container-text p {
+    color: rgba(0, 0, 0, 0.8);
+}
+
 /* span-1 */
 .span-1 .container-image {
     display: flex;
@@ -196,6 +200,7 @@ footer {
 .header-back a:hover {
     background-color: #0081818c;
     transform: scale(0.9);
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.05);
 }
 
 /* media */
