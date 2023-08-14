@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 10 - box css</title>
+    <style>
+        .box {float: left; margin-right: 20px;}
+        .box {
+            width: 300px;
+            height: 300px;
+            border: 1px solid;
+        }
+        .none {overflow: none;}
+        .hidden {overflow: hidden;}
+        .scroll {overflow: scroll;}
+        .auto {overflow: auto;}
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+
+    <nav><br>
+        <a href="box.html">box</a>
+        <a href="box_model.html">box model</a>
+        <a href="overflow.html">overflow</a>
+    </nav><br>
+    
+    <small>overflow: none; konten yang melibihi batas akan di tampilkan diluar (default)</small><br>
+    <small>overflow: visible; konten yang melibihi batas akan di tampilkan diluar (default)</small><br>
+    <small>overflow: hidden; konten yang melibihi batas akan tersembunyi dan tidak terlihat</small><br>
+    <small>overflow: scroll; akan menampilkan billah gulir scroll bar baik horizontal mauppun vertikal</small><br>
+    <small>overflow: auto; akan menampilkan billah gulir hanya jika elemen melebihi batas</small><br>
+
+    <div class="box none">
+        <h2>overflow: none</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+        </p>
+    </div>
+ 
+    <div class="box hidden">
+        <h2>overflow: hidden</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+        </p>
+    </div>
+
+    <div class="box scroll">
+        <h2>overflow: scroll</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+        </p>
+    </div>
+
+    <div class="box auto">
+        <h2>overflow: auto</h2>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Nostrum, odit. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem, reprehenderit.
+        </p>
+    </div>
+
+</body>
+</html>

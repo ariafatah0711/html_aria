@@ -6,7 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css 10 - box model css</title>
     <style>
-        * {font-family: Arial, Helvetica, sans-serif;}
+        .body {
+            border: 1px solid;
+        }
         .content {
             font-size: 36px;
             background-color: bisque;
@@ -37,10 +39,16 @@
         <a href="box_model.html">box model</a>
     </nav><br>
 
-    <small></small><br>
+    <small>box merujuk pada model kotak box</small><br>
+    <small>1. <b>content</b> bagian dari elemen itu sendiri</small><br>
+    <small>2. <b>padding</b> ruang di antara konten dan batas elemen</small><br>
+    <small>3. <b>border</b> garis yang mengelilingi konten</small><br>
+    <small>4. <b>margin</b> ruang diluar batas elemen</small><br><br>
 
-    <div class="container">
-        <p class="content">content</p>
+    <div class="body">
+        <div class="container">
+            <p class="content">content</p>
+        </div>
     </div>
 
 </body>

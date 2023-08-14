@@ -1,150 +1,57 @@
 * {
-    font-family: arial;
+    font-family: Tahoma;
+    box-sizing: border-box; /* agar ukuran padding dan margin dihitung total dan ukuran elemen tidak bertambah */
+}
+
+a {
+    position: relative;
+    z-index: 100;
 }
 
 /* header */
 .header {
-    display: flex;
-    background-color: beige;
+    background-color: burlywood;
+    position: fixed;
+    top: 0px;
+    left: opx;
+    width: 100%;
     padding: 10px;
+    height: 100px;
+    z-index: 2;
 }
 
-.header-logo {
-    margin-top: auto;
-    margin-bottom: auto;
+.header h1 {
+    margin-left: 50px;
 }
 
-.header-logo img {
-    height: 70px;
+/* container */
+.container {
+    position: relative;
+    z-index: 1;
+    top: 100px;
+    max-width: 700px;
+    margin: 0px auto;
 }
 
-.header-title {
-    margin-top: auto;
-    margin-bottom: auto;
-}
-
-.header-title a {
-    text-decoration: none;
+.container h2 {
     font-size: 24px;
-    font-weight: bold;
-    color: black;
 }
 
-/* nav bar */
-.nav {
-    background-color: black;
+/* kolom-konten */
+.kolom-konten {
+    width: 500px;
+    float: left;
+}
+
+/* kolom-menu */
+.kolom-menu {
+    background-color: aquamarine;
+    width: 190px;
+    margin-left: 10px;
     padding: 10px;
-    margin-top: 0px;
+    float: left;
 }
 
-.nav-item {
-    display: inline-block;
-    margin-left: 20px;
-    height: 20px;
-}
-
-.nav-item a {
-    color: white;
-    text-decoration: none;
-}
-
-.nav-item a:hover {
-    color: cadetblue;
-}
-
-/* konten */
-.konten {
-    width: 80%;
-    margin: auto;
-}
-
-.konten h1 {
-    color: darkolivegreen;
-    font-size: 35px;
-}
-
-.konten h2 {
-    font-size: 22px;
-    color: darkgreen;
-}
-
-/* tabel */
-.tabel {
-    border-spacing: 4px;
-}
-
-/* header */
-.tabel-header {
-    background-color: beige;
-}
-
-.tabel-header th {
-    padding: 10px;
-    text-align: left;
-}
-
-/* tabel-konten */
-.tabel-konten {
-    background-color: azure;
-}
-
-.genap {
-    background-color: aliceblue;
-}
-
-.tabel-konten td {
-    padding: 10px;
-}
-
-td>img {
-    width: 100px;
-}
-
-.tabel-konten:hover {
-    background-color: bisque;
-}
-
-/* form */
-.form-group {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.form-group label {
-    display: block;
-    font-size: 20px;
-    color: rgb(135, 135, 135);
-}
-
-.form-group input {
-    display: block;
-    margin-top: 10px;
-    width: 60%;
-}
-
-.form-group textarea {
-    display: block;
-    margin-top: 10px;
-    height: 200px;
-    width: 60%;
-}
-
-.button {
-    width: 150px;
-    height: 50px;
-    font-size: 20px;
-    font-weight: bold;
-    color: aliceblue;
-    background-color: darkgreen;
-    border: 0px;
-    border-radius: 20px;
-    cursor: pointer;
-}
-
-.button:hover {
-    background-color: black;
-}
-
-.button:active {
-    background-color: pink;
+.kolom-menu ul {
+    list-style-type: none
 }
