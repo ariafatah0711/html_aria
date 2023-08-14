@@ -1,26 +1,17 @@
-
-
 /* container */
 .container {
     height: 100px;
     display: flex;
-
-
-    /* border: 1px solid; */
 }
 
 .container-text {
     width: 100%;
     height: 100%;
     display: block;
-
-    /* border: 1px solid; */
 }
 
 .container-text h1, h4, p{
     width: 100%;
-
-    /* border: 1px solid; */
 }
 
 .p {
@@ -49,8 +40,8 @@ body {
 
 main {
     flex: 1;
-    row-gap: 50px;
     align-items: start;
+    /* row-gap: 50px; */
 }
 
 main {
@@ -72,11 +63,9 @@ main {
 
 footer {
     flex-shrink: 0;
-    /* position: sticky;
-    bottom: 0px; */
 }
 
-
+/* media */
 @media only screen and (max-width:900px) {
     .container-text h4 {
         display: flex;
