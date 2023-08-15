@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 03 - selector css</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br /><br>
+
+    <nav>
+        <a href="main.html">selector css</a>
+        <a href="selector-class.html">selector class css</a>
+    </nav><br>
+
+    <main>
+        <ol>
+            
+            <li>Selector Elemen</li>
+            <details>
+                <summary>
+                    <b>&lt;p&gt;</b> memilih elemen berdasarkan nama elemen misalnya memilih semua elemen <b>p</b>
+                </summary>
+                <pre>
+                    <b>p</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector ID</li>
+            <details>
+                <summary>
+                    <b>&lt;div id="header"&gt;</b> memilih elemen berdasarkan nama id mereka misalnya <b>#header</b>
+                </summary>
+                <pre>
+                    <b>#header</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector class</li>
+            <details>
+                <summary>
+                    <b>&lt;div class="body"&gt;</b> memilih elemen berdasarkan class mereka misalnya <b>.body</b>
+                </summary>
+                <pre>
+                    <b>.body</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector potongan elemen</li>
+            <details>
+                <summary>
+                    <b>&lt;ul&gt; &lt;li&gt;</b> memilih elemen li di dalam elemen ul. missalnya <b>ul li</b>
+                </summary>
+                <pre>
+                    <b>ul li</b> {
+                        color: red;
+                    }
+                    <b>.header .header-title</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector anak langsung</li>
+            <details>
+                <summary>
+                    <b>&lt;ul&gt; &lt;li&gt;</b> memilih elemen li yang merupakan anak langsung dari elemen ul. misalnya <b>ul > li</b>
+                </summary>
+                <pre>
+                    <b>ul > li</b> {
+                        color: red;
+                    }
+                    <b>.header > .body</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector pesudo class</li>
+            <details>
+                <summary>
+                    <b>&lt;p&gt;</b> elemen memilih elemen berdasarkan statusnya, seperti saat di hover, di klik,  atau difokuskan. misalnya <b>p:hover</b>
+                </summary>
+                <pre>
+                    <b>p:hover</b> {
+                        color: red;
+                    }
+                    <b>p:active</b> {
+                        color: red;
+                    }
+                    <b>p:focus</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector pesudo elemen</li>
+            <details>
+                <summary>
+                    <b>&lt;p&gt;</b> memungkinkan kamu menambahkan konten sebelum atau setelah isi elemen. misalnya <b>p::before</b>
+                </summary>
+                <pre>
+                    <b>p::before</b> {
+                        content: "<-";
+                    }
+                    <b>p::after</b> {
+                        content: "->";
+                    }
+                </pre>
+            </details>
+
+
+            <li>selector bersaudara</li>
+            <details>
+                <summary>
+                    <b>&lt;h2&gt; &lt;p&gt;</b> memilih elemen p yang berada langsung setelah elemen h2 (semua elemen p yang ada di h2). misalnya <b>h2 + p</b>
+                </summary>
+                <pre>
+                    <b>h2 + p</b> {
+                        color: red;
+                    }
+                    <b>h2 - p</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>selector universal</li>
+            <details>
+                <summary>
+                    <b>semua elemen</b> memilih semua elemen. misalnya <b>*</b>
+                </summary>
+                <pre>
+                    <b>*</b> {
+                        margin: 0px;
+                        box-sizing: border-box;
+                    }
+                </pre>
+            </details>
+
+            <li>selector :nth-child</li>
+            <details>
+                <summary>
+                    <b>:nth-child(N)</b> memilih elemen ke-N dalam hireki orang tua. misalnya <b>ul li:nth-child(odd)</b>
+                </summary>
+                <pre>
+                    <b>ul lo:nth-child(odd)</b> {
+                        background-color: lightgrey;
+                    }
+                    <b>ul lo:nth-child(even)</b> {
+                        background-color: lightblue;
+                    }
+                    <b>ul lo:nth-child(3)</b> {
+                        background-color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>selector elemen berdasarkan atribut</li>
+            <details>
+                <summary>
+                    <b>input[type="text"]</b> memilih elemen input dengan type text. misalnya <b>input[type="text"]</b>
+                </summary>
+                <pre>
+                    <b>input[type="text"</b> {
+                        background-color: lightgrey;
+                    }
+                    <b>img[src="/image/1.jpg"]</b> {
+                        background-color: lightblue;
+                    }
+                </pre>
+            </details>
+
+        </ol>
+    </main>
+    
+</body>
+</html>

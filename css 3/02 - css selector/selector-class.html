@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 03 - selector css</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br /><br>
+
+    <nav>
+        <a href="main.html">selector css</a>
+        <a href="selector-class.html">selector class css</a>
+    </nav><br>
+
+    <main>
+        <ol>
+
+            <li>Selector =</li>
+            <details>
+                <summary>
+                    <b>[class="header"]</b> memilih semua elemen dengan class yang sama dengan <b>"header"</b>
+                </summary>
+                <pre>
+                    <b>[class="header"]</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector *=</li>
+            <details>
+                <summary>
+                    <b>[id*="col-"]</b> memilih semua elmen dengan id yang mengandung kata <b>"col-"</b>
+                </summary>
+                <pre>
+                    <b>[id*="col-"]</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector ^=</li>
+            <details>
+                <summary>
+                    <b>[href^="https://"]</b> memilih semua atribut href yang dimulai dengan kata <b>"https://"</b>
+                </summary>
+                <pre>
+                    <b>[href^="https://"]</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector $=</li>
+            <details>
+                <summary>
+                    <b>[src$=".png"]</b> memilih semua atribut src yang berakhir dengan kata <b>".png"</b>
+                </summary>
+                <pre>
+                    <b>[src$=".png"]</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector ~=</li>
+            <details>
+                <summary>
+                    <b>[rel~="tag"]</b> memilih semua stribut rel yang mengandung kata <b>"tag"</b>
+                </summary>
+                <pre>
+                    <b>[rel~="tag"]</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+            <li>Selector atribut tertentu []</li>
+            <details>
+                <summary>
+                    <b>[required]</b> memilih elemen dengan atribut <b>required</b>
+                </summary>
+                <pre>
+                    <b>[required]</b> {
+                        color: red;
+                    }
+                </pre>
+            </details>
+
+        </ol>
+    </main>
+    
+</body>
+</html>
