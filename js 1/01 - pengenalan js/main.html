@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 01 - pengenalan JavaScript</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br /><br />
+
+    <div class="deskirpsi">
+        <details class="deskripsi-container">
+            <summary>perintah dasar js</summary>
+            <pre>
+                console.log("output_console_log")
+                alert("output_alert")
+                document.write("output_document.write")
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>cara penulisan kode JavaScript</summary>
+            <pre>
+                1. penulisan dengan embed
+                &lt;head&gt;
+                    &lt;script&gt;isi script&lt;/script&gt;
+                &lt;/head&gt;
+                &lt;body&gt;
+                    &lt;script&gt;isi script&lt;/script&gt;
+                &lt;/body&gt;
+
+                2. penulisan dengan inline
+                &lt;a href="#" onclick="alert('output_alert')"&gt;onclick="alert"&lt;/a&gt;
+
+                3. penulisan external
+                &lt;script src="script.js"&gt;&lt;/script&gt;
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>fungsi console.log, alert, dan document.write</summary>
+            <pre>
+                console.log() = mencetak pesan ke konsol
+                alert() = membuat kotak dialog pesan yang tampil di pengguna
+                document.write() menambahkan content kedalam dokumen HTML 
+            </pre>
+        </details>
+    </div><br>
+
+    <script>
+        console.log("output_console_log")
+        alert("output_alert")
+        document.write("output_document.write")
+    </script><br>
+
+    <a href="#" onclick="alert('output_alert')">onclick="alert("output_alert")"</a>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

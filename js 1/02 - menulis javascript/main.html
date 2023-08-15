@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 02 - menulis JavaScript</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br /><br />
+
+    <div class="deskirpsi">
+        <details class="deskripsi-container">
+            <summary>menulis javascript di atribut</summary>
+            <pre>
+                menulis javascript di atribut hanya bisa ditulis pada atribut event
+                1. keybord event
+                    - onkeydown="" = atribut akan dijalankan saat tombol ditekan
+                    - onkeyup="" = terjadi saat tombol keyborad dilepaskan
+                    - onkeypress="" = terjadi saat tombol keybord ditekan dan dilepaskan
+                    - onfocus="" = terjadi saat elemen mendapatkan fokus misalnya saat pengguna mengklik elemen input
+                    - onblur="" = terjadi saat elemen kehilangan fokus misaalnya setelah pengguna mengklik elemen input
+                    
+                2. mouse event
+                    - oneclick="" = akan menjalankan script saat di klik
+                    - ondbclick="" = terjadi saat elemen di klik dua kali dengan cepat
+                    - onmousedown="" = terjadi saat tombol mouse utama di tekan di elemen
+                    - onmouseup="" = terjadi saat tombol mouse utama dilepaskan setelah sebelumnya ditekan pada elemen
+                    - onmouseover="" = terjadi saat kursor mouse bergerak di atas elemen
+
+                3. other
+                    - onsubmit="" = akan menjalankan fungsi saat elemen form di submit
+                    - onchange="" = atribut di jalankan saat isi elemen input berubah misalnya pada elemen select
+                    - onload="" = atribut ini dijalankan saat elemen atau halaman selesai dimuat
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>addEventListener</summary>
+            <pre>
+                addEventListener adalah cara untuk menghubungkan fungsi javascript dengan peristiwa elemen
+                var btn_element = document.getElementalById("btn");
+
+                btn_element.addEventListener("click", function() {
+                    alert("output")
+                })
+            </pre>
+        </details>
+
+    </div><br>
+
+    <button onclick="alert('output dari oneclick')">oneclick="alert()"</button><br><br>
+
+    <textarea onkeyup="document.getElementById('content').innerText = this.value.length" cols="30" rows="10"></textarea>
+    <p>Panjang <span id="content">0</span> Karakter</p>
+
+</body>
+</html>

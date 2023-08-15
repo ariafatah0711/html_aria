@@ -1,0 +1,13 @@
+.deskripsi-container summary {
+    display: flex;
+    width: 100%;
+}
+
+.deskripsi-container:nth-child(odd){
+    background-color: lightgray;
+}
+
+.deskripsi-container pre {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
