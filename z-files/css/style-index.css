@@ -182,8 +182,24 @@ main {
 footer {
     background-color: #1e293b;
     width: 100%;
-    height: 70px;
+    height: 80px;
+    display: flex;
+    align-items: center;
+
+    border: 1px solid;
 }
+
+.footer-image, .footer-image img {
+    height: 80px;
+    margin-top: 5px;
+    margin-left: 3%;
+}
+
+footer ul {
+    color: white;
+}
+
+/* .footer-image, .footer-image img{border: 1px solid;} */
 
 /* ###################################################################################################### */
 /* sudo */
@@ -354,16 +370,3 @@ footer {
     }
 
 }
-
-/* .container-image {
-    border: 1px solid;
-}
-
-[src$="js.png"]{
-    border: 1px solid;
-    height: 1200px;
-}
-
-[src$="css.png"]{
-    border: 1px solid;
-} */
