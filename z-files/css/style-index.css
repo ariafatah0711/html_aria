@@ -417,16 +417,18 @@ footer {
 
     /* footer */
     .icon {
-        gap: 8px;
+        /* gap: 5px; */
+        justify-content: space-evenly;
     }
 
     .icon a {
         border-radius: 90px;
-        width: 50px;
+        width: 40px;
     }
 
     .icon a:hover {
-        width: 60px;
+        width: 40px;
+        transform: scale(1.2);
     }
 
     .icon a:hover p {
