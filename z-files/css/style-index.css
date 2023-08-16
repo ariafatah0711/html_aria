@@ -416,12 +416,17 @@ footer {
     }
 
     /* footer */
+    .icon {
+        gap: 12px;
+    }
+
     .icon a {
-        width: 60px;
+        border-radius: 90px;
+        width: 50px;
     }
 
     .icon a:hover {
-        width: 80px;
+        width: 65px;
     }
 
     .icon a:hover p {
