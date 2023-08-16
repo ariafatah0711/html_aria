@@ -327,8 +327,11 @@ footer {
         align-items: center;
         flex-wrap: wrap;
         flex-direction: row;
-    }
 
+        /* border: 1px solid; */
+    }
+    
+    /* h1 */
     .container-text h1, #h1 {
         width: 100%;
         height: 50px;
@@ -339,14 +342,22 @@ footer {
         font-size: 24px;
     }
 
+    /* h4 */
+    .span-1 .container-text h4, .span-2 .container-text h4 {
+        display: flex;
+        align-items: center;
+    }
+
     .container-text h4 {
         width: 100%;
-        height: 30px;
+        height: 50px;
         display: flex;
         justify-content: center;
+        align-items: center;
         text-align: center;
     }
 
+    /* p */
     .container-text p, .span-1 .container-text p {
         display: none;
     }

@@ -5,7 +5,9 @@
 
 .deskripsi-container:nth-child(odd){
     background-color: lightgray;
-    width: auto;
+    width: max-content;
+
+    /* border: 1px solid; */
 }
 
 .deskripsi-container pre {

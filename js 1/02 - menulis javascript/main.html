@@ -49,6 +49,21 @@
         </details>
 
         <details class="deskripsi-container">
+            <summary>membuat elemen lewat js dan membuat inner text</summary>
+            <pre>
+                1. membuat text muncul di html
+                    - document.write("text write")
+
+                2. membuat elemen
+                    - document.writeln("&lt;p&gt;text paragraph&lt;p&gt;")
+
+                3. mengubah isi dari elemen
+                    - document.getElementalById("p-1").innerText = "inner text"
+                    - document.getElementalById("p-1").innerHTML = "&lt;p&gt;inner html&lt;p&gt;"
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
             <summary>membuat input text yang dapat mengetahui panjang textnya</summary>
             <pre>
                 onkeyup="document.getElementById('content').innerText = this.value.length"
@@ -62,11 +77,24 @@
 
     </div><br>
 
-    <button onclick="alert('output dari oneclick')">oneclick="alert()"</button><br><br>
+    <button onclick="alert('output dari oneclick')">oneclick="alert()"</button><br><hr>
 
-    <p id="p-1"></p>
-    <script>document.getElementById("p-1").innerText = "inner text"</script>
+    <!-- write dan writeln -->
+    <small>write dan writeln</small><br>
+    <script>
+        document.write("text document.write() untuk menampilkan text; write(\"text\")")
+        document.writeln("<p>text document.writeln() untuk menampilkan elemen: writeln(\"&lt;text&gt;\")</p>")
+    </script><hr>
 
+    <!-- inner text dan inner html -->
+    <small>innerText dan innerHTMl</small>
+    <p id="p-1" style="margin-top: 0px;">ini adalah paragraph</p>
+    <script>document.getElementById("p-1").innerText = "inner text, mengubah isi text dari id p-1"</script>
+
+    <h6 id="s-1">ini adalah h6</h6>
+    <script>document.getElementById("s-1").innerHTML = "<b>inner html ,menambah elemen h6 menjadi b dan mengubah isi textnya</b>"</script><hr>
+
+    <!-- input yang mengetahui panjang textnya -->
     <textarea onkeyup="document.getElementById('content').innerText = this.value.length" cols="30" rows="10"></textarea>
     <p>Panjang <span id="content">0</span> Karakter</p>
 
