@@ -417,7 +417,7 @@ footer {
 
     /* footer */
     .icon {
-        gap: 12px;
+        gap: 8px;
     }
 
     .icon a {
@@ -426,7 +426,7 @@ footer {
     }
 
     .icon a:hover {
-        width: 65px;
+        width: 60px;
     }
 
     .icon a:hover p {
