@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>js 02 - variable dan type data</title>
+    <title>js 03 - variable dan type data</title>
     <link rel="stylesheet" href="../../z-files/css/style-js.css">
 </head>
 <body>
@@ -14,17 +14,108 @@
         <details class="deskripsi-container">
             <summary>variable</summary>
             <pre>
+                1. membuat variable
+                    var nama = "valur";
+                    var carnelCase  = "value";
 
+                2. jenis variable
+                    - var
+                        dapat di akses di global scope (seluruh tempat)
+                        var nama = "aria";
+                        nama = "aria fatah";
+
+                    - let
+                        dapat di akses di block scope (dalam block tempat mereka di deklarasikan)
+                        function fungsi() {
+                            let nama = "malik";
+                            document.write(nama); = output: malik
+                        }
+                        document.write(nama) = output: aria fatah
+
+                    - const
+                        variable yang tidak dapat diubah angkanya setelah di buat
+                        const jumlahSiswa = 35;
+                        jumlahSiswa = 36 // tidak bisa dan akan error
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>menghapus value variable</summary>
+            <pre>
+                dengan cara delete namaVariable namun delete tidak dapat mendelate sebuah const/variable tetap
+
+                var nama = "aria"; output aria
+                delete nama; output: ""
+                nama = "aria fatah"; output aria fatah
+
+                const kelas = 11; output 11
+                delete kelas; output 11
             </pre>
         </details>
 
         <details class="deskripsi-container">
             <summary>type data</summary>
             <pre>
+                - string = "text"
+                    let string = "text";
+                
+                - integer = angka(bilangan bulat) dan float = angka (bilangan desimal)
+                    let angka = 100;
+                    angka = 90.5;
 
+                - boolean = True / False
+                    let isStudent = true;
+                    let haveCar = false;
             </pre>
         </details>
-    </div>
+
+        <details class="deskripsi-container">
+            <summary>type data lanjutan</summary>
+            <pre>
+                - null = nilai kosong
+                    let empetyValue = null;
+
+                - undefined = variable yang belum di deklarasikan
+                    let undefinedValue;
+
+                - object = data fungsi dictionary(key-value pairs)
+                    let person = {
+                        firstName: "aria",
+                        lastName: "anom",
+                        age: 30,
+                    };
+
+                - array = list(kumpulan nilai dalam urutan tertentu)
+                    let colors = ["red", "green", "blue"];
+                    
+                - function = fungsi(block kode)
+                    function greet(nama) {
+                        console.log("hello, " + nama + "!");
+                    }
+
+                - symbol = nilai unik dan tidak dapat diubah yang biasanya digunakan sebagai kunci dalam object
+                    const uniqueSymbol = Symbol("description");
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>aturan penulisan nama variable</summary>
+            <pre>
+                1. tidak boleh ada angka di depanya
+                    - var 123nama = "aria" // syntax salah
+                    - var nama123 = "aria" // syntax benar
+
+                2. tidak boleh di spasi(jika mau tambahkan(_))
+                    - var nama 1 = "aria" // syntax salah
+                    - var nama-1 = "aria" // syntax salah
+                    - var nama_1 = "aria" // syntax benar
+                    - var namaSatu = "aria" // syntax benar
+            </pre>
+        </details>
+
+    </div><br>
+
+    <script src="script.js"></script>
 
 </body>
 </html>
