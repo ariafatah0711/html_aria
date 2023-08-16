@@ -64,6 +64,9 @@
 
     <button onclick="alert('output dari oneclick')">oneclick="alert()"</button><br><br>
 
+    <p id="p-1"></p>
+    <script>document.getElementById("p-1").innerText = "inner text"</script>
+
     <textarea onkeyup="document.getElementById('content').innerText = this.value.length" cols="30" rows="10"></textarea>
     <p>Panjang <span id="content">0</span> Karakter</p>
 
