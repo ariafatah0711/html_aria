@@ -15,3 +15,8 @@
     margin-top: 0px;
     margin-bottom: 0px;
 }
+
+table, tr, td {
+    border: 1px solid;
+    text-align: center;
+}
