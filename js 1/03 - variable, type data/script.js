@@ -130,3 +130,7 @@ console.log(undefinedValue);
 console.log(colors);
 greet(nama);
 console.log(Symbol);
+
+var button1 = document.getElementById("satu");
+button1.write();
+button1.innerHTML();

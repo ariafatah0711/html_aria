@@ -31,9 +31,12 @@
                     - function result() {
                         var yakin = confirm("apakah anda ingin menambahkan paragraph");
                         if (yakin) {
-                          document.writeln("&lt;p&gt;ini adalah paragraph, dan dapat ditampilkan hanya jika pengguna mengetik ok&lt;/p&gt;");
+                            var newText = document.createElement("p");
+                            newText.textContent =
+                              "ini adalah paragraph, dan dapat ditampilkan hanya jika pengguna mengetik ok";
+                            document.body.appendChild(newText);
                         } else {
-                          document.write("");
+                          // tindakan jika nilai false
                         }
                       }
                       
@@ -48,10 +51,39 @@
             <pre>
                 prompt() = meminta pengguna memasukan input teks dan memberikan hasilnya
                     - prompt("masukan nama anda: ")
-                    - 
+                    - function result_3()
+                        var inputValue = prompt("siapa nama anda: ");
+                        if (inputValue !== null) {
+                          let newText = document.createElement("p");
+                          newText.innerHTML = "halo <b>" + inputValue + "</b>, salam kenal";
+                          document.body.appendChild(newText);
+                        } else {
+                          // tindakan jika nilai false
+                        }
+
+                    result_3()
 
                 &lt;button onclick="alert('ini adalah button alert')"&gt;&lt;/button&gt;
             </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>button untuk menghapus text p</summary>
+            <pre>
+                &lt;button id="remove"&gt;hapus pesan terakhir&lt;/button&gt;
+
+                function resultRemove() {
+                    var paragraphs = document.querySelectorAll("p");
+                    if (paragraphs.length > 0) {
+                        paragraphs[paragraphs.length - 1].remove();
+                    }
+                    }
+                    
+                    var button_remove = document.getElementById("remove");
+                    
+                    button_remove.addEventListener("click", resultRemove);                      
+            </pre>
+        </details>
 
     </div><br>
 
@@ -70,6 +102,7 @@
     <button id="prompt">prompt() ;nama anda</button><br>
 
     <hr>
+    <button id="remove">hapus pesan terakhir</button>
 
     <script src="script.js"></script>
 
