@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 04 - </title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br /><br />
+
+    <div class="deskirpsi">
+
+        <details class="deskripsi-container">
+            <summary>jendela dialog alert()</summary>
+            <pre>
+                alert() = menampilkan pesan ke pengguna dengan tombol "OK" untuk menutupnya
+                    - window.alert("alert")
+                    - alert("alert")
+
+                &lt;button onclick="alert('ini adalah button alert')"&gt;&lt;/button&gt;
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>jendela dialog confirm()</summary>
+            <pre>
+                confirm() = untuk mengonfirmasi tindakan pengguna dengan dua pilihan "ok" dan "batal"
+                    - confirm("apakah ada ingin menghapus");
+                    - function result() {
+                        var yakin = confirm("apakah anda ingin menambahkan paragraph");
+                        if (yakin) {
+                          document.writeln("&lt;p&gt;ini adalah paragraph, dan dapat ditampilkan hanya jika pengguna mengetik ok&lt;/p&gt;");
+                        } else {
+                          document.write("");
+                        }
+                      }
+                      
+                      result();
+
+                &lt;button onclick="confirm('ini adalah button confirm')"&gt;&lt;/button&gt;
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>jendela dialog prompt()</summary>
+            <pre>
+                prompt() = meminta pengguna memasukan input teks dan memberikan hasilnya
+                    - prompt("masukan nama anda: ")
+                    - 
+
+                &lt;button onclick="alert('ini adalah button alert')"&gt;&lt;/button&gt;
+            </pre>
+
+    </div><br>
+
+    <hr>
+    <small>ini adalah button tanpa kondisi</small><br>
+    
+    <button onclick="alert('ini adalah button alert')">ini adalah alert()</button><br>
+    <button onclick="confirm('ini adalah button confirm')">ini adalah confirm()</button><br>
+    <button onclick="prompt('masukan nama anda: ', '')">ini adalah prompt()</button><br>
+
+    <hr>
+    <small>ini adalah button menggunakan kondisi</small><br>
+    
+    <button id="alert">alert() ;menampilkan pesan "alert"</button><br>
+    <button id="confirm">confirm() ;menambahkan paragraph</button><br>
+    <button id="prompt">prompt() ;nama anda</button><br>
+
+    <hr>
+
+    <script src="script.js"></script>
+
+</body>
+</html>

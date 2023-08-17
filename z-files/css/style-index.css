@@ -257,6 +257,7 @@ footer {
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.05);
 }
 
+/* menhilangkan efek biru pada saat klik link di mobile */
 *, *:before, *:after {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
