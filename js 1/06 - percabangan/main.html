@@ -15,7 +15,7 @@
         <details class="deskripsi-container">
             <summary>percabangan if</summary>
             <pre>
-                percabangan if adalah kondisi dari suatu progam untuk mengambil keputusam
+                percabangan if adalah kondisi yang diberikan jika bernilai true (kondisi pertama)
 
                 var angka = 10;
                 if (angka > 5) {
@@ -24,7 +24,139 @@
             </pre>
         </details>
 
+        <details class="deskripsi-container">
+            <summary>percabangan else</summary>
+            <pre>
+                - percabangan else adalah kondisi selain dari semua kondisi if.
+                - saat kondisi if (true) progam akan dieksekusi dan else tidak akan di eksekusi
+                - namun saat semua kondisi if (false) progam akan mengeksukusi else
+
+                angka = 11;
+                if (angka / 2 == 0) {
+                console.log("ini adalah angka genap");
+                } else {
+                console.log("ini adalah angka ganjil");
+                }
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>percabangan if else, if else</summary>
+            <pre>
+                - percabangan if else adalah percabangan yang memungkinkan untuk mengevaluasi beberapa kondisi secara berurutan
+                - untuk kondisi setelah pertama dan sebelum terakhir biasanya menggunakan <b>else if (kondisi) {}</b>
+
+                angka = 5;
+                if ((angka = 5)) {
+                console.log("ini adalah angka 5");
+                } else if (angka < 5) {
+                console.log("angka lebih kecil dari 5");
+                } else if (angka > 5) {
+                console.log("angka lebih besar dari 5");
+                } else {
+                console.log("ini bukan angka");
+                }
+
+                nama = "aria";
+                if (nama.length === 1) {
+                console.log(nama + " memiliki 1 huruf");
+                } else if (nama.length === 2) {
+                console.log(nama + " memiliki 2 huruf");
+                } else if (nama.length === 3) {
+                console.log(nama + " memiliki 3 huruf");
+                } else if (nama.length === 4) {
+                console.log(nama + " memiliki 4 huruf");
+                } else if (nama.length > 5) {
+                console.log(nama + " memiliki huruf lebih dari 4");
+                } else {
+                console.log("bukan huruf");
+                }
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>percabangan switch</summary>
+            <pre>
+                - digunakan untuk mengevaluasi ekspresi yang mungkin memiliki nilai yang berbeda
+
+                var day = "minggu";
+                switch (day) {
+                case "senin":
+                    console.log("ini adalah hari kerja");
+                    break;
+                case "minggu":
+                    console.log("ini adalah hari minggu");
+                    break;
+                default:
+                    console.log("hari tidak valid");
+                }
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>percabangan ternary</summary>
+            <pre>
+                - ini adalah bentuk singkat dari percabangan
+                - condisi ? expresion1 : expresion2;
+
+                var umur = 18;
+                var status = umur >= 18 ? "dewasa" : "anak - anak";
+                
+                console.log(status);
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>percabangan nested(bersarang)</summary>
+            <pre>
+                - percabangan nested(bercabang)
+
+                    var nilai = 85;
+                    if (nilai >= 70) {
+                    if (nilai >= 90) {
+                        console.log("A");
+                    } else if (nilai >= 80) {
+                        console.log("B");
+                    } else {
+                        console.log("C");
+                    }
+                    } else {
+                    console.log("tidak lulus");
+                    }
+                
+                - percabangan bersarang (switch di dalam if)
+
+                    var umur = 16;
+                    var izin = true;
+                    
+                    if (izin) {
+                    switch (umur) {
+                        case 18:
+                        console.log("boleh masuk");
+                        break;
+                        default:
+                        console.log("tidak memenuhi syarat");
+                    }
+                    } else {
+                    console.log("tidak di izinkan");
+                    }
+                
+                - multipe condisi (&& dan ||)
+
+                    var nilaiUjian = 75;
+                    var kehadiran = 85;
+                    
+                    if (nilaiUjian >= 70 && kehadiran >= 80) console.log("anda lulus");
+                    else console.log("anda tidak lulus");
+            </pre>
+        </details>
+        
     </div><br>
+
+    <button id="btn1">mulai</button><br>
+    <button id="btn2">mulai</button><br>
+
+    <hr>
 
     <script src="script.js"></script>
 
