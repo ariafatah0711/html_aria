@@ -99,31 +99,119 @@
 
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>perulangan for Each</summary>
             <pre>
+                - perulangan forEach biasanya digunakan untuk mencetak item di dalam array.
+                    - menggunakan for dengan operator in
+                    - menggunakan method forEach() 
 
+                var languages = ["javascript", "HTML", "CSS", "Typescript"];
+
+                // for normal                
+                for (i = 0; i < languages.length; i++) {
+                    console.log(i + ". " + languages[i]);
+                }
+
+                // for in
+                for (i in languages) {
+                console.log(i + ". " + languages[i]);
+                }
+
+                // for of
+                text = "aria";
+
+                for (letter of text) {
+                console.log(letter);
+                }
+
+                // forEach()
+                var days = ["senin", "selasa", "rabu", "kamis", "jumat"];
+
+                days.forEach(function (day) {
+                console.log(day);
+                });
+
+                days.forEach((day) => {
+                console.log(day);
+                });
             </pre>
         </details>
 
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>perulagan repeat()</summary>
             <pre>
+                - perulagan dengan method atau fungsi repeat() termasuk kedalam perulangan counted loop
+                - fungsi ini digunakan untuk mengulang sebuah teks (string)
+                - bisa dibilang ini merupakan singkat dari perulagan for
 
+                for (let i = 0; i < 3; i++) {
+                    console.log("ulangi kalimat ini");
+                  }
+
+                console.log("ulangi kalimat ini\n".repeat(3));
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>perulagan nested</summary>
             <pre>
+                - perulagan bersarang adalah perulagan di dalam perulagan
 
+                    for (let i = 0; i < 1; i++) {
+                        for (let j = 1; j < 10; j++) {
+                        console.log("perulangan ke-" + i + "." + j);
+                        }
+                    }
+
+                    perulangan ke-0.1 
+                    perulangan ke-0.2
+                    perulangan ke-0.3
+                    ... dan seterusnya
+
+                    var ulangi = confirm("apakah anda ingin mengulang?");
+                    var counter = 0;
+                  
+                    while (ulangi) {
+                      counter++;                  
+                      var bintang = "*".repeat(counter) + "<br>";
+                      var newText = document.createElement("small");
+                      newText.innerHTML = counter + ": " + bintang;
+                      document.body.appendChild(newText);
+                      var ulangi = confirm("apakah anda ingin mengulang?");
+                    }
             </pre>
         </details>
+
+        <details class="deskripsi-container">
+            <summary>break dan continue</summary>
+            <pre>
+                - break digunakan untuk menghentikan exkesekusi perulagan
+
+                    for (var i = 0; i < 10; i++) {
+                    if (i === 3) {
+                        break; // loop berhenti setelah i = 3
+                    }
+                    console.log(i);
+                    }
+
+                -  continue digunakan untuk melompati satu iterasi dalam perulangan dan melanjutkan ke iterasi berikutnya
+
+                    for (var i = 0; i < 5; i++) {
+                        if (i === 2 || i === 3) {
+                        continue; // iterasi diabaikan saat i = 2 atau i = 3
+                        }
+                        console.log(i);
+                    }
+            </pre>
+        </details>
+
 
     </div><br>
 
     <button id="btn-1">button-1</button>
     <button id="btn-2">button-2</button>
+    <button id="btn-3">button-3</button>
 
     <hr>
     
