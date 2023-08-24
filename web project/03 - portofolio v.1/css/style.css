@@ -1,0 +1,144 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    font-family: 'Poppins', Tahoma ,sans-serif;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, main, section {overflow-x: hidden;}
+[class*="section-"], [class$="-container"] {overflow-y: hidden;}
+
+main {
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    scroll-snap-type: y mandatory;
+}
+
+main > section {
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    scroll-snap-align: start;
+    scroll-snap-stop: always;
+}
+
+/* ##################################################################################################### */
+:root {
+    --bg-1: radial-gradient(#0f172a, #0f1930, #0f1930);
+    --bg-2: radial-gradient(#0f1930, #0f1930, #0f172a);
+    --col-1: lavender;
+    --op-1: 65%;
+    --op-2: 80%;
+    --op-3: 100%;
+}
+
+main {
+    background: var(--bg-1);
+}
+
+h1, h2, h3, h4, h5, h6, p, div, a{
+    color: var(--col-1);
+    width: 100%;
+}
+
+header {
+    height: 50px;
+    width: 100%;
+    position: sticky;
+    top: 0px;
+    display: flex;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    border: 1px solid;
+}
+
+/* ##################################################################################################### */
+/* section-1 */
+.s1-container {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 40%);
+    justify-content: space-around;
+    align-items: center;
+    padding: 0 5%;
+}
+
+.profil,
+.profil-image {
+    height: 80%;
+
+    /* border: 1px solid; */
+}
+
+.profil {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.profil > h1 {font-size: 3rem;}
+.profil > h2 {font-size: 1.2rem; opacity: var(--op-2); height: 40px;}
+.profil > h4{font-size: 1rem; opacity: var(--op-1); height: 50px;}
+
+.s1-nav {
+    height: 120px;
+    width: 100%;
+    margin: auto 0px;
+    display: grid;
+    flex-direction: column;
+}
+
+
+.s1-nav a {
+    opacity: 65%;
+    transition: ease-in-out 0.3s;
+}
+
+.s1-nav a::before {content: "---";}
+.s1-nav > a:hover, .s1-nav a:hover::before {
+    opacity: var(--op-3);
+    content: "-----";
+}
+
+
+.profil-nav i {
+    opacity: var(--op-2);
+    margin-right: 20px;
+}
+.profil-nav i:hover {opacity: var(--op-3);}
+
+.profil-image img {
+    height: 100%;
+    width: 100%;
+    background-size: cover;
+}
+
+/* .profil > h1, h2, h4, .profil-nav {border: 1px solid;} */
+
+/* ##################################################################################################### */
+@media only screen and (max-width:700px) {
+    /* .profil > h1, h2, h4, .profil-nav {border: 1px solid;} */
+    .profil > h2 {height: 100px;}
+    .profil > h4 {height: 80px;}
+
+    .profil,
+    .profil-image {
+        grid-column: span 2;
+    }
+
+    .s1-nav {
+        display: none;
+    }
+
+}
