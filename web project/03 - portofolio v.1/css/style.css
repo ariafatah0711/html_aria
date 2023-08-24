@@ -213,9 +213,24 @@ section {z-index: 0;}
         height: 50%;
     }
 
+    .profil-image {
+        display: flex;
+        align-items: flex-end;
+
+        border: 1px solid;
+    }
+
+    .s2-container .profil-image {
+        height: 400px;
+        transform: translateY(-220px);
+    }
+
     .profil-image img {
         height: 300px;
     }
+
+    [class*="section-"], [class$="-container"] {overflow-y: hidden;}
+
 }
 
 /* menhilangkan efek biru pada saat klik link di mobile */
