@@ -20,6 +20,7 @@ main {
     width: 100%;
     overflow-y: scroll;
     scroll-snap-type: y mandatory;
+    /* -webkit-overflow-scrolling: touch; */
 }
 
 main > section {
@@ -51,21 +52,24 @@ h1, h2, h3, h4, h5, h6, p, div, a{
 
 .header {
     height: 50px;
-    width: 98%;
-    position: fixed;
+    width: 99%;
     top: 0px;
     left: 0px;
-    display: flex;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
     transition: z-index 0.3s;
+    display: flex;
+    align-items: center;
+    padding-left: 5%;
 }
 
-#header-1 {
-    position: fixed;
-    background: var(--bg-1);
-    z-index: 10;
-}
+#header-1 {position: fixed;z-index: 1;}
+#header-2 {z-index: 2;background: none;backdrop-filter: none;}
+#header-3 {z-index: 3;background: none;backdrop-filter: none;}
+#header-4 {z-index: 4;background: none;backdrop-filter: none;}
+#header-5 {z-index: 5;background: none;backdrop-filter: none;}
+#header-6 {z-index: 6;background: none;backdrop-filter: none;}
+section {z-index: 0;}
 
 /* ##################################################################################################### */
 /* section-1 */
@@ -142,7 +146,7 @@ h1, h2, h3, h4, h5, h6, p, div, a{
     .profil-image {
         grid-column: span 2;
         position: relative;
-        transform: translateY(-25px);
+        transform: translateY(-20px);
     }
 
     .profil-image img {

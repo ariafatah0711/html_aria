@@ -5,20 +5,20 @@ if (window.location.hash) {
   history.replaceState(null, null, window.location.href.split("#")[0]);
 }
 
-const sections = document.querySelectorAll('section');
-const headers = document.querySelectorAll('.header');
+const sections = document.querySelectorAll("section");
+const headers = document.querySelectorAll(".header");
 
 function setActiveHeader(index) {
   headers.forEach((header, i) => {
     if (i === index) {
-      header.style.display = 'flex';
+      header.style.display = "flex";
     } else {
-      header.style.display = 'none';
+      header.style.display = "none";
     }
   });
 }
 
-document.addEventListener('scroll', () => {
+document.addEventListener("scroll", () => {
   let activeSectionIndex = 0;
   sections.forEach((section, index) => {
     if (section.getBoundingClientRect().top <= 0) {
@@ -27,7 +27,6 @@ document.addEventListener('scroll', () => {
   });
   setActiveHeader(activeSectionIndex);
 });
-
 
 // header static to fixed
 // const headers = document.querySelectorAll(".header");
