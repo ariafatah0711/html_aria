@@ -49,10 +49,10 @@ h1, h2, h3, h4, h5, h6, p, div, a{
     width: 100%;
 }
 
-header {
+/* header {
     height: 50px;
     width: 100%;
-    position: sticky;
+    position: fixed;
     top: 0px;
     display: flex;
     background: rgba(0, 0, 0, 0.2);
@@ -60,7 +60,35 @@ header {
 }
 
 .static-div {position: static;}
-.fixed-div {position: fixed; top: 0px;}
+.fixed-div {position: fixed; top: 0px; z-index: 1;}
+
+.header-1 {
+    z-index: 10;
+    position: absolute;
+    height: 50px;
+    width: 100%;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    background: var(--bg-1);
+    border: 1px solid;
+} */
+
+.header {
+    height: 50px;
+    width: 100%;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    display: flex;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(10px);
+    transition: z-index 0.3s;
+}
+
+#header-1 {
+    background: var(--bg-1);
+}
 
 /* ##################################################################################################### */
 /* section-1 */

@@ -6,20 +6,29 @@ if (window.location.hash) {
 }
 
 // header static to fixed
-const staticDiv = document.querySelector(".static-div");
-const section2 = document.querySelector("#section-2");
+const headers = document.querySelectorAll(".header");
 
-function handleScroll() {
-  if (section2.getBoundingClientRect().top <= 0) {
-    staticDiv.classList.remove("static-div");
-    staticDiv.classList.add("fixed-div");
-  } else {
-    staticDiv.classList.remove("fixed-div");
-    staticDiv.classList.add("static-div");
-  }
-
-  window.addEventListener("scroll", handleScroll);
+function adjustZIndex(index) {
+  console.log("a");
+  headers.forEach((header, i) => {
+    if (i === index) {
+      console.log("a");
+      header.stylezIndex = "10";
+    } else {
+      console.log("a");
+      header.stylezIndex = "1";
+    }
+  });
 }
+
+document.addEventListener("scroll", () => {
+  headers.forEach((header, index) => {
+    const section = document.querySelector("#section-${index + 1}");
+    if (section.getBoundingClientRect().top <= 0) {
+      adjustZIndex(index);
+    }
+  });
+});
 
 // smooth scroll
 const links = document.querySelectorAll("a");
