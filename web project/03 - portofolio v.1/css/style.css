@@ -109,7 +109,6 @@ section {z-index: 0;}
     flex-direction: column;
 }
 
-
 .s1-nav a {
     opacity: 65%;
     transition: ease-in-out 0.3s;
@@ -120,7 +119,6 @@ section {z-index: 0;}
     opacity: var(--op-3);
     content: "-----";
 }
-
 
 .profil-nav i {
     opacity: var(--op-2);
@@ -162,6 +160,10 @@ section {z-index: 0;}
 @media only screen and (min-height:1000px) {
     main > section {
         height: 50%;
+    }
+
+    .profil-image img {
+        height: 300px;
     }
 }
 
