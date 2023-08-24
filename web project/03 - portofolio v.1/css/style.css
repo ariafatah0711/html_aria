@@ -136,10 +136,11 @@ header {
     .profil-image {
         grid-column: span 2;
         position: relative;
+        transform: translateY(-25px);
     }
 
     .profil-image img {
-        transform: translateY(-65px);
+        transform: translateY(-60px);
     }
 
     .s1-nav {
