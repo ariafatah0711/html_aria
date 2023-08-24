@@ -151,7 +151,7 @@ section {z-index: 0;}
 .s3-container .header,
 .s4-container .header,
 .s5-container .header,
-.container {grid-column: span 2;border: 1px solid;}
+.container {grid-column: span 2;}
 
 .container {
     height: 100%;
@@ -199,6 +199,11 @@ section {z-index: 0;}
     .container {
         grid-template-rows: repeat(2, 50%);
         padding-top: 50px;
+    }
+
+    .s2-container .profil h4 {
+        font-size: 0.8rem;
+        transform: translateY(-60px);
     }
 
 }
