@@ -49,34 +49,9 @@ h1, h2, h3, h4, h5, h6, p, div, a{
     width: 100%;
 }
 
-/* header {
-    height: 50px;
-    width: 100%;
-    position: fixed;
-    top: 0px;
-    display: flex;
-    background: rgba(0, 0, 0, 0.2);
-    backdrop-filter: blur(10px);
-}
-
-.static-div {position: static;}
-.fixed-div {position: fixed; top: 0px; z-index: 1;}
-
-.header-1 {
-    z-index: 10;
-    position: absolute;
-    height: 50px;
-    width: 100%;
-    top: 0px;
-    left: 0px;
-    display: flex;
-    background: var(--bg-1);
-    border: 1px solid;
-} */
-
 .header {
     height: 50px;
-    width: 100%;
+    width: 98%;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -87,7 +62,9 @@ h1, h2, h3, h4, h5, h6, p, div, a{
 }
 
 #header-1 {
+    position: fixed;
     background: var(--bg-1);
+    z-index: 10;
 }
 
 /* ##################################################################################################### */

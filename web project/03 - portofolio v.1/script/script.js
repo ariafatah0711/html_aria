@@ -6,29 +6,26 @@ if (window.location.hash) {
 }
 
 // header static to fixed
-const headers = document.querySelectorAll(".header");
+// const headers = document.querySelectorAll(".header");
 
-function adjustZIndex(index) {
-  console.log("a");
-  headers.forEach((header, i) => {
-    if (i === index) {
-      console.log("a");
-      header.stylezIndex = "10";
-    } else {
-      console.log("a");
-      header.stylezIndex = "1";
-    }
-  });
-}
+// function adjustZIndex(index) {
+//   headers.forEach((header, i) => {
+//     if (i === index) {
+//       header.style.zIndex = "10";
+//     } else {
+//       header.style.zIndex = "1";
+//     }
+//   });
+// }
 
-document.addEventListener("scroll", () => {
-  headers.forEach((header, index) => {
-    const section = document.querySelector("#section-${index + 1}");
-    if (section.getBoundingClientRect().top <= 0) {
-      adjustZIndex(index);
-    }
-  });
-});
+// document.addEventListener("scroll", () => {
+//   headers.forEach((header, index) => {
+//     const section = document.querySelector("#section-${index + 1}");
+//     if (section.getBoundingClientRect().top <= 0) {
+//       adjustZIndex(index);
+//     }
+//   });
+// });
 
 // smooth scroll
 const links = document.querySelectorAll("a");
