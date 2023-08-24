@@ -1,4 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
 * {
@@ -14,7 +13,7 @@ html {
 }
 
 body, main, section {overflow-x: hidden;}
-[class*="section-"], [class$="-container"] {overflow-y: hidden;}
+/* [class*="section-"], [class$="-container"] {overflow-y: hidden;} */
 
 main {
     height: 100vh;
@@ -58,8 +57,10 @@ header {
     display: flex;
     background: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(10px);
-    border: 1px solid;
 }
+
+.static-div {position: static;}
+.fixed-div {position: fixed; top: 0px;}
 
 /* ##################################################################################################### */
 /* section-1 */
@@ -140,7 +141,7 @@ header {
     }
 
     .profil-image img {
-        transform: translateY(-10px);
+        transform: translateY(-5px);
     }
 
     .s1-nav {
