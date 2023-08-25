@@ -242,13 +242,6 @@ section {z-index: 0;}
         height: 100%;
     }
 
-    /* .s2-container .profil-image {
-        height: 400px;
-        transform: translateY(-220px);
-    } */
-
-
-    /* [class*="section-"], [class$="-container"] {overflow-y: hidden;} */
 }
 
 /* menhilangkan efek biru pada saat klik link di mobile */
