@@ -236,11 +236,11 @@ section {z-index: 0;}
 
     .s1-container {
         transform: translateY(-10px);
-        height: 100%;
+        height: 98%;
     }
 
     .s1-container .profil {
-        padding-top: 10px;
+        padding-top: 15px;
     }
 
     .profil,
