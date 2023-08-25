@@ -371,6 +371,10 @@ section {z-index: 0;}
         height: 70%;
     }
 
+    .content i {
+        transform: translateY(-30px);
+    }
+
 }
 
 @media only screen and (min-width:701px) and (max-width:1300px) {
