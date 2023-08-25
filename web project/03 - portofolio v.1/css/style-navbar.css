@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    font-family: 'Poppins', Tahoma ,sans-serif;
+}
+
 :root {
     --bg-1: radial-gradient(#0f172a, #0f1930, #0f1930);
     --bg-2: radial-gradient(#0f1930, #0f1930, #0f172a);
@@ -12,39 +18,56 @@
 }
 
 @media only screen and (max-width:700px) {
+    /* #check {display: flex;} */
+
     .nav-icon {
         color: lavender;
-        width: 100%;
-
-        border: 1px solid;
+        width: 15%;
         cursor: pointer;
+        position: fixed;
+        right: 1%;
         display: flex;
         justify-content: right;
         padding-right: 5%;
+
+        /* border: 1px solid; */
     } 
 
     .navbar {
-        width: 40%;
+        width: 99%;
         position: fixed;
         top: 50px;
-        right: 5%;
-        display: flex;
+        left: 0px;
+        display: none;
         flex-wrap: wrap;
-        border: 1px solid;
         backdrop-filter: blur(10px);
         background-color: var(--bg-2);
         text-align: center;
+
+        /* border: 1px solid; */
     }
 
-    #check {
-        display: flex;
+    .navbar a {
+        font-size: 1.2rem;
+        margin: 5px 0;
+
+        /* border: 1px solid; */
     }
-    
-    #check:checked~.nav-icons #menu-icon {
+
+
+    #check:checked~.nav-icon #menu-icon {
         display: none;
     }
 
     #close-icon {
         display: none;
+    }
+
+    #check:checked~.nav-icon #close-icon {
+        display: block;
+    }
+
+    #check:checked~.navbar {
+        display: flex;
     }
 }
