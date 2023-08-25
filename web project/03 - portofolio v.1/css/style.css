@@ -36,6 +36,7 @@ main > section {
 :root {
     --bg-1: radial-gradient(#0f172a, #0f1930, #0f1930);
     --bg-2: radial-gradient(#0f1930, #0f1930, #0f172a);
+    --bg-3: #1a2642;
     --col-1: lavender;
     --op-1: 65%;
     --op-2: 80%;
@@ -159,7 +160,9 @@ section {z-index: 0;}
 .s3-container .header,
 .s4-container .header,
 .s5-container .header,
-.container, .container-2 {grid-column: span 2;}
+.container,
+.container-2,
+.container-3 {grid-column: span 2;}
 
 .container {
     height: 100%;
@@ -220,12 +223,81 @@ section {z-index: 0;}
     margin-bottom: 10px;
 }
 
+/* ##################################################################################################### */
+.container-3 {
+    width: 100%;
+    height: 80%;
+    padding: 5% 5% 0% 5%;
+    display: flex;
+    gap: 5%;
+    justify-content: left;
+    align-items: center;
+    flex-wrap: wrap;
+    overflow: scroll;
 
-.profil > h4 > button {
-    padding: 2px 10px;
-    margin-right: 10px;
-    border-radius: 10px;
-    border: none;
+    /* border: 1px solid; */
+}
+
+.card {
+    width: 250px;
+    height: 100%;
+    margin-bottom: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 20px;
+    box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--bg-3);
+    overflow: hidden;
+
+    /* border: 1px solid cyan; */
+}
+
+.thumb {
+    height: 40%;
+
+    /* border: 1px solid; */
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+    /* object-fit: scale-down; */
+}
+
+.content {
+    height: 60%;
+    overflow: hidden;
+    padding: 5px 10px;
+
+    /* border: 1px solid; */
+}
+
+.content h2 {
+    display: flex;
+    height: 35px;
+    overflow: hidden;
+
+    /* border: 1px solid; */
+}
+
+.content p {
+    font-size: 1rem;
+    height: 65%;
+    overflow: hidden;
+
+    /* border: 1px solid; */
+}
+
+.content a {
+    display: flex;
+    justify-content: right;
+    align-items: center;
+    padding-right: 8%;
+}
+
+.card {
+    grid-row: span 4;
+    grid-column: span 1;
 }
 
 /* ##################################################################################################### */
@@ -287,18 +359,35 @@ section {z-index: 0;}
     .wrapper-box h1 {font-size: 1rem;}
     .wrapper-box h4 {font-size: 0.75rem;}
 
+    .container-3 {
+        justify-content: center;
+    }
+
+    .card {
+        height: 70%;
+    }
+
+    .content p {
+        height: 70%;
+    }
+
+}
+
+@media only screen and (min-width:701px) and (max-width:1300px) {
+    .content p {
+        height: 78%;
+    }
 }
 
 @media only screen and (min-width:701px) {
     .container {
         width: 100%;
     }
-
 }
 
 @media only screen and (min-height:1000px) {
     main > section {
-        height: 50%;
+        height: 100%;
     }
 
     .profil-image {
@@ -320,6 +409,19 @@ section {z-index: 0;}
         height: 100%;
     }
 
+    .s2-container .profil-image {
+        grid-column: span 2;
+        transform: translateY(-150px);
+    }
+
+    .s2-container .profil {
+        transform: translateY(-200px);
+    }
+
+    .hidden {
+        display: none;
+    }
+
 }
 
 /* menhilangkan efek biru pada saat klik link di mobile */
@@ -329,6 +431,12 @@ section {z-index: 0;}
     box-sizing: border-box;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
+}
+
+.card,
+.card a {transition: all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1);}
+.card:hover {
+    transform: scale(0.9);
 }
 
 .profil-image img {
