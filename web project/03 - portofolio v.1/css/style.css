@@ -13,7 +13,6 @@ html {
 }
 
 body, main, section {overflow-x: hidden;}
-/* [class*="section-"], [class$="-container"] {overflow-y: hidden;} */
 
 main {
     height: 100vh;
@@ -32,6 +31,8 @@ main > section {
 }
 
 /* ##################################################################################################### */
+/* main, body, header */
+/* ##################################################################################################### */
 :root {
     --bg-1: radial-gradient(#0f172a, #0f1930, #0f1930);
     --bg-2: radial-gradient(#0f1930, #0f1930, #0f172a);
@@ -48,6 +49,7 @@ main {
 h1, h2, h3, h4, h5, h6, p, div, a{
     color: var(--col-1);
     width: 100%;
+    text-align: justify;
 }
 
 span {
@@ -78,7 +80,8 @@ section {z-index: 0;}
 
 /* ##################################################################################################### */
 /* section-1 */
-.s1-container, .s2-container{
+/* ##################################################################################################### */
+.s1-container, .s2-container {
     height: 100%;
     width: 100%;
     display: grid;
@@ -95,7 +98,7 @@ section {z-index: 0;}
 .about {
     height: 80%;
 
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 .profil {
@@ -188,10 +191,6 @@ section {z-index: 0;}
         transform: translateY(-20px);
     }
 
-    /* .profil-image img {
-        transform: translateY(-5px);
-    } */
-
     .s1-nav {
         display: none;
     }
@@ -212,6 +211,13 @@ section {z-index: 0;}
 
 }
 
+@media only screen and (min-width:701px) {
+    .container {
+        width: 100%;
+    }
+
+}
+
 @media only screen and (min-height:1000px) {
     main > section {
         height: 50%;
@@ -221,7 +227,7 @@ section {z-index: 0;}
         display: flex;
         align-items: flex-end;
 
-        border: 1px solid;
+        /* border: 1px solid; */
     }
 
     .profil-image img {
@@ -252,4 +258,8 @@ section {z-index: 0;}
     box-sizing: border-box;
     -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
     -webkit-tap-highlight-color: transparent;
+}
+
+.profil-image img {
+    object-fit: scale-down;
 }
