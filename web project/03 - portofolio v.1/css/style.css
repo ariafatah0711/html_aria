@@ -49,8 +49,10 @@ main {
 h1, h2, h3, h4, h5, h6, p, div, a{
     color: var(--col-1);
     width: 100%;
-    text-align: justify;
 }
+
+h2 {overflow: hidden;}
+h4 {text-align: justify;}
 
 span {
     opacity: var(--op-3);
@@ -184,6 +186,10 @@ section {z-index: 0;}
     .profil > h2 {height: 100px;}
     .profil > h4 {height: 120px; margin-bottom: 20px;}
 
+    .s1-container {
+        transform: translateY(-20px);
+    }
+
     .profil,
     .profil-image {
         grid-column: span 2;
@@ -242,6 +248,7 @@ section {z-index: 0;}
         height: 100%;
     }
 
+    /* [class*="section-"], [class$="-container"] {overflow-y: hidden;} */
 }
 
 /* menhilangkan efek biru pada saat klik link di mobile */
