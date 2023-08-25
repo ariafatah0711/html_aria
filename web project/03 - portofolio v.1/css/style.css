@@ -54,7 +54,8 @@ h1, h2, h3, h4, h5, h6, p, div, a{
 }
 
 h2 {overflow: hidden;}
-h4 {text-align: justify;}
+/* h4 {text-align: justify;} */
+.s1-container h4 {text-align: left;}
 
 span {
     opacity: var(--op-3);
@@ -184,8 +185,8 @@ section {z-index: 0;}
     width: 80%;
     height: 100%;
     display: grid;
-    grid-template-rows: repeat(3, 30%);
-    padding: 20px 0;
+    grid-template-rows: repeat(3, 28%);
+    padding: 15px 0;
 }
 
 .wrapper-box {
@@ -230,11 +231,16 @@ section {z-index: 0;}
 /* ##################################################################################################### */
 @media only screen and (max-width:700px) {
     /* .profil > h1, h2, h4, .profil-nav {border: 1px solid;} */
-    .profil > h2 {height: 100px;}
+    .profil > h2 {height: auto; font-size: 1rem; padding-bottom: 15px; opacity: 100%;}
     .profil > h4 {height: 120px; margin-bottom: 20px;}
 
     .s1-container {
-        transform: translateY(-30px);
+        transform: translateY(-45px);
+        height: 97%;
+    }
+
+    .s1-container .profil {
+        padding-top: 40px;
     }
 
     .profil,
@@ -261,7 +267,6 @@ section {z-index: 0;}
     .s2-container .profil h4 .hidden {
         display: none;
     }
-
 
     .wrapper {
         width: 90%;
@@ -324,4 +329,14 @@ section {z-index: 0;}
 
 .profil-image img {
     object-fit: scale-down;
+}
+
+
+.bottom {
+    border: 1px solid red;
+    height: 115px;
+    width: 100%;
+    display: flex;
+    position: fixed;
+    bottom: 0px;
 }
