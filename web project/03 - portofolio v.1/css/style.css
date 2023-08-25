@@ -231,16 +231,16 @@ section {z-index: 0;}
 /* ##################################################################################################### */
 @media only screen and (max-width:700px) {
     /* .profil > h1, h2, h4, .profil-nav {border: 1px solid;} */
-    .profil > h2 {height: auto; font-size: 1rem; padding-bottom: 15px; opacity: 100%;}
+    .profil > h2 {height: auto; font-size: 1rem; padding-bottom: 25px; opacity: 100%;}
     .profil > h4 {height: 120px; margin-bottom: 20px;}
 
     .s1-container {
-        transform: translateY(-45px);
-        height: 97%;
+        transform: translateY(-10px);
+        height: 100%;
     }
 
     .s1-container .profil {
-        padding-top: 40px;
+        padding-top: 10px;
     }
 
     .profil,
