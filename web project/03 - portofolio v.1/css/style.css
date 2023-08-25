@@ -84,10 +84,6 @@ span {
 #header-6 {z-index: 6;background: none;backdrop-filter: none;position: static;}
 section {z-index: 0;}
 
-footer {
-    display: none;
-}
-
 /* ##################################################################################################### */
 /* section-1 */
 /* ##################################################################################################### */
@@ -394,36 +390,7 @@ footer {
 }
 
 @media only screen and (min-height:1000px) {
-    main {display: none;}
-
-    footer {
-        height: 1500px;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: flex-start;
-        background-color: #0f172a;
-
-        /* border: 1px solid; */
-    }
-
-    .error-404 {
-        width: 400px;
-        height: 250px;
-        margin-top: 100px;
-        display: grid;
-        grid-template-columns: 100%;
-        grid-template-rows: 10% 50% 40%;
-        justify-content: center;
-
-        /* border: 1px solid; */
-    }
-
-    .error-404 h2 {
-        width: 400px;
-
-        /* border: 1px solid; */
-    }
+    /* main {display: none;} */
 
     main > section {
         height: 100%;
