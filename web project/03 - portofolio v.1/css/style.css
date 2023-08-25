@@ -278,6 +278,9 @@ section {z-index: 0;}
         grid-template-columns: 100%;
         grid-template-rows: 10% auto auto auto;
         overflow: hidden;
+        min-height: 100%;
+        max-height: 120%;
+        border: 1px solid;
     }
 
     .wrapper-box h1 {font-size: 1rem;}

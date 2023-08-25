@@ -1,0 +1,50 @@
+:root {
+    --bg-1: radial-gradient(#0f172a, #0f1930, #0f1930);
+    --bg-2: radial-gradient(#0f1930, #0f1930, #0f172a);
+    --col-1: lavender;
+    --op-1: 65%;
+    --op-2: 80%;
+    --op-3: 100%;
+}
+
+.navbar, .nav-icon, #check {
+    display: none;
+}
+
+@media only screen and (max-width:700px) {
+    .nav-icon {
+        color: lavender;
+        width: 100%;
+
+        border: 1px solid;
+        cursor: pointer;
+        display: flex;
+        justify-content: right;
+        padding-right: 5%;
+    } 
+
+    .navbar {
+        width: 40%;
+        position: fixed;
+        top: 50px;
+        right: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        border: 1px solid;
+        backdrop-filter: blur(10px);
+        background-color: var(--bg-2);
+        text-align: center;
+    }
+
+    #check {
+        display: flex;
+    }
+    
+    #check:checked~.nav-icons #menu-icon {
+        display: none;
+    }
+
+    #close-icon {
+        display: none;
+    }
+}

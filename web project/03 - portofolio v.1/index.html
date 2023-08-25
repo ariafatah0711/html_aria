@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ariafatah - portofolio</title>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style-navbar.css">
     <script src="script/script.js"></script>
     <!-- library animation aos -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -12,7 +13,22 @@
 <body>
     <main>
         <section id="section-1">
-            <div class="header" id="header-1"></div>
+
+            <div class="header" id="header-1">
+
+                <input type="checkbox" id="check">
+                <label for="check" class="icon nav-icon">
+                    <i class="fa-solid fa-bars fa-2x" id="menu-icon"></i>
+                    <i class="fa-solid fa-x fa-2x" id="close-icon"></i>
+                </label>
+
+                <nav class="navbar">
+                    <a href="#">ABOUT</a>
+                    <a href="#">EXPERIENCE</a>
+                    <a href="#">PROJECTS</a>
+                </nav>
+            </div>
+
             <div class="s1-container">
                 <div class="profil" data-aos="fade-right">
                     <h1>AriaFatah</h1>
@@ -22,7 +38,7 @@
                         I'am like Anime, Game, Music, and Drawing.
                     </h4>
                     <div class="s1-nav">
-                        <a href="#section-2" id="link1" class="anchor-link">ABOUT</a>
+                        <a href="#section-2" id="link1">ABOUT</a>
                         <a href="#section-3" id="link-2">EXPERIENCE</a>
                         <a href="#section-4" id="link-3">PROJECTS</a>
                     </div>
