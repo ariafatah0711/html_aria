@@ -4,6 +4,12 @@ if (window.location.hash) {
   history.replaceState(null, null, window.location.href.split("#")[0]);
 }
 
+// unchecked navbar
+function uncheckCheckbox() {
+  const checkbox = document.getElementById("check");
+  checkbox.checked = false;
+}
+
 // scroll link anchor
 // document.getElementById("link1").addEventListener("click", function (event) {
 //   event.preventDefault(); // mencegah aksi bawahan link
