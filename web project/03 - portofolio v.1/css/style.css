@@ -95,7 +95,7 @@ section {z-index: 0;}
 .about {
     height: 80%;
 
-    /* border: 1px solid; */
+    border: 1px solid;
 }
 
 .profil {
@@ -188,9 +188,9 @@ section {z-index: 0;}
         transform: translateY(-20px);
     }
 
-    .profil-image img {
+    /* .profil-image img {
         transform: translateY(-5px);
-    }
+    } */
 
     .s1-nav {
         display: none;
@@ -203,7 +203,11 @@ section {z-index: 0;}
 
     .s2-container .profil h4 {
         font-size: 0.8rem;
-        transform: translateY(-60px);
+        transform: translateY(-85px);
+    }
+
+    .s2-container .profil h4 .hidden {
+        display: none;
     }
 
 }
@@ -220,16 +224,25 @@ section {z-index: 0;}
         border: 1px solid;
     }
 
-    .s2-container .profil-image {
-        height: 400px;
-        transform: translateY(-220px);
-    }
-
     .profil-image img {
         height: 300px;
+        object-fit: scale-down;
     }
 
-    [class*="section-"], [class$="-container"] {overflow-y: hidden;}
+    .s2-container,
+    .s3-container,
+    .s4-container,
+    .s5-container {
+        height: 100%;
+    }
+
+    /* .s2-container .profil-image {
+        height: 400px;
+        transform: translateY(-220px);
+    } */
+
+
+    /* [class*="section-"], [class$="-container"] {overflow-y: hidden;} */
 }
 
 /* menhilangkan efek biru pada saat klik link di mobile */
