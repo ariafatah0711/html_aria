@@ -428,7 +428,7 @@ textarea:focus {
         transform: translateY(-10px);
     }
 
-    .s5-container {
+    .s5-container .container {
         transform: translateY(-50px);
     }
     
@@ -445,6 +445,10 @@ textarea:focus {
 @media only screen and (min-width:701px) and (max-width:1300px) {
     .content p {
         height: 78%;
+    }
+
+    .card {
+        height: 550px;
     }
 }
 
