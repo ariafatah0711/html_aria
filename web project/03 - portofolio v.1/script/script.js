@@ -10,21 +10,50 @@ function uncheckCheckbox() {
   checkbox.checked = false;
 }
 
-// scroll link anchor
-// document.getElementById("link1").addEventListener("click", function (event) {
-//   event.preventDefault(); // mencegah aksi bawahan link
-//   window.scrollBy(0, window.innerHeight * 2);
-//   window.location.href = this.getAttribute("href"); //pergi ke tautan setelah scroll
-// });
+// contact
+function goToLink() {
+  var nama = document.getElementById("nama").value;
+  var pesan = document.getElementById("pesan").value;
 
-// smooth scroll
-// const links = document.querySelectorAll("anchor-link");
+  // enter = %0A
+  var formatNama = nama.replace(/\n/g, function (match) {
+    return "%0A".repeat(match.length);
+  });
+  var formatPesan = pesan.replace(/\n/g, function (match) {
+    return "%0A".repeat(match.length);
+  });
 
-// links.forEach((link) => {
-//   link.addEventListener("click", (e) => {
-//     e.preventDefault();
-//     const targetId = link.getAttribute("href");
-//     const targetElement = document.querySelector(targetId);
-//     targetElement.scrollIntoView({ behavior: "smooth" });
-//   });
-// });
+  nama = formatNama;
+  pesan = formatPesan;
+
+  // spasi = %20
+  formatNama = nama.replace(/ /g, function (match) {
+    return "%20".repeat(match.length);
+  });
+  formatPesan = pesan.replace(/ /g, function (match) {
+    return "%20".repeat(match.length);
+  });
+
+  nama = formatNama;
+  pesan = formatPesan;
+
+  var whatsappLink =
+    "https://wa.me/6289509221496?text=nama%20saya%20" + nama + "%0A" + pesan;
+  alert(whatsappLink);
+  window.location.href = whatsappLink;
+
+  var nama = document.getElementById("nama");
+  var pesan = document.getElementById("pesan");
+  nama.value = "";
+  pesan.value = "";
+}
+
+// clear textarea
+function clearTextarea() {
+  var nama = document.getElementById("nama");
+  var pesan = document.getElementById("pesan");
+  nama.value = "";
+  pesan.value = "";
+}
+
+window.onload = clearTextarea;
