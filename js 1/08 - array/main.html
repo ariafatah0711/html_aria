@@ -8,14 +8,89 @@
     <link rel="stylesheet" href="../../z-files/css/style-js.css">
 </head>
 <body>
-    <a href="../00 - main.html">back css...</a><br /><br />
+    <a href="../00 - main.html">back js...</a><br />
+
+    <a href="main.html">array</a>
+    <a href="sort.html">array sort</a><br />
 
     <div class="deskirpsi">
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>pengertian array</summary>
             <pre>
+                - struktur data merupakan cara cara atau metode yang digunakan untuk menyimpan data di dalam memori komputer
 
+                - membuat array
+                    data = ["index ke 0", "index ke-1", "index ke-2"]
+                    makanan = ["nasi goreng", "ayam", "nasi uduk"]
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>memanipulasi array</summary>
+            <pre>
+                push() = menambahkan data di akhir
+                unshift() = menambahkan data di awal
+
+                pop() = menghapus data di akhir
+                shift() = menghapus data di awal
+
+                var barang = ["helm"]
+                - menambahkan data array
+                    barang.push("baju") //-> ["helm", "baju"]
+                    barang.unshift("henphone") //-> ["henphone, "helm", "baju"]
+
+                - menghapus elemen
+                    barang.pop() //-> ["henphone, "helm"]
+                    barang.shift() //-> ["helm"]
+
+                - mengubah array
+                    barang[0] = "head" //-> ["head"]
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>method array</summary>
+            <pre>
+                splice(index, jumlah_dihapus) = menghapus data dari index ke- sampai
+                splice(index, 0, new_value) = mengganti elemen dari index ke-
+
+                sort() = mensortir data array
+                join("-") = menggabungkan array menjadi string ["aria", "fatah"] => ["aria-fatah"]
+                split("-") = memecah string menjadi array ["aria-fatah"] => ["aria", "fatah"]
+                includes(data) = mengecek apakah sebuah array memilki nilai tertentu
+                indexOf(data) = mencari data index yang ada di depan/pertama
+                lastIndexOf(data) = mencari data index yang ada di belakang/akhir
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>contoh method array</summary>
+            <pre>
+                var barang = ["head", "badan", "foot", "tangan"];
+                barang.splice(1, 1, "body"); //-> ["head", "body", "foot", "tangan"]
+                barang.splice(3, 1); //-> ["head", "body", "foot"]
+
+                let angka = [3, 2, 5, 4];
+                angka.sort(); //-> [2, 3, 4, 5]
+
+                let bahasa = ["html", "css", "javascript"];
+                bahasa.join("-"); //-> ["html-css-javascript"]
+
+                var string = "aria fatah anom";
+                var array = string.split(" "); //-> ["aria", "fatah", "anom"]
+                console.log(array);
+
+                angka = [2, 3, 4, 5];
+                let angka2 = angka.includes(2); //-> true
+
+                var buah = ["apel", "anggur", "apel"];
+                var i = buah.indexOf("apel");
+                console.log(i); //-> 0 (ada)
+                i = buah.lastIndexOf("apel");
+                console.log(i); //-> 2 (ada)
+                i = buah.indexOf("pisang");
+                console.log(i); //-> -1 (tidak ada)
             </pre>
         </details>
 

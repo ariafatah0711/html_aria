@@ -81,6 +81,7 @@ main {
     row-gap: 50px;
     justify-content: space-evenly;
     align-items: stretch;
+    align-content: flex-start;
     overflow-y: scroll;
     overflow-x: hidden;
 }
