@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="script/script.js"></script>
+</head>
+<body>
+    <header>
+        <input type="checkbox" id="check">
+        <script src="https://kit.fontawesome.com/0d6ed94a1b.js" crossorigin="anonymous"></script>
+        <label for="check" class="icon icon-label">
+            <i class="fa-solid fa-bars fa-2x" id="menu-icon"></i>
+            <i class="fa-solid fa-x fa-2x" id="close-icon"></i>
+        </label>
+
+        <div class="navbar">
+            <a href="#section1" onclick="uncheckChecked()">HOME</a>
+            <a href="#section2" onclick="uncheckChecked()">ABOUT</a>
+            <a href="#section3" onclick="uncheckChecked()">EXPERIMENT</a>
+            <a href="#section4" onclick="uncheckChecked()">PROJECT</a>
+            <a href="#section5" onclick="uncheckChecked()">CONTACT</a>
+            <a href="../00 - main.html" onclick="uncheckChecked()">BACK</a>
+        </div>
+    </header>
+
+    <main>
+        <div class="section" id="section1">
+            HOME
+        </div>
+        <div class="section" id="section2">
+            ABOUT
+        </div>
+    </main>
+
+</body>
+</html>

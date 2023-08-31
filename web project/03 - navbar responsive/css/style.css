@@ -1,0 +1,132 @@
+/* ###################################################################################################### */
+/* navbar */
+/* ###################################################################################################### */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html {scroll-behavior: smooth; scroll-padding-top: 50px;}
+
+:root {
+    --col-1: lavender;
+    --col-2: black;
+    --bg-1: url(../image/section1.jpg);
+    --top: 50px;
+}
+header {
+    width: 100%;
+    height: var(--top);
+    position: fixed;
+    top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    font-family: 'Poppins', Tahoma ,sans-serif;
+    color: var(--col-1);
+    backdrop-filter: blur(10px);
+}
+.icon-label, #check {
+    position: fixed;
+    right: 4%;
+    display: none;
+}
+.navbar { 
+    position: fixed;
+    right: 4%;
+}
+
+main {margin-top: var(--top);}
+.navbar a {color: var(--col-1); padding: 0px 10px;}
+
+/* @media */
+@media screen and (max-width:600px) {
+    .navbar {display: none;}
+    .icon-label {display: flex;}
+
+    .navbar {
+        top: var(--top);
+        z-index: 10;
+        width: 50%;
+        height: auto;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: row;
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+    }
+    .navbar a {
+        margin: 5px 25%;
+        width: 100%;
+        padding: 0;
+    }
+    
+    /* checked */
+    #menu-icon {display: flex;}
+    #close-icon {display: none;}
+    .navbar {display: none;}
+    
+    #check:checked~.icon-label #menu-icon {
+        display: none;
+    }
+    
+    #check:checked~.icon-label #close-icon {
+        display: flex;
+    }
+    #check:checked~.navbar {
+        display: flex
+    }
+}
+
+/* effect */
+.navbar a {
+    text-align: center;
+    transition: 0.3s;
+    position: relative;
+}
+.navbar a::before {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    transition: width 0.3s, left 0.5s;
+    background-color: red; /* background border */
+}
+.navbar a:hover {
+    color: red; /* color border */
+}
+.navbar a:hover::before {
+    width: 100%;
+    left: 0;
+}
+/* ###################################################################################################### */
+
+/* ###################################################################################################### */
+/* ga penting */
+/* ###################################################################################################### */
+body {
+    width: 100%;
+    height: 100vh;
+    background: var(--bg-1);
+    background-size: cover;
+    background-attachment: fixed;
+}
+
+main {
+    width: 100%;
+    height: auto;
+    display: grid;
+    color: var(--col-1);
+}
+
+.section {
+    width: 100%;
+    height: 100vh;
+    font-size: 40px;
+    text-align: center;
+}
