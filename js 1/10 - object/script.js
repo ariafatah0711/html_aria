@@ -42,22 +42,22 @@ var person = {
 
 // #####################################################################################################
 // membuat class
-function Person(firstName, lastName) {
+function person(firstName, lastName) {
   // propety
   this.firstName = firstName;
   this.lastName = lastName;
 
   // method
   this.fullName = function () {
-    return `${this.firstName} ${lastName}`;
+    return `${this.firstName} ${this.lastName}`;
   };
   this.showName = function () {
     document.write(this.fullName());
   };
 }
 
-var Person1 = new person("aria", "anom");
-// var Person2 = new person("abdul", "malik");
+var person1 = new person("aria", "anom");
+// var person2 = new person("abdul", "malik");
 
-// Person1.showName();
-// Person("aria", "fatah");
+person1.showName();
+// person("aria", "fatah");
