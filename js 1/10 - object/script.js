@@ -32,7 +32,7 @@ car.stop();
 
 // #####################################################################################################
 // menggunakan keyword this
-var person = {
+var nama = {
   firstName: "aria",
   lastName: "anom",
   showName: function () {
@@ -57,7 +57,8 @@ function person(firstName, lastName) {
 }
 
 var person1 = new person("aria", "anom");
-// var person2 = new person("abdul", "malik");
+var person2 = new person("abdul", "malik");
 
 person1.showName();
-// person("aria", "fatah");
+document.write("<br>");
+person2.showName();

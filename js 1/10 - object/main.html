@@ -27,20 +27,45 @@
                     }
                 }
 
+                // memanggil propety
+                var = namaObject.key //=> "value"
 
+
+                // memanggil object
+                namaObject.method()
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>class menggunakan OOP</summary>
             <pre>    
-
+                function person(firstName, lastName) {
+                    // propety
+                    this.firstName = firstName;
+                    this.lastName = lastName;
+                  
+                    // method
+                    this.fullName = function () {
+                      return `${this.firstName} ${this.lastName}`;
+                    };
+                    this.showName = function () {
+                      document.write(this.fullName());
+                    };
+                  }
+                  
+                  var person1 = new person("aria", "anom");
+                  var person2 = new person("abdul", "malik");
+                  
+                  person1.showName();
+                  document.write("&lt;br&gt;");
+                  person2.showName();
+                  
             </pre>
         </details>
 
     </div><br>
 
-    <button onclick="person.showName()">button 1</button>
+    <button onclick="nama.showName()">button 1</button>
 
     <script src="script.js"></script>
 
