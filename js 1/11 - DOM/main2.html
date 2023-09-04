@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 11 - DOM</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="../00 - main.html">back js...</a><br />
+
+    <a href="main.html">main</a>
+    <a href="main2.html">main2</a><br>
+
+    <div class="deskirpsi">
+
+        <details class="deskripsi-container">
+            <summary>membuat aplikasi merubah warna</summary>
+            <pre>    
+                var bgColor = document.getElementById("bg-color")
+                var txtColor = document.getElementById("text-color")
+        
+                bgColor.addEventListener("change", (event) => {
+                    document.body.style.backgroundColor = bgColor.value
+                })
+        
+                txtColor.addEventListener("change", (event) => {
+                    document.body.style.color = txtColor.value
+                })
+        
+                var btn = {
+                    resetBgColor: () => {
+                        document.body.style.backgroundColor = "white"
+                        bgColor.value = "white"
+                    },
+                    resetTextColor: () => {
+                        document.body.style.color = "black"
+                        txtColor.value = "black"
+                    }
+                }
+            </pre>
+        </details>
+
+    </div><br>
+
+    <h1>aplikasi merubah warna</h1>
+
+    <label for="bg-color">warna latar: </label>
+    <input type="color" id="bg-color"><br>
+    <label for="text-color">warna text: </label>
+    <input type="color" id="text-color"><br>
+
+    <button onclick="btn.resetBgColor()">reset color</button>
+    <button onclick="btn.resetTextColor()">reset color</button>
+
+    <script>
+        var bgColor = document.getElementById("bg-color")
+        var txtColor = document.getElementById("text-color")
+
+        bgColor.addEventListener("change", (event) => {
+            document.body.style.backgroundColor = bgColor.value
+        })
+
+        txtColor.addEventListener("change", (event) => {
+            document.body.style.color = txtColor.value
+        })
+
+        var btn = {
+            resetBgColor: () => {
+                document.body.style.backgroundColor = "white"
+                bgColor.value = "white"
+            },
+            resetTextColor: () => {
+                document.body.style.color = "black"
+                txtColor.value = "black"
+            }
+        }
+    </script>
+    
+</body>
+</html>

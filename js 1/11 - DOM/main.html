@@ -10,6 +10,9 @@
 <body>
     <a href="../00 - main.html">back js...</a><br />
 
+    <a href="main.html">main</a>
+    <a href="main2.html">main2</a><br>
+
     <div class="deskirpsi">
 
         <details class="deskripsi-container">
@@ -42,34 +45,113 @@
                 - querySelector() // memilih elemen berdasarkan query
                 - querySelectorAll() // memilih elemen berdasarkan semua elemen query
 
-                    document.getElementById("id");
-                    document.getElementsByClassName("class");
-                    document.getElementsByName("name");
-                    document.getElementsByTagName("a");
-                    document.querySelector("p");
-                    document.querySelectorAll("p");
+                // mengakses elemen spesifik
+                    var div1 = document.getElementById("id");
+                    var div2 = document.getElementsByClassName("class")[0];
+                    var button = document.getElementsByName("name")[0];
+                    var link = document.getElementsByTagName("a");
+                    var pFirst = document.querySelector("p");
+                    var Pall = document.querySelectorAll("p");
 
-                    
+                // mengisi teks ke dalam elemen
+                    div1.innerText =
+                    "ini adalah elemen yang memilki id='id' dan telah diubah teksnya menggunakan div1.innerText";
+
+                // memberikan CSS ke elemen
+                    div1.style.backgroundColor = "red";
+                    div2.style.backgroundColor = "blue";
+                    button.style.border = "10px solid green";
+
+                    for (let i = 0; i < link.length; i++) {
+                    link[i].style.textDecoration = "none";
+                    }
+
+                    pFirst.style.backgroundColor = "blue";
+                    for (let i = 0; i < Pall.length; i++) {
+                    Pall[i].style.color = "red";
+                    }
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>membuat text warna warni menggunakan setInterval dan setTimeout</summary>
             <pre>    
+                var paragraf = document.getElementsByClassName("paragraf");
+                console.log(paragraf); //=> array
 
+                // membuat animasi warna menggunakan ser interval dan timeout
+                setInterval(function () {
+                    // menjalankan sesuatu secara berulang
+                    paragraf[0].style.color = "red";
+                    paragraf[1].style.color = "yellow";
+                    paragraf[2].style.color = "green";
+
+                    setTimeout(function () {
+                        // menjalankan sesuatu setelah penundaan selesai
+                        paragraf[0].style.color = "black";
+                        paragraf[1].style.color = "black";
+                        paragraf[2].style.color = "black";
+                    }, 500);
+                }, 1000);
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>membuat elemen DOM dengan API</summary>
+            <pre>    
+                createElement("p"); // membuat elemen namun belum dapat tampil
+                append() // untuk menambahkan elemen
+
+                var div3 = document.getElementsByClassName("div3")[0];            
+                - contoh penggunaan
+                    var judul = document.createElement("h4");
+                
+                    // mengisi konten elemen
+                    judul.textContent = "ini adalah isi dari elemen h4 yand ditambah peke DOM api";
+                
+                    // menambahkan elemen ke dalam tag body
+                    document.body.append(judul); // akan tampil di paling bawah
+                    div3.appendChild(judul); // akan tampil di dalam elemen div
+                
+                // atau menggunakan inner html
+                    div3.innerHTML += "&lt;h5&gt;ini adalah h5 yang ditambahkan menggunakan div3.innerHTML += ''&lt;/h5&gt;";
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>menghapus elemen yang sudah dipilih</summary>
+            <pre>    
+                // menghapus elemen
+                    var removeP = document.getElementById("remove");
+                    removeP.remove();
+
+                    console.log(removeP);
             </pre>
         </details>
 
     </div><br>
 
-    <div id="id">document.getElementById("id")</div>
-    <div class="class">document.getElementsByClassName("class")</div>
-    <button name="name">document.getElementsByName("name")</button><br>
-    <a href="#">document.getElementsByTagName("a")</a>
-    <p>document.querySelector("p");</p>    
-    <p>document.querySelectorAll("p");</p>
+    <div style="border: 1px solid black">
+        <div id="id">document.getElementById("id")</div>
+        <div class="class">document.getElementsByClassName("class")</div>
+        <button name="name">document.getElementsByName("name")</button><br>
+        <a href="#">document.getElementsByTagName("a")</a>
+        <p>document.querySelector("p");</p>    
+        <p id="remove">document.querySelectorAll("p");</p>
+        <p id="remove">document.querySelectorAll("p");</p>
+    </div>
+
+    <div style="border: 1px solid black">
+        <small class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odio minima necessitatibus veniam laborum cum, sunt sequi aspernatur vero totam ullam quis minus. Provident similique esse deleniti, quisquam architecto quas.</small><br>
+        <small class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odio minima necessitatibus veniam laborum cum, sunt sequi aspernatur vero totam ullam quis minus. Provident similique esse deleniti, quisquam architecto quas.</small><br>
+        <small class="paragraf">Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti odio minima necessitatibus veniam laborum cum, sunt sequi aspernatur vero totam ullam quis minus. Provident similique esse deleniti, quisquam architecto quas.</small><br>
+    </div>
+
+    <div style="border: 1px solid black" class="div3">
+
+    </div>
 
     <script src="script.js"></script>
-
+    
 </body>
 </html>
