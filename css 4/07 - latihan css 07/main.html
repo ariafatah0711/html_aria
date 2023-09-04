@@ -13,7 +13,32 @@
         <a href="snap.html">deskripsi</a>
     </nav>
 
+    <a style="position: fixed; top: 100px;" href="#" id="myLink">Klik Saya</a>
     <main>
+
+        <script>
+            var link = document.getElementById("myLink")
+
+            link.addEventListener("click", function(event) {
+                event.preventDefault()
+                simulateArrowDownKey()
+            })
+
+            function simulateArrowDownKey() {
+                var event = new KeyboardEvent("keydown", {
+                    key: "arrowDown",
+                    code: "arrowDown",
+                    keyCode: 40,
+                    which: 40,
+                    shiftKey: false,
+                    ctrlKey: false,
+                    altKey: false
+                })
+                document.dispatchEvent(event)
+            }
+
+        </script>
+
         <section id="section-1">
             <div>1</div>
         </section>
