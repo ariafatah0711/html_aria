@@ -13,9 +13,43 @@
     <div class="deskirpsi">
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>DOM (Document Object Model)</summary>
             <pre>    
+                - DOM adalah reprentasi struktur dokumen HTML atau XML dalam bentuk pohon yang dapat diakses oleh bahasa pemograman seperti javascript
+                - Object DOM di javascript bernama document
+                    jika kita mengetik dokumen pada console javascript maka yang tampil adalah kode HTML
 
+                    document.write("hello world");
+
+                    // mengakses object head
+                    document.head;
+                    
+                    // mengakses object body
+                    document.body;
+                    
+                    // melihat panjang judul pada object title
+                    document.title.length;
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>mengakses elemen tertentu</summary>
+            <pre>    
+                - getElementById() // memilih elemen berdasarkan atribut id
+                - getElementsByClassName() // memilih elemen berdasarkan atribut class
+                - getElementsByName() // memilih elemen berdasarkan atribut name
+                - getElementsByTagName() // memilih elemen berdasarkan nama tag
+                - querySelector() // memilih elemen berdasarkan query
+                - querySelectorAll() // memilih elemen berdasarkan semua elemen query
+
+                    document.getElementById("id");
+                    document.getElementsByClassName("class");
+                    document.getElementsByName("name");
+                    document.getElementsByTagName("a");
+                    document.querySelector("p");
+                    document.querySelectorAll("p");
+
+                    
             </pre>
         </details>
 
@@ -27,6 +61,13 @@
         </details>
 
     </div><br>
+
+    <div id="id">document.getElementById("id")</div>
+    <div class="class">document.getElementsByClassName("class")</div>
+    <button name="name">document.getElementsByName("name")</button><br>
+    <a href="#">document.getElementsByTagName("a")</a>
+    <p>document.querySelector("p");</p>    
+    <p>document.querySelectorAll("p");</p>
 
     <script src="script.js"></script>
 
