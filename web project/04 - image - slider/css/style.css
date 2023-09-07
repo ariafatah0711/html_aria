@@ -35,6 +35,7 @@ body {
 }
 .wrapper i:first-child {
     left: -23px;
+    display: none;
 }
 .wrapper i:last-child {
     right: -23px;
@@ -45,6 +46,16 @@ body {
     cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
+    scroll-behavior: smooth;
+}
+
+.carousel .dragging {
+    cursor: grab;
+    scroll-behavior: auto;
+}
+
+.carousel .dragging img {
+    pointer-events: none;
 }
 
 .carousel img {
@@ -54,9 +65,6 @@ body {
     width: calc(100% / 3);
 }
 
-.wrapper, .wrapper .carousel {
-    border: 1px solid;
-}
 
 .carousel img:first-child {margin-left: 0;}
 
@@ -71,3 +79,5 @@ body {
         width: 100%;
     }
 }
+
+/* .wrapper, .wrapper .carousel {border: 1px solid;} */
