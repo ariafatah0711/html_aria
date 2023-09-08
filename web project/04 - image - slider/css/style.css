@@ -6,7 +6,6 @@
     box-sizing: border-box;
     font-family: 'Poppins', Tahoma, sans-serif;
 }
-
 body {
     min-height: 100vh;
     padding: 0 35px;
@@ -20,6 +19,7 @@ body {
     max-width: 1200px;
     position: relative;
 }
+
 .wrapper i {
     width: 45px;
     height: 45px;
@@ -35,7 +35,6 @@ body {
 }
 .wrapper i:first-child {
     left: -23px;
-    display: none;
 }
 .wrapper i:last-child {
     right: -23px;
@@ -43,30 +42,18 @@ body {
 
 .wrapper .carousel {
     font-size: 0px;
-    cursor: pointer;
     overflow: hidden;
     white-space: nowrap;
     scroll-behavior: smooth;
 }
 
-.carousel .dragging {
-    cursor: grab;
-    scroll-behavior: auto;
-}
-
-.carousel .dragging img {
-    pointer-events: none;
-}
-
 .carousel img {
     height: 340px;
     object-fit: cover;
-    margin-left: 14px;
+    padding-left: 10px;
     width: calc(100% / 3);
 }
-
-
-.carousel img:first-child {margin-left: 0;}
+.carousel img:first-child {padding-left: 0;}
 
 @media screen and (max-width:900px) {
     .carousel img {
