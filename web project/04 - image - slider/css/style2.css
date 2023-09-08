@@ -44,7 +44,7 @@ body {
 
 .wrapper .carousel {
     overflow: hidden;
-    white-space: nowrap;
+    /* white-space: nowrap; */
     scroll-behavior: smooth;
     transition: transform 0.3s ease;
     display: flex;
