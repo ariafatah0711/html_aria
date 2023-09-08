@@ -45,16 +45,18 @@ body {
     overflow: hidden;
     white-space: nowrap;
     scroll-behavior: smooth;
+    display: flex;
+    flex-direction: row;
 }
 
 .carousel .carousel-content {
     height: 340px;
-    width: 8000px;
     object-fit: cover;
     padding-left: 10px;
     width: calc(100% / 3);
-    display: flex;
-
+    object-fit: 9 / 16;
+    
+    
     border: 1px solid;
 }
 .carousel .carousel-content:first-child {padding-left: 0;}
@@ -74,6 +76,6 @@ body {
 /* .wrapper, .wrapper .carousel {border: 1px solid;} */
 
 img {
-    object-fit: 16 / 9;
-    height: 50px;
+    object-fit: 9 / 16;
+    height: 200px;
 }

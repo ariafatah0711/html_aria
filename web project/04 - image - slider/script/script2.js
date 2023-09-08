@@ -1,5 +1,5 @@
 const carousel = document.querySelector(".carousel");
-firstCarouselContent = carousel.querySelectorAll("carasoul-content")[0];
+firstCarouselContent = carousel.querySelectorAll(".carasoul-content")[0];
 const arrowIcons = document.querySelectorAll(".wrapper i");
 
 arrowIcons.forEach((icon) => {
