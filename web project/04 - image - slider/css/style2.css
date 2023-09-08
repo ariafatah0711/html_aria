@@ -33,6 +33,7 @@ body {
     border-radius: 50%;
     position: absolute;
     top: 50%;
+    transition: color 0.2s ease;
     transform: translateY(-50%);
 }
 .wrapper i:first-child {
@@ -40,6 +41,13 @@ body {
 }
 .wrapper i:last-child {
     right: -23px;
+}
+.wrapper i:hover {
+    color: red;
+}
+.wrapper i:active {
+    scale: 0.95;
+    transform-origin: center;
 }
 
 .wrapper .carousel {

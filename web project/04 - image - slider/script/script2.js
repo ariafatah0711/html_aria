@@ -18,7 +18,7 @@ arrowIcons.forEach((icon) => {
     }
     setTimeout(() => {
       isAnimating = false;
-    }, 600);
+    }, 700);
   });
 });
 
