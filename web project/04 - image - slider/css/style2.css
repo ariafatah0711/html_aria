@@ -16,7 +16,8 @@ body {
 }
 
 .wrapper {
-    max-width: 1200px;
+    /* max-width: 1200px; */
+    width: 80%;
     position: relative;
 }
 
@@ -47,10 +48,14 @@ body {
     scroll-behavior: smooth;
     display: flex;
     flex-direction: row;
+
+    border: 1px solid red;
 }
 
 .carousel .carousel-content {
     height: 340px;
+    min-width: 400px;
+    display: block;
     object-fit: cover;
     padding-left: 10px;
     width: calc(100% / 3);
@@ -62,8 +67,13 @@ body {
 .carousel .carousel-content:first-child {padding-left: 0;}
 
 @media screen and (max-width:900px) {
+    .wrapper {
+        max-width: 700px;
+        width: 80%;
+    }
+
     .carousel .carousel-content {
-        width: calc(100% / 2);
+        min-width: 350px;
     }
 }
 
