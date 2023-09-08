@@ -18,7 +18,7 @@ body {
 
 .wrapper {
     /* max-width: 1200px; */
-    width: 80%;
+    width: 90%;
     position: relative;
 }
 
@@ -63,32 +63,29 @@ body {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-
-    /* height: 340px;
-    width: calc(50% - 10px);
-    margin: 0 5px;
-    padding: 0 10px;
-    object-fit: cover;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    justify-content: center; */
-
+    /* background: #efefef; */
 
     /* border: 1px solid; */
 }
-.carousel .carousel-content:first-child {padding-left: 0;}
 
 .carousel-content img {
     display: flex;
+    border-radius: 10px 10px 0 0;
 }
 
-.carousel-content h1 {
-    clear: both;
-    color: white;
+.carousel .content {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    padding: 5px 10px;
+    border-radius: 0 0 10px 10px;
 
-    background-color: red;
+    border: 1px solid;
+    background: #efefef;
 }
+
+.carousel-content h1 {font-size: 1.3rem; border: 1px solid;}
+.carousel-content p {font-size: 0.75rem; border: 1px solid; overflow: hidden; height: 60px; }
 
 @media screen and (max-width:900px) {
     .carousel .carousel-content {
