@@ -10,7 +10,8 @@
 <body>
     <a href="../00 - main.html">back js...</a><br /><br>
     <a href="main.html">main.html</a>
-    <a href="main2.html">main2.html</a><br>
+    <a href="main2.html">main2.html</a>
+    <a href="main3.html">main3.html</a><br>
 
     <div class="deskirpsi">
 
@@ -42,10 +43,10 @@
                     timeout // mengatur waktu maximum yang diijimkan untuk permintaan
                     event ontimeout akan dipicu
 
-                --
+                - withCredentials // untuk memgidintifikasi apakah permintaan harus menyertakan kredensial (seperti cookie/ header otentikasi HTTP) saat melakukam permintaan lintas domain (CORS)
 
-                --
-                
+                - upload // sub object yang merujuk ke bagian upload dari permintaan dapat dapat menggunakan sub object ini untuk mengakses prepoerty terkait upload, seperti "onprogress" untuk memantau kemajuan upload
+
             </pre>
         </details>
 
@@ -68,7 +69,6 @@
     <button id="btn-clear" onclick="clearResult()">Clear</button>
     <div id="hasil"></div>
     <button id="button" onclick="loadContent()">Load Content</button>
-
 
     <script>
         function loadContent() {
