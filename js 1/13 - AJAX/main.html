@@ -8,7 +8,9 @@
     <link rel="stylesheet" href="../../z-files/css/style-js.css">
 </head>
 <body>
-    <a href="../00 - main.html">back js...</a><br />
+    <a href="../00 - main.html">back js...</a><br /><br>
+    <a href="main.html">main.html</a>
+    <a href="main2.html">main2.html</a><br>
 
     <div class="deskirpsi">
 
@@ -21,14 +23,27 @@
                 - ajax berkomunikasi menggunakan object XMLHttpRequest
 
                 - cara menggunakan AJAX
+                    // membuat object AJAX
+                        var xhr = new XMLHttpRequest(); // membuat object dalam persiapan HTTP asinkron
 
+                    // menentukan fungsi handler untuk event
+                        xhr.onreadystatechange = function () {};
+                        xhr.onload = function () {};
+                        xhr.onerror = function () {};
+                        xhr.onprogress = function () {};
+
+                    // menentukan method dan URL
+                        xhr.open("GET", url, true);
+                        
+                    // mengirim request
+                        xhr.send();
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>event handler</summary>
             <pre>    
-
+                - 
             </pre>
         </details>
 
@@ -42,7 +57,7 @@
     </div><br>
 
     <div id="hasil"></div>
-    <button onclick="loadContent()">loadContent</button>
+    <button onclick="loadContent()">load Content</button>
 
     <script>
         function loadContent() {
