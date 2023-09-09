@@ -42,18 +42,122 @@
 
         <details class="deskripsi-container">
             <summary>event handler</summary>
-            <pre>    
-                - 
+            <pre>
+                - onloadstart : event ini terjadi ketika permintaan dimulai
+                    xhr.onloadstart = function () {
+                        console.log("permintaan dimulai");
+                    };
+
+                - onload : event ini terjadi ketika permintaan berhasil selesai dan respons dari server telah diterima dengan sukses
+                    xhr.onload = function () {
+                        if (this.status == 200) {
+                            // Respon berhasil diterima
+                            var data = xhr.responseText;
+                            console.log(data);
+                        }
+                    };
+
+                - onerror : event ini terjadi jika ada kesalahan selama proses permintaan
+                            misal ketika server merenspon dengan kode status yang bukan 200 (OK) / ada kesalahan jaringan
+                    xhr.onerror = function () {
+                        console.log("terjadi kesalahan");
+                    };
+
+                - onloadend : event ini terjadi ketika permintaan selesai, baik berhasil / gagal. event terjadi setelah "onload" / "onerror"
+                    xhr.onabort = function () {
+                        xhr.abort(); // permintaan yang sedang berlangusung akan diberhentikan secara paksa
+                        console.log("permintaan dibatalkan");
+                    };
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
-            <pre>    
+            <summary>event handler 2</summary>
+            <pre>
+                - onreadystatechange : event ini memungkinkan anda untuk menangani perubahan dalam "readyState" objext XHR selama proses permintaan
+                    xhr.onreadystatechange = function () {
+                        if (this.readyState === XMLHttpRequest.DONE) {
+                            if (this.status === 200) {
+                                // respons berhasil diterima
+                                var data = this.responseText;
+                                console.log(data);
+                            } else {
+                                console.log("terjadi kesalahan" + xhr.status);
+                            }
+                        }
+                    };
 
+                    atau 
+
+                    xhr.onreadystatechange = function() {
+                        // readystate 4 artinya done dan status 200 artinya sukses
+                        if(this.readyState == 4 && this.status == 200) {
+                            document.getElementById("hasil").innerHTML= this.responseText;
+                        }
+                    };
+
+                - onprogress : terjadi selama pengiriman / penerima data ketika respons atau permintaan masih dalam proses 
+                               anda dapat meanampilkan proges / indikator loading
+                    xhr.onprogress = function (event) {
+                        if (event.lengthComputable) {
+                            var percentCompleate = (event.loaded / event.total) * 100;
+                            console.log("proges: " + percentCompleate + "%");
+                        }
+                    };
+
+                - ontimeout : jika anda mengatur waktu maksimal time out untuk permintaan dengan dengan "xhr.timeout"                    
+                    xhr.timeout = function () {
+                        console.log("waktu permintaan habis")
+                    }
+
+                - onabort : jika anda membatalkan permintaan XHR dengan menggunakan xhr.abort()
+                    xhr.onabort = function () {
+                        xhr.abort(); // permintaan yang sedang berlangusung akan diberhentikan secara paksa
+                        console.log("permintaan dibatalkan");
+                    };
             </pre>
         </details>
 
+        <details class="deskripsi-container">
+            <summary>method</summary>
+            <pre>    
+                // mengirim permintaan http ke server
+
+                // metode open() digunakan untuk menginisialisasi permintaan http
+                    xhr.open("GET", url, true);
+
+                    // method : "GET", "POST", "PUT", "DELETE"
+                    // url : url tujuan target yang akan diminta
+                    // async : nilai bolean yang akan menentukan permintaan akan dilakukan secara asinkron(true) atau sinkron(false)
+
+                // metode send() digunakan untuk mengirim permintaan http ke server setelah permintaan telah diinisialisasi dengan xhr.opem()
+                    xhr.send();
+
+                    // parameter data(opsional) adalah data yang akan dikirim ke server. : "POST"
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>contoh fungsi loadContent menggunakan XMLHttpRequest</summary>
+            <pre>    
+                function loadContent() {
+                    var xhr = new XMLHttpRequest();
+                    var url = "https://api.github.com/users/ariafatah0711"
+                    xhr.onreadystatechange = function() {
+                        // readystate 4 artinya done dan status 200 artinya sukses
+                        if(this.readyState == 4 && this.status == 200) {
+                            document.getElementById("hasil").innerHTML= this.responseText;
+                        }
+                    };
+                    // GET = metode request yang digunakan
+                    // url = url tujuan
+                    // true mengeksekusi AJAX secara asyncrounus
+                    xhr.open("GET", url, true)
+                    xhr.send();
+                }
+            </pre>
+        </details>
+        
     </div><br>
 
     <div id="hasil"></div>

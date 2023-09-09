@@ -15,9 +15,37 @@
     <div class="deskirpsi">
 
         <details class="deskripsi-container">
-            <summary></summary>
-            <pre>    
+            <summary>propety readyState, status, response</summary>
+            <pre>
+                - readyState
+                    readyState == 0 // 0(UNSENT) xhr telah dibuat, tetapi method "open()" belum dipanggil
+                    readyState == 1 // 1(opened) method "open" telah dipanggil
+                    readyState == 2 // 2(HEADERS_RECEIVED) method "send()" telah dipanggil dan respons header telah diterima
+                    readyState == 3 // 3(LOADING) data respons sedang diunduh
+                    readyState == 4 // 4(DONE) operasi selesai, Data telah sepenuhnya diunduh
 
+                - status
+                    status == 200 // 200:OK
+                    status == 404 // 404:Not Found
+                    status == 500 // 500:Internet Server Error
+
+                    statusText adalah value yang berisi text yang telah di ambil oleh status
+                
+                - response
+                    respons // berisi respons dari server dalam bentuk yang sesuai jenis konten : teks, JSON, XML, dll
+
+                    responseText // berisi respons dari server dalam bentuk teks
+                    responseXML // berisi respons dari server dalam bentuk XML
+                    responseType // menentukan tipe data yang diharapkan untuk respons
+
+                - timeout
+                    timeout // mengatur waktu maximum yang diijimkan untuk permintaan
+                    event ontimeout akan dipicu
+
+                --
+
+                --
+                
             </pre>
         </details>
 
