@@ -1,10 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
+:root {
+    --bg-1: radial-gradient(#0f172a, #0f1930 ,#0f172a);
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', Tahoma, sans-serif;
+    color: lavender;
 }
 body {
     min-height: 100vh;
@@ -12,7 +17,7 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #343f4f;
+    background: var(--bg-1);
 }
 
 .wrapper {
@@ -45,6 +50,7 @@ body {
     overflow: hidden;
     white-space: nowrap;
     scroll-behavior: smooth;
+    scroll-snap-type: x mandatory;
 }
 
 .carousel img {
@@ -52,6 +58,7 @@ body {
     object-fit: cover;
     padding-left: 10px;
     width: calc(100% / 3);
+    scroll-snap-align: start;
 }
 .carousel img:first-child {padding-left: 0;}
 
