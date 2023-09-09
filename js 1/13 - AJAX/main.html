@@ -13,8 +13,14 @@
     <div class="deskirpsi">
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>AJAX (Asynchronus Javascript And XML)</summary>
             <pre>    
+                - mengambil data dari server secara background
+                - update tampilan web tanpa harus relaod browser
+                - mengirim data ke server secara background
+                - ajax berkomunikasi menggunakan object XMLHttpRequest
+
+                - cara menggunakan AJAX
 
             </pre>
         </details>
@@ -34,6 +40,27 @@
         </details>
 
     </div><br>
+
+    <div id="hasil"></div>
+    <button onclick="loadContent()">loadContent</button>
+
+    <script>
+        function loadContent() {
+            var xhr = new XMLHttpRequest();
+            var url = "https://api.github.com/users/ariafatah0711"
+            xhr.onreadystatechange = function() {
+                // readystate 4 artinya done dan status 200 artinya sukses
+                if(this.readyState == 4 && this.status == 200) {
+                    document.getElementById("hasil").innerHTML= this.responseText;
+                }
+            };
+            // GET = metode request yang digunakan
+            // url = url tujuan
+            // true mengeksekusi AJAX secara asyncrounus
+            xhr.open("GET", url, true)
+            xhr.send();
+        }
+    </script>
 
     <script src="script.js"></script>
     
