@@ -49,11 +49,12 @@
         </p>
         <input type="submit" value="kirim">
     </form>
+    <div id="hasil"></div>
 
     <script>
         function sendData() {
             var xhr = new XMLHttpRequest();
-            var url = "https://jsonplaceholder.typincode.com/posts";
+            var url = "https://jsonplaceholder.typicode.com/posts";
 
             var data = JSON.stringify({
                 title: document.getElementById("title").value,
@@ -62,9 +63,12 @@
             });
 
             xhr.open("POST", url, true);
-            xhr.setRequestHeader("Content-Type", "aplication/json;charset=UTF-8");
+            xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
             xhr.onload = function() {
                 console.log(this.responseText)
+                let datas = document.createElement("p")
+                datas.innerHTML = this.responseText
+                document.getElementById("hasil").append(datas)
             };
             xhr.send(data);
             return false;
