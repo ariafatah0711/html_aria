@@ -6,6 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js 13 - AJAX</title>
     <link rel="stylesheet" href="../../z-files/css/style-js.css">
+    <style>
+        #hasil {border: 1px solid black; width: 200px; display: flex; justify-content: center; flex-direction: column; text-align: center;}
+        #hasil img {border-radius: 50%; height: 100px; width: 100px}
+    </style>
 </head>
 <body>
     <a href="../00 - main.html">back js...</a><br /><br>
@@ -53,14 +57,84 @@
         <details class="deskripsi-container">
             <summary></summary>
             <pre>
+                var data = JSON.parse(this.responseText);
+                    fungsi JSON.parse()
+                    fungsi this.responsText adalah sebagai string JSON yang di terima dari API GiTHUB 
+                    dan menggunakan JSON.parse untuk mengubah string menjadi object JavaScript yang di simpan di dalman variable data
+                
+                // mengubah data string menjadi object
+                var data = JSON.parse(this.responseText);
+
+                console.log(data); //berisi object data
+                    {
+                        nameL : "ariafatah"
+                        avatar_url: "https://avatars.githubusercontent.com/u/125982341?v=4"
+                        bio: "Just learn Coding"
+                        blog: "https://s.id/ariafatah"
+                    }
+
+                // mengambil data img,  name, bio
+                    var img = document.createElement("img"); // data.avatar_url
+                    img.src = data.avatar_url;
+                    var name = document.createElement(("h3")); // data.name
+                    name.innerHTML = data.name;
+                    var bio = document.createElement("h4"); // data.bio
+                    bio.innerHTML = data.bio;
+
+                // mengappend img,name,bio ke dalam elemen id hasil, dan mengubah value button menjadi done
+                    document.getElementById("hasil").append(img, name, bio);
+                    document.getElementById("button").innerHTML = "Done";
 
             </pre>
         </details>
+    
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>mengambil data title dan gambar dari api github</summary>
             <pre>
-
+                function loadContent() {
+                    var xhr = new XMLHttpRequest();
+                    var url = "https://api.github.com/users/ariafatah0711";
+        
+                    xhr.onloadstart = function() {
+                        document.getElementById("button").innerHTML = "Loading...";
+                    };
+        
+                    xhr.onerror = function() {
+                        alert("gagal mengambil data");
+                    };
+        
+                    xhr.onloadend = function() {
+                        // if data responsText tidak kosong/null/""
+                        if(this.responText !== "") {
+                            // mengubah data string menjadi object
+                            var data = JSON.parse(this.responseText);
+                            console.log(data); //berisi object data
+                            
+                            // mengambil data img,  name, bio
+                            var img = document.createElement("img"); // data.avatar_url
+                            img.src = data.avatar_url;
+                            var name = document.createElement(("h3")); // data.name
+                            name.innerHTML = data.name;
+                            var bio = document.createElement("h4"); // data.bio
+                            bio.innerHTML = data.bio;
+        
+                            // mengappend img,name,bio ke dalam elemen id hasil, dan mengubah value button menjadi done
+                            document.getElementById("hasil").append(img, name, bio);
+                            document.getElementById("button").innerHTML = "Done";
+        
+                            setTimeout(function () {
+                                document.getElementById("button").innerHTML = "Load Lagi";
+                            }, 3000)
+                        };
+                    };
+                
+                    xhr.open("GET", url, true);
+                    xhr.send();            
+                };
+                function clearResult() {
+                    document.getElementById("hasil").innerHTML = "";
+                }
             </pre>
         </details>
 
@@ -84,14 +158,22 @@
             };
 
             xhr.onloadend = function() {
+                // if data responsText tidak kosong/null/""
                 if(this.responText !== "") {
+                    // mengubah data string menjadi object
                     var data = JSON.parse(this.responseText);
-                    var img = document.createElement("img");
+                    console.log(data); //berisi object data
+                    
+                    // mengambil data img,  name, bio
+                    var img = document.createElement("img"); // data.avatar_url
                     img.src = data.avatar_url;
-                    var name = document.createElement(("h3"));
+                    var name = document.createElement(("h3")); // data.name
                     name.innerHTML = data.name;
+                    var bio = document.createElement("h4"); // data.bio
+                    bio.innerHTML = data.bio;
 
-                    document.getElementById("hasil").append(img, name);
+                    // mengappend img,name,bio ke dalam elemen id hasil, dan mengubah value button menjadi done
+                    document.getElementById("hasil").append(img, name, bio);
                     document.getElementById("button").innerHTML = "Done";
 
                     setTimeout(function () {
