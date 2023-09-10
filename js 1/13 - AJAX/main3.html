@@ -38,13 +38,40 @@
 
     </div><br>
 
-
+    <form method="POST" onsubmit="return sendData()">
+        <p>
+            <label for="title">Title</label>            
+            <input type="text" id="title" placeholder="judul artikel">
+        </p>
+        <p>
+            <label for="body">Isi Artikel</label><br>
+            <textarea id="body" placeholder="isi artikel.." cols="50" rows="10"></textarea>
+        </p>
+        <input type="submit" value="kirim">
+    </form>
 
     <script>
+        function sendData() {
+            var xhr = new XMLHttpRequest();
+            var url = "https://jsonplaceholder.typincode.com/posts";
 
+            var data = JSON.stringify({
+                title: document.getElementById("title").value,
+                body: document.getElementById("body").value,
+                userId: 1
+            });
+
+            xhr.open("POST", url, true);
+            xhr.setRequestHeader("Content-Type", "aplication/json;charset=UTF-8");
+            xhr.onload = function() {
+                console.log(this.responseText)
+            };
+            xhr.send(data);
+            return false;
+        }
     </script>
 
-    <script src="script.js"></script>
+    <!-- <script src="script.js"></script> -->
     
 </body>
 </html>
