@@ -11,7 +11,9 @@
     <a href="../00 - main.html">back js...</a><br /><br>
     <a href="main.html">main.html</a>
     <a href="main2.html">main2.html</a>
-    <a href="main3.html">main3.html</a><br>
+    <a href="main3.html">main3.html</a>
+    <a href="main4.html">main4.html</a>
+    <a href="main5.html">main5.html</a><br>
 
     <div class="deskirpsi">
 
@@ -23,16 +25,47 @@
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
-            <pre>    
+            <summary>setRequestHeader : mengubah konten yang dikirim</summary>
+            <pre>
+                xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                  fungsi setRequestHeader digunakan untuk mengatur header HTTP pada object XMLHttpRequest dan mengatur
+                  
+                  header "Content-Type", ke "application/json/charset=UTF-8"
+                    yang menunjukan bahwa konten yang dikirim adalah format JSON
 
+                return false
+                    agar sendData(data)
+                    mencegah formulir secara otomatis melakukam tindakan default saat tombol "sumbit" ditekan
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>mengirim data ke server</summary>
             <pre>    
+                pengiiriman dara tersebut hanya untuk simulasi. data tidak benar benar akan terkirim ke server
+                "https://jsonplaceholder.typicode.com/posts"
 
+                function sendData() {
+                    var xhr = new XMLHttpRequest();
+                    var url = "https://jsonplaceholder.typicode.com/posts";
+        
+                    var data = JSON.stringify({
+                        title: document.getElementById("title").value,
+                        body: document.getElementById("body").value,
+                        userId: 1
+                    });
+        
+                    xhr.open("POST", url, true);
+                    xhr.setRequestHeader("Content-Type", "application/json;charset=UTF-8");
+                    xhr.onload = function() {
+                        console.log(this.responseText)
+                        let datas = document.createElement("p")
+                        datas.innerHTML = this.responseText
+                        document.getElementById("hasil").append(datas)
+                    };
+                    xhr.send(data);
+                    return false;
+                }
             </pre>
         </details>
 
@@ -45,7 +78,7 @@
         </p>
         <p>
             <label for="body">Isi Artikel</label><br>
-            <textarea id="body" placeholder="isi artikel.." cols="50" rows="10"></textarea>
+            <textarea id="body" placeholder="isi artikel.." cols="50" rows="10" spellcheck="false"></textarea>
         </p>
         <input type="submit" value="kirim">
     </form>

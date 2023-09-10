@@ -8,14 +8,18 @@
     <link rel="stylesheet" href="../../z-files/css/style-js.css">
     <style>
         #hasil {border: 1px solid black; width: 200px; display: flex; justify-content: center; flex-direction: column; text-align: center;}
-        #hasil img {border-radius: 50%; height: 100px; width: 100px}
+        #hasil img {border-radius: 50%; height: 100px; width: 100px; margin: 15px auto;}
+        h4, h5 {margin: 3px 0 0 0; padding-bottom: 5px;}
+        h5 {border-bottom: 1px solid;}
     </style>
 </head>
 <body>
     <a href="../00 - main.html">back js...</a><br /><br>
     <a href="main.html">main.html</a>
     <a href="main2.html">main2.html</a>
-    <a href="main3.html">main3.html</a><br>
+    <a href="main3.html">main3.html</a>
+    <a href="main4.html">main4.html</a>
+    <a href="main5.html">main5.html</a><br>
 
     <div class="deskirpsi">
 
@@ -55,7 +59,7 @@
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>JSON.parse = mengubah string menjadi object</summary>
             <pre>
                 var data = JSON.parse(this.responseText);
                     fungsi JSON.parse()
@@ -114,9 +118,9 @@
                             // mengambil data img,  name, bio
                             var img = document.createElement("img"); // data.avatar_url
                             img.src = data.avatar_url;
-                            var name = document.createElement(("h3")); // data.name
+                            var name = document.createElement(("h4")); // data.name
                             name.innerHTML = data.name;
-                            var bio = document.createElement("h4"); // data.bio
+                            var bio = document.createElement("h5"); // data.bio
                             bio.innerHTML = data.bio;
         
                             // mengappend img,name,bio ke dalam elemen id hasil, dan mengubah value button menjadi done
@@ -167,9 +171,9 @@
                     // mengambil data img,  name, bio
                     var img = document.createElement("img"); // data.avatar_url
                     img.src = data.avatar_url;
-                    var name = document.createElement(("h3")); // data.name
+                    var name = document.createElement("h4"); // data.name
                     name.innerHTML = data.name;
-                    var bio = document.createElement("h4"); // data.bio
+                    var bio = document.createElement("h5"); // data.bio
                     bio.innerHTML = data.bio;
 
                     // mengappend img,name,bio ke dalam elemen id hasil, dan mengubah value button menjadi done
