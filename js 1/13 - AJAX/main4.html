@@ -10,12 +10,15 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
 </head>
 <body>
-    <a href="../00 - main.html">back js...</a><br /><br>
-    <a href="main.html">main.html</a>
-    <a href="main2.html">main2.html</a>
-    <a href="main3.html">main3.html</a>
-    <a href="main4.html">main4.html</a>
-    <a href="main5.html">main5.html</a><br>
+    <nav>
+        <a href="../00 - main.html">back js...</a><br /><br>
+        <a href="main.html">AJAX.menampilkan data</a>
+        <a href="main2.html">AJAX.mengambil data</a>
+        <a href="main3.html">AJAX.mengirim data</a><br>
+        <a href="main4.html">JQuery</a>
+        <a href="main5.html">FETCH API</a>
+        <a href="main6.html">Axios</a><br>
+    </nav>
 
     <div class="deskirpsi">
 
@@ -41,28 +44,47 @@
                     $("#result").load("https://api.github.com/users/ariafatah0711");
                     maka id result akan menampilkan object dari api tsb
 
-                - 
+                    fungsi load() untuk mengambil bagian dari HTML untuk ditampilkan
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>mengambil data</summary>
             <pre>
+                - mengambil avatar_url, name, location menggunakan JQuery
 
+                    var url = "https://api.github.com/users/ariafatah0711";
+                    $.get(url, function(data, status) {
+                        $("#avatar").attr("src", data.avatar_url);
+                        $("#name").text(data.name);
+                        $("#location").text(data.location);
+                    });
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>mengirim data</summary>
             <pre>    
-          
+                - mengirim data title, body, userId
+
+                    var url = "https://jsonplaceholder.typicode.com/posts";
+                    var data = {
+                        title: "Ini adalah contoh AJAX dengan JQuery",
+                        body: "Ini adalah body",
+                        userId: 1
+                    };
+            
+                    $.post(url, data, function(data, status) {
+                        // data terkirim, lakukan sesuatu di sini
+                        console.log("data terkirim");
+                    })
             </pre>
         </details>
 
     </div><br>
 
-    <h1>Load data</h1>
-    <!-- <pre id="result"></pre> -->
+    <h1>JQuery Load data</h1>
+    <pre id="result"></pre>
 
     <img src="" id="avatar" width="100" height="100">
     <br>
@@ -70,17 +92,32 @@
     <p id="location"></p>
 
     <script>
-        // $("#result").load("https://api.github.com/users/ariafatah0711");
+        // menampilkan data
+        $("#result").load("https://api.github.com/users/ariafatah0711");
 
-        var url = "https://api.github.com/users/ariafatah071";
+        // mengambil data
+        var url = "https://api.github.com/users/ariafatah0711";
         $.get(url, function(data, status) {
             $("#avatar").attr("src", data.avatar_url);
             $("#name").text(data.name);
             $("#location").text(data.location);
         });
+
+        // mengirim data
+        var url = "https://jsonplaceholder.typicode.com/posts";
+        var data = {
+            title: "Ini adalah contoh AJAX dengan JQuery",
+            body: "Ini adalah body",
+            userId: 1
+        };
+
+        $.post(url, data, function(data, status) {
+            // data terkirim, lakukan sesuatu di sini
+            console.log("data terkirim");
+        });
     </script>
 
-    <script src="script2.js"></script>
+    <!-- <script src="script2.js"></script> -->
     
 </body>
 </html>

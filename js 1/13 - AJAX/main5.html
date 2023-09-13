@@ -8,45 +8,136 @@
     <link rel="stylesheet" href="../../z-files/css/style-js.css">
 </head>
 <body>
-    <a href="../00 - main.html">back js...</a><br /><br>
-    <a href="main.html">main.html</a>
-    <a href="main2.html">main2.html</a>
-    <a href="main3.html">main3.html</a>
-    <a href="main4.html">main4.html</a>
-    <a href="main5.html">main5.html</a><br>
+    <nav>
+        <a href="../00 - main.html">back js...</a><br /><br>
+        <a href="main.html">AJAX.menampilkan data</a>
+        <a href="main2.html">AJAX.mengambil data</a>
+        <a href="main3.html">AJAX.mengirim data</a><br>
+        <a href="main4.html">JQuery</a>
+        <a href="main5.html">FETCH API</a>
+        <a href="main6.html">Axios</a><br>
+    </nav>
 
     <div class="deskirpsi">
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>FETCH API</summary>
             <pre>    
+                - fetch artinya mengambil. metode fetch bisa jadi alternatif untuk ajax
+                - perbedaan XMLHttpRequest dengan JQuery adalah
+                    1. fetch bisa mengembalikan sebuah promise
+                    2. secara bawaan(default), fetch tidak akan menerima cookie dari server server
+                    3. fetch dapat digunakan di web browser dan juga nodeJs dengan modul node-fetch
 
+                - fungsi then, catch, response
+                    fetch("https://api.example.com/data")
+                    .then((response) => {
+                    // response
+                    if (!response.ok) {
+                        throw new Error("Network response was not ok");
+                    }
+                    return response.json; // if true response atau jika benar diresponse
+                    })
+                    .then((data) => {
+                    console.log(data); // melakukan sesuatu dengan data yang diterima
+                    })
+                    .catch((error) => {
+                    console.error("there was a problem with the fetch operation", error);
+                    });
+
+                    - respsonse berisi response HTTP dari permintaan yang anda lakukan
+                        - object respons memilki banyak format tertentu
+                            1. response.text()
+                            2. response.json()
+                            3. response.formData()
+                            4. response.blob()
+                        - anda juga dapat memeriksa status HTTP header, body dari response seperti status OK
+                    
+                    - pemanggilan
+                        .fetch() adalah metode yang digunakan pada object
+                        .catch() adalah metode yang digunakan untuk menangani kesalaha
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>load content menggunakan fetch</summary>
             <pre>
-
+                function loadContent() {
+                    var url = "https://jsonplaceholder.typicode.com/posts/";
+                    fetch(url)
+                      .then((Response) => Response.json())
+                      .then(function (data) {
+                        var template = data.map((post) => {
+                          return `/
+                                  &lt;h3&gt;${post.title}&lt;/h3&gt;
+                                  &lt;p&gt;${post.body}&lt;/p&gt;
+                                  &lt;hr&gt;
+                                  `;
+                        });
+                        document.getElementById("hasil").innerHTML = template.join("&lt;br&gt;");
+                      })
+                      .catch(function (e) {
+                        alert("gagal mengambil data");
+                      });
+                  }
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>mengatur beberapa opsi fetch</summary>
             <pre>    
-          
+                fetch("http://example.com/movies/.json")
+                .then(function (response) {
+                    return response.json;
+                })
+                .then(function (myJson) {
+                    console.log(JSON.stringify(myJson));
+                });
+
+                fetch(url, {
+                method: "POST", // GET, POST, PUT, DELETE, etc
+                mode: "cors", // no-cors, cors, *same-origin
+                chace: "no-chache", // *default, no-chache, reload, force-chace, only-if-chaced
+                credentials: "same-origin", // include, *same-origin, omit
+                headers: {
+                    "Content-type": "application/json",
+                    "Content-type": "application/x-www-form-urlencoded",
+                },
+                redirect: "follow", // manual, *follow, error
+                referrer: "no-referrer", // no-referrer, *client
+                body: JSON.stringify(data), // body data type must match "Content-type" header
+                }).then((response) => response.json()); // parser JSON response into native javascript object
             </pre>
         </details>
 
     </div><br>
 
-
+    <h1>FETCH API</h1>
+    <button onclick="loadContent()">load content</button>
+    <div id="hasil"></div>
 
     <script>
-
+        function loadContent() {
+            var url = "https://jsonplaceholder.typicode.com/posts/";
+            fetch(url)
+              .then((Response) => Response.json())
+              .then(function (data) {
+                var template = data.map((post) => {
+                  return `/
+                          <h3>${post.title}</h3>
+                          <p>${post.body}</p>
+                          <hr>
+                          `;
+                });
+                document.getElementById("hasil").innerHTML = template.join("<br>");
+              })
+              .catch(function (e) {
+                alert("gagal mengambil data");
+              });
+          }
     </script>
 
-    <!-- <script src="script.js"></script> -->
+    <!-- <script src="script2.js"></script> -->
     
 </body>
 </html>
