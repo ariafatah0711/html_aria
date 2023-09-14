@@ -13,16 +13,32 @@
     <div class="deskirpsi">
 
         <details class="deskripsi-container">
-            <summary>h</summary>
+            <summary>event</summary>
             <pre>
-  
+                - event adalah kejadian yang terjadi di halaman web
+                  misalnya
+                    - user melakukan scroll
+                    - user melakukan klick
+                    - halaman web di load
+                    - form di submit
+
+                - handle event
+                    1. menggunakan atribut
+                        &lt;button onclick="hello()"&gt;klik me&lt;/button&gt;
+                        ada juga selain onclick: onchange, onmouseover, onkeyup, onload.
+
+                    2. menggunakan method addeventListener()
+                        button.addEventListener("click", function() {
+                            // kode yang akan dijalankan disini
+                        });
+                        artinya button memilki event yang saat di click akan menjalankan fungsi
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>handle event</summary>
             <pre>    
-
+                event click
             </pre>
         </details>
         <details class="deskripsi-container">
@@ -34,6 +50,47 @@
 
     </div><br>
 
+    <div class="button">
+        <!-- menggunakan atribut -->
+        <button onclick="hello()">klik me</button>
+
+        <!-- menggunakan method -->
+        <button>hallo button</button>
+        <script>
+            button.addEventListener("click", function() {
+                // kode yang akan dijalankan disini
+                alert("hallo button")
+            });
+        </script>
+        <button onclick="hello()">klik me</button>
+        <button id="hello-ariafatah0711">hello ariafatah0711</button><hr>
+
+        <button id="btn-one">click</button>
+        <button id="btn-double">dblclick</button>
+    </div>
+
+    <div class="mouse">
+        <button id="btn-enter">mouse enter</button>
+        <button id="btn-hover">hover</button>
+        <button id="btn-out">mouse out</button>
+    </div>
+
+    <div class="keyboard">
+        <h1 id="keydown"></h1>
+        <h1 id="pressed"></h1>
+        <h1 id="keyup"></h1>
+    </div>
+
+    <div class="change">
+        <div id="info"></div>
+        <label for="buah">Pilih Buah</label>
+        <select name="buah" id="buah">
+            <option>apel</option>
+            <option>mangga</option>
+            <option>jeruk</option>
+        </select>
+    </div>
+    
     <script src="script.js"></script>
 
 </body>
