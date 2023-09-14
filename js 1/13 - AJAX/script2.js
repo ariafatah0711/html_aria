@@ -52,3 +52,14 @@ fetch("https://api.example.com/data")
 // ###################################################################################################3
 // axios
 axios.get("https://jsonplaceholder.typicode.com/posts");
+.then(function (response) {
+  // handle succes
+  console.log(response);
+})
+.catch(function (error) {
+  // handle error
+  console.log(error);
+})
+.then(function () {
+  // always execute
+})
