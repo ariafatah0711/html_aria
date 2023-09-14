@@ -26,15 +26,50 @@
             <summary>Axios</summary>
             <pre>    
                 - axios hampir mirip seperti fetch bedanya axios adalah sebuah libary sedangkan fetch adalah API yang tersedia di web browser
+                - libary axios
+                    &lt;script src="https://unpkg.com/axios/dist/axios.min.js"&gt;&lt;/script&gt;
 
-                
+                - contoh axios
+                    axios.get("https://jsonplaceholder.typicode.com/posts");
+                    .then(function (response) {
+                    // handle succes
+                    console.log(response);
+                    })
+                    .catch(function (error) {
+                    // handle error
+                    console.log(error);
+                    })
+                    .then(function () {
+                    // always execute
+                    })
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>load content menggunakan axios</summary>
             <pre>
-
+                function loadContent() {
+                    document.getElementById("btn-load").innerHTML = "Loading...";
+                    document.getElementById("btn-load").setAttribute("disable", "true");
+                    axios.get("https://jsonplaceholder.typicode.com/posts")
+                    .then(function (response) {
+                        var template = response.data.map(post => {
+                            return `
+                            &lt;h3&gt;${post.title}&lt;/h3&gt;
+                            &lt;p&gt;${post.body}&lt;/p&gt;
+                            &lt;hr&gt;
+                            `
+                        }).join("")
+                        document.getElementById("result").innerHTML = template;
+                    }).catch(function (error) {
+                        // handle error
+                        console.log(error)
+                    })
+                    .then(function () {
+                        document.getElementById("btn-load").innerHTML = "done;"
+                        document.getElementById("btn-load").removeAttribute("disable");
+                    })
+                }
             </pre>
         </details>
 
@@ -48,12 +83,35 @@
     </div><br>
 
     <h1>Axios</h1>
+    <button id="btn-load" onclick="loadContent()">load content</button>
+    <div id="result"></div>
 
     <script>
-        
+        function loadContent() {
+            document.getElementById("btn-load").innerHTML = "Loading...";
+            document.getElementById("btn-load").setAttribute("disable", "true");
+            axios.get("https://jsonplaceholder.typicode.com/posts")
+            .then(function (response) {
+                var template = response.data.map(post => {
+                    return `
+                    <h3>${post.title}</h3>
+                    <p>${post.body}</p>
+                    <hr>
+                    `
+                }).join("")
+                document.getElementById("result").innerHTML = template;
+            }).catch(function (error) {
+                // handle error
+                console.log(error)
+            })
+            .then(function () {
+                document.getElementById("btn-load").innerHTML = "done;"
+                document.getElementById("btn-load").removeAttribute("disable");
+            })
+        }
     </script>
 
-    <!-- <script src="script2.js"></script> -->
+    <script src="script2.js"></script>
     
 </body>
 </html>
