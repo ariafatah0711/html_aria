@@ -56,3 +56,8 @@ const info = document.getElementById("info");
 buah.addEventListener("change", function (e) {
   info.innerText = `anda memilih: ${e.target.value}`;
 });
+
+const textArea = document.getElementById("textarea");
+const result = document.getElementById("result");
+
+// textArea.addEventListener("change", function)

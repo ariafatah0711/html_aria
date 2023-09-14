@@ -36,15 +36,88 @@
         </details>
 
         <details class="deskripsi-container">
-            <summary>handle event</summary>
+            <summary>event click dan mouse</summary>
             <pre>    
-                event click
+                - event click
+                    btnlogin.addEventListener("click", function () {}) // berfungsi saat elemem di click
+                    btnlogin.addEventListener("dblclick", function () {}) // berfungsi saat elemem di click sebanyak dua kali
+
+                    contoh:
+                        document.getElementById("btn-one").addEventListener("click", function () {
+                            alert("click satu kali");
+                        });
+                        document.getElementById("btn-double").addEventListener("dblclick", function () {
+                            alert("click dua kali");
+                        });
+                  
+                - event mouse
+                    btn.addEventListener("mousedown", function (event) {}) // berfungsi saat tombol mouse ditekan
+                    btn.addEventListener("mouseup", function (event) {}) // berfungsi saat tombol mouse dilepas
+                    btn.addEventListener("mousemove", function (event) {}) // berfungsi saat mouse bergerak di atas elemen
+
+                    btn.addEventListener("mouseenter", function () {}) // berfungsi saat tombol mouse ditekan
+                    btn.addEventListener("mouseover", function () {}) // berfungsi saat mouse memasuki elemen
+                    btn.addEventListener("mouseleave", function () {}) // berfungsi saat mouse meninggalkan elemen setelah memasukinya
+                    btn.addEventListener("mouseout", function () {}) // berfungsi saat mouse meninggalkan elemen                    
+
+                    contoh:
+                        const btnEnter = document.getElementById("btn-enter");
+                        const btnHover = document.getElementById("btn-hover");
+                        const btnOut = document.getElementById("btn-out");
+
+                        btnEnter.addEventListener("mouseenter", function (event) {
+                        event.target.innerText = "mouse sudah masuk";
+                        });
+
+                        btnOut.addEventListener("mouseout", function (event) {
+                        event.target.innerText = "mouse sudah keluar";
+                        });
+
+                        btnHover.addEventListener("mouseover", function (event) {
+                        event.target.innerText = "mouse sudah di atas element";
+                        });
+
+                    fugsi event,target adalah untuk mengakses elemen html yang menjadi sumber event
             </pre>
         </details>
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>event keyboard dan change</summary>
             <pre>    
+                - event keyboard
+                    document.addEventListener("keydown", function (event) {}) // berfungsi saat pengguna menekan tombol keyboard
+                    document.addEventListener("keypress", function (event) {}) // berfungsi saat pengguna menekan dan melepaskan tombol keyboard
+                    document.addEventListener("keyup", function (event) {}) // berfungsi saat pengguna melepaskan tombol keyboard
+                    
+                    contoh:
+                        const keydown = document.getElementById("keydown");
+                        const pressed = document.getElementById("pressed");
+                        const keyup = document.getElementById("keyup");
+                        
+                        document.addEventListener("keydown", function (event) {
+                            keydown.innerText = `menekan: ${event.key}`;
+                        });
+                        
+                        document.addEventListener("keypress", function (event) {
+                           pressed.innerText = `menahan: ${event.key}`;
+                        });
+                        
+                        document.addEventListener("keyup", function (event) {
+                            keyup.innerText = `melepas: ${event.key}`;
+                        });
 
+                - event change
+                    buah.addEventListener("change", function (e) {}) // berfungsi untuk menangani perubahan yang terjadi dan meresponsenya
+
+                    contoh:
+                        const buah = document.getElementById("buah");
+                        const info = document.getElementById("info");
+
+                        buah.addEventListener("change", function (e) {
+                        info.innerText = `anda memilih: ${e.target.value}`;
+                        });
+
+                    contoh:
+                        
             </pre>
         </details>
 
@@ -76,9 +149,9 @@
     </div>
 
     <div class="keyboard">
-        <h1 id="keydown"></h1>
-        <h1 id="pressed"></h1>
-        <h1 id="keyup"></h1>
+        <h4 id="keydown">menekan:</h4>
+        <h4 id="pressed">menahan:</h4>
+        <h4 id="keyup">melepas:</h4>
     </div>
 
     <div class="change">
@@ -90,7 +163,12 @@
             <option>jeruk</option>
         </select>
     </div>
-    
+
+    <div class="change">
+        <div id="result"></div>
+        <textarea id="textarea" cols="30" rows="10"></textarea>
+    </div>
+
     <script src="script.js"></script>
 
 </body>
