@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// type data object => mirip tipe data dictionary
+    // berisi key dan value
+    let person = {
+        nama: "aria",
+        "first Name": "aria"
+    }
+
+// mengubah value
+    person["nama"] = "aria fatah"
+
+// menambahkan key, dan value
+    person["kelas"] = 11
+    person["umur"] = 17
+
+// mendelete propety
+    delete person["umur"] // mendelete key dan value
+
+    console.table(person)
+
+// mengambil data
+    console.info(`nama: ${person.nama}`)
+    console.info(`firstNama: ${person["first Name"]}`)
+    </script>
+
+</body>
+</html>
