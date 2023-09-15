@@ -18,16 +18,43 @@
     <div class="deskirpsi">
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>event form</summary>
             <pre>
-
+                - event pada form
+                    formLogin.addEventListener("submit", function(event) {}) // berfungsi saat button dengan id submit di klick
+                    formLogin.addEventListener("reset", function() {}) // berfungsi saat button dengan id reset di klick
             </pre>
         </details>
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>membuat event form login</summary>
             <pre>    
+                - script membuat fungsi submit yang tidak me reload page dan mengambil data username dan ditampilkan
+                - dan membuat event reset yang kalo di klik akan mengubah isi teks p
+                    const formLogin = document.getElementById("form-login");
+                    const feedbackMessage = document.getElementById("feedback");
+            
+                    // mendengarkan event submit pada form
+                    formLogin.addEventListener("submit", function(event) {
+                        event.preventDefault(); // berfungsi agar saat disubmit page tidak di reload
+                        const data = new FormData(event.target);
+                        feedbackMessage.innerHTML = `login dengan username &lt;code&gt;target("username")}&lt;/code& dikirim!`
+                    )
+            
+                    // mengengarkan event reset pada form
+                    formLogin.addEventListener("reset", function() {
+                        feedbackMessage.textContent = "form dibersihkan!";
+                    })
 
+                - fungsi preventDefault 
+                    adalah agar saat button dengan id submit di klick tidak akan melakukan reload
+
+            - fungsi const data = new FormData(event.target);
+                    - formData digunakan untuk mengumpulkan data yang telah disini
+                        formData(event.target); yang mengacu id form Login
+
+                    - lalu dipanggil menggunakan 
+                        data.get("username") // maka output akan mengahasilkan value username
             </pre>
         </details>
 

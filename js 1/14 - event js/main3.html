@@ -18,8 +18,31 @@
     <div class="deskirpsi">
 
         <details class="deskripsi-container">
-            <summary></summary>
+            <summary>Custom Event</summary>
             <pre>
+                - selain mendengarkan event yang ada kita juga dapat menciptakan event sendiri
+                - langkah membuat custom event
+                    1. membuat object baru dengan new event()
+                    2. mendengarkan event dengan method addEventListener()
+                    3. memicu atau triger dengan method dispatchEvent()
+
+                    // membuat object untuk custom event
+                    const namaObjectEvent = new Event("nama-event");
+                    
+                    // mendengarkan event
+                    domObject.addEventListener("nama-event", function () {});
+                    
+                    // memicu atau triger event
+                    domObject.dispatchEvent(namaObjectEvent);
+                    // atau bisa juga di triger pada object window dan document
+                    window.dispatchEvent(namaObjectEvent);
+                    document.dispatchEvent(namaObjectEvent);
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary>membuat custom event</summary>
+            <pre>    
 
             </pre>
         </details>
@@ -33,9 +56,14 @@
 
     </div><br>
 
-    <form action="">
+    <div id="message" style="display: none; background: lightgreen;">
+        pendaftaran berhasil
+    </div>
+    <button id="btn-submit"></button>
 
-    </form>
+    <script>
+ 
+    </script>
 
     <script src="script.js"></script>
 

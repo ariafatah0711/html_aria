@@ -56,3 +56,17 @@ const info = document.getElementById("info");
 buah.addEventListener("change", function (e) {
   info.innerText = `anda memilih: ${e.target.value}`;
 });
+
+// ######################################################################################################
+// custom event
+// membuat object untuk custom event
+const namaObjectEvent = new Event("nama-event");
+
+// mendengarkan event
+domObject.addEventListener("nama-event", function () {});
+
+// memicu atau triger event
+domObject.dispatchEvent(namaObjectEvent);
+// atau bisa juga di triger pada object window dan document
+window.dispatchEvent(namaObjectEvent);
+document.dispatchEvent(namaObjectEvent);
