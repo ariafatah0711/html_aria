@@ -43,7 +43,32 @@
         <details class="deskripsi-container">
             <summary>membuat custom event</summary>
             <pre>    
+                - script
+                    // membuat object custom event
+                    const eventRegisterCompleate = new Event("register-compleate");
+            
+                    // membuat object element dom
+                    const messageElement = document.getElementById("message");
+                    const btnSubmit = document.getElementById("btn-submit"); 
+            
+                    // handle untuk custom event
+                    document.addEventListener("register-compleate", function(e) {
+                        messageElement.style.display = "flex";
+                    });
+            
+                    // handle untuk submit event klick pada button
+                    btnSubmit.addEventListener("click", function(e) {
+                        // trigger custom event register-compleate
+                        document.dispatchEvent(eventRegisterCompleate);
+                    });
 
+                - cara kerjanya
+                    eventRegisterCompleate adalah variable yang berisi event register-compleate
+                    lalu register-compleate itu dibuat menjadi addEventListener yang memiliki fungsi menampilkan messageElement
+                    sama seperti function pada umumnya
+
+                    namun ini dipanggil menggunakan
+                        document.dispatchEvent(eventRegisterCompleate);
             </pre>
         </details>
 
@@ -59,10 +84,26 @@
     <div id="message" style="display: none; background: lightgreen;">
         pendaftaran berhasil
     </div>
-    <button id="btn-submit"></button>
+    <button id="btn-submit">daftar sekarang</button>
 
     <script>
- 
+        // membuat object custom event
+        const eventRegisterCompleate = new Event("register-compleate");
+
+        // membuat object element dom
+        const messageElement = document.getElementById("message");
+        const btnSubmit = document.getElementById("btn-submit"); 
+
+        // handle untuk custom event
+        document.addEventListener("register-compleate", function(e) {
+            messageElement.style.display = "flex";
+        });
+
+        // handle untuk submit event klick pada button
+        btnSubmit.addEventListener("click", function(e) {
+            // trigger custom event register-compleate
+            document.dispatchEvent(eventRegisterCompleate);
+        });
     </script>
 
     <script src="script.js"></script>
