@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// string template
+    let name = "aria fatah"
+    let kelas = 11
+    const template = `name: ${name} kelas: ${kelas}, sudah lulus: ${11 > 12}`
+
+    console.info(template)
+
+// multiline string
+    let multilineString = `
+nama: ${name}
+firstname: aria
+lastname: anom
+kelas: ${kelas}
+    `;
+
+    console.info(multilineString)
+    document.writeln("<pre>")
+    document.writeln(multilineString)
+    document.writeln("</pre>")
+
+// string format
+    console.info("baris ke 1 \nbaris ke 2") // \n => untuk membuat enter
+
+    console.info("nama \t\t: aria fatah") // \t => untuk membuat Tab
+    console.info("nama first \t: aria")
+    console.log("ini adalah karakter backslash \\") // ini adalah karakter backslash \
+    // teks \ ini akan dapat muncul
+
+    console.info("ini teks pertama \rini teks ke dua") // untuk membuat kursor kembali ke awal baris
+    console.log("ini teks dengan \bbackspace") // untuk mengahsilkan efek backspace, yaitu menghapus karakter sebelumnya
+    </script>
+    
+</body>
+</html>

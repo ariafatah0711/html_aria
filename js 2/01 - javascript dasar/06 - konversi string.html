@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// koversi string dan number
+    let value1 = "1"
+    let value2 = 1
+
+    let sum = value1 + value2
+    document.writeln(`<p> ${sum} </p>`) // 11 => karena var pertama string jadi di anggepnya semuanya jadi string
+
+    value1 = parseInt("1")
+    value2 = 1
+    sum = value1 + value2
+    document.writeln(`<p> ${sum} </p>`) // 2 => karena var pertama string telah diubah menjadi integer
+
+    document.writeln(`<p> ${parseInt("1.5")} </p>`) // angka bulat
+    document.writeln(`<p> ${parseFloat("1.5")} </p>`) // angka decimal
+    document.writeln(`<p> ${Number("1.5")} </p>`) // angka bulat / decimal
+
+    const a = 1
+    const b = 2
+    const total = a.toString() + b.toString()
+    document.writeln(`<p> ${total} </p>`) // 12 => karena 1 dan 2 telah diubah jadi string
+
+// Nan => not a number
+    document.writeln(`<p> ${parseInt("salah")} </p>`) // Nan
+    document.writeln(`<p> ${parseFloat("1.5teks")} </p>`) // 1.5 => karena int dan dloat jika ada teks dibelakangnya hanya akan di tampilkan yang angka saja
+
+    document.writeln(`<p> ${Number("10salah")} </p>`) // Nan => karena number tidak mentolelir
+
+    value1 = Number(5) // 5
+    value1 = Number("sepuluh") // NaN
+    let result = value1 + value2
+
+    document.writeln(`<p> ${result} </p>`) // Nan
+
+// isNaN() function
+    document.writeln(`<p> ${isNaN(result)} </p>`) // Nan
+    document.writeln(`<p> ${isNaN(1 + 2)} </p>`) // Nan
+    </script>
+
+</body>
+</html>
