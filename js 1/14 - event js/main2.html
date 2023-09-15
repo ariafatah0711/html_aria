@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 14 - event js</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <nav>
+        <a href="../00 - main.html">back js...</a><br />
+        <a href="main.html">event</a>
+        <a href="main2.html">event form</a>
+        <a href="main3.html">custom event</a><br>
+    </nav>
+
+    <div class="deskirpsi">
+
+        <details class="deskripsi-container">
+            <summary></summary>
+            <pre>
+
+            </pre>
+        </details>
+
+        <details class="deskripsi-container">
+            <summary></summary>
+            <pre>    
+
+            </pre>
+        </details>
+
+    </div><br>
+
+    <form action="" method="post" id="form-login">
+        <fieldset>
+            <legend>Login</legend>
+            <div>
+                <label for="username">username</label>
+                <input type="text" name="username" placeholder="username">
+            </div>
+            <div>
+                <label for="password">password</label>
+                <input type="password" name="password" placeholder="password">
+            </div>
+            <div>
+                <p id="feedback"></p>
+                <button type="submit">Login</button>
+                <button type="reset">clear</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <script>
+        const formLogin = document.getElementById("form-login");
+        const feedbackMessage = document.getElementById("feedback");
+
+        // mendengarkan event submit pada form
+        formLogin.addEventListener("submit", function(event) {
+            event.preventDefault(); // berfungsi agar saat disubmit page tidak di reload
+            const data = new FormData(event.target);
+            feedbackMessage.innerHTML = `login dengan username <code>${data.get("username")}</code> dikirim!`
+        })
+
+        // mengengarkan event reset pada form
+        formLogin.addEventListener("reset", function() {
+            feedbackMessage.textContent = "form dibersihkan!";
+        })
+    </script>
+
+    <!-- <script src="script.js"></script> -->
+
+</body>
+</html>
