@@ -11,7 +11,66 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
+// operasi artimatika
+        let result = 1 + 2; // 3
+        document.writeln("<p> 1 + 2 = " + result + "</p>")
+        let originalResult = result
+
+        result = result - 1 // 2
+        document.writeln("<p>" + originalResult + " - 1 = " + result + "</p>")
+        originalResult = 2
+
+        result = result * 2 // 4
+        document.writeln("<p>" + originalResult + " * 2 = " + result + "</p>")
+        originalResult = 4
+
+// operasi assigment
+    // result = result + 4 // 14
+        result += 10 // 14
+        document.writeln(`<p> result + 10 = ${result} </p>`) // 14
+
+// operasi unary
+    // + menandakan nilai positif
+        result = +1 // 1
+        document.writeln(`<p> ${result} </p>`) // 1
+
+    // - menandakan nilai negatif
+        result = -1 // -1
+        document.writeln(`<p> ${result} </p>`) // -1
+
+    // ++ increment, menaikan 1 angka
+        result++ // 0
+        document.writeln(`<p> ${result} </p>`) // 0
+
+    // -- decrement, menurunkan 1 angka
+        result-- // -1
+        document.writeln(`<p> ${result} </p>`) // -1
+
+// operasi perbandigan
+    // value: true or false
+        result = 5 == "5" // true => karena == hanya membandingkan nilai bukan typenya
+        document.writeln(`<p> ${result} </p>`) // true
+
+        result = 5 === "5" // false
+        document.writeln(`<p> ${result} </p>`) // false
+
+        result = 5 > 10 // false
+        result = 5 < 10 // true
+        result = 5 <= 5 // true
+
+// operasi logika
+    // && = and, || or, ! not
+        const nilaiUjian = 86
+        const nialaiAbsensi = 72
         
+        const lulusUjian = nilaiUjian > 80 // true
+        const lulusAbsensi = nialaiAbsensi > 75 // false
+
+        let lulus = lulusUjian && lulusAbsensi // false => karena true and false = yang berarti keuduanya tidak and
+        document.writeln(`<p> ${lulus} </p>`) // false
+
+        lulus = lulusUjian || lulusAbsensi // true => karena salah satu disana ada yang true
+        lulus = lulusUjian && !lulusAbsensi // true => karena lulus absensi yang tadinya false jadi !false/not false alias true
     </script>
 
 </body>
