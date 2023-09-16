@@ -11,27 +11,19 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// foor loop => suatu perulangan yang akan selalu di eksekusi selama kondisi terpenuhi
-    //for (statment ;kondisi ;post statment) {
-        // block perulangan
-    //}
-
-    /* // perulangan tak berhenti
-    for (; ;) {
-        alert("for loop tidak akan berhenti")
-    }
-    */
-
-    let counter = 1;
-    for (; counter <= 5;) {
+// while => perulangan yang lebih sederhana
+    let counter = 1
+    while (counter <= 5) {
         document.writeln(`<p>perulangan ke ${counter}</p>`)
         counter++
     }
 
-    // dapat disingkat menjadi
-    for (let i = 5; i >= 1; i--) {
-        document.writeln(`<p>perulangan ke ${i}</p>`)
-    }
+// do while => akan mengeksekusi terlebih dahulu baru mengecek kondisinya
+    counter = 1
+    do { //akan mengeksekusi 1 kali terlebih dahulu
+        document.writeln(`<p>perulangan ke ${counter}</p>`)
+        counter++
+    } while (counter <= 0) // jika true akan mengulang lagi jika false dia akan menutup
     </script>
 
 </body>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// break => menghentikan seluruh perulangan / percabangan
+    let counter = 1
+    while (true) {
+        document.writeln(`<p>perulangan ke ${counter}</p>`)
+        counter++
+
+        if (counter >= 5) {
+            break // akan keluar dari perulangan
+        }
+    }
+
+    for (let i = 1; i <= 10; i++) {
+        if (i % 2 === 0) {
+            continue // akan continue jika sisa i bagi 2 adalah 0 maka progam akan continue
+            // maka akan langsung pergi ke atas dan tidak mengeksekusi yang bawah
+        }
+        document.writeln(`<p>perulangan ganjil ke ${i}</p>`)
+    }
+    
+
+// continue => menghentikan satu perulangan dan akan melanjutkan perulangan / percabangan berikutnya
+    </script>
+
+</body>
+</html>
