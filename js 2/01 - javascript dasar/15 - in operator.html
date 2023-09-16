@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// in operator => untuk mengecek apakah sebuah propety ada di dalam object atau tidak
+    const person = {
+        firstName: "aria",
+        lastName: undefined
+    }
+
+    const result1 = "firstName" in person
+    if (result1) {
+        document.writeln(`<p>${person.firstName}</p>`)
+        document.writeln(result1)
+    }
+
+    // akan ttp true meski value undefine
+    const result2 = "firstName" in person
+
+    if (result2) {
+        document.writeln(`<p>${person.lastName}</p>`)
+        document.writeln(result2)
+    }
+
+// array
+    const nama = [null, "aria", undefined]
+    let hasil = 0 in nama
+    document.write(hasil)
+    </script>
+
+</body>
+</html>

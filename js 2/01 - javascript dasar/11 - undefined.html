@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// undefine => variable hanya tela dibuat
+    let nama;
+    if (nama === undefined) {
+        document.writeln(`<p>${nama}</p>`)
+    } else {
+        document.writeln(`<p>defined</p>`)
+    }
+
+// undefined array
+    nama = ["eko", "kurniawan"];
+    delete nama[0]
+
+    if (nama[0] === undefined) {
+        console.info("array undefined")
+    } else {
+        console.info("array defined")
+    }
+
+// undefine object
+    let person = {}
+        if (person === undefined) {
+            console.info("object undefined")
+        } else {
+            console.info("object defined")
+        }
+    </script>
+
+</body>
+</html>

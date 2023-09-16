@@ -59,6 +59,13 @@ var status = umur >= 18 ? "dewasa" : "anak - anak";
 
 console.log(status);
 
+// nullist coalescing
+var parameter;
+
+var data = parameter;
+var result = data ?? "ini adalah teks undefined/null";
+console.log(result);
+
 // percabangan nested(bercabang)
 var nilai = 85;
 if (nilai >= 70) {

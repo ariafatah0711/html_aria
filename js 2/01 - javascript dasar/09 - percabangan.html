@@ -12,7 +12,45 @@
 
     <script>
 // percabangan
-    
+    let exampValue = 90;
+
+    if (exampValue > 80) {
+        // if kondisi awal jika true progam block akan berjalan
+        document.writeln("<P>Good Job</p>")
+    } else {
+        // else kondisi selain dari kondisi if 
+        document.writeln("<p>Try angain Next year</p>")
+    }
+
+// percabangan else if => membutat banyak ekspresi
+    if (exampValue > 90) {
+        document.writeln("<P>A</p>")
+    } else if (exampValue > 80) {
+        document.writeln("<P>B</p>")
+    } else if (exampValue > 70) {
+        document.writeln("<P>C</p>")
+    } else {
+        document.writeln("<P>D</p>")
+    }
+
+// percabangan singkat
+    let umur = 17
+    var status = umur > 18 ? "dewasa" : "belum dewasa"
+
+    console.log(status)
+
+// percabangan switch
+    var day = "rabu"
+
+    switch(day){
+        case "senin":
+            console.log("ini hari senin")
+            break
+        case "selasa":
+            console.log("ini hari selasa")
+        default:
+            console.log("selain hari senin dan selasa")
+    }
     </script>
 
 </body>

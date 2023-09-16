@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// nullist = value null dan undefined / nilai kosong
+    let parameter;
+    
+    let data = parameter;
+    if (data === undefined || data === null) {
+        data = "nilai default"
+    }
+    document.writeln(`<p>${data}</p>`)
+    
+// menggunakan nullist coalescing
+    parameter = "aria"
+    data = parameter ?? "nilai default";
+
+    document.writeln(`<p>${data}</p>`)
+    </script>
+
+</body>
+</html>
