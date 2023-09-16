@@ -215,7 +215,7 @@ footer {
     padding: 0px 10px;
     font-size: 24px;
     border-radius: 30px;
-    border: 1px solid;
+    /* border: 1px solid; */
 }
 
 .icon i {width: 40px;}
@@ -229,12 +229,12 @@ footer {
 }
 
 .icon a:hover {
-    width: 150px;
+    /* width: 150px; */
     background-color: #2c3d57c9;
 }
 
 .icon a:hover p {
-    display: flex;
+    /* display: flex; */
     opacity: 1;
 }
 
