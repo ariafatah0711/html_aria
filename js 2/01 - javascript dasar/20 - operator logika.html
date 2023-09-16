@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// operator logika OR || membaca dari kiri dan kanan (atau)
+    // akan mengambil data kiri telebih dahulu
+    console.log("hello" || ""); // hello
+    console.log("" || []); // []
+    console.log("0" || "NOL"); // 0 => karena ini string kosong
+    console.log(0 || "NOL"); // NOL
+    console.log(null || null); // null
+    console.log(undefined || undefined); // undefined
+    console.log(0 || false); // false => 
+
+    const person = {
+        firstName: "aria",
+        lastName: "fatah"
+    }
+
+    const nama = person.firstName || person.lastName
+    console.log(nama + "\n\n")
+
+// operator logika AND || membaca dari kiri dan kanan (dan)
+    // akan mengambil data false jika true dua duanya akan mengambil truthy di kanan
+    console.log("hello" && ""); // ""
+    console.log("" && []); // ""
+    console.log("0" && "NOL"); // nol
+    console.log(0 && "NOL"); // 0
+    console.log(null && null); // null
+    console.log(undefined && undefined); // undefined
+    console.log(undefined && null); // null
+    </script>
+
+</body>
+</html>
