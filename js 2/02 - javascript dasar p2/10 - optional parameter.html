@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// optional parameter => di js kita tidak wajib mengisi value parameter
+    // jika value tidak di isi maka otomatis paramter akan bernilai undefined
+    function sayHello(firstName, middleName, lastName) {
+        console.info(firstName) // undefined jika tidak ada valuenya
+        console.info(middleName)
+        console.info(lastName)
+        console.log()
+    }
+    // jika di pemograman lain akan error
+    sayHello() // undefined, undefined, undefined
+    sayHello("aria") // aria, undefined, undefined
+    sayHello("aria", "fatah") // aria, fatah, undefined
+    </script>
+
+</body>
+</html>

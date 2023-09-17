@@ -14,9 +14,52 @@
 // return => mengembalikan nilai sebuah fungsi menjadi value
     // maksudnya saat kita buat suatu fungsi lalu mau ambil value fungsinya ternyata tidak ada valuenya (undefined)
     // return hanya dapat mengembalikan satu data namun jika ingin banyak dapat menggunakan array
-    
-    
-    </script>
+    function sayhello(firstName, lastName) {
+        const say = `hello ${firstName} ${lastName}` // ini value say
+        return say // maka nanti say hello akan menampilkan value say
+    }
+    sayhello("aria", "fatah") // ketika ini dipanggil ini tidak akan menghasilkan apapun karena di block fungsi tidak ada document.writeln()
+    const result = sayhello("aria", "fatah")
+    document.writeln(`<p>${result}</p>`)
+
+    // return lebih dari satu dengan percabangan
+    function getFinalScore(value) {
+        if (value > 90) {
+            return "A"
+        } else if (value > 80) {
+            return "B"
+        } else if (value > 70) {
+            return "C"
+        } else {
+            return "D"
+        }
+    }
+    const aria = getFinalScore(96)
+    const fadly = getFinalScore(85)
+    const zaky = getFinalScore(59)
+
+    document.writeln(`<p>${aria}</p>`)
+    document.writeln(`<p>${fadly}</p>`)
+    document.writeln(`<p>${zaky}</p>`)
+
+// menghentikan eksekusi dengan return
+    // saat kita menggunakan kata kunci return maka kode setelah return tidak akan di eksekusi
+    function isContent(array, searchValue) {
+        for (let element of array) {
+            console.info(`find: ${searchValue}.  found: ${element}`)
+            if (element === searchValue) {
+                return true; // ketika telah menemukan data array yang ada pada array maka akan langsung nge return true
+            }
+        }
+        return false; // jika for tidak menemukan sama sekali maka dia akan melanjutkan progam ini dan menghasilkan false
+    }
+    listAngka = [1, 2, 3, 4, 5, 6, 7 ,8 ,9 ,10]
+    console.info(isContent(listAngka, 5))
+    console.info(isContent(listAngka, 20)) // false karena saat dia for dia tidak mereturn apapun lalu karena block lanjut dia ke return false
+
+    find = 15
+    document.writeln(`<p>find ${find} in listAngka: ${isContent(listAngka, find)}</p>`)
+</script>
 
 </body>
 </html>
