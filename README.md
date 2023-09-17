@@ -1,4 +1,14 @@
-# **1. membuat branch dan menjadikan situs**
+# **1. My Learn Html, Css, JS**
+## 💡 About the project
+- ini adalah file folder tempat saya belajar HTML, CSS, JS.
+
+## 🚀 Getting started
+- preview:
+  <img float="left" src="https://i.imgur.com/Vyl8cA6.jpeg">
+
+- cek websitenya [disini](https://ariafatah0711.github.io/html_aria/)
+
+# **2. membuat branch dan menjadikan situs**
 
 1. buka resipotori anda di github, klik menu <b>branch</b> di sebelah kiri nama resipotori anda
 2. dan tulis nama branchnya, dan klik <b>"create branch"</b>
@@ -24,7 +34,7 @@
 
 <hr />
 
-# **2. git pada vs code**
+# **3. git pada vs code**
 - git untuk mengambil resipotori, mengirim resipotori, dan mengecheck perubahan commit, dll
 ```
 $ git clone #membuat salinan dari resipotory git yang sudah ada di server
