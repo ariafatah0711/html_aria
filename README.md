@@ -1,10 +1,11 @@
 # **1. My Learn Html, Css, JS**
 ## 💡 About the project
 - ini adalah file folder tempat saya belajar HTML, CSS, JS.
+- file ini di pelajari dari berbagai layanan seperti petani kode, kelas terbuka, mimo, dll.
 
 ## 🚀 Getting started
 - preview:
-  <img float="left" src="https://i.imgur.com/Vyl8cA6.jpeg">
+  <img float="left" src="https://ariafatah0711.github.io/portofolio_v.1/image/project-2.png">
 
 - cek websitenya [disini](https://ariafatah0711.github.io/html_aria/)
 
