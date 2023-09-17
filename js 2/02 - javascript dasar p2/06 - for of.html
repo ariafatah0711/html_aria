@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// for of =>  mengiterasi seluruh value array (tidak bisa di object)
+    // yang diambil valuenya
+    const nama = ["aria", "fatah", "anom"]
+
+    for (let namas of nama) {
+        document.writeln(`<p>${namas}</p>`)
+    }
+
+    // mengambil 1 huruf
+    const fullname = "aria fatah"
+
+    for (let character of fullname) {
+        document.writeln(`<p>${character}</p>`)
+    }
+    </script>
+
+</body>
+</html>
