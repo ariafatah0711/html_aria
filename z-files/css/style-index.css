@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
 * {
     margin: 0px;
     box-sizing: border-box;
     color: black;
     text-decoration: none;
-    font-family: 'Times New Roman', Times, serif;
+    /* font-family: 'Times New Roman', Times, serif; */
+    font-family: 'Poppins', Tahoma ,sans-serif;
 }
 
 body {
@@ -45,7 +48,7 @@ header {
     justify-content: center;
     align-items: center;
     text-align: center;
-    text-shadow: 0px 2px 3px rgba(0, 0, 0, 1);
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
 }
 
 .header-back, .header-back a, .header-title {
@@ -61,7 +64,7 @@ header {
     padding: 0px 20%;
     border-radius: 20px;
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.1);
-    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 0px 2px 3px rgba(0, 0, 0, 0.2);
     background-color: #008081;
 }
 
@@ -218,7 +221,7 @@ footer {
     /* border: 1px solid; */
 }
 
-.icon i {width: 40px;}
+.icon i {width: 40px; opacity: 0.5; transition: all 0.5s ease;}
 
 .icon a p {
     display: none;
@@ -235,6 +238,10 @@ footer {
 
 .icon a:hover p {
     /* display: flex; */
+    opacity: 1;
+}
+
+.icon a:hover i {
     opacity: 1;
 }
 
@@ -256,6 +263,11 @@ footer {
     background-color: #0081818c;
     transform: scale(0.9);
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.05);
+}
+
+header .header-title {transition: all 0.3s ease;}
+header .header-title:hover {
+    color: red;
 }
 
 /* menhilangkan efek biru pada saat klik link di mobile */
