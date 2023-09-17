@@ -76,5 +76,5 @@ $ git stashh
 * daripada duitnya ga diipake mending donate kesini☕
 ------
   
-<a href="https://saweria.co/ariafatah0711"><img src="https://w7.pngwing.com/pngs/207/1009/png-transparent-donation-box-anime-saisen-otaku-it-otaku-television-mammal-brown.png" alt="donate banh" height="300" width="300"></a>
+<a href="https://saweria.co/ariafatah0711"><img src="https://github.com/ariafatah0711/ariafatah0711/raw/main/asset/Donate-Box-PNG.png" alt="donate banh" height="300" width="300"></a>
 ------
