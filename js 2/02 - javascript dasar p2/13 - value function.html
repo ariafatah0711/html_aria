@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// function sebagai value => function bisa dimasukan variable,sebagai value, dan bisa di kirim melalui parameter function lainya
+    function sayHello(nama) {
+        document.writeln(`<p>hello ${nama}</p>`)
+    }
+    let say = sayHello;
+
+    sayHello("ariafatah")
+    say("aria")
+
+// callback
+    function giveMeName(callback) {
+        callback("eko")
+    }
+
+    giveMeName(sayHello)
+    giveMeName(say)
+    </script>
+
+</body>
+</html>

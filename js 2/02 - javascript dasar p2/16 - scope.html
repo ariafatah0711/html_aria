@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// scope => merupakan area akses sebuah data
+    // global scope => dapat di akses diluar atau di dalam scope
+    let counter = 0 // global
+
+    function hitMe() {
+        // local scope hitme
+        counter++ // we can access
+    }
+
+    hitMe()
+    hitMe()
+    console.log(counter)
+
+    // local scope => hanya dapat di akses dalam scope
+    let firstVariable = "pertama" // global
+    function first() {
+        // local scope first 
+        let firstVariable = "first"
+    }
+
+    function last() {
+        // local scope last
+        let lastVariable = "last"
+        // console.info(firstVariable) // we can't access
+    }
+
+    first()
+    last()
+
+    console.info(firstVariable) // pertama => yang ke akses adalah global scope
+    // console.info(lastVariable) // we can't access
+
+// nested function scope
+    function first() {
+        let firstVariable = "first"
+
+        function second() {
+            console.info(firstVariable) // we can access local scope first
+        }
+
+        second()
+    }
+
+    first()
+    </script>
+
+</body>
+</html>

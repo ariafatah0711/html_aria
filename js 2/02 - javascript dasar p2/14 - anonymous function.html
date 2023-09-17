@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// anonymouns function => function tanpa nama (anonymous) bisa dibuat di dalam variable / parameter
+    // dimasukan ke dalam variable
+    let say = function (nama) {
+        document.writeln(`<p>hello ${nama}</P>`)
+    }
+    say("aria fatah")
+    say("ucup gans")
+
+    // dimasukan ke dalam parameter
+    function giveMeName(callback) {
+        callback("aria")
+    }
+
+    giveMeName(say)
+    giveMeName(function (nama) {
+        document.writeln(`<p>hello ${nama}</P>`)
+    })
+    </script>
+
+</body>
+</html>
