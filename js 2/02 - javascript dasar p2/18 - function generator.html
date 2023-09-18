@@ -11,7 +11,58 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
+// function generator => generator data yang berupa array dan bisa di iterasi namun tidak bisa dipanggil seperti array pada ummumnya
+    // membuat function generator dengan cara meanmbahkan * sesudah function
+    // mengembalikan dara di tiap iterasi menggunakan katakunci yield
+    function* createNames() {
+        yield "aria";
+        yield "fatah";
+        yield "anom";
+    }
 
+    console.info(createNames)
+    
+    const names = createNames()
+    console.info(names[1]) // undefine => karena dia bukan array
+
+    for (let name of names) {
+        console.log(name)
+    }
+
+// function generator kompleks
+// lazy
+    function* buatGanjil(value) {
+        for (let i = 1; i <= value; i++) {
+            if (i % 2 === 1) {
+                console.info(`yield ${i}`)
+                yield i
+            }
+        }
+    }
+    const numbers = buatGanjil(20)
+    for (let number of numbers) {
+        console.info(number)
+    }
+
+    console.log(" ")
+// eager
+    function buatGanjilArray(value) {
+        let result = []
+        for (let i = 1; i < value; i++) {
+            if (i % 2 === 1) {
+                console.info(`yield ${i}`)
+                result.push(i)
+            }
+        }
+        return result
+    }
+
+    let angka = buatGanjil(10)
+    buatGanjil(10) // ga kpanggil karena dia lazy
+    console.info(angka.next().value) // 1 kali eksekusi
+    console.info(angka.next().value) // 2 kali eksekusi
+
+    buatGanjilArray(10) // terpanggil karena dia eager
     </script>
 
 </body>
