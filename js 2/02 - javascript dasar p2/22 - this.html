@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// this => adalah referensi object pemilik function
+    // global scope = referensi ke global object = window
+    // this adalah undefined
+    // dalam event this merupakan element yang menerima event
+
+    console.info(this) // window
+    
+    function sample() {
+        console.info(this) // window
+
+        function inner() {
+            console.info(this) // window
+        }
+        inner()
+    }
+    sample()
+
+// this pada object method
+    const person = {
+        name: "aria",
+        sayhello: function (value) {
+            console.log(`hello ${value} my name is ${this.name}`) // person.name
+            console.log(person.name) // this.name
+            console.info(this) // person => object pemilik
+        }
+    }
+    person.sayhello("budi") // parameter value
+    </script>
+
+</body>
+</html>

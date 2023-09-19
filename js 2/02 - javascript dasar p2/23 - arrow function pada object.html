@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// arrow function pada object => arrow function tidak bisa digunakan untuk mengakses arguments, function generator,
+    // kata kunci this dan kata kunci super
+    const person = {
+        name: "aria",
+        sayHello1: (name) => {
+            console.info(`hallo ${name} my name is ${this.name}`) // kosong/aria tidak tampil karena menggunakan arrow function
+            console.info(this) // window
+        },
+        sayhello2: function (name) {
+            console.info(`hallo ${name} my name is ${this.name}`) // aria
+            console.info(this) // object
+        }
+
+    }
+    person.sayHello1("budi")
+    person.sayhello2("malik")
+    </script>
+
+</body>
+</html>
