@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// closure => kombinasi fuunction, yang mampu membuat function di local scope ke luar scope(global scope)
+    function createAdder(value) {
+        const owner = "eko"
+        function add(parameter) {
+            console.info(owner)
+            return value + parameter
+        }
+
+        return add
+    }
+
+    const addTwo = createAdder(2)
+    //function addtwo(parameter) {
+    //   console.info(owner)
+    //   return 2 + parameter
+    //}
+
+    const addTen = createAdder(10)
+    //function addtwo(parameter) {
+    //   console.info(owner)
+    //   return 10 + parameter
+    //}
+
+    console.info(addTwo(10)) // jadi create adder 2 memanggil add dengan paramter 0
+                             // lalu memanggil create adder yang berisi value 2 dan param 10
+                             // yang menghasilkan 12
+    console.info(addTwo(20))
+    </script>
+
+</body>
+</html>

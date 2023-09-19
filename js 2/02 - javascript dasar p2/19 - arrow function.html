@@ -11,7 +11,32 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// arrow function => 
+// arrow function => alternatif pembuatan function yang lebih sederhana dari function biasanya
+    // kekurangan arrow function => tidak ada argumen, tidak ada function generator, tidak bisa mengakses this, tidak bisa mengakses super(OOP)
+   let sayHello = (name) => {
+       let say = (`hello ${name}`)
+        console.info(say)
+    }
+    sayHello("eko")
+
+// arrow function tanpa block (hanya 1 baris)
+    sayHello = (name) => console.log(`hello ${name}`)
+    sayHello("malik")
+
+// arrow function return value
+    const sum = (first, second) => first + second
+    console.log(sum(5,10))
+
+// arrow function tanpa kurung parameter
+    sayHello = name => console.info(`hello ${name}`)
+    sayHello("aria")
+
+// arrow function sebagai parameter
+    function giveMeName(callback) {
+        callback("aria")
+    }
+
+    giveMeName((name) => console.info(`hello ${name}`))
     </script>
 
 </body>
