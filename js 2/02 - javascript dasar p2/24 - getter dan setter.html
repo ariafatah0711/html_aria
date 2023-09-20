@@ -10,10 +10,10 @@
 <body>
     <a href="./00 - main.html">back js list</a><br />
 
-    <script>
+    <!-- <script>
 // getter dan setter => function yang berbeda untuk mengambil data(getter), dan mengubah data (setter) pada sebuah propety di object
     // getter => mengambil data dan tidak boleh ada parameter
-    let person1 = {
+    let person = {
         firstName: "aria",
         lastName: "fatah",
 
@@ -24,29 +24,50 @@
         fullNames: function() { return `${this.firstName} ${this.lastName}` }
     }
 
-    // console.info(person1.fullNames()) // function => menjadi function
-    console.info(person1.fullName) // get => menjadi data object
+    // console.info(person.fullNames()) // function => menjadi function
+    console.info(person.fullName) // get => menjadi data object
 
     // setter
-    const person = {
+    person = {
         firstName: "aria",
         lastName: "fatah",
 
         get fullName() {
             return `${this.firstName} ${this.lastName}`
         },
-        
         set fullName(value) {
             // console.info("ubah fullName menjadi value")
-            const array = value.split(" ")
+            const array = value.split(` `)
             this.firstName = array[0]
             this.lastName = array[1]
         }
     }
     person.fullName = "zaki umar"
     console.table(person)
-
     
+    person.fullName = "zaki umar"
+    console.table(person)
+
+    person.fullName = "zaki umar"
+    console.table(person)
+    
+    </script> -->
+
+    <script>
+        const person = {
+            firstName: "aria",
+            lastName: "fatah",
+            get fullName() {
+                return `${this.firstName} ${this.lastName}`
+            },
+            set fullName(value) {
+                const array = value.split(" ");
+                this.firstName = array[0];
+                this.lastName = array[1];
+            }
+        }
+        person.fullName = "Budi Kurniawan"
+        console.table(person)
     </script>
 
 </body>
