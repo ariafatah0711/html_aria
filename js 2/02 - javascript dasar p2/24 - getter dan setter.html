@@ -11,7 +11,42 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// getter => merupakan
+// getter dan setter => function yang berbeda untuk mengambil data(getter), dan mengubah data (setter) pada sebuah propety di object
+    // getter => mengambil data dan tidak boleh ada parameter
+    let person1 = {
+        firstName: "aria",
+        lastName: "fatah",
+
+        get fullName() {
+            return `${this.firstName} ${this.lastName}`
+        },
+
+        fullNames: function() { return `${this.firstName} ${this.lastName}` }
+    }
+
+    // console.info(person1.fullNames()) // function => menjadi function
+    console.info(person1.fullName) // get => menjadi data object
+
+    // setter
+    const person = {
+        firstName: "aria",
+        lastName: "fatah",
+
+        get fullName() {
+            return `${this.firstName} ${this.lastName}`
+        },
+        
+        set fullName(value) {
+            // console.info("ubah fullName menjadi value")
+            const array = value.split(" ")
+            this.firstName = array[0]
+            this.lastName = array[1]
+        }
+    }
+    person.fullName = "zaki umar"
+    console.table(person)
+
+    
     </script>
 
 </body>
