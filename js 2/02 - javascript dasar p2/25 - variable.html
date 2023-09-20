@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// masalah variable var => tidak di rekemendasikan karena tidak memilki block scope
+    // artinya tidak mengikat local scope
+    let i = 20;
+
+    for (let i = 0; i < 10; i++) { // jika kita gunain tanpa let maka i yang di atas adalah variable aslinya
+        // local scope
+        console.log(`local ${i}`)
+    }
+
+    console.info(`global ${i}`)
+
+    // jika pake var
+    var j = 20;
+
+    for (var j = 0; j < 10; j++) { // jika kita gunain tanpa let maka i yang di atas adalah variable aslinya
+        // tetap global scope
+        console.log(`global ${j}`)
+    }
+
+    console.info(`global ${j}`)
+    </script>
+
+</body>
+</html>
