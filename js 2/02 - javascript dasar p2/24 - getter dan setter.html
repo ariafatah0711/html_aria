@@ -68,6 +68,28 @@
         }
         person.fullName = "Budi Kurniawan"
         console.table(person)
+
+const person = {
+    firstName: 'John',
+    lastName: 'Doe',
+    get fullName(){
+        return `${this.firstName} ${this.lastName}`;
+    },
+    set fullName(value){
+        const array = value.split(' ');
+        this.firstName = array[0]
+        this.lastName = array[1]
+    }
+};
+
+person.fullName = "budi abo";
+console.table(person);
+
+person.fullName = "budi santoso";
+console.table(person);
+
+person.fullName = "john Doe";
+console.table(person);
     </script>
 
 </body>
