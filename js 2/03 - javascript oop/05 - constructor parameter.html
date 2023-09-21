@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// parameter di constructor function => kita dapat menemabahkan parameter langsung di propetynya
+    function Person(firstName, lastName) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.sayHello = function (name) {
+            console.log(`hello ${name}, my name is ${`${this.firstName} ${this.lastName}`}`)
+        }
+    }
+
+    // dan langsung dapat dipanggil
+    const aria = new Person("aria", "fatah")
+    aria.sayHello("aria gans")
+
+    const malik = new Person("muhammad", "malik")
+    malik.sayHello("malik")
+
+    console.info(aria)
+    console.info(malik)
+    </script>
+
+</body>
+</html>

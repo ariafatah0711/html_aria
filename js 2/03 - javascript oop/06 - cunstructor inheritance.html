@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// constructor inheritance => memanggil constructor lain NamaConstractor.call(this, parameter)
+    // mencopy = mewarisi
+    function Employee(firstName) {
+        this.firstName = firstName
+        this.sayHello = function() {
+            console.log(`hello ${name}, my name is ${this.firstName}`)
+        }
+    }
+
+    function Manager(firstName, lastName) {
+        Employee.call(this, firstName) // memanggil seluruh function/block cunstractor lain
+        this.lastName = lastName
+    }
+
+    const eko = new Manager("eko", "khanedi")
+    console.info(eko)
+    </script>
+
+</body>
+</html>

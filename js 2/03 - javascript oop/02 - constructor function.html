@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// membuat constructor function => membuat classs sebagai cetakan, sehingga bisa membuat object dengan karasteristik berakali kali
+// tanpa harus mendeklarasikan object berakali kali
+    
+// membuat object dengan object
+    const aria = {
+        firstName: "aria",
+        lastName: "fatah"
+    }
+    const budi = {
+        firstName: "budi",
+        lastName: "nurgaha"
+    }
+
+// versi lama membuat constructor function (P harus besar p nya atau huruf awalnya)
+{
+    // propety pada crunstructor function
+    function Person() {
+        this.firstName = ""
+        this.lastName = ""
+    }
+    
+    const eko = new Person() // jadi eko memiliki propety firstname dan lastname
+    eko.firstName = "eko"
+    eko.lastName = "khanedy"
+
+    const bayu = new Person() // sama
+    bayu.firstName = "bayu"
+    bayu.lastName = "dayiro"
+    
+    console.info(eko)
+    console.info(bayu)
+}
+
+{
+    // method pada constructor function
+    function Person() {
+        this.firstName = ""
+        this.lastName = ""
+        this.sayHello = function (name) {
+            console.log(`hello ${name}, my name is ${this.firstName}`)
+        }
+    }
+    const eko = new Person()
+    eko.firstName = "aria fatah"
+    eko.sayHello("aria")
+}
+
+{
+    // parameter di constructor function => kita dapat menemabahkan parameter langsung di propetynya
+    function Person(firstName, lastName) {
+        this.firstName = firstName
+        this.lastName = lastName
+        this.sayHello = function (name) {
+            console.log(`hello ${name}, my name is ${`${this.firstName} ${this.lastName}`}`)
+        }
+    }
+
+    // dan langsung dapat dipanggil
+    const aria = new Person("aria", "fatah")
+    aria.sayHello("aria gans")
+
+    const malik = new Person("muhammad", "malik")
+    malik.sayHello("malik")
+
+    console.info(aria)
+    console.info(malik)
+}
+
+{
+    // constructor inheritance => memanggil constructor lain NamaConstractor.call(this, parameter)
+    // mencopy = mewarisi
+    function Employee(firstName) {
+        this.firstName = firstName
+        this.sayHello = function() {
+            console.log(`hello ${name}, my name is ${this.firstName}`)
+        }
+    }
+
+    function Manager(firstName, lastName) {
+        Employee.call(this, firstName) // memanggil seluruh function/block cunstractor lain
+        this.lastName = lastName
+    }
+
+    const eko = new Manager("eko", "khanedi")
+    console.info(eko)
+}
+    </script>
+
+</body>
+</html>
