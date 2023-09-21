@@ -261,12 +261,15 @@ footer {
 
 .header-back a:hover {
     background-color: #0081818c;
-    transform: scale(0.9);
+    transform: scale(0.95);
     box-shadow: 5px 10px 10px rgba(0, 0, 0, 0.05);
 }
 
-header .header-title {transition: all 0.3s ease;}
-header .header-title:hover {
+header .header-title a {
+    color: lavender;
+    transition: color 0.3s ease;
+}
+header .header-title a:hover {
     color: red;
 }
 
