@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// debugger => proses mencaari bug (masalah) yang biasa terjadi pada progam kita
+// dengan debugger kita bisa mengehentikan kode progam di posisi yang kita inginkan (break point)
+    // lalu meliat semua isi variable yang ada pada saat kode progam sedang berhenti (kaya pause dan play)
+
+    // debugger akan jalan kalau kita berada di inspek
+    function createFullName(firstName, middleName, lastName) {
+        const fullName = `${firstName} ${middleName} ${lastName}`
+        return fullName
+    }
+
+    const name = createFullName("aria", "fatah", "anom")
+    console.info(name)
+
+    function sum(...numbers) {
+        debugger;
+        let total = 0
+        for (let number of numbers) {
+            total += number;
+        }
+        return total
+    }
+
+    console.info(sum(1, 1, 1, 1, 1))
+
+    </script>
+
+</body>
+</html>

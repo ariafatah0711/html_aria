@@ -11,7 +11,26 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// strict mode => 
+// saat kita menjalankan progam javascript. secara default kita berajaln dalam mode tidak strict(sloppy mode)
+// strict mode => javascript error silent akan mejadi terlihat (true error), memperbaiki bbrp kesalahan pada javascript.
+    // menolak beberap kode perintah yang kedepanya akan digunakan di ECMScript
+
+    // menjalankan strict mode
+    function useStrictMode() {
+        'use strict';
+        const person = {
+            firstName: "aria"
+        }
+
+        // error
+        /*
+        with (person) {
+            console.info(firstName)
+        }
+        */
+    }
+
+    useStrictMode()
     </script>
 
 </body>
