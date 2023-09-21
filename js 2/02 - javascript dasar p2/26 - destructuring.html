@@ -7,12 +7,142 @@
     <title>js 2</title>
     <link rel="stylesheet" href="../../z-files/css/style-js.css">
 </head>
-<body>
+
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// destructuring => 
-    </script>
+// destructuring => membongkar value di array / object ke dalam variable
+    // mempermudah ketika mau mengambil data array tanpa mengambil satu persatu
+
+// list
+{
+    // => tanpa destructing
+    const name = ["aria", "fatah", "anom"]
+    let firstName = name[0]
+    let middleName = name[1]
+    let lastName = name[2]
+    
+    console.info(firstName)
+    console.log(middleName)
+    console.log(lastName)
+    
+    // => destructing
+    const names = ["aria", "fatah", "anom", "xi.tkj.4", 17, true]
+    let [firstNames, middleNames, lastNames, ...others] = names
+
+    console.info(firstNames)
+    console.log(middleNames)
+    console.log(lastNames)
+    console.log(others)
+
+    console.log(" ")
+}
+// object
+{   
+    // => object
+    const person = {
+        firstName: "eko",
+        lastName: "khamedy",
+        address: {
+            street: "jalan belum ada",
+            city: "jakarta",
+            country: "indonesia"
+        },
+        hoby: "Game",
+        chanel: "junior gaming"
+    }
+    
+    var {firstName, lastName, address, ...others} = person;
+    console.info(firstName)
+    console.log(lastName)
+    console.log(address)
+    console.log(others)
+
+    // jika mau ambil data di nested object namaObject: {propety, propety}
+    var {firstName, lastName, address: {country, city, street}, ...others} = person;
+    console.log(country, city, street)
+
+    console.log(" ")
+}
+
+// function
+{
+    function displayPerson(person) {
+        console.info(person.firstName)
+        console.log(person.middleName)
+        console.log(person.lastName)
+    }
+
+    const person = {
+        firstName: "aria",
+        middleName: "fatah",
+        lastName: "khamedi"
+    }
+
+    displayPerson(person)
+    console.log(" ")
+}
+
+{
+    // tanpa destructuring
+    function sum(array) {
+        return array[0] + array[1]
+    }
+
+    console.info(sum([1, 5]))
+
+    // menggunakan destructuring
+    function sum([first, second]) {
+        return first + second
+    }
+
+    console.log(sum([1, 5]))
+    console.log(" ")
+}
+{
+    // default value
+    const names = ["eko", undefined, "kurniawan"]
+    let [firstName = "data 1 kosong", middleName = "data 2 kosong", lastName = "data 3 kosong", ...others] = names
+
+    console.info(firstName)
+    console.log(middleName)
+    console.log(lastName)
+    console.log(" ")
+
+    const person = {
+        firstNames: "aria",
+        middleNames: "fatah",
+        lastNames: undefined
+    }
+
+    var {firstNames, middleNames, lastNames = "propety 3 kosong"} = person;
+    console.info(firstNames)
+    console.log(middleNames)
+    console.log(lastNames)
+
+    console.log(" ")
+}
+
+// nama variable lain di object
+{
+    const person = {
+        firstNames: "aria",
+        middleNames: "fatah",
+        lastNames: undefined
+    }
+
+    // menganti var destructuring
+    let {
+        firstNames: namaDepan = "data kosong",
+        middleNames: namaTengah = "data kosong",
+        lastNames: namaBelakang = "data kosong"
+    } = person
+
+    console.info(namaDepan)
+    console.log(namaTengah)
+    console.log(namaBelakang)
+}
+</script>
 
 </body>
 </html>

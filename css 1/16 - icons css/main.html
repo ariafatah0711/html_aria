@@ -5,11 +5,47 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>css 16 - icons css</title>
+    <style>
+        .icon {
+            border: 1px solid;
+            display: flex;
+            height: 50px;
+            width: 100%;
+        }
+        .icon i {
+            margin: auto;
+            transition: color 0.3s ease;
+        }
+        .icon i:hover {
+            color: red;
+        }
+    </style>
+    <!-- logo icon -->
+    <link rel="icon" href="../../z-files/image/logo.png" type="image/x-icon">
+    <!-- library fs = font awosome -->
+    <script src="https://kit.fontawesome.com/0d6ed94a1b.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <a href="../00 - main.html">back css...</a><br />
     
-    <small></small><br>
+    <small>
+        <pre>
+            &lt;script src="https://kit.fontawesome.com/0d6ed94a1b.js" crossorigin="anonymous"&gt;&lt;/script&gt;
+            - script atau kode untuk menghubungkan icon
+
+            - lalu tinggal buat elemen &lt;i&gt;&lt;/i&gt;
+            &lt;i class="fa-brands fa-github"&gt;&lt;/i&gt; =&gt; maka akan tampil icon github
+        </pre>
+    </small><br>
+
+    <footer>
+        <div class="icon">
+            <i class="fa-brands fa-github fa-2x"></i>
+            <i class="fa-brands fa-tiktok fa-2x"></i>
+            <i class="fa-brands fa-youtube fa-2x"></i>
+            <i class="fa-brands fa-instagram fa-2x"></i>
+        </div>
+    </footer>
 
 </body>
 </html>
