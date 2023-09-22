@@ -11,7 +11,83 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// protoype => 
+// protoype => pewarisan (saat kita membuat object dari constructor function, object tersebut disebut instance)
+    // semua propety baik itu value atau method akan berada di dalam instance objectnya
+    // misal ketika kita membuat constructor function Person maka akan ada Person.protoytpe
+    // saat buat object instance seacara otomatis object tersebut adalah turunanya
+        // untuk mengakses protoypt milih sebuah instance kita bisa menggunakan __proto__
+
+        // misal kita memiliki var eko yang mewarisi protoype dari person, dan person juga memilki protoype dari object.protoype
+    {
+        function Person(firstName, lastName) {
+            this.firstName = firstName
+            this.lastName = lastName
+            this.sayHello = function (name) {
+                console.log(`hello ${name}, my name is ${`${this.firstName} ${this.lastName}`}`)
+            }
+        }
+
+        const aria = new Person("aria", "fatah")
+        const malik = new Person("muhammad", "malik")
+
+    // akan dimasukan di object eko
+        // hanya meanmbah instance object eko (jadi si object malik tidak dpt function sayBye)
+        aria.sayBye = function () {
+            console.info("Good Bye")
+        }
+    
+    // akan di akses di __proto__
+        // menambahkan propety ke protoype
+        Person.prototype.sayBye = function () {
+            console.info("Good Bye!!")
+        }
+        Person.prototype.run = function () {
+            console.info(`${this.firstName} is running!!`)
+        }
+
+        console.info(aria)
+        console.info(malik)
+
+        // cara mengakses protoype inherirance
+            // ketika kita mengakses protoype. pertama akan di cek apakah di object tersebut terdapat protoype
+            //jika tidak maka akan di cek di __proto__, jika masih tidak ada maka akan di cek di __proto__ yang lebih tinggi
+            // sampai berakhir di object.__proto__. dan akan error jika ttp tidak ada
+
+        aria.sayBye() // akan mengakses yang saybye di eko
+        malik.sayBye() // akan mengakses yang saybye di __proto__ person
+        aria.run() // karena aria tidak memiliki method run maka akan di cek di proto dan jika ada maka akan tampil
+
+        console.log(" ")
+    }
+
+    {
+    // protoype inheritance => mewarisi protoype dari constructor/protoype lain
+        // protoype yang salah
+        function Employee(name) {
+            this.name = name
+        }
+
+        function Manager(name) {
+            this.name = name
+        }
+
+        Manager.prototype = Employee.prototype // jadi nanti fungsi sayhello akan mengambil yang employee
+
+        Manager.prototype.sayHello = function (name) {
+            console.info(`hello ${name} my name is Manager ${this.name}`) // fungsi ini tidak akan di panggil karena
+            // manager protoype adalah turunan dari employee. (jadi yang di ambil sayhello dari employee)
+        }
+
+        Employee.prototype.sayHello = function (name) {
+            console.info(`hello ${name} my name is Employee ${this.name}`)
+        }
+
+        const employeeBudi = new Employee("budi")
+        employeeBudi.sayHello("joko") // hasilnya akan employee budi
+
+        const managerEko = new Manager("eko")
+        managerEko.sayHello("joko") // hasilnya akan employee eko
+    }
     </script>
 
 </body>
