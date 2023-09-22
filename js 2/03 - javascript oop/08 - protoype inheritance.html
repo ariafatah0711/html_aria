@@ -11,34 +11,36 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-    {
-    // protoype inheritance => mewarisi protoype dari constructor/protoype lain
-        // protoype yang benar
-        function Employee(name) {
-            this.name = name
-        }
-
-        function Manager(name) {
-            this.name = name
-        }
-
-        Manager.prototype = Employee.prototype
-        
-        Manager.prototype.sayHello = function (name) {
-            console.info(`hello ${name} my name is Manager ${this.name}`) // fungsi ini tidak akan di panggil karena
-            // manager protoype adalah turunan dari employee. (jadi yang di ambil sayhello dari employee)
-        }
-
-        Employee.prototype.sayHello = function (name) {
-            console.info(`hello ${name} my name is Employee ${this.name}`)
-        }
-
-        const employeeBudi = new Employee("budi")
-        employeeBudi.sayHello("joko") // hasilnya akan employee budi
-
-        const managerEko = new Manager("eko")
-        managerEko.sayHello("joko") // hasilnya akan employee eko
+// protoype inheritance => mewarisi protoype dari constructor/protoype lain
+    // protoype yang benar
+    function Employee(name) {
+        this.name = name
     }
+
+    function Manager(name) {
+        this.name = name
+    }
+
+    Manager.prototype = Object.create(Employee.prototype) // bikin object baru yang isinya protoype si manager
+    
+    Manager.prototype.sayHello = function (name) {
+        console.info(`hello ${name} my name is Manager ${this.name}`) 
+    }
+
+    Employee.prototype.sayHello = function (name) {
+        console.info(`hello ${name} my name is Employee ${this.name}`)
+    }
+
+    const employeeBudi = new Employee("budi")
+    employeeBudi.sayHello("joko") // hasilnya akan employee budi
+
+    const managerEko = new Manager("eko")
+    managerEko.sayHello("joko") // hasilnya akan manager eko karena proto employeenya berada di dalam dan
+    // karena si manager sudah ada sayhello maka yang ditampilkan adalah milik si say hello kecuali dia tidak memiliki maka
+    // akan di akses oleh employee
+
+    console.info(Employee)
+    console.info(Manager)
     </script>
 
 </body>
