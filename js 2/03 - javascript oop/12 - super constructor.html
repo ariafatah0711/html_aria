@@ -11,7 +11,40 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// super constructor => 
+    // constructor inheritance hanyalah melakukan eksekusi constructor lain dengan tujuan agar propety dapat di tamabahkan
+// super constructor => mengambil propety dari constructor
+    class Employee {
+        constructor(firstname) {
+            this.firstname = firstname
+        }
+
+        sayHello(name) {
+            console.info(`HI ${name}, my name is employee ${this.firstname}`)
+        }
+    }
+
+    class Manager extends Employee {
+        constructor(firstname, lastname) {
+            super(firstname) // jadi saat kita memanggil first name di manager kita hanya perlu nulis ini
+            // dan otomatis akan di panggil dari parent si employee
+            this.lastname = lastname
+
+            // this.firstname = firstname // akan terjadi erorr jika memakai ini
+        }
+
+        sayHello(name) {
+            console.info(`Hello ${name}, my name is manager ${this.firstname} ${this.lastname}`)
+        }
+    }
+
+    const eko = new Employee("eko")
+    eko.sayHello("aria")
+
+    const budi = new Manager("budi", "ganteng")
+    budi.sayHello("aria")
+
+    console.info(eko)
+    console.info(budi)
     </script>
 
 </body>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// juga bisa ngakses method di parentnya (referensi dari prototype nya)
+    class Shape {
+        paint() {
+            console.info("paint Shape")
+        }
+    }
+
+    class Circle extends Shape {
+        paint() {
+            super.paint() // memanggil paint() method parent class
+            console.info("paint Circle")
+        }
+        paintRed() {
+            super.paint()
+            console.info("paint circle red")
+        }
+    }
+
+    const makeCircle = new Circle()
+    makeCircle.paint()
+    makeCircle.paintRed()
+    </script>
+
+</body>
+</html>

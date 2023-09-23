@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// class field => menambahkan propety class (public = di luar) (privat = !di luar)
+    // public => dapat di akses dari luar class, dan private hanya bisa diakses dari dalam class saja
+    // privat => hanya dapat di akses dari dalam class
+        // bisa pake value jika tidak ada valuneya maka akan undefined
+    class Customer {
+        firstName;
+        lastName;
+        balance = 0;
+
+        constructor(firstName, lastName) {
+            this.firstName = firstName
+            this.lastName = lastName
+        }
+
+        sayHello() {
+
+        }
+    }
+
+    const eko = new Customer("eko", "khanedi")
+    console.info(eko)
+    </script>
+
+</body>
+</html>

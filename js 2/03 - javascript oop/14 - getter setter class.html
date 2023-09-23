@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// ingat getter dan setter akan berada di prototype bukan di instance object
+    class Person {
+        constructor(firstName, lastName) {
+            this.firstName = firstName
+            this.lastName = lastName
+        }
+ 
+        get fullName() {
+            return `${this.firstName} ${this.lastName}`
+        }
+
+        set fullName(value) {
+            const result = value.split(" ")
+            this.firstName = result[0]
+            this.lastName = result[1]
+        }
+    }
+
+    const eko = new Person("eko", "khanedy")
+    console.info(eko)
+    console.info(eko.fullName)
+
+    eko.fullName = "aria fatah"
+    console.info(eko)
+    </script>
+
+</body>
+</html>

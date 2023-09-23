@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// privat method = privat method #(crash)
+    class Person {
+        say(name) {
+            if (name) {
+                this.#sayWithName(name)
+            } else {
+                this.#sayWithoutName()
+            }
+        }
+
+        #sayWithoutName() {
+            console.info("hello")
+        }
+        
+        #sayWithName(name) {
+            console.info(`hello ${name}`)
+        }
+    }
+
+    const aria = new Person()
+    aria.say("aria")
+    aria.say("eko")
+    // aria.#sayWithoutName() // tidak bisa di akses
+    </script>
+
+</body>
+</html>
