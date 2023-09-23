@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// method di class => akan di tambahkan di protoype nya dan bukan di istance obectnya
+    // karena itulah class lebih enak digunakan
+    class Person {
+        constructor(name) {
+            this.name = name
+            // tidak di rekomendasikan di taruh disini karena nanti yang ditaruh bukan di protonya
+            /*
+            this.sayHello = function(name) {
+                console.log(`hi ${this.name}`)
+            }
+            */
+        }
+
+        // akan ditambahkan di protoype (ekomondasi)
+        sayHello(name) {
+           console.log(`Hi ${name}, my name is ${this.name}`)
+        }
+    }
+
+    const eko = new Person("eko")
+    console.info(eko)
+    eko.sayHello("aria")
+    
+    const budi = new Person("budi")
+    console.info(budi)
+    budi.sayHello("aria")
+    </script>
+
+</body>
+</html>

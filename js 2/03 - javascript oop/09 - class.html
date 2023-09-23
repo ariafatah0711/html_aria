@@ -11,7 +11,110 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// class => merupakan
+// class => membuat propety tanpa constructor function (versi modern)
+{
+    class Person {
+        
+    }
+    
+    const eko = new Person()
+    console.info(eko)
+    console.log(" ")
+}
+
+// constructor function di class
+{
+    class Person {
+        constructor(name) {
+            // kode apapun
+            console.log(`membuat person ${name}`)
+        }
+    }
+
+    const eko = new Person("eko")
+    console.info(eko)
+
+    const budi = new Person("budi")
+    console.info(budi)
+    console.log(" ")
+}
+
+// propety di class
+{
+    class Person {
+        constructor(name) {
+            this.name = name
+        }
+    }
+
+    const eko = new Person("eko")
+    console.log(eko.name)
+
+    const budi = new Person("budi")
+    console.log(budi.name)
+    console.log(" ")
+}
+
+// method di class => akan di tambahkan di protoype nya dan bukan di istance obectnya
+    // karena itulah class lebih enak digunakan
+{
+    class Person {
+        constructor(name) {
+            this.name = name
+            // tidak di rekomendasikan di taruh disini
+            /*
+            this.sayHello = function(name) {
+                console.log(`hi ${this.name}`)
+            }
+            */
+        }
+
+        // akan ditambahkan di protoype
+        sayHello(name) {
+           console.log(`Hi ${name}, my name is ${this.name}`)
+        }
+    }
+
+    const eko = new Person("eko")
+    console.info(eko)
+    eko.sayHello("aria")
+    
+    const budi = new Person("budi")
+    console.info(budi)
+    budi.sayHello("aria")
+    console.log(" ")
+}
+
+// class inheritance => pewarisan dari class lainya
+    // namun hanya bisa memiliki satu parent class saja
+{
+    class Employee {
+        sayHello(name) {
+            console.info(`HI ${name}, my name is employee ${this.name}`)
+        }
+    }
+
+    class Manager extends Employee {
+        // semisal jika ini tidak memilki object sayhello yang di proto ini
+        // maka yang dipanggil adalah object sayHello yang employee(yang di warisi)
+        /*
+        sayHello(name) {
+            console.info(`Hello ${name}, my name is manager ${this.name}`)
+        }
+        */
+    }
+
+    const eko = new Employee()
+    eko.name = "eko"
+    eko.sayHello("aria")
+
+    const budi = new Manager()
+    budi.name = "budi"
+    budi.sayHello("aria")
+
+    console.info(eko)
+    console.info(budi)
+}
     </script>
 
 </body>
