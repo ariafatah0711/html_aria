@@ -266,6 +266,7 @@ footer {
 }
 
 header .header-title a {
+    opacity: 100%;
     color: white;
     transition: color 0.3s ease;
 }
