@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// static method => menaruh method milik si class bukan milik proto/ object
+    // namun dapat di akes di manapun (bersifat global)
+    class MathAria {
+
+        static sum(...numbers) {
+            let total = 0
+            for (const number of numbers) {
+                total += number
+            }
+            return total
+        }
+    }
+
+    const aria = new MathAria() //d object ini tidak memiliki method sum
+    // aria.sum(1, 2, 3, 4, 5) // akan error karena sum milik si MathAria
+
+    const sum = MathAria.sum(1, 2, 3, 4, 5) // sum milik si MathAria
+    console.info(sum) // 15
+    </script>
+
+</body>
+</html>

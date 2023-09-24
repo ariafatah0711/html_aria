@@ -266,7 +266,7 @@ footer {
 }
 
 header .header-title a {
-    color: lavender;
+    color: white;
     transition: color 0.3s ease;
 }
 header .header-title a:hover {

@@ -11,7 +11,51 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// operator instancof
+// operator instancof => mengecek apakah sebuah object merupakan instance dari class tertentu atau bukan
+// mirip seperti type of
+{
+    // mengetahui apakah object ini adalah class ini atau tidak
+    class Employee {
+        
+    }
+
+    class Manager {
+
+    }
+
+    const budi = new Employee()
+    const eko = new Manager()
+
+    console.info(typeof(budi)) // akan menampilkan object dan bukan mengecek class
+
+    console.info(budi instanceof Employee) // true karena budi berasal dari class Employee
+    console.log(budi instanceof Manager) // false
+
+    console.info(eko instanceof Employee) // false
+    console.log(eko instanceof Manager) // true karena eko berasal dari class Manager
+
+    console.log(" ")
+}
+
+{
+    // operator instanceof di class inheritance => mengecek apakah dia adalah class yang memilki parent/pewrisan
+    class Employee {
+
+    }
+
+    class Manager extends Employee {
+
+    }
+
+    const budi = new Employee()
+    const eko = new Manager()
+
+    console.info(budi instanceof Employee) // true karena budi berasal dari class Employee
+    console.log(budi instanceof Manager) // false
+
+    console.info(eko instanceof Employee) // true karena eko adalah turunan dari employee
+    console.log(eko instanceof Manager) // true karena eko berasal dari class Manager
+}
     </script>
 
 </body>

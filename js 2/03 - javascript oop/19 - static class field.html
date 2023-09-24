@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// static class field => saat kita membuat field maka akan ditambahkan di prototypenya
+    // namun jika pake static itu tidak akan terjadi
+        // saat di tambahkan maka akan dimasukan ke dalam objectnya bukan di proto/instance nya
+        // bersifat global dapat di akses dimanapun
+    // kesimpulanya static itu milik si configuration atau class nya bukan milik si object
+    class Configuration {
+        teks = "ini adalah teks yang berada di instance" // milik proto atau object
+        number = 15
+
+        static name = "belajar Javasript oop" // milik class dan akan tampil di class configuration
+        static version = 1.0
+        static author = "Aria Fatah"
+    }
+
+    console.info(Configuration)
+
+    const config = new Configuration()
+    console.info(config)
+    console.log(config.name) // undefined => karena name milik si configuration
+
+    // cara mengakses nya
+    Configuration.author = "muhammad malik"
+    console.log(Configuration.name) // dan dapat di akses dimanapun
+    console.log(Configuration.version)
+    console.log(Configuration.author) 
+    </script>
+
+</body>
+</html>
