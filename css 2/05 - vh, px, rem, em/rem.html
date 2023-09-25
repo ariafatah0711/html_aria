@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 04 - vh, px, rem, em</title>
+    <style>
+        section {
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid;
+        }
+
+        html {
+            font-size: 80%;
+        }
+        h1 {font-size: 2rem;}
+        h2 {font-size: 1.5rem;}
+        h3 {font-size: 1rem;}
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+
+    <nav><br>
+        <a href="main.html">vh</a>
+        <a href="px.html">px</a>
+        <a href="rem.html">rem</a>
+        <a href="em.html">em</a>
+    </nav><br>
+
+    <small>rem (root extensible messaging/ root em) : umengukur ukuran font elemen root (biasanya ada di html)</small><br>
+    <small>ini bersifat relatif</small><br>
+    <small>
+        dan ukuran defaultnya <b>16px</b> jika kita pakai 2 rem jadi <b>16*2 = 32</b>
+        namun saat kita mengubah di html font-size nya <b>50%</b> maka nanti akan jadi 8px per rem
+    </small><br>
+
+    <section>
+        <h1>Judul</h1>
+        <h2>subjudul</h2>
+        <h3>html: 75% => 1rem = 12<b>px</b></h3>
+        <h3>h1: 2rem = 12*2 = 24<b>px</b></h3>
+        <h3>h1: 1.5rem = 12*1.5 = 18<b>px</b></h3>
+        <h3>h3: 1rem = 12*1 = 12<b>px</b></h3>
+    </section>
+
+</body>
+</html>

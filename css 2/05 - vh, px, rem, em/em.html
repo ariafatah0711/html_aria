@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>css 04 - vh, px, rem, em</title>
+    <style>
+        section {
+            height: 500px;
+            width: 500px;
+            margin: 0 auto;
+            border: 1px solid;
+        }
+
+        .section-1 {
+            font-size: 20px;
+        }
+        .section-1 h1 {font-size: 2em;}
+        .section-1 h2 {font-size: 1.5em;}
+        .section-1 h3 {font-size: 1em;}
+
+        .section-2 {
+            font-size: 10px;
+        }
+        .section-2 h1 {font-size: 2em;}
+        .section-2 h2 {font-size: 1.5em;}
+        .section-2 h3 {font-size: 1em;}
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back css...</a><br />
+
+    <nav><br>
+        <a href="main.html">vh</a>
+        <a href="px.html">px</a>
+        <a href="rem.html">rem</a>
+        <a href="em.html">em</a>
+    </nav><br>
+
+    <small>em (extensible messaging) : umengukur ukuran font elemen namun bukan dari root melainkan induknya (div, dll)</small><br>
+    <small>ini bersifat relatif sesuai induknya atau parentnya</small><br>
+    <small>
+        contoh jika induknya memilki font size <b>20px</b> maka saat teks h1 di atur menjadi <b>2em</b>
+        akan menjadi 2*20 yaitu <b>40px</b> dan seterusnya <b>ingat em bukan rem</b>
+    </small><br>
+
+    <section class="section-1">
+        <h1>section 1: 20px</h1>
+        <h2>subjudul</h2>
+        <h3>section 1: 20px => 1em = 20<b>px</b></h3>
+        <h3>h1: 2em = 20*2 = 40<b>px</b></h3>
+        <h3>h1: 1.5em = 20*1.5 = 30<b>px</b></h3>
+        <h3>h3: 1em = 20*1 = 20<b>px</b></h3>
+    </section>
+
+
+    <section class="section-2">
+        <h1>section 2: 10px</h1>
+        <h2>subjudul</h2>
+        <h3>section 2: 10px => 1em = 10<b>px</b></h3>
+        <h3>h1: 2em = 10*2 = 20<b>px</b></h3>
+        <h3>h1: 1.5em = 10*1.5 = 15<b>px</b></h3>
+        <h3>h3: 1em = 10*1 = 10<b>px</b></h3>
+    </section>
+
+</body>
+</html>
