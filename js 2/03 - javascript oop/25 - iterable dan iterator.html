@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// iterable => spesial object yang => melakukan iterasi otomatis dengan menggunakan perulngan for...of
+    // saat kita melakuakn perulangan, object iterator akan dibuat, hal ini akan menjadi aman
+
+    /* typescript
+    interface IteratorYieldResult<TYield> {
+        done?: false;
+        value: TYield;
+    }
+
+    interface IteratorReturnieldResult<TYield> {
+        done?: true;
+        value: TReturn;
+    }
+
+    type IteratorResult<T, Treturn = any> = IteratorYieldResult<T> |  iteratorReturnResult<TReturn>;
+
+    interface Iterable<T> {
+        [Symbol.iterator](): Iterator<T>}
+    */
+
+    // kontrak counter iterator result
+    class CounterIterationResult {
+        constructor(value, done) {
+            this.value = value;
+            this.done = done;
+        }
+    }
+
+    // kontrak counter iteratornya
+    class CounterIteration {
+        constructor(value, max) {
+            this.value = value;
+            this.max = max;
+        }
+        
+        next() {
+            try {
+                if (this.value > this.max) {
+                    return new CounterIterationResult(this.value, true);
+                } else {
+                    return new CounterIterationResult(this.value, false);
+                }
+            } finally {
+                this.value++;
+            }
+        }
+    }
+
+    // counter iterable
+    class Counter {
+        constructor(value, max) {
+            this.value = value;
+            this.max = max;
+        }
+
+        [Symbol.iterator]() {
+            return new CounterIteration(this.value, this.max)
+        }
+    }
+
+    // cara menggunakan counter iterable
+    const counter = new Counter(1, 20)
+    for (const value of counter){
+        console.log(value)
+    }
+    </script>
+
+</body>
+</html>

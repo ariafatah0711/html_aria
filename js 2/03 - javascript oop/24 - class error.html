@@ -11,7 +11,42 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// class error => 
+// class error => turunan dari class error dan bisa ditambahkan message
+    class ValidationError extends Error { // class ValidationError dari parent/induk error
+        constructor(message, field) {
+            super(message) // artinya mencopy this.message di error
+            this.field = field // membuat error teks baru
+        }
+    }
+
+    class MathAria {
+        static sum(...numbers) {
+            if (numbers.length === 0) {
+                // throw new Error("total parameter harus lebih dari 0")
+                throw new ValidationError("total parameter harus lebih dari 0", "numbers")
+            } else {
+                let total = 0
+                for (const number of numbers) {
+                    total += number
+                }
+                return total
+            }
+        }
+    }
+
+    try {
+        var result = MathAria.sum()
+        console.info(result)
+    } catch (error) {
+        if (error instanceof ValidationError) {
+            // jika error ini termasuk dalam class validationError
+            console.warn(`terjadi error di field : ${error.field}, dengan error ${error.message}`)
+        } else {
+            console.warn(`Terjadi error : ${error.message}`)
+        }
+    } finally {
+        console.info("progam selesai")
+    }
     </script>
 
 </body>
