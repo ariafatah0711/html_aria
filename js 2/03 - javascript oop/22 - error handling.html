@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// error handling => saat terjadi error kita ingin progam kita tidak berhenti
+    // try cath statement => menangkap error
+    class MathAria {
+        static sum(...numbers) {
+            if (numbers.length === 0) {
+                // const error = new Error("total parameter harus lebih dari 0")
+                // atau
+                throw new Error("total parameter harus lebih dari 0")
+            } else {
+                let total = 0
+                for (const number of numbers) {
+                    total += number
+                }
+                return total
+            }
+        }
+    }
+
+    // progam gagal
+    try {
+        console.log(MathAria.sum()) // saat progam ini dijalankan dan ini terjadi error
+        console.info("progam ini tidak dijalankan jika terjadi error") // maka progam ini tidak jalan
+    } catch (error) {
+        console.warn(`Terjadi error : ${error.message}`) // dan akan mengeksekusi ini / pesan erorr
+    }
+
+    // namun saat block try berhasil jalan tanpa kesalahan maka catch tidak akan dijalankan
+    // erorr.message
+    console.log("aria \n\n")
+
+    // progam berhasil
+    try {
+        console.log(MathAria.sum(1, 1, 1, 1)) // saat progam ini dijalankan dan berhasil
+        console.info("progam telah selesai") // ini dijalankan
+    } catch (error) {
+        console.warn(`Terjadi error : ${error.message}`) // dan ini tidak akan dijalankan
+    }
+    console.log("finish")
+    </script>
+
+</body>
+</html>

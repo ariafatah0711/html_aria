@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// error => class error / super class untuk semua jenis error di javascript
+    // contoh : syntax error, type error, eval error, dll
+    // saat membuat instance object error, tidak lantas otomatis jadi error
+    // melempar error, throw error
+        // saat throw error terjadi kode akan otomatis akan terhenti
+    class MathAria {
+        static sum(...numbers) {
+            if (numbers.length === 0) {
+                // const error = new Error("total parameter harus lebih dari 0")
+                // atau
+                throw new Error("total parameter harus lebih dari 0")
+            } else {
+                let total = 0
+                for (const number of numbers) {
+                    total += number
+                }
+                return total
+            }
+        }
+    }
+
+    console.log(MathAria.sum(1,2,3))
+
+    const result = MathAria.sum(1, 2, 3, 4, 5)
+    console.log(result)
+
+    console.info(MathAria.sum()) // error
+    </script>
+
+</body>
+</html>

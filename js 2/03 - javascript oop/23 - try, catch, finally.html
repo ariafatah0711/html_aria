@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// try, catch, finnaly => progam untuk membuat error tetap lanjut saat dijalankan
+    // try => mencoba (progam yang ingin di test jika tidak ada error akan melwati catch)
+    // catch => progam yang tampil jika saat try ada kesalahan
+    // finally => progam yang akan jalan try dan catch selesai (entah terjadi error atau tidak akan tetap jalan)
+    class MathAria {
+        static sum(...numbers) {
+            if (numbers.length === 0) {
+                // const error = new Error("total parameter harus lebih dari 0")
+                // atau
+                throw new Error("total parameter harus lebih dari 0")
+            } else {
+                let total = 0
+                for (const number of numbers) {
+                    total += number
+                }
+                return total
+            }
+        }
+    }
+
+    // try
+    // catch (nama_var_error) => berisi value
+        // error.message => dari sananya
+    // finally
+    try {
+        var result = MathAria.sum()
+        console.info(result)
+    } catch (error) {
+        console.warn(`Terjadi error : ${error.message}`)
+    } finally {
+        console.info("progam selesai")
+    }
+
+    console.log("\n=========== aria fatah ===========")
+
+// try finally
+    class Counter {
+        #counter = 0;
+        
+        next() {
+            try {
+                return this.#counter // setalh ini me return dia akan menjalankan finally terlebih dahulu
+            } finally {
+                this.#counter++ // akan dijalankan meski error atau tidak
+            }
+        }
+    }
+    const malik = new Counter()
+    console.log(malik.next()) // function next akan jalan dan mereturn dan ditambah block finally
+    console.log(malik.next()) // 1
+    console.log(malik.next()) // 2
+    </script>
+
+</body>
+</html>
