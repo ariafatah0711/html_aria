@@ -1,0 +1,31 @@
+div *,  div {
+    box-sizing: border-box;
+    margin: 0; padding: 0;
+}
+
+.container {
+    height: 200px; width: 100%;
+    display: flex;
+    flex-direction: row; /* nilai default */
+    flex-wrap: wrap;
+    border: 1px solid;
+    margin: 0; padding: 0;
+}
+
+.flex-item {
+    display: flex;
+    height: 80px; width: 20%;
+    border: 1px solid;
+}
+
+.one {
+    flex-grow: 1; /* default 0 */
+}
+
+.zero {
+    flex-shrink: 0; /* default 1 */
+}
+
+.self {
+    align-self: flex-end;
+}

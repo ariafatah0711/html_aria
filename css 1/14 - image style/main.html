@@ -12,6 +12,10 @@
     
     <small>float: right; untuk mengubah posisi background di kanan</small><br>
     <small>display: block; margin: 0px auto; untuk membuat gambar di tengah</small><br>
+    <small>object-fit: cover; mempertahankan kualitas artinya gambarnya akan tetap pas namun akan ada yang terpotong</small><br>
+    <small>object-fit: contain; membuat gambar sesuai ukuran aslinya dan akan di perkecil jika tidak pas jadiya ada spot kosong</small><br>
+    <small>object-fit: 16 / 9; membuat sesuai ukuran yang diinginan</small><br>
+    <small>object-position: posisi imagenya saat layar ada yang kepotong</small><br>
 
     <h1>Gambar</h1>
     <div>
@@ -31,6 +35,19 @@
 
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nulla corrupti ducimus deserunt quia optio asperiores doloremque consequatur maxime aspernatur, tenetur perspiciatis accusamus ad voluptates commodi obcaecati sint non dolorem.</p>
     </div><br>
+
+    <div>
+        <img src="../../css 4/07 - latihan css 07/image/1.jpg" alt="github" class="small fit-cover">
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nulla corrupti ducimus deserunt quia optio asperiores doloremque consequatur maxime aspernatur, tenetur perspiciatis accusamus ad voluptates commodi obcaecati sint non dolorem.</p>
+    </div><br>
+
+    <div>
+        <img src="../../css 4/07 - latihan css 07/image/1.jpg" alt="github" class="small fit-contain">
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque nulla corrupti ducimus deserunt quia optio asperiores doloremque consequatur maxime aspernatur, tenetur perspiciatis accusamus ad voluptates commodi obcaecati sint non dolorem.</p>
+    </div><br>
+
 
 </body>
 </html>

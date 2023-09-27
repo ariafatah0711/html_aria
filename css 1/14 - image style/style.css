@@ -41,3 +41,13 @@ img.small {
     display: block;
     margin: 0px auto;
 }
+
+/* object-fit */
+.fit-cover {
+    object-fit: cover;
+}
+
+.fit-contain {
+    width: 600px;
+    object-fit: contain;
+}
