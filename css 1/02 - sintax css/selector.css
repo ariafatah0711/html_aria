@@ -37,3 +37,12 @@ i {
 body, h2, h3, .class-warna, #idwarna, input[type=text]{
     font-size: normal;
 }
+
+/* !important */
+p, pre {
+    color: red !important;
+}  
+
+p, pre {
+    color: blue;
+}
