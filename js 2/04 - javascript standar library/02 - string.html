@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// string => 
+// string Instance Method dan propeties
+    // manipulasi string seperti mengubah menjadi lowercase, UPPERCASE, memotong string mejadi array, dll
+    // saat method string di panggil data tidak di ubah hanya mengemballikan nilai saja
+    const name = "aria fatah anom"
+
+    console.info(name.length); // panjang teks
+    console.info(name.toLowerCase()); // mengubah teks menjadi lowerCase(kecil semua)
+    console.info(name.toUpperCase()); // mengubah teks menjadi upperCase(besar semua)
+    console.info(name.split(" "))
+
+    // menghapus kiri dan kanan
+    const input = "       input data         "
+
+    console.info(input.trim()) // menghapus teks kosong yang ada di kiri dan kanan
+    console.info(input.trimRight()) // menghapus teks yang di kanan saja
+    </script>
+
+</body>
+</html>

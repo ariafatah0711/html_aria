@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+{
+    // array => tipe data array
+    // array Loop => menggunakan for in, of untuk melakukan iterasi Array, namun array juga memilki method beranama forEach()
+    // forEach()
+    const array = ["aria", "fatah", "anom"]
+
+    array.forEach(function (value, index) {
+        console.log(`${index} : ${value}`)
+    });
+
+    array.forEach((value, index) => console.log(`${index} : ${value}`))
+    array.forEach(value => console.log(`${value}`))
+    console.log("\n")
+}
+
+{
+    // array Queue => dalam tipe struktur data bernama queue (antrian)
+    // dimana data masuk akan di posisikan urutan paling belakang
+    // sedangakan data keluar akan di posisikan dari urutan paling depan
+    // antrian => istilahnya FIFO (first in first out)
+        // kesimpulan saat pertama kali masuk maka dia akan pertama kali keluar
+    // contoh push() menamabah data di belakang shift() menghapus data di depan
+    const queue = []
+
+    queue.push("aria")
+    queue.push("fatah")
+    queue.push("anom")
+    console.info(queue)
+
+    console.log(queue.shift()) // mengampil / menghapus index paling kiri
+    console.log(queue.shift()) // mengambil fatah karena aria telah di hapus
+    console.log(queue.shift()) // anom
+    console.log(queue.shift()) // undefined
+    console.info(queue)
+    console.log(" ")
+}
+    
+{
+// array stack => tumpukan yang mirip dengan tumpukan kartu
+    // berkebalikan dengan queue
+    // saat memasukan data, kita akan berada di paling belakang atau atas
+    // stack ini disebut LIFO (last in fiirst out)
+        // untuk menambahkan diurutan belakang, kita bisa menggunakan function push()
+    // san kita mengambil data dan menghapus paling bealkang kita menggunakan pop()
+    const stack = []
+
+    stack.push("aria")
+    stack.push("fatah")
+    stack.push("anom")
+    console.info(stack)
+
+    console.log(stack.pop())
+    console.log(stack.pop())
+    console.log(stack.pop())
+    console.log(stack.pop())
+    console.info(stack)
+    console.log(" ")
+}
+    </script>
+
+</body>
+</html>

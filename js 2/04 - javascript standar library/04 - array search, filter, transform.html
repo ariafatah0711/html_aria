@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+{
+// array search => mencari value, index tanpa mengloop
+    const source = [1, 2, 3, 4, 5, 1 ,2, 3, 4, 5]
+
+    console.log(source.find(value => value > 3)) // 4 => (5 ga termasuk karena hanya ngambil yang pertama saja)
+    console.log(source.findIndex(value => value > 3)) // 3 => (karena 4 berada di index ke 3)
+    console.log(source.includes(7)) // false => karana data tidak ditemukan
+    console.log(source.indexOf(5)) // 4 posisi index pertama
+    console.log(source.lastIndexOf(5)) // 9 posisi index terakhir
+    console.log(" ")
+}
+
+{
+// array filter => melakukan filter data yang bernilai true
+    // perbedaan sama find adalah ketika kita filter itu akan mengambil semua data yang memilki kodisi tsb. jika find hanya data pertama nya saja
+    const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    
+    const ganjil = (numbers.filter(value => value % 2 === 1))
+    const genap = (numbers.filter(value => value % 2 === 0))
+
+    console.log(numbers)
+    console.log(ganjil)
+    console.log(genap)
+}
+
+{
+// array transform => merubah suatu bentuk array jika berniali true
+    // misal ingin mentotalkan data maka kita dapat menggunakan ini tampa menggunakan perulangan
+    const names = "aria fatah anom".split(" ")
+    console.info(names)
+
+    const nameUpercase = names.map(value => value.toUpperCase()) // melooping semua data lalu diubah tiap data menjadi uppercase
+    console.log(nameUpercase) // Array(3) [ "ARIA", "FATAH", "ANOM" ]
+
+    // menghitung total saat perulagan
+    // kalau reduce() menambahkan data dari kiri ke kanan kalau reduceRight() menambahkan data dari kanan ke kiri
+    // before itu data sebelum value yang sedang di jalankan
+    const nameReduce = names.reduce((before, value) => before + " " + value) // reduce() kiri ke kanana
+    console.log(nameReduce)
+
+    const namesRight = names.reduceRight((before, value) => before + " " + value) // reduceRight() kanan ke kiri
+    console.log(namesRight)
+
+    const numbers = [1, 2, 3, 4, 5]
+    const total = numbers.reduce((before, value) => before + value); // menjumlahkan dari kiri ke kanan
+    console.log(total)
+}
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// number => merupakan function untuk menkonfersi ke tipe data number
+    // jika data tidak di konfersi ke number, secara otomatis hasilnya adalah NaN
+    const input = "12345"
+    const number = Number(input)
+
+    console.info(typeof input)
+    console.info(typeof number)
+    console.log(number)
+
+    console.info(Number("satu")) // NaN Not A Number
+
+// number static propeties
+    // number.MIN_VALUE untuk mendapatkan number minimal
+    // number.MAX_VALUE untuk mendapatkan number maksimal
+        // jika static di OOP itu artinya bisa di akses propetynya tanpa membuat object numbernya 
+    console.info(Number.MIN_VALUE)
+    console.info(Number.MAX_VALUE)
+    console.info(Number.MIN_SAFE_INTEGER)
+    console.info(Number.MAX_SAFE_INTEGER)
+    console.info(Number.NaN)
+
+// number static method
+    let value = "123"
+    console.info(Number.isNaN(value))
+    console.info(Number.isInteger(value))
+    value = 12
+    console.info(Number.isInteger(value))
+
+// number istance method
+    value = Number("12345")
+    console.info(value.toString(2)) // konfersi binary
+    console.info(value.toLocaleString("id-ID")) // konfersi indo Rp.12.345
+    console.info(value.toLocaleString("en-US")) // konfersi indo $12,345
+    </script>
+
+</body>
+</html>
