@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 3</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <a href="../00 - main.html">back js...</a><br /><br>
+    <a href="main.html">main1</a>
+    <a href="main2.html">main2</a>
+
+    <h1 id="display-name"></h1>
+    <h2 id="display-age"></h2>
+    <input type="text" placeholder="Masukan Nama Anda"><br>
+    <input type="text" placeholder="Masukan Umur Anda"><br>
+    <input type="submit">
+
+    <script>
+        const displayName = document.getElementById("display-name");
+        const displayAge = document.getElementById("display-age");
+
+        // key local storage
+        const KEY = "DATA_USER"
+        
+        let data = localStorage.getItem(KEY)
+
+ 
+
+        // console.log(data)
+        if (!name) {
+            let name = prompt("masukan nama anda: ")
+            let age = prompt("masukan umur anda: ")
+            var dataUser = {
+                name: name,
+                age: age,
+            }
+        }
+  
+        console.log(dataUser)
+        // JSON.parse(dataUser)
+        JSON.stringify(dataUser)
+        console.log(dataUser)
+        localStorage.setItem(KEY, dataUser)
+        //displayName.innerText = `halo, ${name}`
+        //displayAge.innerText = `halo, ${name}`
+    </script>
+
+</body>
+</html>

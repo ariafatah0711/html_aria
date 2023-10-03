@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 3</title>
+    <style>
+        .dark {
+            background-color: black;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <a href="../00 - main.html">back js...</a><br /><br>
+    <a href="main.html">main1</a>
+    <a href="main2.html">main2</a>
+
+    <h1 id="display-name"></h1>
+
+    <a href="" onclick="gantiNama()">change name</a>
+    <a href="" onclick="hapusNama()">hapus nama</a>
+    <a href="" class="toggle">Dark Mode</a>
+    <a href="" onclick="hapusStorage()">hapus storage</a>
+
+    <script>
+        const judul = document.getElementById("display-name")
+
+        let KEY = "nama"
+        let nama = localStorage.getItem(KEY)
+        if (!nama) {
+            nama = prompt("masukan nama anda")
+            localStorage.setItem(KEY, nama)
+        }
+        
+        judul.innerHTML = `halo ${nama}`
+        const gantiNama = (e) => {
+            nama = prompt("masukan nama anda");
+            localStorage.setItem(KEY, nama);
+            e.preventDefault()
+        }
+
+        const hapusNama = (event) => {
+            localStorage.removeItem(KEY)
+        }
+
+        const toggle = document.querySelector(".toggle")
+        let tema = localStorage.getItem("tema")
+
+        if (!tema) {
+            localStorage.setItem("tema", "light")
+        }
+        
+        const darkMode = () => {
+            document.body.classList.add("dark")
+            toggle.innerHTML = "light mode"
+            localStorage.setItem("tema", "dark")
+        }
+
+        const lightMode = () => {
+            document.body.classList.remove("dark")
+            toggle.innerHTML = "dark mode"
+            localStorage.setItem("tema", "light")
+        }
+
+        if (tema == "dark") {
+            darkMode()
+        }
+
+        toggle.addEventListener("click", function(e) {
+            tema = localStorage.getItem("tema")
+            if(tema === "light") {
+                darkMode()
+            } else {
+                lightMode()
+            }
+
+            e.preventDefault()
+        })
+
+        const hapusStorage = (e) => {
+            localStorage.clear()
+            e.preventDefault()
+        }
+    </script>
+</body>
+</html>
