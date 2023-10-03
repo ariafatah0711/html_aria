@@ -7,46 +7,78 @@
     <title>js 3</title>
     <link rel="stylesheet" href="style.css">
     <script src="script.js"></script>
+    <style>
+        * {margin: 0; padding: 0;}
+        main {
+            border: 1px solid black;
+            height: 90vh; margin: 0 auto; width: 50%;
+        }
+        main div {
+            background: cyan; display: flex; flex-direction: column;
+        }
+    </style>
 </head>
 <body>
     <a href="../00 - main.html">back js...</a><br /><br>
     <a href="main.html">main1</a>
     <a href="main2.html">main2</a>
 
-    <h1 id="display-name"></h1>
-    <h2 id="display-age"></h2>
-    <input type="text" placeholder="Masukan Nama Anda"><br>
-    <input type="text" placeholder="Masukan Umur Anda"><br>
-    <input type="submit">
+    <main>
+        <form>
+            <input id="name" type="text" placeholder="Masukan Nama Anda" required><br>
+            <input id="age" type="text" placeholder="Masukan Umur Anda" required><br>
+            <input id="submit" type="submit" onclick="inputValue()">
+        </form>
+        <div>
+            <h4 id="display-name">aria</h4>
+            <p id="display-age">umur anda 18</p>
+        </div>
+        </main>
 
     <script>
         const displayName = document.getElementById("display-name");
         const displayAge = document.getElementById("display-age");
+        var inputName = document.getElementById("name");
+        var inputAge = document.getElementById("age");
 
         // key local storage
         const KEY = "DATA_USER"
-        
         let data = localStorage.getItem(KEY)
-
- 
-
-        // console.log(data)
-        if (!name) {
-            let name = prompt("masukan nama anda: ")
-            let age = prompt("masukan umur anda: ")
-            var dataUser = {
-                name: name,
-                age: age,
+        data = JSON.parse(data)
+        
+        function inputValue(e) {
+            if (inputName.value !== " " && inputName !== undefined && inputAge !== " " && inputAge !== undefined) {
+                let dataUser = {
+                    name: inputName.value,
+                    age: inputAge.value,
+                }
+            data = JSON.stringify(dataUser)
+            localStorage.setItem(KEY, data)
+            showData()
             }
         }
+
+        function showData() {
+            localStorage.getItem(KEY)
+            displayName.innerText = `halo, ${data.name}`
+            displayAge.innerText = `umur anda adalah, ${data.age}`
+        }
+
+        // mulai
+        if (!data) {
+            let name = prompt("masukan nama anda: ")
+            let age = prompt("masukan umur anda: ")
+            let dataUser = {
+                name: name,
+                age: age
+            }
+            data = JSON.stringify(dataUser)
+            localStorage.setItem(KEY, data)
+            showData()
+        } else {
+            showData()
+        }
   
-        console.log(dataUser)
-        // JSON.parse(dataUser)
-        JSON.stringify(dataUser)
-        console.log(dataUser)
-        localStorage.setItem(KEY, dataUser)
-        //displayName.innerText = `halo, ${name}`
-        //displayAge.innerText = `halo, ${name}`
     </script>
 
 </body>

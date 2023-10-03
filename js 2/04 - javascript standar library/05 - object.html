@@ -11,7 +11,50 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// object => 
+{
+// object freeze dan seal => secara default object bisa di hapus dan diubah propetynya
+    // jika ingin mengubah sebuah object menjadi object yang tidak bisa diubah atau dihapus kita bisa menggunakan beberapa static method
+    // Object.freeze() object yang tidak bisa hapus diubah dan dihapus atributnya
+    // Object.seal() valuenya masih bisa diubah namun objectya tidak bisa dihapus
+    const person = {
+        firstName: "aria",
+        lastName: "fatah"
+    }
+
+    // Object.freeze(person) //  tidak error namun sudah tidak bisa dihapus/ditambah atau diubah value objectnya
+    Object.seal(person) //  tidak error namun sudah tidak bisa dihapus/ditambah
+
+    person.firstName = "budi" 
+    person.midleName ="ganteng" // tidak bisa ditambahkan meskipun di seal dan frreeze
+    delete person.lastName // tidak pengaruh
+    
+    console.info(person)
+}
+
+{
+// object assign => menggabungkan semua atribute dari sebuah obeject ke object lain
+    // dengan cara Object.assign(target, source)
+    const target = {firstName: "malik"}
+    const source = {firstName: "aria", lastName: "fatah"} // jika ada yang sama akan ditimpa
+
+    // target itu tujuan tempat copynya
+    // source itu object mana yang ingin di copy
+    Object.assign(target, source)
+    console.info(target)
+}
+
+{
+// object propety name dan value => object juga memilki static method untuk digunakan mengambil semua propety names dan value
+    // Object.value => mengambil semua propety value
+    // Object.getPropertyNames() => mengambil semua propety name (jadi array)
+    const person = {
+        firstName: "aria",
+        lastName: "fatah"
+    }
+
+    console.info(Object.values(person)) // aria, fatah
+    console.info(Object.getOwnPropertyNames(person)) // firstName, LastName
+}
     </script>
 
 </body>

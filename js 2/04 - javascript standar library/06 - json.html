@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// JSON => singkatan dari Javascript Object Notion
+    // JSON merupakan data string yang bentuknya mirip dengan Javascript Object
+    // JSON digunakan untuk komunikasi antara server dan client
+{
+    // javascript mendukung konversi string JSON ke Object atau sebaliknya
+    // JSON.stringify() => digunakan untuk melakukan konversi dari Object ke string
+    // JSON.parse() => digunakan untuk melakukan konversi dari string ke Object
+    const person = {
+        firstName: "aria",
+        middleName: "fatah",
+        lastName: "anom",
+        address: {
+            country: "Indonesia",
+            city: "Depok"
+        },
+        hobies: [
+            "coding", "game", "anime"
+        ]
+    }
+    console.info(person)
+
+    // const personString = JSON.stringify([person]) // bisa juga jadi array
+    const personString = JSON.stringify(person)
+    console.log(personString)
+
+    const personObject = JSON.parse(personString)
+    console.log(personObject)    
+}
+    </script>
+
+</body>
+</html>

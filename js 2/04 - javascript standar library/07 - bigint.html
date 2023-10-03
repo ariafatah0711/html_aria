@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// BigInt => tipe data number yang bisa mencakup data angka lebih dari Number.MAX_SAFE_INTEGER
+    // untuk kasus number lebih dari itu sangat di sarankan menggunakan tipe data BigInt
+    // cara penggunaanya pun sama dengan number (yang bisa dilakukan number juga bisa digunakan BigInt)
+    const a = BigInt(Number.MAX_SAFE_INTEGER)
+    const b = BigInt(Number.MAX_SAFE_INTEGER)
+
+    const c = a + b;
+    console.info(c)
+    console.info(typeof(c))
+    </script>
+
+</body>
+</html>
