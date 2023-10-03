@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+{
+// date => repesentasi waktu dan tanggal, yaitu date
+    // date merupakan repesentasi milisecond sejak 1 januari 1970
+    // membuat object date dengan cara new Date() // waktu saat ini juga
+        // new Date() // membuat date saat ini
+        // new Date(year, moth, date) // membuat date dengan tanggal
+        // new Date(year, moth, date?, hour?, minute?, second?, mils?) // membuat date dengan parameter sampai mils
+        // new Date(timestamp) // membuat date dari epoch atau unix stamp
+    const date1 = new Date()
+    console.info(date1)
+
+    const date2 = new Date(2020, 11, 7)
+    console.log(date2)
+
+    const date3 = new Date(2020, 11, 7, 24, 60, 60, 100)
+    console.log(date3)
+
+    const date4 = new Date(17287847924797)
+    console.log(date4)
+
+    console.log(" ")
+}
+
+{
+    // epoch dan unix timestap => merupakan hitungan milisecond setelah tanggal 1 januari 1970
+    // javascript mnedukung pembuatan epoch dan timestap seperti bahasa pemograman lainya
+    // untuk mendapatkan waktu saat ini dalam epoch dan unix timestamp kita bisa mengguanakan
+        // Date.now()
+        // Date.time() => untuk mengubah dari object date ke epoch dan unix timestap
+    const timestamp = Date.now()
+    console.info(timestamp)
+
+    // const dateUnix = new date(timestamp)
+    // console.log(dateUnix)
+    // console.info(dateUnix.getTime())
+
+    const date1 = new Date()
+    console.log(date1.getTime())
+
+    const date2 = new Date(2020, 11, 7)
+    console.log(date2.getTime())
+
+    const date3 = new Date(2020, 11, 7, 24, 60, 60, 100)
+    console.log(date3.getTime())
+
+    const date4 = new Date(17287847924797)
+    console.log(date4.getTime())
+
+    console.log(Date.now())
+    console.log(" ")
+}
+
+{
+// parsing date => membuat date menjadi string Date.parse(value)
+    // format string harus YYYY-MM-DDTHH:mm:ss:sss.sssZ (YYYY-MM-DDTHH)
+    // YY: itu year; MM: month; DD: date; T: pemisah; HH: hours; mm: minute; ss: second; sss: milisecond; sssZ: timezone;
+    const time = Date.parse("2020-10-10T08:45:45.123+07:00")
+    console.info(time)
+
+    // memanggil tanggal dati string menjadi time
+    const date = new Date(time)
+    console.info(date)
+
+    console.log(" ")
+}
+
+{
+// date getter dan setter => method untuk mendapatkan informasi date dan juga mengubah informasi date
+    // mengubah dan mendapatkan informasi date(getter dan setter)
+    const date = new Date()
+    date.setFullYear(2020)
+
+    console.info(date.getFullYear())
+    console.info(date.getMonth())
+    console.info(date.getDate())
+    console.info(date.getHours())
+    console.info(date.getMinutes())
+    console.info(date.getSeconds())
+    console.info(date.getMilliseconds())
+    console.info(date.getTimezoneOffset())
+}
+    </script>
+
+</body>
+</html>

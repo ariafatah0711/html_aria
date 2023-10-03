@@ -10,7 +10,6 @@
     <style>
         * {margin: 0; padding: 0;}
         main {
-            border: 1px solid black;
             height: 90vh; margin: 0 auto; width: 50%;
         }
         main div {
@@ -24,10 +23,10 @@
     <a href="main2.html">main2</a>
 
     <main>
-        <form>
+        <form onsubmit="inputValue(event)">
             <input id="name" type="text" placeholder="Masukan Nama Anda" required><br>
             <input id="age" type="text" placeholder="Masukan Umur Anda" required><br>
-            <input id="submit" type="submit" onclick="inputValue()">
+            <input id="submit" type="submit" onclick="inputValue(event)">
         </form>
         <div>
             <h4 id="display-name">aria</h4>
@@ -44,22 +43,25 @@
         // key local storage
         const KEY = "DATA_USER"
         let data = localStorage.getItem(KEY)
-        data = JSON.parse(data)
+        // data = JSON.parse(data)
         
-        function inputValue(e) {
-            if (inputName.value !== " " && inputName !== undefined && inputAge !== " " && inputAge !== undefined) {
+        function inputValue(event) {
+            if (inputName.value !== "" && inputAge.value !== "") {
                 let dataUser = {
                     name: inputName.value,
                     age: inputAge.value,
                 }
-            data = JSON.stringify(dataUser)
-            localStorage.setItem(KEY, data)
-            showData()
+                console.log(dataUser)
+                data = JSON.stringify(dataUser)
+                localStorage.setItem(KEY, data)
+                showData()
             }
+            event.preventDefault();
         }
 
         function showData() {
             localStorage.getItem(KEY)
+            data = JSON.parse(data)
             displayName.innerText = `halo, ${data.name}`
             displayAge.innerText = `umur anda adalah, ${data.age}`
         }
