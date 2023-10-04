@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+{
+    // symbol => merupakan tipe data yang digaransi akan selalu uniqe setiap membuat data symbol
+    // symbol kadang banyak digunakan untuk membuat key pada object    
+    const name1 = Symbol("nama")
+    const name2 = Symbol("nama") // ini deskripsi symbolnya
+    console.info(name1 == name2) // akan false karena symbol itu tipenya uniqe
+
+    const firstName = Symbol()
+    const lastName = Symbol()
+
+    const person = {}
+    person[firstName] = "aria"
+    person[lastName] = "khanedy"
+
+    console.info(person) // keynya jadi symbol
+    console.info(person[firstName])
+    console.info(person[lastName])
+}
+
+{
+// symbol For => kadang agak sulit membuat symbol harus selalu menggunakan variable
+    // pembuatan symbol juga bisa menggunakan static method Symbol.for(key)
+    // jika kita menggunakan key yang sama symbol akan selalu dikembalikan // mirip map
+    const person = {}    
+    person[Symbol.for("firstName")] = "aria"
+    person[Symbol.for("lastName")] = "fatah"
+    
+    console.info(person)
+    console.info(person[Symbol.for("firstName")])
+    console.info(person[Symbol.for("lastName")])
+}
+    </script>
+
+</body>
+</html>

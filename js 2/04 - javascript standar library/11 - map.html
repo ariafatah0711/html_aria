@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// map => merupakan respetensi dari struktur data key-value
+    // map mirip dengan tipe data object, hanya saja map, semua method untuk manipulasi data sudah disediakan
+    // map mengikuti kontrak iterable
+        // map saat dibuat tidak ada propety/key; object setelah dibuat akan ada default key
+        // key bisa tipe data apapaun; object hanya bisa string dan symbol
+        // jumlah key bisa dikethui dengan mudah dengan atribut size; harus mengguankan iterasi untuk tahu berapa banyak jumlah keynya
+        // secra default tidak bisa dikonversi ke JSON; object bisa dikonversi dengan JSON
+            // size => panjang map/key; clear() menghapus semua isi map; delete(key) => menghapus data map berdasarkan key
+            // get(key) : value => mendapatkan data berdasatkan key; has(key) : booolean => mengecek apakah map berisi data key
+            // set(value, key) => mengubah data map dengan key dan value; forEach((key, value) => ) => melakukan iterasi map
+    const map = new Map()
+    map.set("name", "aria fatah")
+    map.set("address", "indoneasia")
+
+    console.info(map) // entris itu pasangan key dan value(bisa juga di iterasi)
+    console.info(map.get("name"))
+    console.info(map.get("address"))
+    console.info(map.get("hoby"))
+
+    for (const element of map) {
+        console.info(element) // yang muncul entry berisi array
+        console.info(`${element[0]}: ${element[1]}`) // bisa dipanggil dengan mengambil indeks pertama dan kesatu
+    }
+
+    map.forEach((value, key) => console.info(`${key} : ${value}`)) // lebih singkat jika menggunakan method for each
+    </script>
+
+</body>
+</html>

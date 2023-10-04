@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// set => merupakan implementasi dari struktur data yang berisi data Uniqe(datanya tidak bisa sama)
+    // set mirip seperti array, hanya saja isi datanya selalu unique
+    // jika kita menamabhakan data data itu hanya diterima satu kali
+        // set mengimpletasi kontrak iterable, sehingga bisa diiterasi secara default
+    // size => panjang set; add(value) => menambahkan data ke set; has(value) => mengecek apakah set memilki value
+    // delete(value) => menghapus value dari set; forEach(value => ) => melakukan iterasi set
+    const set = new Set()
+
+    set.add("apel")
+    set.add("anggur")
+    set.add("pisang")
+    set.add("apel") // tidak diterima karena sudah ada datanya
+
+    console.info(set)
+
+    set.forEach((value) => console.info(value))
+    </script>
+
+</body>
+</html>
