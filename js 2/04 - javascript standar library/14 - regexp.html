@@ -11,7 +11,58 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// RegExp => 
+{
+// RegExp => regulaer expression di javascript
+    // meerupakan fitur unutk mencari teks dengan pola yang ditentukan
+    // menggunakan literal notation atau membuat object ReqExp
+    const regex1 = /aria/
+    const regex2 = new RegExp("aria")
+    const regex3 = new RegExp(/aria/)
+
+    // istance methodnya exec(value) : result => jika menemukan data sesuai pola, maka kembalikan resulntya jika tidak ada maka null
+    // test(value) : boolean eksekusi regex, jika menemukan data sesuai pola, maka return true, jika tidak maka false
+    const name = "aria fatah anom ganteng"
+    const regex = /aria/
+
+    let result = regex.exec(name) // mencari regex(/aria/) di name
+    console.info(result) // aria
+    console.log(regex.exec("abdul malik")) // null
+    
+    let test = regex.test(name) // mencari tahu apakah data aria ada atau tidak
+    console.log(test) // true
+    console.log(regex.test("abdul malik")) // false
+
+    console.log(" ")
+}
+
+{
+// regex instance method => regex modifier
+    // secara default regex itu case sensitive => saat mencari "Aria" "A" nya besar maka itu tidak dapat
+    // i => regex menjadi incase sensitive(tidak peduli huruf besar dan kecil)
+    // g => pencarian dilakukan secara global, secara default setelah menemukan data pencarian akan berhenti
+    // m => multiline  pencarian dilakukan tiap baris (enter)
+    let regex = /aria/
+    console.info(regex.exec("Aria Fatah Anom")) // null => karena case sensitive "A" nya besar
+
+    // i => cara agar tidak case sensitive menggunakan i
+    // m => mendetek multiline di tiap baris
+    // g => cara agar semua data di ambil semua (misal eko ada 5 maka akan ada 5)
+    const nama = "aria ganteng Banget \nmalik ganteng banget \nramadhan biasa Banget"
+    const regexIncase = /banget/i // dia ngambil yang banget pertama
+    const regexGlobal = /Banget/g // dia ngambil Banget yang memiliki "B" besar
+    const regexIglobal = /Banget/ig // dia mengambil semua banget "B" besar maupun "b" kecil
+
+    console.log(regexIncase.exec(nama))
+
+    let result;
+    while ((result = regexGlobal.exec(nama)) !== null) {
+        console.log(result)
+    }
+
+    while ((result = regexIglobal.exec(nama)) !== null) {
+        console.log(result)
+    }
+}
     </script>
 
 </body>

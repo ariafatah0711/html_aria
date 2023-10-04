@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+{
+// regex lainya
+    // Assersions => indikasi awal dan akhir teks
+        // /^A/ menandakan awal string; /$A/ di akhir; dll
+        // console.log(/^A/igm.exec("ARIA\nFATAH\nANOM")) // Aria dan Anom
+        let regex = /^A/igm
+        let text = "ARIA\nFATAH\nANOM"
+        while ((result = regex.exec(text)) !== null) {
+            console.log(result)
+        } // yang tampil hanya a yang berada di depan string 
+
+    // Character Classes => membedakan huruf atau angka
+
+    // Group dan Range => melakukan Grouping atau range huruf atau angka
+        regex = /ek[aiueo]/ig
+        text = "eko ado eki eka ejo emi elo eko"
+        while ((result = regex.exec(text)) !== null) {
+            console.log(result)
+        } // yang tampil adalah string yang depanya ek dan selanjutnya antata [aiuro]
+
+    // Quantifiers => menentukan jumlah huruf atau angka
+
+    console.log(" ")
+}
+
+{
+// regular ecpresion di string => di javascript juga memilki instance method yang dapat memenfaatkan regexp untuk melakuakan pencarian
+    // match(regex) : array => mencari semua data yang sesuai dengan regex
+    // search : index => mencari index data yang sesuai dengan regex
+    // replace(regex, value) => mengubah data dengan value yang sesuai regex
+    // replaceAll(regex, value) => mengubah semua data dengan value yang sesuai regex
+    // spill(regex) : array => memotong string dengan regex
+    const string = "eko ado eki aku eka ajo"
+
+    console.log(string.match(/ek[aiueo]/ig)) // ["eko", "eki", "eka"]
+    console.log(string.search(/ek[aiueo]/ig)) // index ke 0
+
+    // replace
+    console.log(string.replace(/ek[aiueo]/i, "aria")) // aria ado eki aku eka ajo (diambil satu aja karena)
+    console.log(string.replace(/ek[aiueo]/ig, "aria")) // aria ado aria aku aria ajo
+    console.log(string.replaceAll(/ek[aiueo]/ig, "aria")) // (kalo mau replcae all harus global dulu)
+
+    // split
+    console.log(string.split(/ /ig)) // Array(6) [ "eko", "ado", "eki", "aku", "eka", "ajo" ]
+    console.log("aria-ganteng-banget".split(/-/ig)) // Array(3) [ "aria", "ganteng", "banget" ]
+}
+    </script>
+
+</body>
+</html>
