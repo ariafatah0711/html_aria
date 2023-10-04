@@ -11,7 +11,25 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// Base64 => 
+// Base64 => merupakan binary to text encoding, respentasi binary data dalam format string
+    // Base64 merupakan format text data yang biasanya digunakan untuk dikirimkan ke web
+    // merupakan encoding yang biasanya digunakan untuk ketika perlu mengirim data dari client ke server
+    // karena encoding base64 merupakan format text, 
+        // oleh karena itu sangat aman digunakan pada query paramter URL atau text body dalam format
+    // function encode decode base64
+        // btoa(value) => encode value ke base64
+        // atob(value) => decode base64 ke value
+    const original = "aria&fatah=anom"
+    console.info(original) // aria&fatah=anom
+
+    const encode = btoa(original)
+    console.info(encode) // YXJpYSZmYXRhaD1hbm9t
+
+    const decoded = atob(encode)
+    console.info(decoded)
+
+    // tapi ini fungsinya bukan untuk ekripsi
+        // hanya untuk kirim format
     </script>
 
 </body>

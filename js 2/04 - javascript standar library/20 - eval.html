@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// eval => merupakan function untuk mengeksekusi kode javascript dari string
+    // fitur ini sangat menarik namun perlu hati hati ketika menggunakanya
+        // karena jika sampai salah penggunaanya, maka bisa jadi kita malah mengeksekusi
+        // kode progam yang bisa menyebabkan masalah di website kita
+    console.log(eval(`2 + 2`))
+
+    const script = `alert("Ups, Anda di hack")`
+    eval(script) // dan bahaya jika yang diambil untuk mencuri data kita/cookie
+    </script>
+
+</body>
+</html>
