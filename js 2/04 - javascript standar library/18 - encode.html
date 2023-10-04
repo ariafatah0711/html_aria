@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <link rel="stylesheet" href="../../z-files/css/style-js.css">
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// encode => saat kita di URL kita bisa menambhakan informasi tambahan seperti query parameter di url
+    // URL sendiri sudah memiliki standat enoding penulisan URL
+    // standar ecoding ini dilakukan agar aman ketika diterima oleh server
+        // aman disini artinya informasi URL tidak berubah
+    // contoh sederhananya, misal walaupun kita bisa mengirim spasi dalam URL, tapi disarankan untuk
+        // di Encode agar nilai spasi tidak benar benar terlihat seperti spasi pada URL
+
+    // contoh masalah jika tiak mengguanakn encode
+        // misal ada query parameter dengan nama data, lalu kita ingin mengirim nilai kesana
+        // misal nilainya adalah &aria=12&, alhasil nilai URL nya akan seperti berikut
+            // http://contoh.com?data=&aria=12& => saat dikirim akan dinilai kosong
+            // URL di atas tidak ada masalah, tapi sebenarnya ketika parameter diterima oleh server,
+                // parameter data itu bernilai kosong, kenapa karena & dianggap sebagai pemisah antar parameter
+        // artinya tanda & dan lain lain perlu di encode agar tidak terjadi kesalahan data yang kita kirim
+
+    // encodeURL(value) => melakukan encode value 
+        // namun karakter yang di pesan di URL tidak akan diubah ;,/?:@&=+$#
+    // encodeURL(Component(value)) => encode semua karakter
+    // decodeURL(encoded) => encode value hasil encode
+    // decodeURL(Component(value)) => mengembalikan nilai hasilnya
+{
+    const url = `http://www.contoh.com/?name=Aria Fatah Anom`
+    console.info(url) // string biasaa
+    
+    const encode = encodeURI(url)
+    console.info(encode) // jadi kode url namun tidak semua karakter
+
+    const decoded = decodeURI(encode)
+    console.info(decoded) // mengembalikan kode url menjadi string
+}
+
+{
+    const value = `eko&kurniawan=khanedy;`
+    const url = `http://www,contoh.com/?name=`
+    console.log(encodeURIComponent(url + value)) // jika component nya ga dipisah maka akan jadi begini
+
+    const encode = encodeURIComponent(value) // kenapa yang di encode value => karena agar tidak meggubah urlnya
+    console.info(url + encode) // dan saat digabungkan akan mejadi url(encode biasa) encode(encode component)
+
+    const decoded = decodeURIComponent(encode) // mengembalikan encode
+    console.info(url + decoded)
+}
+    </script>
+
+</body>
+</html>

@@ -11,7 +11,70 @@
     <a href="./00 - main.html">back js list</a><br />
 
     <script>
-// proxy => 
+// proxy => merupakan fitur yang digunakan untuk sebagai wakil sebuah data
+    // dengan menggunakan proxy, semua interaksi ke data selalu melalui proxy terlebih dahulu
+    // dengan ini kita bisa melakukan apapun sebelum interaksi ke data yang dituju
+
+{
+// proxy handler => membuat function yang dinamakan interceptor yang digunakan untuk mengambil data atau mengubah data ke target
+    // untuk membuat proxy, kita bisa menggunakan new Proxy(target, handler)
+    const target = {
+        middleName: "fatah"
+    }
+
+    const handler = {
+        get: function (target, propety) {
+            return target[propety];
+        },
+        set: function (target, propety, value) {
+            target[propety] = value;
+        } 
+    }
+
+    const proxy = new Proxy(target, handler)
+    proxy.firstName = "aria" // set
+    proxy.lastName = "anom"
+
+    console.info(proxy.firstName) // get
+    console.info(proxy.middleName)
+    console.info(proxy.lastName)
+
+    console.info(target)
+    console.log(" ")
+}
+
+{
+// proxy handler => saat kita mengubah data proxy, secara otomatis data akan dikirim ke target
+    // melalui handler dengan memanggil function set(target, propety, value)
+    // saat kita mengambil data proxy, secara otomatis data akan diambil target melalui handler dengan memanggil
+    // function get(target, propety)
+        // artinya, jika kita melakukan sesuatu sebelum dan setelahnya, bisa kita lakukan di handler
+    const target = {}
+
+    const handler = {
+        get: function (target, propety) {
+            console.info(`access propety ${propety}`)
+            return [propety]
+        },
+        set: function (target, propety, value) {
+            console.info(`change propety ${propety} : ${value}`)
+            if (value == null) {
+                target[propety] = "nama belum di set";
+            } else {
+                target[propety] = value;
+            }
+        }
+    }
+
+    const proxy = new Proxy(target, handler)
+    proxy.firstName = "aria" // change propety => propety set dijalan
+    proxy.lastName = null // set
+
+    console.info(proxy.firstName) // acces propety => propety get akan dijalankan
+    console.info(proxy.lastName) // get
+
+    console.info(target)
+}
     </script>
 
 </body>
