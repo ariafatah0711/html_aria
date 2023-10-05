@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <script type="module" src="script/library.mjs"></script>
+</head>
+<body>
+    <a href="../00 - main.html">back js list</a><br />
+
+    <a href="main.html">no module</a>
+    <a href="main2.html">with module</a>
+
+    <script type="module">
+// dengan module => kita bisa secara selektif atau memilih bagian kode mana yang di ekspos keluar
+    // secara default kode yang dibuat js tidak bisa digunakan dari luar module
+    // kecuali kita memintanya untuk mengekspos keluar
+        // membuat module tidak menggunakan type javascript lagi melainkan type nya module
+    // menggunakan file .mjs => namun tidak wajib hanya untuk perbedaan saja
+    /*
+    sayHello("aria") // harus di export dulu functionya
+    sayGoodBy("aria") 
+    console.log(name)
+    */
+    
+// import => untuk menggunakan kode yang telah di ekspos
+    // import {namaFunction, namaVariable, namaClass} from "lokasi-module.js"
+    import {sayHello, sayGoodBy, name} from "./script/library.mjs"
+    sayHello("aria") // harus di export dulu functionya
+    sayGoodBy("aria") // serta harus di import dari sini
+    console.log(name) // jangan lupa ubah script ini jadi module juga
+
+    console.log(`<script type="module">`)
+</script>
+
+</body>
+</html>

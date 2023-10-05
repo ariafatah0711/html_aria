@@ -56,7 +56,6 @@ F. Browser Network Tool
     - biasanya ada di inspect yang ada di chrome, firefox
     - dengan network tool kita bisa melihat semua detail HTTP request dan HTTP response yang dilakukan client dan server
 
-
 G. HTTP Request dan HTTP Response
 - HTTP Message => HTTP request dan HTTP response sebenarnya adalah sebuah HTTP message
     - HTTP message memliki standar format => jikalau ingin membuat client dan server sendiri, sebenarnya bisa dilakukan. asal kita memilki standarisasi format HTTP message
@@ -185,5 +184,14 @@ N. HTTP Cookie
     - expire: date
     
 O. HTTP chacing
-- HTTP chacing
-
+- HTTP chacing => menyimpan data di client sampai batas waktu yang sudah ditentukan
+    - sehingga saat client ingin melakukan request yang sama, cukup ambil resource nya di client. tanpa harus meminta ulang ke server
+    - HTTP chacing sangat cocok digunakan untuk resource file static yang jarang berubah, seperti file gambar, audio, video, dll
+- cara kerjnaya pertama client meminta request ke server lalu server me response dan
+    - memberikan response + chace info(dalam rentan waktu)
+    - ketika kita ingin request lagi maka web browser tidak akan me request lagi dan hanya mengambil data di web browser
+- Header chace control => Chace-Control: (berisi informasi berapa lama client bisa menyimpan data response tersebut)
+    ```
+    Chace-Control: max-age=100 => untuk rentan waktu
+    Chace-Control: no-chace => tidak bisa di chace
+    ```
