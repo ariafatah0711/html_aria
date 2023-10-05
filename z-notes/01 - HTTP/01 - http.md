@@ -116,3 +116,74 @@ I. URL
     - /#home
 
 J. HTTP Header
+- HTTP Header => merupakan informasi tambahan yang biasa di kirim di request atau response
+- digunakan agar informasi tidak harus dikirim melalui request body atau response body
+- HTTP header berisi key: value
+    ```
+    - Host: www.example.com => authority pada URL(wajib)
+    - Content-Type: => tipe data dari HTTP Body(img, mp3, dll)
+    - User-Agent: => informasi user agent(seperti browser, versi, dan os)
+    - Accept: text/html => tipe data yang diterima oleh client
+    - Authorization: => credential untuk autentikasi(misal username + password)
+    ```
+
+K. HTTP status
+- HTTP status => merupakan code http response yang menginditidikasi apakah sebuah request
+    - yang diterima sukses, gagal, atau ada hal lain yang harus diketahui client
+- statusnya:
+    - informational Response(100 - 199) => request telah diterima(namun belum di peroses)(jarang digunakan)
+    - successful response(200 - 299) => request telah diterima dan sukses di peroses
+        - 200 (OK) => berhasil di peroses, 201 => suces diterima, dll
+    - redirect(300 - 399) => client harus melakukan aksi selanjutanya untuk menyelesaikan request(biasanya karean lokasi sebuah resource berubah)
+    - client error(400 - 499) => request yang dikirim oleh client tidak diterima(contoh client mengirim body yang salah)
+        - 400 (bad request) => rrequest ditolak
+    - server error(500 - 599) => terjadi kesalahan di servernya (misal si server tidak konek ke basis datanya)
+        - 500 (internal server error) => masalah pada servernya
+- HTTP status berada di Http response di starlinenya
+    - HTTP/1.1 200 => 200 itu responsenya(OK)
+
+L. HTTP body
+- HTTP body => merupakan data yang dikirim di HTTP request, atau data yang diterima oleh HTTP response
+- artinya client bisa mengirim data ke server menggunakan HTTP body atau juga sebaliknya
+    - misal kita ingin melihat gambar maka kita akan mendapat gambar, atau data
+- Content-Type: JSON/img/html/css => berisi type data si HTTP bodynya
+    - misal saat content-type: JSON maka hasilnya akan JSON. img juga, dll
+
+M. Redirect
+- redirect(300 - 399) => client harus mengirim aksi selanjutnya untuk menyelesaikan request
+- informasi ini biasanya response HTTP status redirect, selalu dibarengi dengan informasi URL redirectnya
+    - dan disimpan pada header Location (dan biasanya ada setelah kita login dan akan kemana setelah itu)
+    - HTTP/1.1 301 
+    - Location: /dashboard => maka dia akan redirect ke /dasbord bisa juga untuk http://www.exmple.com
+
+N. HTTP Cookie
+- HTTP di design steless yang artinya tidak tahu aksi selanjutnya
+    - lantas bagaimana server tahu kalau client sebelumnya sudah mengakses halaman tertentu
+- HTTP cookie => merupakan informasi yang diberikan oleh server, dan client secara otomatis akan menyimpan data tersebut
+    - ketika web browser menyisipkan cookie yang sudah diterima request sebelumnya
+    - dari cookie server bisa mengetahui apakah request tersebut merupakan request client yang sudah login atau belum
+    - misal saat anda login github dengan vs code anda menyimpan di cookie maka kita tidak perlu login kembali
+- cara kerjanya => saat kita login dan mengirim request ke server, kita akan menerima data dan cookie sesion di broser
+    - jadi saat ingin login kita hanya request dan serveer yang tahu kita memiliki cookie nya tidak perlu login lagi
+- cookie di HTTP response(dan dapat lebih dari satu)
+    - disimpan i header dengan value set-cookie
+    ```
+    - HTTP/1,1 200 => OK(succes)
+    - Set-Cookie: user=aria => mengirim ke client untuk disimpan di browser
+    - Set-Cookie: session=138468111
+    ```
+- cookie di HTTP request => setelah cookie dari http response diterima oleh web browser, maka akan disimpan di web browser
+    - selalnjutnya HTTP request akan mengirim cookie di tiap request, dimana cookie yang dikirim bisa menggunakan header dengan naam cookie
+    - berbeda dengan http response, untuk http reqeust cookie harus digabungkan
+    ```
+    - GET /dashboard HTTP/1.1
+    - Host: example.com
+    - Accept: text/html
+    - Cookie: user=aria; session=138468111 => mengirim ke server untuk di response
+    ```
+- cookie atribute= => misal ingin cookie nya jika tidak login selama 30 hari dia akan otomatis di logout
+    - expire: date
+    
+O. HTTP chacing
+- HTTP chacing
+
