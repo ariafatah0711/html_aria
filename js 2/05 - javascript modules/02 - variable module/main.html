@@ -5,7 +5,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>js 2</title>
-    <script type="module" src=""></script>
+    <script type="module" src="script.js"></script>
+    <script type="module" src="script2.js"></script>
 </head>
 <body>
     <a href="../00 - main.html">back js list</a><br />
@@ -15,7 +16,10 @@
     // oleh file javascript lainya
     // saat kita menggunakan module, kita buat var maka var tersebut hanya berada di module tsb
         // dan tidak dapat digunakan di module lain
-    
+    // import {name} from "./script.js";
+    import {name} from "./script2.js"; // bisa memilih variable yang maana yang diambil
+
+    console.info(name)
     </script>
 
 </body>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <a href="../00 - main.html">back js list</a><br />
+
+    <script type="module">
+// Alias => mengubah nama variable, functiion atau class. pada saat di import
+    // => agar bisa menggunakan 1 var yang sama di 2 file jadi bisa di ubah namanya
+    // atau bisa disebut juga nama tiruan(tapi var aslinya tetap sama)
+        // alias di export {var as varNama}
+        // alias di import {class as classEat}
+
+    // alias di export(tapi tidak di rekemondesikan)
+    import {perusahaan, total, Orang} from "./script.js"
+    
+    console.info(perusahaan)
+    console.info(total(25, 25))
+    
+    const aria = new Orang("aria")
+    aria.sayHello("malik")
+
+    // alias di import
+    import {perusahaan as company, total as sum, Orang as Person} from "./script.js"
+
+    console.info(company)
+    console.info(sum(25, 25))
+
+    const malik = new Person("malik")
+    malik.sayHello("aria")
+    </script>
+
+</body>
+</html>

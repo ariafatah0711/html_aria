@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <script type="module" src="variable.js"></script>
+    <script type="module" src="function.js"></script>
+    <script type="module" src="class.js"></script>
+</head>
+<body>
+    <a href="../00 - main.html">back js list</a><br />
+
+    <script type="module">
+// export default => fitur unutk mempermudah untuk membuat default export, dan membantu javascript
+    // agar kompitable dengan CoomonJs dan AMD module system
+    // dengan cara export default name = value, export efault namaFungsi {}
+    // untuk import hanya perlu import {default as aliasVar} / import {default as aliasNamaFungsi}
+
+    // dan saat di export dia tidak perlu maggil namaFungsi jadi fungsinya berjalan default di javascript
+        /*
+            export default name = "aria";
+            export default function (name) {}
+            export default class {}
+        */
+        // kita tinggal mengubah aliasnya
+    import {default as sayHello} from "./function.js"
+    sayHello("aria")
+
+    import {default as namaAria} from "./variable.js"
+    console.info(namaAria)
+
+    import {default as Person} from "./class.js"
+    const aria = new Person("aria")
+    aria.sayHello("malik")
+    </script>
+
+</body>
+</html>

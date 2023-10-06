@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <script type="module" src="module.js"></script>
+</head>
+<body>
+    <a href="../00 - main.html">back js list</a><br />
+
+    <script type="module">
+// default dan names export => dalam satu module kita menggabungkan default dan export named
+    // yang tidak boleh adalah dalam satu module kita membuat lebih dari satu module
+    /*
+    import defaultAlias {names1, named2} from "./module.js"
+    import {default as defaultAlias names1, named2} from "./module.js"
+    */
+    import authorName, {title, content} from "./module.js" // jadi authorName adalah alias default variable
+    // import {default as authorName, title, content} from "./module.js" // sama aja
+    console.log(content)
+    console.log(authorName)
+
+// namun tidak di rekemondasikan export default karena tidak ada namenya dan jadi susah
+    </script>
+
+</body>
+</html>
