@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <script type="module" src="script.js"></script>
+</head>
+<body>
+    <a href="../00 - main.html">back js list</a><br />
+
+    <script type="module">
+// aggregating modules => meng agregate beberapa module menjadi satu agar penggunaanya lebih sederhana
+    // jika module sudah banyak maka kita butuh mengimport satu persatu
+    // dengan aggregating kita bisa membuat yang namanya module aggregate
+    // export {a, b, c} from "./module.js"
+    import {Person, company, sum, aria} from "./script.js"
+
+    // ini adalah file dari class module
+    const malik = new Person("malik")
+    malik.sayHello("aria")
+
+    // ini adalah file dari export multipe
+    console.log(company)
+    console.log(sum(10, 10))
+
+    // ini adalah file yang dari object module
+    console.log(aria.firstName)
+    console.log(aria.middleName)
+    console.log(aria.lastName)
+
+    aria.hello()
+    const ariafatah = new aria.Person()
+    </script>
+
+</body>
+</html>
