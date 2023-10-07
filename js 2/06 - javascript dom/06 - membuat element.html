@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <script src="script/library.js"></script>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <div class="content" id="content">
+        
+    </div>
+
+    <script>
+// membuat element => membuat object element dan menambahkanya ke halaman web
+    // menggunakan method creteElement(tag) => akan membuat element
+    const content = document.getElementById(`content`)
+
+    const title = document.createElement(`h1`) // membuat tag h1
+    title.textContent = "belajar Javascript DOM" // menambahkan teks element
+    content.appendChild(title) // untuk menambahkan element
+
+    const description = document.createElement(`p`)
+    description.textContent = "selamat belajar javascript DOM"
+    content.appendChild(description)
+    </script>
+
+</body>
+</html>

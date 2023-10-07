@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <script src="script/library.js"></script>
+    <style>
+        .content {
+            border: 1px solid black;
+        }
+    </style>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <div class="content box" id="content">
+        <h1 id="title"></h1>
+        <p id="description"></p>
+    </div>
+
+    <script>
+{
+    // element => merupakan node yang berbentuk element(html elemen),
+    // biasanya adalah element HTML misal <html> <head> <div> <table>, dll
+    // atau bisa di bilang suatu turunan dari node
+    const title = document.getElementById(`title`)
+    title.textContent = "belajar Javascript DOM"
+
+    const description = document.getElementById(`description`)
+    description.textContent = "selamat belajar javascript"
+}
+
+{
+    // element propety => karena element adalah turunan dari sebuah node,
+    // semua property bisa diugunakan di element
+    // element.attributes => mendapatkan atribut
+    // element.id => mendapatkan idnya
+    const content = document.getElementById(`content`)
+
+    // mendapatkan informasi
+    console.info(content.id)
+    console.info(content.tagName) // div => karean ini adalah tag element nya
+    console.info(content.className) // content box => berisi teks
+    
+    console.info(content.attributes) // NamedNodeMap [ class="content box", id="content" ] => berisi object
+    console.info(content.classList) // DOMTokenList [ "content", "box" ] => berisi node yang bisa di ubah
+
+// element method => method yang di gunakan untuk sebuah element
+    const description = document.getElementById(`description`)
+    description.remove() // menghapus element
+    // document.getElementById(`description`).remove() // bisa juga begini
+}
+    </script>
+
+</body>
+</html>

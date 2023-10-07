@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <script src="script/library.js"></script>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <ul id="menu">
+        <li id="first">first</li>
+        <li id="second">second</li>
+        <li id="third">third</li>
+    </ul>
+
+    <script>
+{
+    // node => base class dari document, elemnt, dan attr
+    // artinya semua fitur yang dimilki node akan dimiliki turunanya
+    // node dalam DOM bentuknya adalah tree(pohon)
+        // artinya kita bisa melihat parent(node di atasnya)
+        // children(node dibawahya), sibling(node di sebelahnya)
+    const menu = document.getElementById(`menu`) // yang di ambil berarti semua elemenya
+    console.info(menu)
+
+    const second = document.getElementById(`second`)
+    console.info(second)
+
+    console.log(" ")
+}
+
+{
+    // node property => node berisi banyak freference ke node lain
+    // .childNodes => mengambil childnya
+    // .firstChild => anak pertama .lastChild => anak terakhir .nextSlibing => mengambil sodara atau sebelahnya
+    const menu = document.getElementById(`menu`)
+    console.info(menu)
+    console.info(menu.children)
+    // childNodes
+    /*  0: #text "\n        "​​
+        1: <li id="first">​​
+        2: #text "\n        "​​
+        3: <li id="second">​​
+        4: #text "\n        "​​
+        5: <li id="third">​​
+        6: #text "\n    "
+        length: 7 
+    */
+    // children
+    /*
+    children: HTMLCollection { 0: li#first, 1: li#second, length: 3, … }
+        0: <li id="first">​​
+        1: <li id="second">​​
+        2: <li id="third">​​
+        first: <li id="first">​
+        length: 3
+        second: <li id="second">​​
+        third: <li id="third">
+    */
+
+    const second = document.getElementById(`second`)
+    console.info(second.previousSibling) // text karena disebelum childNodes li second adalah text
+    console.info(second.nextSibling)
+    console.info(second.previousSibling.previousSibling) // baru ini ngambil elemenya karena ngambil 2 di atas
+    console.info(second.previousElementSibling) // jika ingin lebih cepet
+
+    console.info(second.textContent) // second => mengambil isi text
+
+    console.log(" ")
+}
+
+{
+// node method => memanipulasi data node di dalam node tersebut(menambahkan atau menghapus nodesnya)
+    // node.apendCHild => menambahkan childNode argument
+    // node.cloneNode => menduplikasi kontent node
+    // node.contains => apakah suatu node merupakan turunan dari node pemanggil removec
+    // node.removeChild => mengapus node child dari element saat ini
+    // node.replaceChild(id, newId) => menggantikan satu child node dari child ke dua yang diberikan dalam parameter
+    // replcae dll
+    const menu = document.getElementById("menu")
+    menu.removeChild(document.getElementById(`first`))
+
+    console.info(menu)
+}
+    </script>
+
+</body>
+</html>

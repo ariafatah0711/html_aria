@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <script src="script/library.js"></script>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <p id="tulisan">ini adalah tulisan</p>
+
+    <script>
+// document => merupakan reprentasi dari object halaman web
+    // dalam satu halaman web terdapat 1 document
+    // document object => beerisi semua halan website
+    console.info(document)
+
+    // document property => digunakan untuk melihat semua data dari docuement nya
+    // body => mendapatkan element body
+    // children =>  mendapatkan detail dari semua element elementya
+    // content-type => type dari docuemtnya
+    // images, link, dll
+    console.info(document.title)
+    console.info(document.head)
+    console.info(document.body)
+    console.info(document.contentType)
+    console.info(document.images)
+    console.info(document.links)
+
+// document method => method untuk manipulasi data DOM(membuat node, element, attr, dan menyeleksi node yang ada dalam document)
+    // document.append, document.createAttribut, document.createElement, docuemnt.getElementById, dll
+    const tulisan = document.getElementById(`tulisan`)
+    console.log(tulisan)
+    </script>
+
+</body>
+</html>
