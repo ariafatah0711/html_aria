@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <img id="logo" src="../../z-files/image/logo.png" alt="logo">
+
+    <script>
+// namedNodeMap => merupakan kumpulan dari attribut
+    // mirip seperti nodelist
+    const logo = document.getElementById("logo")
+    const attributes = logo.attributes
+
+    attributes.getNamedItem("alt")
+    for (let attribut of attributes) {
+        console.info(`${attribut.name} : ${attribut.value}`)
+    }
+    </script>
+
+</body>
+</html>

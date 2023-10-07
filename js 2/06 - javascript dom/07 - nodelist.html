@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <ul id="menu1">
+        <li id="first">first</li>
+        <li id="second">second</li>
+        <li id="third">third</li>
+    </ul>
+
+    <ul id="menu2">
+        <li>apel</li>
+        <li>pisang</li>
+        <li>anggur</li>
+    </ul>
+
+    <script>
+{
+    // nodeList => merupakan kumpulan dari node
+    // digunakan untuk menyeleksi semua children sekaligus di node
+    // karena di dalam node list bisa berisi banyak hal dan bukan element list
+    const list = document.querySelectorAll("li")
+    console.info(list) // mengambil semua element li
+    // NodeList(3) [ li#first, li#second, li#third, li, li, li ]]
+    // 0: <li id="first"> 1: <li id="second"> 2: <li id="third"> 3: <li>​ 4: <li>​ 5: <li>
+
+    const menu1 = document.getElementById("menu1").childNodes
+    console.info(menu1) // mengambil child dari id menu1
+    
+    const menu2 = document.getElementById("menu2").childNodes
+    console.info(menu2) // mengambil child dari id menu2
+
+    console.log(" ")
+}
+
+{
+// live nodelist => perubahan yang terjadi pada nodelist,
+    // akan merubah semua nodelist yang sama static artinya yang terjadi pada nodelist
+    // menggunakan childNodes
+    const menu1 = document.getElementById("menu1")
+    const list = menu1.childNodes; // live nodelist
+    
+    menu1.appendChild(document.createElement("li"))
+    menu1.appendChild(document.createElement("li"))
+    
+    console.info(list) // perubahan yang terjadi akan tetap muncul
+}
+
+{   
+// static nodelist => tidak akan merubah semua nodelist yang sama
+    // menggunakan document.queryselectorAll()
+    let list = document.querySelectorAll("li") // static nodelist
+    
+    const menu1 = document.getElementById("menu1")
+    menu1.append(document.createElement("li")) // data ini tidak di anggep karena ini diambil queryselector
+    menu1.append(document.createElement("li"))
+    
+    // list = document.querySelectorAll("li") // jika ingin datanya muncul perlu memanggil ulang queryselectornya
+    console.info(list) // perubahan yang terjadi
+}
+    </script>
+
+</body>
+</html>

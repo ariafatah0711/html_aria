@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <img id="logo" src="../../z-files/image/logo.png" alt="logo">
+    <img id="logo2" alt="logo2">
+
+    <script>
+{
+    // attr => atribut meerupakan reprentasi sebuah element
+    // atau singkatnya key dan value, name read only, kalo value bisa diubah
+    const logo = document.getElementById("logo")
+    const src = logo.getAttributeNode("src")
+    
+    console.info(src.name)
+    console.info(src.value)
+}
+
+{
+// mendapatkan value secara langsung
+    const logo = document.getElementById("logo")
+    const src = logo.getAttribute("src") // akan mendapatkan valuenya
+    console.info(src) // dan akan langsung mendapatkan src
+}
+
+{
+// membuat atribut baru => document.createAttribute(name)
+    // lalu menambahkan ke element, gunakan element.setAttributeNode(attr) 
+    // atau menggunakan element.setAttribute(name, value)
+    const logo = document.getElementById("logo2")
+    const src = document.createAttribute("src")
+
+    src.value = "../../z-files/image/html.png"
+    logo.setAttributeNode(src) // kalau yang ini harus membuat object attributnya dulu
+
+    // atau 
+    logo.setAttribute("src", "../../z-files/image/css.png") // kalau ini hanya perlu membuat nama dan value
+}
+    </script>
+
+</body>
+</html>
