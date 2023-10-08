@@ -9,8 +9,42 @@
 <body>
     <a href="./00 - main.html">back js list</a><br />
 
+    <input id="click" type="button" value="Click Me"><br>
+    <input id="clickGlobal" type="button" value="GlobalEventHandler">
+
     <script>
-// event handler => merupakan
+// event handler => node yang memilki kemampuan aksi terhadap suatu kejadian atau sebuah event
+    // node yang berarti element, atrribut, dll
+    // cara menggunakanya : event target, dan global event handler
+
+// event target => merupakan parent class dari node, artinya semua node memilki kemampuan event target
+    // digunakan untuk element, document, dll
+        // eventTarget.addEventListener(type, listener) => menembahkan
+        // eventTarget.removeEventListener() => menghapus
+        // eventTarget.dispatchEventListener()
+    // dan dapat digunakan berkali kali eventnya dan tidak akan tertimpa
+    
+    const button = document.getElementById("click")
+    button.addEventListener("click", function () {
+        button.setAttribute("value", "you alredy Click ME")
+    })
+    button.addEventListener("click", function () {
+        console.log("button telah di click")
+    })
+    // bisa menggunakan 2 event sekaligus
+
+// global event handler => bukanlah superclass hanya kontrak yang bisa digunakan dengan type handlernya
+    // jadi secara otomatis setelah membuat sebuah element kita bisa menambahkan property event handler
+        // globalEventHandler.onabort => membatalkan (abort)
+        // globalEventHandler.onclick => saat di click (click)
+        // globalEventHandler.onfocus => saat focus (focus)
+        // globalEventHandler.onchange => saat value/atribut di ubah (change)
+    // tidak dapat digunakan berkali kali eventnya dan akan tertimpa dengan event yang terbaru
+    const btn = document.getElementById("clickGlobal")
+    btn.onclick = function () {
+        btn.setAttribute("value", "you alredy Click ME")
+    }
+    // btn.onclick = () => console.log("global event handler di click") // ketika dia dipanggil akan ditimpa
     </script>
 
 </body>

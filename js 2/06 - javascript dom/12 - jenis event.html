@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <h1 id="text">Click Yellow Box</h1>
+    <div id="canvas" style="width: 500px; height: 500px; background: yellow;"></div>
+
+    <script>
+// jenis event => jenis event yang bisa disesuaikan target eventnya
+    // misalnya pada element video, ada play, pause
+        // sedangkan pada element button, tidak ada play, pause
+        // dll
+
+// saat kita membuat callback function untuk event handler
+        // kita juga bisa menerima data event yang memicu event itu terjadi
+    // click event => data eventya mouse event(yang berisi lokasi mouse, dll)
+    const canvas = document.getElementById("canvas")
+    const text = document.getElementById("text")
+    canvas.onclick = function (event) { // kalau onclick yang di ambil mouse event
+        text.textContent = `You Click At ${event.x}, ${event.y}`
+    }
+    </script>
+
+</body>
+</html>

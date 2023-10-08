@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <input type="button" value="blue">
+    <input type="button" value="red">
+    <input type="button" value="yellow">
+
+    <div id="canvas" style="width: 500px; height: 500px; background: black;"></div>
+
+    <script>
+// style => digunakan untuk manipulasi data style css
+    // kita tidak perlu menggunakan element.setAttribute("style", "value") setiap ingin mengubah
+    // kita bisa langsung element.style.name = value
+
+// name style => penamaan style pada js berubah
+    // jika di css rata rata menggunakan lowercase dan -
+        // misal background-color
+    // sedangkan di DOM js menggunakan pascalCase
+        // missal backgroundColor
+    // jadinya ntar element.style.backgroundColor = "red"
+    const canvas = document.getElementById("canvas")
+    const buttons = document.querySelectorAll("input")
+    for (const button of buttons) {
+        button.onclick = function () {
+            canvas.style.backgroundColor = button.getAttribute("value") 
+        }
+    }
+    </script>
+
+</body>
+</html>

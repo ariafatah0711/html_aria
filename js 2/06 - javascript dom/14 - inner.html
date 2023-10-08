@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <p id="content">
+        <script>
+            console.log("hello world")
+        </script>
+        <b>Eko</b> kurniawan <i>Khannedy</i>
+    </p>
+
+    <p id="text"></p>
+
+    <script>
+// innerText dan innerHTML => mendapatkan isi text sebuah element
+    // tujuanya sama untuk mengambil atau mengubah isi text content sebuah element
+    // namun textContent => mengembalikan semua isi dari kontent text sebuah element(jika ada element lain dia ga akan di ambil)
+    // innerText bisa tahu bagian text mana yang akan di tampilkan, dia hanya mengambil text yang ditampilkan saja
+    const content = document.getElementById("content")
+    console.info(content.textContent) // mengambil scriptnya juga
+    console.info(content.innerText) // hanya mengambil yang berhubungan text
+    // innerText lebih pintar > textContent
+
+// innerHTML => mengambil seluruh element htmlnya(tidak hanya textnya saja)
+    console.info(content.innerHTML) // mengambil semua element beserta tag nya
+    
+// keuntunganya bisa mengubah sebuah isi dari element menggunakan string
+    content.innerHTML = `
+        <h1>This Is Title</h1>
+        <p>This Is Description </p>
+        <p>${content.innerText}</p>
+    `
+    document.getElementById("text").innerText = `
+    inner text: 
+        <h1>This Is Title</h1>
+        <p>This Is Description </p>
+    `
+    </script>
+
+</body>
+</html>
