@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+
+    Aria Fatah <br>
+    <a href="./00 - main.html">back js list</a><br />
+    <!-- hello world -->
+
+    <script>
+// node type => mencari type node (element, textElement, atau lainya)
+    // nodeType => propety yang digunakan untuk mengetahui type node
+        // dan berisi angka
+    // 1 => Node.ELEMENT_NODE
+    // 2 => Node.ATTRIBUTE_NODE
+    // 3 => Node.TEXT_NODE
+    // 4 => Node.CDATA_SECTION_NODE => <!CData[[ ... ]]>
+    // 7 => Node.PROCESSING_INSTRUCTION_NODE => <?xml-stylesheet ... ?>
+    // 8 => Node.COMMENT_NODE => <!-- ... -->
+    // 9 => Node.DOCUMENT_NODE
+    // 10 => Node.DOCUMENT_TYPE_NODE => <!DOCTYPE html>
+    // 11 => Node.DOCUMENT_FRAGMENT_NODE
+
+    const nodes = document.body.childNodes
+    nodes.forEach(node => {
+        console.info(`${node}: ${node.nodeType}`)
+    })
+    </script>
+
+</body>
+</html>

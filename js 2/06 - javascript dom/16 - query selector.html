@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+    <style>img{height: 100px;}</style>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <h1>judul</h1>
+    <h2>sub judul</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime necessitatibus culpa deleniti in soluta rerum temporibus vitae magni. Minus molestias ea minima ex nam aliquam numquam corporis reiciendis? Consequuntur, reprehenderit!</p>
+
+    <h1>judul</h1>
+    <h2>sub judul</h2>
+    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maxime necessitatibus culpa deleniti in soluta rerum temporibus vitae magni. Minus molestias ea minima ex nam aliquam numquam corporis reiciendis? Consequuntur, reprehenderit!</p>
+
+    <ul>
+        <li class="menuItem">1</li>
+        <li>2</li>
+        <li class="menuItem">3</li>
+    </ul>
+
+    <form>
+        <input id="submit" type="submit" value="submit">
+    </form>
+
+    <img src="../../z-files/image/logo.png" alt="image1">
+    <img src="../../z-files/image/logo.png" alt="image2">
+    <img src="../../z-files/image/logo.png" alt="image3">
+
+    <script>
+// Query Selector => merupakan method untuk menseleksi node sesuai pola yang ingin kita cari
+    // document.querySelector(pola) => digunakan menyeleksi node pertama
+    // document.querySelectorAll(pola) => digunakan menyeleksi semua node yang sesuai dengan pola
+        // pola => menggunakan css selector
+            // body .header => begini contohnya
+    // document.querySelector("body .heaader p") => mengambil tag/elemen p
+
+    // * (universal selector) => menyeleksi semua elemen 
+    const allElements = document.querySelectorAll("*")
+    console.info(allElements) // NodeList(13) [ html, head, meta, meta, meta, title, body, a, br, h1, … ]
+
+    // h1, p (type selector) => menyeleksi tag html yang kita pilih
+    const h1All = document.querySelector("h1")
+    console.info(h1All) // <h1> => hanya mengambil satu element saja
+
+    // .container (class selector) => selector untuk memilih class
+    const menuItems = document.querySelectorAll(".menuItem")
+    console.info(menuItems) // mengambil tag yang memilki class menuItem
+
+    // #submit (id selector) => selector untuk memilih id yang sesuai
+    const submitBtn = document.querySelector("#submit")
+    console.info(submitBtn)
+
+    // element[attribut] (attribut selector) => selector untuk menyelksi element berdasarkan atribut
+    const imgSrcImage = document.querySelectorAll("img[src]")
+    console.info(imgSrcImage)
+    
+    // [atribut*=value] (operator di atribut selector) => selector atribut dan valuenya
+    // [atribut^=value] => diawali, [atribut$=value] => diakhiri
+    const imgAltImage = document.querySelectorAll("img[alt*=image1]")
+    console.info(imgAltImage) // img yang memilki alt ada image1
+
+    const imgSrcPng = document.querySelectorAll("img[src$=png]")
+    console.info(imgSrcPng) // img yang memilki src yang diakhiri dengan png
+    </script>
+
+</body>
+</html>

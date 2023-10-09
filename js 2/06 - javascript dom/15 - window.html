@@ -9,8 +9,24 @@
 <body>
     <a href="./00 - main.html">back js list</a><br />
 
+    <p id="content"></p>
+    <p id="locationUrl"></p>
+
     <script>
-// window => 
+// window => merupakan reprentasi dari window yang berisi DOM document
+    // alert, confirm, prompt, console sebenernya adalah object dari window
+    // window.alert() => sama saja dengan alert()
+    // window.location => untuk lokasi
+    // window.close => menutup window, window.open => membuka window
+    const content = document.getElementById("content")
+    const locationUrl = document.getElementById("locationUrl")
+
+    const height = window.screen.height
+    const width = window.screen.width
+    const url = window.location
+
+    content.textContent = `window width: ${width}, height: ${height}`
+    locationUrl.textContent = `window location: ${url}`
     </script>
 
 </body>
