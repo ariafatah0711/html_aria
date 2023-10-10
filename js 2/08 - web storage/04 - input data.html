@@ -11,48 +11,145 @@
 
     <div class="container"></div>
 
+    <input type="button" value="input user" id="user">
+    <input type="button" value="input hobies" id="hobies">
+    <input type="button" value="input address" id="address">
+    <input type="reset" value="reset data" id="reset">
+
     <script>   
     const KEY = "USER_ARIA"
-
-    myObject = {
-        umur: 17,
-        hobies: ["anime", "music", "coding"],
+    
+    const myObject = {
+        name: "",
+        kelas: "",
+        umur: "",
+        hobies: [],
         address: {
-            country: "indonesia",
-            city: "depok",
-            road: "Gg. bakti 3"
+            country: "",
+            city: "",
+            road: ""
         }
     }
-
-    if (!localStorage.getItem(KEY)) {
-        var username = prompt("masukan nama anda: ")
+    function input() {
+        let name = prompt("masukan nama anda: ")
         let kelas = prompt("masukan kelas anda: ")
-        myObject.name, myObject.kelas = username, kelas
-    } else {
+        let umur = prompt("masukan umur anda: ")
+        myObject.name = name
+        myObject.kelas = kelas
+        myObject.umur = umur
 
+        let done = false
+        while (done === false) {
+            let hobies = prompt("masukan hobies: ")
+
+            if (!hobies) {
+                myObject.hobies.push(" - ")
+            } else {
+                myObject.hobies.push(hobies)
+            }
+
+            if (myObject.hobies.length == 3) {
+                done = true
+            }
+        }
+
+        let country = prompt("masukan negara anda: ")
+        let city= prompt("masukan kota anda: ")
+        let road = prompt("masukan alamat anda: ")
+        myObject.address.country = country
+        myObject.address.city = city
+        myObject.address.road = road
+        localStorage.setItem(KEY, JSON.stringify(myObject))
+    }
+    // checked have item or no
+    if (!localStorage.getItem(KEY)) {
+        input()
+        localStorage.setItem(KEY, JSON.stringify(myObject))
+
+        var myData = localStorage.getItem(KEY) // object
+        myData = JSON.parse(myData)
+    } else {
+        var myData = localStorage.getItem(KEY) // object
+        myData = JSON.parse(myData)
+        }
+
+    function inputUser() {
+        var myData = localStorage.getItem(KEY)
+        myData = JSON.parse(myData)
+
+        let name = prompt("masukan nama anda: ")
+        let kelas = prompt("masukan kelas anda: ")
+        let umur = prompt("masukan umur anda: ")
+        myData.name = name
+        myData.kelas = kelas
+        myData.umur = umur
+
+        localStorage.setItem(KEY, JSON.stringify(myData))
+    }
+    function inputHobies() {
+        var myData = localStorage.getItem(KEY)
+        myData = JSON.parse(myData)
+        myData.hobies = []
+        let done = false
+        while (done === false) {
+            let hobies = prompt("masukan hobies: ")
+
+            if (!hobies) {
+                myData.hobies.push(" - ")
+            } else {
+                myData.hobies.push(hobies)
+            }
+
+            if (myData.hobies.length == 3) {
+                localStorage.setItem(KEY, JSON.stringify(myData))
+                done = true
+            }
+        }
+    }
+    function inputAddress() {
+        var myData = localStorage.getItem(KEY)
+        myData = JSON.parse(myData)
+        let country = prompt("masukan negara anda: ")
+        let city= prompt("masukan kota anda: ")
+        let road = prompt("masukan alamat anda: ")
+        myData.address.country = country
+        myData.address.city = city
+        myData.address.road = road
+        localStorage.setItem(KEY, JSON.stringify(myData))
     }
 
-    localStorage.setItem(KEY, JSON.stringify(myObject)) 
+    // input data
+    document.getElementById("user").onclick = function () {
+        inputUser()
+        location.reload()
+    }
+    document.getElementById("hobies").onclick = function () {
+        inputHobies()
+        location.reload()
+    }
+    document.getElementById("address").onclick = function () {
+        inputAddress()
+        location.reload()
+    }
+    // clear data
+    document.getElementById("reset").onclick = function () {
+        localStorage.removeItem(KEY)
+        location.reload()
+    }
 
-    let myData = localStorage.getItem(KEY) // object
-
-
+    // tampilkan data
     const content = document.createElement("div")
     content.innerHTML = `
-        <h3>name : ${myData.username}</h3>
-        <h3>kelas : 11</h3>
-        <h3>umur : 17</h3>
-        <h3>hobies : </h3>
-        <h3>hobies : </h3>
-        <h3>hobies : </h3>
-        <h3>address: </h3>
+        <h3>name : ${myData.name}</h3>
+        <h3>kelas : ${myData.kelas}</h3>
+        <h3>umur : ${myData.umur}</h3>
+        <h3>hobies : ${myData.hobies[0]}, ${myData.hobies[1]}, ${myData.hobies[2]}</h3>
+        <h3>address: ${myData.address.country}, ${myData.address.city}, ${myData.address.road},</h3>
     `
 
-    const container = document.getElementsByClassName("container")
-    console.log(container)
-    console.log(content)
+    // const container = document.getElementsByClassName("container") // html Collection
+    const container = document.querySelector(".container") // DOM tunggal
     container.appendChild(content)
-
     </script>
 
 </body>
