@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <div class="container"></div>
+
+    <script>   
+    const KEY = "USER_ARIA"
+
+    myObject = {
+        umur: 17,
+        hobies: ["anime", "music", "coding"],
+        address: {
+            country: "indonesia",
+            city: "depok",
+            road: "Gg. bakti 3"
+        }
+    }
+
+    if (!localStorage.getItem(KEY)) {
+        var username = prompt("masukan nama anda: ")
+        let kelas = prompt("masukan kelas anda: ")
+        myObject.name, myObject.kelas = username, kelas
+    } else {
+
+    }
+
+    localStorage.setItem(KEY, JSON.stringify(myObject)) 
+
+    let myData = localStorage.getItem(KEY) // object
+
+
+    const content = document.createElement("div")
+    content.innerHTML = `
+        <h3>name : ${myData.username}</h3>
+        <h3>kelas : 11</h3>
+        <h3>umur : 17</h3>
+        <h3>hobies : </h3>
+        <h3>hobies : </h3>
+        <h3>hobies : </h3>
+        <h3>address: </h3>
+    `
+
+    const container = document.getElementsByClassName("container")
+    console.log(container)
+    console.log(content)
+    container.appendChild(content)
+
+    </script>
+
+</body>
+</html>

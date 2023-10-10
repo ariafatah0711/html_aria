@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <form name="commentForm">
+        <label for="comment">
+            Comment : <input id="comment" type="text" name="comment">
+        </label> <br>
+        <label for="from">
+            From : <input id="from" type="text" name="from">
+        </label> <br>
+        <input type="submit">
+    </form>
+
+    <div id="commentList"></div>
+
+    <script>
+// html form element => propety, method dan juga event yang terdapat pada form
+    // propety => .method, .length, .target, .action
+    // method => .reset(), .submit(), dll
+    // event => reset, submit
+// html input element => 
+    // propety => .name, .type, .disabled, .required, .value, .autoFocus
+    // method => .blur(), .click(), .select()
+    // event => input, search, invalid
+    comment.required = "true"
+    from.required = "true"
+
+{
+    document.querySelector("form[name=commentForm]").onsubmit = function (event) {
+        const commentList = document.getElementById("commentList")
+        const comment = document.getElementById("comment").value
+        const from = document.getElementById("from").value
+
+        const CommentItem = document.createElement("p")
+        CommentItem.textContent = `${comment} - ${from}`
+        commentList.appendChild(CommentItem)
+
+        document.querySelector("form[name=commentForm]").reset() // reset value form
+
+        event.preventDefault() // agar tidak ngerefresh atau tidakmelakukan action dan hanya javascriptnya saja
+    }
+}
+
+{
+    // akses form via name => bisa mengakses form hanya dengan menggunakan name
+    // kita bisa gunakan document.forms[name]
+    // atau jika ingin mengakses inputnya kita bisa menggunakan
+        // document.forms[name][inputName]
+    document.querySelector("form[name=commentForm]").onsubmit = function (event) {
+        const commentList = document.getElementById("commentList")
+        const comment = document.forms["commentForm"]["comment"].value // akses input via name
+        const from = document.forms["commentForm"]["from"].value
+
+        const CommentItem = document.createElement("p")
+        CommentItem.textContent = `${comment} - ${from}`
+        commentList.appendChild(CommentItem)
+
+        document.forms["commentForm"].reset() // akses form via name
+        
+        event.preventDefault() // agar tidak ngerefresh atau tidakmelakukan action dan hanya javascriptnya saja
+    }
+}
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// localStorage => jenis web storage yang datanya akan disimpan di browser
+    // dan data ini tetap ada bahkan setelah web browser ditutup
+    // data yang di simpan dalam bentuk string
+    // berisi key - value (key: value) seperti object    
+    const KEY = "USER_ARIA"
+
+    myObject = {
+        name: "ariafatah",
+        kelas: 11,
+        umur: 17,
+        hobies: ["anime", "music", "coding"],
+        address: {
+            country: "indonesia",
+            city: "depok",
+            road: "Gg. bakti 3"
+        }
+    }
+
+    // .setItem(key, value) => menyimpan data(key-value) di web storage
+    // .getItem(key) => mengambil data di web storage berdasarkan key
+    // .removeItem(key) => menghapus data di web storage berdasarkan key
+    // .clear() => menghapus semua data
+    // .key(index) => mengambil nama kunci di index tertentu
+    // .length => 
+
+// menyimpan kedalam localStorage
+    // menyimpan data dalam bentuk string
+    localStorage.setItem(KEY, JSON.stringify(myObject)) 
+
+    // mengambil data dalam bentuk JSON/object
+    const getLocal = localStorage.getItem(KEY)
+    let myData = JSON.parse(getLocal) // object
+    console.log(myData)
+    console.log(myData.name)
+    console.log(myData.kelas)
+    console.log(myData.hobies[1])
+    console.log(myData.address.country)
+
+    // meremoveItem
+    // localStorage.removeItem(KEY)
+    // localStorage.clear()
+    const localStorageKey0 = localStorage.key(0) // USER_ARIA
+    console.log(localStorageKey0)
+
+    const localStorageLength = localStorage.length
+    console.log(localStorageLength)
+    </script>
+
+</body>
+</html>

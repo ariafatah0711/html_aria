@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <script>
+// sessionStorage => jenis web storage yang datanya akan hilang dan hanya bertahan selama satu sesi perambanan web
+    // artinya data ini akan hilang setelah tab atau jendela ditutup
+    // data yang di simpan dalam bentuk string
+    // berisi key - value (key: value) seperti object
+    const myArray = ["eat", "sleep", "code"]
+    const myObject = {
+        name: "aria",
+        hobies:  ["eat", "sleep", "code"],
+        logName: function () {
+            console.log(this.name)
+            this.hobies.forEach((value, key) => {
+                console.log(`${key} ${value}`)
+            })
+        }
+    }
+
+{
+    // sessionStorage.setItem(key, value)
+    sessionStorage.setItem("mySessionStore", myObject) // => untuk menyimpan data
+    const sessionData = sessionStorage.getItem("mySessionStore")
+    console.info(typeof(sessionData)) // string
+    console.log(sessionData) // [object Object]
+    // data nya akan menjadi mySessionStorage: [object Object] => dan ini tidak dapat digunakan datanya
+    // web storage hanya mengambil data string
+    
+    sessionStorage.setItem("mySessionStore", myArray) // => eat,sleep,code (namun ini bukanlah array hanya string)
+    // kesimpulanya data yang set haruslah string, lalu bagaimana untuk mengirim data dan menyimpan dan
+    // saat ditampilkan masih data yang sama
+}
+
+{
+    // membuat data string yang digunakan untuk mengirim data
+    // JSON => string (mengubah data object menjadi string)
+    sessionStorage.setItem("mySessionStore", JSON.stringify(myObject)) // => data yang di simpan akan menjadi string
+    console.info(`data yang diambil => ${typeof(JSON.stringify(myObject))}`)
+    console.log(JSON.stringify(myObject))
+    
+    // string => JSON (mengubah data string menjadi object)
+    getData = JSON.parse(sessionStorage.getItem("mySessionStore"))
+    console.info(`data yang diambil => ${typeof(getData)}`)
+    console.log(getData)
+    // getData.logName() // tidak bisa dipanggil karena ini adalah function
+    // function tidak dapat di kirim ke JSON
+}
+    </script>
+
+</body>
+</html>

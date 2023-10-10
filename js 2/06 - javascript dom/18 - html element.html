@@ -9,8 +9,23 @@
 <body>
     <a href="./00 - main.html">back js list</a><br />
 
+    <a id="link"></a>
+
     <script>
-// HTML element => 
+// HTML element => turunan dari element
+    // HTML element memilki banyak propety dan method tambahan selain dari element DOM
+    // seperti htmlElement.style => menambahkan style
+    // htmlElement.title => untuk title atribut
+    // htmlElement.spellCheck => untuk mengaktifkan/menonaktifkan spellCheck 
+    const link = document.getElementById("link")
+
+    // menggunakan setAttribut
+    link.setAttribute("href", "00 - main.html")
+
+    // menggunakan propety
+    link.href = "00 - main.html"
+    link.target = "_blank"
+    link.textContent = "website belajar dom"
     </script>
 
 </body>
