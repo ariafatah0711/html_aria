@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <h1 id="header"></h1>
+
+    <script>
+// callback => merupakan mekanisme untuk memanggil kembali kode progam yang ada di progam Async
+    // callback biasanya dibuat dalam bentuk function as parameter,
+    // dan parameter function tersebut akan di eksekusi oleh prosesn Asynch
+    // dengan menggunakan callback kita dapat menerima 
+        // informasi yang dibutuhkan dari peoses yang berjalan secara Asynch
+
+// Asynch method, timeMSecond => waktu dalam mili second
+    // setTimeout(callback, timeMSecond) => digunakan untuk menjalankan proses Asynch sekali dalam kurun waktu tertentu
+    // setInterval(callback, timeMSecond) => digunakan untuk menjalankan Asynch secara priodik dalam waktu tertentu
+        // akan dipanggil berkali kali secara interval waktu ini
+        // (callback, 5000) artinya setiap 5 detik sekali akan dipanggil callback ini
+    
+// setTimeout => dieksekusi sekali dan merupakan Asynch(jalan tanpa harus ditunggu)
+    const addElement = () => {
+        const header = document.createElement("p")
+        header.textContent = "Aria Fatah Anom"
+
+        document.body.appendChild(header)
+    }
+
+    setTimeout(addElement, 5000) // => akan muncul sekali setelah 5 detik
+    console.info("progam selesai") // progam selesai ini sudah keluar sebelum setTimeOut selesai
+
+// setInterval => dieksekusi setiap kurun waktu dan merupakan Asynch(jalan tanpa harus ditunggu)
+    const setTime = () => {
+        const header = document.getElementById("header")
+        header.textContent = new Date().toString(); // => new Date() berfungsi untuk mengambil waktu saat ini
+        const date = new Date()
+        header.textContent = `${date.getHours()}.${date.getSeconds()}`
+        // toString digunakan untuk mengubah angka menjadi string
+    }
+
+    setInterval(setTime, 1000) // tidak akan berhenti(mengulang setiap 1 detik)
+    </script> 
+
+</body>
+</html>
