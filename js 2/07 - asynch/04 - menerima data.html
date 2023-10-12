@@ -14,19 +14,9 @@
     <h3 id="kelas"></h3>
 
     <script>
-// AJAX => asynchronous javascript and XML
-    // AJAX biasanya digunakan untuk mengambil atau mengirm data ke URL lain
-    // untuk melakukan AJAX, kita bisa menggunakan class XMLHttpRequest
-    // cara kerja nya => saat progam kita membuat ajax kita akan mengirim ke server dan
-        // selanjutnya server akan membalas dan kita akan mendapat sebuah response
-        // dan kita akan menampilkan tampilan data di website kita
+// membuat object ajax dari class XMLHttpRequest
     const ajax = new XMLHttpRequest();
     ajax.open("GET", "./api/hello.json");
-    
-    // menerima data di ajax => tidak dapat langsung mengambil response ajax karena proses ajax adalah asynch
-    // sehingga kita perlu menunggu informasi aysnch nya selesai
-    // untuk mendapatkan informasi ajax, kita bisa menggunakan ajax callback, 
-    // yang akan di eksekusi setelah proses ajax selesai
 
 // menambhakan addEventListener("load", callback) atau .onload
     ajax.addEventListener("load", function () {
@@ -40,11 +30,11 @@
     })
     
     ajax.onload = function () {
-        
+        // proses response
     }
     
 // mengirim response
-    ajax.send(); // request dan data nya akan di response
+    ajax.send();
     </script> 
 
 </body>

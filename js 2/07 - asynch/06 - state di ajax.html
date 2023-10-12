@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <table border="1">
+        <tr><th>value</th><th>state</th><th>description</th></tr>
+        <tr><td>0</td><td>UNSENT</td><td>xml telah dibuat namun belum di call open()</td></tr>
+        <tr><td>1</td><td>OPENED</td><td>open() => sudah di open</td></tr>
+        <tr><td>2</td><td>HEADERS_RECAIVED</td><td>send() => sudah di kirim dan statusnya sudah ada </td></tr>
+        <tr><td>3</td><td>LOADING</td><td>downloading, response sedang mendownload (masih proses)</td></tr>
+        <tr><td>4</td><td>DONE</td><td>response / operasinya sudah selesai</td></tr>
+    </table>
+
+    <h1 id="header"></h1>
+
+    <script>
+// state di ajax => tahapan state
+    // menggunakan propety readyState => mengembalikan niali number,
+    // dimana tiap number merupakan reprentasi dari statenya
+    /*
+    0 UNSET xml telah dibuat namun belum di call open()
+    1 OPENED open() => sudah di open
+    2 HEADERS_RECAIVED
+    3 LOADING downloading, response sedang mendownload (masih proses)
+    4 DONE response / operasinya sudah selesai
+    */
+    // redy state change event => jika ingin mendengarkan perubahan yang terjadi pada state
+        // redyStateChange
+
+    function displayResponse(json) {document.getElementById("header").textContent = json.response}
+    const ajax = new XMLHttpRequest();
+    ajax.open("GET", "./api/hello.json");
+
+    // ajax.readyState = function () {}
+    ajax.addEventListener("readystatechange", function () {
+        console.info(`redy state change ${ajax.readyState}`)
+    })
+
+    ajax.addEventListener("load", function () {
+        if (ajax.status === 200) {
+            const json = JSON.parse(ajax.responseText);
+            displayResponse(json)
+        } else {
+            displayResponse({response: `terjadi kesalahan dengan status ${ajax.status}`})
+        }
+    })
+    
+    ajax.send();
+
+    </script> 
+
+</body>
+</html>

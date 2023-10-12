@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <table border="1">
+        <tr><th>value</th><th>status</th><th>description</th></tr>
+        <tr><td>100-199</td><td>informational response</td><td>request telah diterima (belum di peroses)</td></tr>
+        <tr><td>200-299</td><td>OK</td><td>berhasil di peroses</td></tr>
+        <tr><td>300-399</td><td>redirect</td><td>membutuhkan aksi selanjutnya</td></tr>
+        <tr><td>400-499</td><td>client error</td><td>request yang dikirim tidak diterima oleh client</td></tr>
+        <tr><td>500-599</td><td>server error</td><td>terjadi kesalahan di servernya</td></tr>
+    </table>
+
+    <h1 id="header"></h1>
+
+    <script>
+    // ajax adalah proses komunikasi client dan server
+// response status => merupakan status proses ajax
+    // contoh jika ada error, koneksi bermasalah, url tidak ketemu, dll
+    // maka kita bisa mengetahui response satatusnya
+    // menggunakan propety status
+
+    function displayResponse(json) {
+        document.getElementById("header").textContent = json.response
+    }
+
+    const ajax = new XMLHttpRequest();
+    ajax.open("GET", "./api/hello.json");
+
+    ajax.addEventListener("load", function () {
+        // 200 (ok) => success
+        if (ajax.status === 200) {
+            const json = JSON.parse(ajax.responseText);
+            displayResponse(json)
+        } else {
+            displayResponse({
+                response: `terjadi kesalahan dengan status ${ajax.status}`
+            })
+        }
+    })
+    
+    ajax.send();
+
+    </script> 
+
+</body>
+</html>
