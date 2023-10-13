@@ -8,31 +8,18 @@
 </head>
 <body>
     <a href="./00 - main.html">back js list</a><br />
+    
+    <br>
+    <a href="https://public.requestbin.com/r"> https://public.requestbin.com/r</a><br>
 
-    <h1 id="header"></h1>
+    <p>https://hookbin.com/</p>
+    <p>https://public.requestbin.com/r</p>
 
     <script>
-// hookbin =>
-
-    function displayResponse(json) {document.getElementById("header").textContent = json.response}
-    const ajax = new XMLHttpRequest();
-    ajax.open("GET", "./api/hello.json");
-
-    ajax.addEventListener("readystatechange", function () {
-        console.info(`redy state change ${ajax.readyState}`)
-    })
-
-    ajax.addEventListener("load", function () {
-        if (ajax.status === 200) {
-            const json = JSON.parse(ajax.responseText);
-            displayResponse(json)
-        } else {
-            displayResponse({response: `terjadi kesalahan dengan status ${ajax.status}`})
-        }
-    })
-    
-    ajax.send();
-
+// hookbin => aplikasi yang bisa digunakan untuk menerima request HTTP dan menyimpan datanya, 
+    // dengan ini kita bisa menggunakan hookbin untuk melihat detail data dari data AJAX yang kita kirim
+    // https://hookbin.com/
+    // https://public.requestbin.com/
     </script> 
 
 </body>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <form>
+        <label for="username">
+            username : <input type="text" id="username" name="username">
+        </label><br>
+        <label for="password">
+            password : <input type="password" id="password" name="password">
+        </label><br>
+        <input type="button" id="login" value="login">
+    </form>
+
+    <h1 id="response"></h1>
+
+    <script>
+// mengirim data dengan ajax => misal kita membaca semua data di web form, 
+    // lalu mengirimkan ke server menggunakan AJAX
+    // menggunakan method .send() milik XMLHttpRequest
+    function doLogin() {
+        const ajax = new XMLHttpRequest()
+        ajax.open("POST", "https://eo9r6vqqwmh5ru9.m.pipedream.net/") // pipedream susah
+        ajax.open("POST", "https://webhook.site/4b7afa78-f3fa-471b-8d3b-e5245bd610eb") // webhook ribet
+        ajax.open("POST", "https://enet3qeea8kyi.x.pipedream.net") // requestbin berhasil
+
+        // menampilkan data
+        ajax.onload = function () {
+            console.info(ajax.responseText)
+            const response = document.getElementById(`response`)
+            response.innerText = ajax.responseText
+        }
+
+        // content type
+        ajax.setRequestHeader(`Content-Type`, `application/json`)
+
+        // mengirim data
+        const json = {
+            username: document.getElementById(`username`).value,
+            password: document.getElementById(`password`).value
+        }
+        ajax.send(JSON.stringify(json))
+    }
+    document.getElementById(`login`).onclick = doLogin;
+    </script> 
+
+</body>
+</html>
