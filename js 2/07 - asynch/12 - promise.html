@@ -9,48 +9,42 @@
 <body>
     <a href="./00 - main.html">back js list</a><br />
 
-    <form>
-        <label for="username">
-            username : <input type="text" id="username" name="username">
-        </label><br>
-        <label for="name">
-            name : <input type="text" id="name" name="name">
-        </label><br>
-        <label for="profile">
-            profile : <input type="file" id="profile" name="profile">
-        </label><br>
-        <input type="button" id="register" value="register">
-    </form>
-
-    <h1 id="response"></h1>
-
-    <a href="https://public.requestbin.com/r/enet3qeea8kyi/2WjpYQ1Qk5w8MDXoAiKN9DSKG3f"> https://public.requestbin.com/r/enet3qeea8kyi/2WjpYQ1Qk5w8MDXoAiKN9DSKG3f</a><br>
-
     <script>
-// promise => 
-    function doRegister() {
-        const ajax = new XMLHttpRequest()
-        ajax.open("POST", "https://enet3qeea8kyi.x.pipedream.net")
+// promise => sebuah proxy untuk sebuah nilai di masa depan(future) yang belum diketahui
+    // digunakan sebagai proxy untuk proses asynch
+    // membuat data suatau saat akan datang(janji)
 
-        ajax.onload = function () {
-            console.info(ajax.responseText)
-            document.getElementById(`response`).innerText = ajax.responseText
-        }
+    // state promise
+        // pending => resultnya undefined (janji)
+        // fullfiled => resultnya value (ditepati / sudah ada)
+        // rejected => resulntya error (tidak ditepati / error kesalahan)
+        /*
+        const promises = new Promise(function(resolve, reject) {
+            if (success) {
+                resolve(value)
+            } else {
+                reject(error)
+            }
+        })
+        */
 
-        ajax.setRequestHeader(`Content-Type`, `application/json`)
+        // function getProduct() {
+            const promise = new Promise(function (resolve, reject) {
+                const ajax = new XMLHttpRequest()
+                ajax.open("GET", "api/product.json")
+                ajax.onload = function () {
+                    if(ajax.status === 200) {
+                        resolve(ajax.responseText)
+                    } else {
+                        reject(`error get product with response : ${ajax.responseText}`)
+                    }
+                }
+                ajax.send()
+            })
+        // }
 
-        const form = new FormData()        
-
-        form.append("username", document.getElementById("username").value)
-        form.append("name", document.getElementById("name").value)
-        const files = document.getElementById("profile").files
-        const firstFiles = files.item(0)
-        form.append("profile",firstFiles)
-
-        ajax.send(form)
-    }
-    document.getElementById(`register`).onclick = doRegister;
-</script> 
+        console.info(promise)
+    </script> 
 
 </body>
 </html>
