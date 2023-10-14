@@ -8,10 +8,41 @@
 </head>
 <body>
     <a href="./00 - main.html">back js list</a><br />
-    
+
+    <form>
+        <label for="search">
+            search : <input type="text" id="search" name="search">
+        </label><br>
+        <input type="button" id="searchButton" value="search">
+    </form>
+
+    <h1 id="response"></h1>
+
+    <a href="https://public.requestbin.com/r/enet3qeea8kyi/2WjpYQ1Qk5w8MDXoAiKN9DSKG3f">https://public.requestbin.com/r/enet3qeea8kyi/2WjpYQ1Qk5w8MDXoAiKN9DSKG3f</a><br>
+
     <script>
-// url search param => 
-    </script> 
+// selain format JSON, kadang saat mengirim data menggunakan AJAX, kita hanya mengirim data dalam bentuk query paramter
+// url search param => mengubah url dengan menambahkan query parameternya
+    // namun bisa lebih mudah menggunakan object URLSearchParam
+    function doSearch() {
+        const ajax = new XMLHttpRequest()
+
+        const param = new URLSearchParams()
+        param.append("search", document.getElementById("search").value)
+        param.append("filter", document.getElementById("search").value)
+        // "search=xxxxx&filter=yyy"
+
+        ajax.open("GET", `https://enet3qeea8kyi.x.pipedream.net?${param.toString()}`)
+        ajax.onload = function () {
+            console.info(ajax.responseText)
+            const response = document.getElementById(`response`)
+            response.innerText = ajax.responseText
+        }
+
+        ajax.send()
+    }
+    document.getElementById(`searchButton`).onclick = doSearch;    
+</script> 
 
 </body>
 </html>

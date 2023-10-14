@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <form>
+        <label for="username">
+            username : <input type="text" id="username" name="username">
+        </label><br>
+        <label for="name">
+            name : <input type="text" id="name" name="name">
+        </label><br>
+        <label for="profile">
+            profile : <input type="file" id="profile" name="profile">
+        </label><br>
+        <input type="button" id="register" value="register">
+    </form>
+
+    <h1 id="response"></h1>
+
+    <a href="https://public.requestbin.com/r/enet3qeea8kyi/2WjpYQ1Qk5w8MDXoAiKN9DSKG3f"> https://public.requestbin.com/r/enet3qeea8kyi/2WjpYQ1Qk5w8MDXoAiKN9DSKG3f</a><br>
+
+    <script>
+// promise => 
+    function doRegister() {
+        const ajax = new XMLHttpRequest()
+        ajax.open("POST", "https://enet3qeea8kyi.x.pipedream.net")
+
+        ajax.onload = function () {
+            console.info(ajax.responseText)
+            document.getElementById(`response`).innerText = ajax.responseText
+        }
+
+        ajax.setRequestHeader(`Content-Type`, `application/json`)
+
+        const form = new FormData()        
+
+        form.append("username", document.getElementById("username").value)
+        form.append("name", document.getElementById("name").value)
+        const files = document.getElementById("profile").files
+        const firstFiles = files.item(0)
+        form.append("profile",firstFiles)
+
+        ajax.send(form)
+    }
+    document.getElementById(`register`).onclick = doRegister;
+</script> 
+
+</body>
+</html>
