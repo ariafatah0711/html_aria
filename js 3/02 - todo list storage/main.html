@@ -10,18 +10,24 @@
 <body>
     <a href="../00 - main.html">back js...</a><br /><br>
 
-    <form name="inputData">
-        <label for="judul">
-            judul: <input id="judul" type="text" placeholder="judul buku" required>
-        </label><br>
-        <label for="penulis">
-            penulis: <input id="penulis" type="text" placeholder="penulis" required>
-        </label><br>
-        <input type="submit" value="submit"><br>
-        <input type="reset" value="reset data" onclick="resetData()">
-    </form>
+    <main>
+        <form name="inputData">
+            <label for="judul">judul:</label>
+            <input id="judul" type="text" placeholder="judul buku" required><br>
 
-    <ul id="container"></ul>
+            <label for="penulis">penulis:</label>
+            <input id="penulis" type="text" placeholder="penulis" required><br>
+
+            <input type="submit" value="submit"><br>
+            <input type="reset" value="reset data" onclick="resetData()">
+        </form>
+        
+        <div class="showData">
+            <h1>todo list</h1>
+            <ul id="container"></ul>
+        </div>
+            
+    </main>
 
     <script src="./script.js"></script>
     

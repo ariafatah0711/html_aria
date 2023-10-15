@@ -4,30 +4,51 @@
     box-sizing: border-box;
 }
 
+main {
+    height: calc(100vh - 10vh);
+    display: flex; justify-content: center; align-content: center;    
+    border-top: 1px solid black;
+}
+
 form {
-    display: flex; flex-direction: column;
+    height: 100%; width: 35%;
+    display: flex; flex-direction: column; row-gap: 1px; padding: 5px 10px;
     background: cyan;
-    border: 1px solid grey;
+}
+form input {
+    height: 30px;
 }
 
-form input:not(input[type*="checkbox"]) {
-    width: 30%;
+.showData {
+    height: 100%; width: 35%;
+    display: flex; flex-direction: column; row-gap: 10px; padding: 10px;
+    background: #efefef;
 }
-
+.showData h1 {
+    width: 100%; text-align: center;
+}
 ul {
-    border: 1px solid grey;
-    margin-top: 10px;
-    padding: 10px;
+    flex-grow: 1;
+    display: flex; flex-direction: column; row-gap: 10px;
+    background: #efefef;
 }
-
 ul li {
-    margin: 10px 0;
-    border: 1px solid grey;
-    display: flex; flex-direction: column;
+    padding: 1px 10px;
+    display: flex; flex-direction: column; gap: 5px;
     position: relative;
+    background: cyan;
 }
 
 ul li span:nth-child(3) {
-    position: absolute; right: 0;
+    position: absolute; right: 10px;
     font-size: 200%; cursor: pointer;
+}
+
+@media only screen and (max-width:786px) {
+    main {height: auto; flex-direction: column; width: 100%; justify-content: center;}
+    form,
+    .showData {
+        height: auto; width: 100%; max-width: 350px; margin: 0 auto;
+    }
+
 }
