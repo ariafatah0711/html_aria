@@ -9,8 +9,58 @@
 <body>
     <a href="./00 - main.html">back js list</a><br />
 
+    <form enctype="application/x-www-form-urlencoded"> <!-- sebuah form -->
+        <label for="username">
+            username : <input type="text" id="username" name="username">
+        </label><br>
+        <label for="password">
+            password : <input type="password" id="password" name="password">
+        </label><br>
+        <input type="button" id="login" value="login">
+    </form>
+
+    <h1 id="response"></h1>
+
+    <a href="https://public.requestbin.com/r/enet3qeea8kyi/2WjpYQ1Qk5w8MDXoAiKN9DSKG3f"> https://public.requestbin.com/r/enet3qeea8kyi/2WjpYQ1Qk5w8MDXoAiKN9DSKG3f</a><br>
+
     <script>
-// fetch api => 
+    // ajax => fitur lama (perlu membuat callback)
+    // fetch api => fitur baru (sudah ada promise)
+// fetch api => penggunaan ajax yang lebih simp;e dan sudah menggunakan promise sehingga lebih mudah
+    
+// request => membuat object Request terebih dahulu
+    // lalu dikirimkan menggunakan fetch api
+    // var my request = new Request(input,{init}); // init itu object
+        // input => berupa url
+        // init => konfigurasi(opsional)
+            // method, headers, body, dll
+    function doLogin() {
+        const request = new Request("https://public.requestbin.com/r/enet3qeea8kyi/2WjpYQ1Qk5w8MDXoAiKN9DSKG3f", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+                "Accept": "application/json"
+            },
+            body: JSON.stringify({
+                username: document.getElementById("username").value,
+                password: document.getElementById("password").value,
+            })
+        })
+        // promise<response> => berupa promise
+        const response = fetch(request); // fetch itu untuk mengirim dan request adalah datanya
+
+        // response
+        console.log(response)
+    }
+    document.getElementById("login").onclick = doLogin();
+
+// response => hasil dari fetch api adalah sebuah promise
+    // promise berisikan obect reponse
+    // response.body => baca body, .headers, ok, status, type, url, method, dll
+        // jika di ajax kita perlu JSON.stringFly dulu untuk mengubah atau parse
+        // di sini kita hanya perlu Response.json()
+        // jika text Response.text()
+
     </script> 
 
 </body>

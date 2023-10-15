@@ -7,10 +7,12 @@ function asynchData(method, value, status) {
     case "get":
       data = localStorage.getItem(key);
       data = JSON.parse(data);
+      if (data === null) data = {};
       break;
     case "post":
       if (!localStorage.getItem(key)) {
         data = {};
+        console.log("data kosong");
       } else {
         data = localStorage.getItem(key);
         data = JSON.parse(data);
@@ -21,6 +23,9 @@ function asynchData(method, value, status) {
     case "remove":
       delete data[value];
       localStorage.setItem(key, JSON.stringify(data));
+      break;
+    case "reset":
+      localStorage.clear();
       break;
     default:
   }
@@ -55,12 +60,13 @@ function addItem() {
 }
 
 function removeItem(element) {
-  // console.log(element);
-
   var parentElement = element.parentNode.id;
-  // console.log(parentElement);
-
   asynchData("remove", parentElement);
+  location.reload();
+}
+
+function resetData() {
+  asynchData("reset");
   location.reload();
 }
 
