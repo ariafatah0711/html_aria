@@ -1,0 +1,33 @@
+* {
+    margin: 0; padding: 0;
+    text-decoration: none; outline: none;
+    box-sizing: border-box;
+}
+
+form {
+    display: flex; flex-direction: column;
+    background: cyan;
+    border: 1px solid grey;
+}
+
+form input:not(input[type*="checkbox"]) {
+    width: 30%;
+}
+
+ul {
+    border: 1px solid grey;
+    margin-top: 10px;
+    padding: 10px;
+}
+
+ul li {
+    margin: 10px 0;
+    border: 1px solid grey;
+    display: flex; flex-direction: column;
+    position: relative;
+}
+
+ul li span:nth-child(3) {
+    position: absolute; right: 0;
+    font-size: 200%; cursor: pointer;
+}
