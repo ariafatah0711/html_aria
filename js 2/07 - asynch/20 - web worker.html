@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+
+    <button id="buttonTask">Click Me</button>
+    <button id="buttonTaskWorker">Click Me(worker)</button>
+    
+    <script>
+// web worker => javascript menggunakan single thread (single proses)
+    // single proses => artinya proses yang berjalan cuma ada satu
+    // asynch akan dijalankan di thread(proses) yang sama
+// Concurrent => kemampuan satu thread(proses) mengelola beberapa pekerjaan
+// Pararel => kemampuan menjalankan beberapa thread(proses) untuk mengelola satu atau lebih pekerjaan
+    // untuk membuat Pararel kita bisa menggunakan web worker
+
+// tanpa web worker => hanya 1 thread
+    function slowLog(total) {
+        for (let i = 0; i <= total; i++) {
+            console.log(i)
+        }
+    }
+
+    document.getElementById("buttonTask").onclick = function () {
+        console.log("start")
+        slowLog(500) // saat di klick akan ngeheng dan
+        // dan tombol tidak dapat di klik hingga selesai
+        console.log("end")
+    }
+
+// web worker => menggunakan beberapa thread (proses)
+    // menjalankan proses di thread yang berbeda dibandingka main thread
+    // keuntungan => jika terdapat proses yang membutuhkan waktu lama
+        // web kita tidak akan freze, karena proses tersebut bisa kita jalankan di thread yang berbeda
+    /*
+        diagram web worker
+        Main Thread   Web Worker Thread
+            |post message => |
+            |            |   |
+            |_show header|   |
+            |            |   |_Do work
+            |_show footer|   |
+            |            |   |
+            | <= post message|
+        Main Thread   Web Worker Thread
+    */
+// untuk menggunakan kita membuat object Worker
+    // saat kita membuat worker tidak akan langsung jalan
+    // kita harus beri perintah
+        // method postMessage => untuk mengirim pesan
+        // eventListener onmessage => untuk menerima balasan
+    // data yang diterima adalah object MessageEvent
+    const worker = new Worker("20 - worker.js")
+    // worker.onmessage = callback
+    worker.addEventListener("message", function(message) {
+        console.log(message.data)
+    })
+
+    document.getElementById("buttonTaskWorker").onclick = function() {
+        worker.postMessage(500)
+    }
+
+    </script> 
+
+</body>
+</html>

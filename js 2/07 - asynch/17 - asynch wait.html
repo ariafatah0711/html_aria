@@ -14,7 +14,37 @@
     // membuat asynch dengan gaya synch
         // asynch => menandakan bahwa function tersebut adalah asynch, dan mengembalikan promise
             // dengan asynch kita tidak membuat promise secara manual
-    // 
+    // return Promise<string>
+    function getNamePromise() {
+        return new Promise(function(resolve, reject) {
+            resolve("aria promise")
+        })
+    }
+    getNamePromise()
+    .then((name) => console.info(name))
+
+    // return Promise<String>
+    async function getNameAsynch() {
+        return "aria promise in asynch"
+    }
+    getNameAsynch()
+    .then((name) => console.info(name))
+
+// await => mendaptakan value dari sebuah promise
+    // biasanya pae .then(callback)
+    // namun kita dapat menggunakan asynch function
+
+    // promise<JSON Product>
+    function getProduct() {
+        return fetch("api/product.json", {
+            method: "GET"
+        }).then((response) => response.json())
+    } 
+
+    async function getProduct() {
+        response = await getProduct()
+        return response.name
+    }
     </script> 
 
 </body>

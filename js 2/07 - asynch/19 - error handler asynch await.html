@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>js 2</title>
+</head>
+<body>
+    <a href="./00 - main.html">back js list</a><br />
+    
+    <script>
+// error handler di asynch await
+    // jika di promise bisa pakai ,catch()
+    // di asynch await kita bisa gunakan try catch untuk melakukan penanganan error
+    function getProduct() {
+        const request = new Request("api/product.json", {
+            method: "GET"
+        })
+
+        const response = fetch(request)
+
+        return response.then((response) => response.json())
+    }
+
+// menggunakan await
+    async function getProductNameAsynch() {
+        try {
+            const product = await getProduct() // menunggu sampai data ada jika ada dimasukan
+            return product.name
+        } catch (e) {
+            return "Product not Found"
+        }
+    }
+
+    getProductNameAsynch()
+        .then((productName) => console.info(productName))
+    </script> 
+
+</body>
+</html>
