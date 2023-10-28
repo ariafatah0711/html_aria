@@ -25,7 +25,6 @@ This file that I studied while learning web development consists of HTML, CSS, a
 ## table of contents
 <details>
   <summary><b>Create Repository on Github</b></summary>
-  
   1. **Create a New Repository on GitHub:**
      - Log in to your GitHub account.
      - Click the "+" sign in the top right corner and select "New repository."
@@ -48,13 +47,36 @@ This file that I studied while learning web development consists of HTML, CSS, a
        ```sh
        git push -u origin master
        ```
-       Your local folder is now connected to your GitHub repository. You can manage and collaborate on your project using Git and GitHub.
+    Your local folder is now connected to your GitHub repository. You can manage and collaborate on your project using Git and GitHub.
+</details>
+
+<details>
+  <summary><b>Create Page Website on Github</b></summary>
+  1. **Configure the Repository:**
+     - Go to your GitHub repository on the web.
+     - Click on the "Settings" tab.
+     - Scroll down to the "GitHub Pages" section.
+  2. **Select a Source Branch:**
+     - In the "Source" section, choose the branch you want to use for GitHub Pages. The "main" or "master" branch is common.
+  3. **Save Your Changes:**
+     - After selecting the source branch, click "Save."
+  4. **Wait for Deployment:**
+     - GitHub Pages will now deploy your website. It might take a few minutes.
+  5. **Access Your Website:**
+     - Once the deployment is complete, you'll see a message with the URL where your website is published, such as `https://your-username.github.io/your-repo-name`.
+  6. **Custom Domain (Optional):**
+     - If you have a custom domain, you can configure it in the GitHub Pages settings for your repository.
+  7. **Edit Your Website:**
+     - To update your website, make changes to the files in your repository. GitHub Pages will automatically update based on the changes in your source branch.
+  8. **README.md:**
+     - Make sure to update your README.md with information about your website, its purpose, and how to use it.
+  That's it! You've created a website hosted on GitHub Pages that can be accessed online. 
 </details>
 
 ## download
 1. Open a terminal or command prompt on your computer.
 2. Navigate to the directory where you want to save this project.
 3. Use the following command to download the project from the GitHub repository:
-```
-git clone
+```sh
+git clone https://github.com/ariafatah0711/html_aria.git
 ```
