@@ -10,8 +10,8 @@ This file that I studied while learning web development consists of HTML, CSS, a
   <a href="#license">License</a>
 </p>
 
-## introduction
-
+## 🚀 introduction
+<p id="introduction"></p>
 "In my journey as a web developer, I have delved into a comprehensive file encompassing the fundamental building blocks of web development – HTML, CSS, and JavaScript. This resource not only equips me with the essential coding languages but also serves as a treasure trove of invaluable web-related information and references. This amalgamation of knowledge has been instrumental in shaping my understanding of web development, making it an indispensable asset in my quest to master the art of creating web experiences."
 
 <p align="left"> <a href="#">
@@ -22,7 +22,8 @@ This file that I studied while learning web development consists of HTML, CSS, a
   </a>
 </p>
 
-## table of contents
+## 📋 Table of Contents
+<p id="table-of-contents"></p>
 <details>
   <summary><b>Create Repository on Github</b></summary>
   
@@ -75,7 +76,8 @@ This file that I studied while learning web development consists of HTML, CSS, a
   That's it! You've created a website hosted on GitHub Pages that can be accessed online. 
 </details>
 
-## download
+## 🔨 download
+<p id="download"></p>
 1. Open a terminal or command prompt on your computer.
 2. Navigate to the directory where you want to save this project.
 3. Use the following command to download the project from the GitHub repository:
@@ -83,6 +85,8 @@ This file that I studied while learning web development consists of HTML, CSS, a
 git clone https://github.com/ariafatah0711/html_aria.git
 ```
 
-## related
+## 📈 related
+<p id="related"></p>
 
-## license
+## ©️ license
+<p id="license"></p>
