@@ -5,8 +5,7 @@ This file that I studied while learning web development consists of HTML, CSS, a
 <p align="center">
   <a href="#introduction">introduction</a> •
   <a href="#table-of-contents">table of contents</a> •
-  <a href="#download">Download</a> <br>
-  <a href="#credits">Credits</a> •
+  <a href="#download">Download</a> •
   <a href="#related">Related</a> •
   <a href="#license">License</a>
 </p>
@@ -25,6 +24,7 @@ This file that I studied while learning web development consists of HTML, CSS, a
 ## table of contents
 <details>
   <summary><b>Create Repository on Github</b></summary>
+  
   1. **Create a New Repository on GitHub:**
      - Log in to your GitHub account.
      - Click the "+" sign in the top right corner and select "New repository."
@@ -47,11 +47,12 @@ This file that I studied while learning web development consists of HTML, CSS, a
        ```sh
        git push -u origin master
        ```
-    Your local folder is now connected to your GitHub repository. You can manage and collaborate on your project using Git and GitHub.
+      Your local folder is now connected to your GitHub repository. You can manage and collaborate on your project using Git and GitHub.
 </details>
 
 <details>
   <summary><b>Create Page Website on Github</b></summary>
+  
   1. **Configure the Repository:**
      - Go to your GitHub repository on the web.
      - Click on the "Settings" tab.
@@ -80,3 +81,7 @@ This file that I studied while learning web development consists of HTML, CSS, a
 ```sh
 git clone https://github.com/ariafatah0711/html_aria.git
 ```
+
+## related
+
+## license
