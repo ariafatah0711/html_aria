@@ -4,7 +4,7 @@ This file that I studied while learning web development consists of HTML, CSS, a
 
 <p align="center">
   <a href="#introduction">introduction</a> •
-  <a href="#table-of-contents">table of contents</a> •
+  <a href="#📋-Table-of-Contents">table of contents</a> •
   <a href="#download">Download</a> •
   <a href="#related">Related</a> •
   <a href="#license">License</a>
