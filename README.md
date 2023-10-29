@@ -96,3 +96,5 @@ git clone https://github.com/ariafatah0711/html_aria.git
 <p id="license"></p>
 
 ## ©️ license
+<a href="https://github.com/blackcater" alt="https://github.com/ariafatah0711"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=CREATED%20BY&message=ariafatah0711&color=000000"></a>
+<a href="https://github.com/ariafatah0711/ariafatah0711/blob/main/LICENSE" alt="https://github.com/blackcater/blackcater/blob/main/LICENSE"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=LICENSE&message=MIT&color=000000"></a>
