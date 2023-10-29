@@ -92,6 +92,7 @@ git clone https://github.com/ariafatah0711/html_aria.git
 <p id="related"></p>
 
 ## 📈 related
+<a href="https://ariafatah0711.github.io/html_aria/" alt="DEMO"><img src="https://img.shields.io/static/v1?style=for-the-badge&label=DEMO&message=html_aria&color=000000"></a>
 
 <p id="license"></p>
 
