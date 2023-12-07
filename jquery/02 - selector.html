@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+
+    <!-- file jquery secara offline -->
+    <script type="text/JavaScript" src="./jquery/jquery.js"></script>
+
+    <!-- jquery secara online -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+</head>
+<body>
+    <a href="./00 - main.html">back html_aria</a><br />
+
+    <div style="padding: 10px;">
+        <h1 class="text">hello world</h1>
+        <p id="paragraf" class="text">ini adalah web JQuery</p>
+
+        <a class="link" href="#">1</a><br>
+        <a class="link" href="#">2</a><br>
+        <a class="link" href="#">3:link to back</a><br>
+        <a class="link" href="#">4</a><br>
+        <a class="link" href="#">5</a><br>
+    </div>
+
+    <form style="border: 1px solid black; background: #efefef; padding: 10px;">
+        <input type="button" name="name" value="tombol-1"><br>
+        <input type="submit" name="name" value="tombol-2"><br>
+    </form>
+
+    <script>
+// selector => digunakan untuk memilih element atau object berdasarkan tag, id, class, dan attribut
+    // selector tag => h1, h2, img
+    // selector class => .text .paragraf
+    // selector id => #title
+    // selector gabungan => $("h1 .text#tittle")
+
+    $(document).ready(function() {
+        // sebuah funtion/metode JQuery yang akan di panggil ketika document selesai di load
+            $("*").css("font-size", "95%"); // universal
+
+        // selector tag
+            $("h1").css("color", "red");
+            $(".text").css("font-weight", "bold");
+            $("div p#paragraf").css("color", "blue");
+
+        // selector dengan banyak property
+            $("div").css({
+                "border": "2px solid black",
+                "background": "#efefef !important"
+            });
+
+        // selector dengan index
+            // :eq(index) => index dimulai dari 0
+            $("a.link:eq(2)").attr("href", "00 - main.html");
+            $("a.link:eq(2)").css({
+                "color": "red",
+            });
+
+        // selector dengan attr
+            //:type
+            $("input:button").attr({
+                "type": "text",
+                "value": "",
+            });
+    });
+    </script>
+
+</body>
+</html>
