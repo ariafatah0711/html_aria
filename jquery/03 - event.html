@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JQuery</title>
+
+    <!-- file jquery secara offline -->
+    <script type="text/JavaScript" src="./jquery/jquery.js"></script>
+
+    <!-- jquery secara online -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script> -->
+</head>
+<body>
+    <a href="./00 - main.html">back jquery</a><br /><br />
+
+    <button id="click">Event Click</button><br>
+    <button id="dblclick">Event Double Click</button><br>
+    <button id="href">More Event</button>
+
+    <script>
+// event => merupakan aksi lanjutan setelah menetapkan selector
+    // JQuery(selector).action
+
+    // .click() => event saat tombol di click 
+    // .dblclick() => event saat tombol di click 2x
+
+    // .mousehover(), .mouseleave(), dll => event saat mouse di arahkan
+        // (mouserhover => hover) (mouseleave => saat keluar)
+
+    // .keyup(), .keydown(), .keypress() => event saat input di klick atau sedang mengetik
+
+    // .bind()
+    // .blur() 
+    // .change
+    // .contextmenu()
+    // .delegate() 
+    // .die() 
+    // .unload() 
+    // .undelegate() 
+    // .error()
+
+    // event.currentTarget event.data event.delegateTarget
+    // event.isDefaultPrevent()
+    // eventisImmaediateProgationStopped()
+    // event.isPropagationStopped()
+    // event.metaKey
+    // event.namespace
+    $(document).ready(function() {
+        // with function()
+        $("#click").click(function() {
+            alert("click");
+        })
+
+        // with arrow function
+        // namun memiliki kelemahan yaitu tidak dapat menggunakan this
+        $("#dblclick").dblclick(()=> {
+            alert("Double Click");
+            // $(this); // ini tidak bisa di lakukan di arrow function
+        })
+
+        $("#href").click(()=> {
+            window.location.href = "./event/01 - event p1.html";
+        })
+    });
+    </script>
+
+</body>
+</html>
