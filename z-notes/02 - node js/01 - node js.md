@@ -75,4 +75,12 @@ blocking dan non-blocking
         ketika memanggil kode non-blocking, biasanya kita perlu mengirimkan callback untuk dipanggil oleh kode non-blocking tersebut ketika kodenya sudah selesai
         contoh: Asynch seperti AJAX, fetch API
 
-    
+nodeJSarchitecture
+    event-loop => merupakan single thread proses yang digunakan untuk mengeksekusi kode non-blocking
+        karena event loop hanya menggunakan single thread maka kita harus berhati hati agar tidak memperlambat proses eksekusi kode kita
+        event-loop tugasnya hanya menerima dan mengirim eksekusi kode ke C++ threadpool
+
+    node js menggunakan C++ threadpool untuk workernya
+        libuv => library yang digunakan di nodeJS (default 4 thread di dalam threadpool)
+
+        jika terlalu banyak pekerjaan blobking kita bisa mengubah jumlah thread di libuv dengan environment variable UV_THREADPOOL_SIZE
