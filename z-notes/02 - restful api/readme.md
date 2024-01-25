@@ -131,3 +131,173 @@ http header request if-not-math
     - http header if-not-math berisikan etag yang sebelumnya
     - jika data tidak berubah, maka server akan mengembalikan HTTP response code 304 : Not modified
 
+idempotent restful api (opsional)
+    dalam restful api, ketika membuat multiple request yang identik, harus memiliki efect yang sama seperti membuat satu reequest
+    
+    POST(belum idempotent)
+        - umumnya pada POST, kita tidak perlu membuat api menjadi idempotent. request berkali kali untuk membuat record yang sama
+        - namun kadang ini berbahaya, jika ada masalah maka datanya bisa jadi ada 2 yang di post
+        - untuk mengatasi ini kita gunakan id record setiap mengirim post agar 
+
+    GET(idempotent)
+
+    PUT dan PATCH(idempotent)
+        - jika update berkali kali hasilnya akan sama aja karena itu mereka sudah idempotent
+
+    DELETE(idempotent)
+        - ketika mengirim berkali kali request selanjutnya akan sudah menghilang karena sudah di hapus di awal
+        - 200, lalu 400 kalau sudah tidak ada datanya
+
+security => membatasi pihak yang boleh mengakses restfull api
+    salah satunya menggunakan authentication dan authorization
+
+    authentication => memvalidasi kredensial untuk memverifikasi pemiliknya
+        - user yang ada pada system kita
+        - contoh: proses login menggunakan username dan password
+
+    authorization => proses setelah authentication
+        - untuk memvalidasi apakah pemilik identitas/user tersebut memiliki hak akses untuk mengakses resource data yang diminta
+        - contoh: Access-Control List
+
+    contoh authentication dan authorization
+        - Basic Auth => menggunakan username dan password
+            - cukup menggunakan header authorization
+            - contoh: Authorization: Basic base64(username:password)
+
+        - API-Key => menggunakan API-Key atau Secret-Key
+            - cukup gunakan headder sesuai yang diinginkan dan value berisi API-key atau Secret Key
+            - contoh: API-Key:random-api-key-unrakcnajfkajnajcnriaunajfa
+
+        - Oauth 2 => mekanisme authorication dan authorization yang populer saat ini
+            - banyak digunakan intregasi antara aplikasi mobile dan server
+
+versioning(tidak di rekemondasikan) => saat mengubah versioning karena ini dapat merusak kompatibilitas client
+    - namun ini harus dilakukan ketika memang perlu untuk mengubah version
+    - membuat versioning sebuah api
+
+    - contoh menggunakan url
+        - http://api.example/v1/products
+        - http://api.example/v2/products
+        - http://api.example/2019/products
+        - http://api.example/2020/products
+
+    - contoh menggunakan header (tidak lumrah digunakan)
+        - HTTP Header => API_Version : 1
+        - HTTP Header => API_Version : 2
+        - HTTP Header => X-API_Version : 2019
+        - HTTP Header => X-API_Version : 2020
+
+stateless => menyimpan state data
+    - jadi setiap request dari client ke server, harus berisikan semua informasi lengkap yang dibutuhkan oleh server
+    - jadi server tidak perlu menyimpan state atau data client
+
+    keuntungan stateless
+        - mudah di scalling, karena request dari client bisa masuk ke server mana saja, sehingga tinggal menambah server baru
+        - sederhana kita tidak perlu tahu state sebelumnya yang sangat kompleks
+        - setiap request client akan sangat lengkap sehingga mudah di track dan di cek requestnya
+
+hateoas(hyper as the engine of application state) => content yang memiliki link menuju resource yang ada
+    contoh:
+        {
+            "id": 1,
+            "name": "aria",
+            "email": "ariafatah999@gmail.com",
+            "_links": {
+                "self": "/customer1/"
+            }
+        }
+        atau
+        {
+            "account":"109021023",
+            "balance": 10000000,
+            "links": {
+                "deposit": "/accounts/109021023/deposit",
+                "withdraw": "/accounts/109021023/withdraw",
+                "transfer": "/accounts/109021023/transfer"
+            }
+        }
+
+    keuntungan
+        - client bisa secara dinamis mendapatkan url lokasi resource nya
+
+documentation => untuk mempermudah client dalam menggunakan restfull api
+    - biasanya documentasi dibuat menggunakan tool
+        - swagger
+        - stoplight
+        - redoc
+        - open api => yang paling banyak digunakan karena sudah standar untuk dokumentasi restful api
+
+development
+    kesalahan ketika membuat resstful api
+        - selalu membuat CRUD API
+        - membuat response data sama dengan table di database
+        - membuat API lebih dulu, baru mengerjakan web atau mobile menggunakan api yang sudah dibuat
+        - mengembalikan data selengkapnya-lengkapnya di api
+        - membuat api yang tidak dibutuhkan oleh client
+
+tahapan membuat restful api
+    - business flow
+    - ui/ux screen
+    - api documentaion
+    - develope restful api
+
+    contoh restfull api shoping chart
+        - business flow => product detail
+            - customer menambahkan barang ke keranjang, bia lebih dari satu barang
+            - customer membuka halaman keranjang, bisa mengubah data quantity barang
+            - customer memasukan alamat pengirim
+            - customer menekan tombol order untuk membuat order
+
+        - ui/ux creen => shopping chart
+
+        - api documentation
+            - product detail:
+                - GET /product/{productid}
+                - POST /cart
+
+            - shopping chart
+                - GET /carts
+                - PATCH /carts/products
+                - PATCH /carts/products/{productid}
+
+            - shipping address
+                - GET /address
+                - POST /adress
+                - PUT /carts/address
+                - POST /orders
+
+            - order detail
+                - GET /orders/{orderid}
+
+meintenance restfull api => perubahan saat fitur bertambah
+    - berguna agar tidak terjadi kesalahan di kemudian hari
+    
+    proses maintanence yang boleh dilakukan
+        - menambahkan data baru di api yang sudah ada
+        - menambahkan api baru di endpoint url yang berbeda
+        - mempercepat proses api yang sudah ada
+        - menggabungkan beberapa api menjadi satu, tanpa menghilangkan api lama
+
+    prose maintanence yang tidak boleh dilakukan
+        - mengubah total response data api yang sudah ada
+        - merubah field response data di api yang sudah ada
+        - menghilangkan api yang sudah ada
+        - men-split api yang sudah ada menjadi dua atau lebih
+        - menggabungkan beberapa api menjadi satu dengan menghapus api yang lama
+
+maturity model => seberapa sempurna restfull api
+    - level zero
+        - one url, one http method
+        - contoh soap dan xml-rpc, dan hanya menggunakan satu url/ dan 1 method yaitu POST saja
+
+    - level one
+        - many url, one http method
+        - contoh web service versi lama, namun hanya menggunakan satu method yaitu POSTd
+
+    - level two
+        - many url, multiple http method
+        - misal utl yang sama, menggunakan GET untuk mengambil data, POST dan menambahkan data 
+
+    - level three
+        - resource describe their own capabilites and interconnections
+        - mirip level2 namun akan memberikan detail relasi ke resource lainya, atau dingkatnya sudah mengimplementasi HATEOAS
