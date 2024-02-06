@@ -52,6 +52,15 @@ This file that I studied while learning web development consists of HTML, CSS, a
        git push -u origin master
        ```
       Your local folder is now connected to your GitHub repository. You can manage and collaborate on your project using Git and GitHub.
+  6. **git date**
+     - Use the following command to commit with yesterday's date
+       ```sh
+       git commit --date="yesterday" -m "update"
+       ```
+     - Use the following command to commit with a custom date (e.g., 1st February 2024)
+       ```
+       git commit --date="2024-02-1" -m "update"
+       ```
 </details>
 
 <details>
