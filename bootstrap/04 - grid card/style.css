@@ -1,0 +1,6 @@
+#services img {
+    height: 150px;
+}
+#services .card p {
+    height: 100px !important;
+}
