@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smooth Scroll Text Animation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Bebas Neue', sans-serif;
+      background: #000;
+      color: #fefae0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 3vw + 1rem, 7rem);
+      text-transform: uppercase;
+      line-height: 1; /* Pastikan ini membuat teks pas satu baris */
+      /* Tinggi H1 harus pas dengan tinggi satu baris teks untuk efek terbaik */
+      height: calc(1em * 1); /* Coba sesuaikan pengali jika perlu (misal 1.1) */
+      overflow: hidden; /* Kunci utama efek scroll */
+      position: relative; /* Konteks untuk span absolut */
+      text-align: center;
+      width: 90%; /* Beri sedikit ruang jika perlu */
+    }
+
+    h1 span {
+        display: block;
+        position: absolute;
+        left: 0;
+        width: 100%;
+        /* y (transform) akan diatur oleh GSAP */
+    }
+
+  </style>
+</head>
+<body>
+  <h1 id="my_text"></h1>
+
+  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script>
+    const texts = [
+      "Front-End Developer",
+      "Back-End Developer",
+      "Full-Stack Developer",
+      "Aria Fatah"
+    ];
+
+    const el = document.getElementById("my_text");
+    let index = 0;
+    const animationDuration = 0.6; // Durasi scroll sedikit lebih cepat
+    const delayBetweenTexts = 1000; // Jeda antar teks
+    let isAnimating = false; // Flag untuk mencegah trigger ganda
+
+    // Fungsi untuk menginisialisasi atau mengganti teks
+    function changeText() {
+        // Jika sedang animasi, jangan lakukan apa-apa
+        if (isAnimating) return;
+        isAnimating = true; // Set flag animasi
+
+        const currentSpan = el.querySelector("span"); // Span yang sedang TAMPIL
+        let nextIndex = (index + 1) % texts.length;
+        if (!currentSpan) nextIndex = 0
+        const nextText = texts[nextIndex];
+
+        // Buat span baru untuk teks berikutnya
+        const newSpan = document.createElement("span");
+        newSpan.textContent = nextText;
+        el.appendChild(newSpan);
+
+        // Dapatkan tinggi H1 (ini akan jadi jarak scroll)
+        const scrollDistance = el.offsetHeight;
+
+        // --- Atur Posisi Awal ---
+        if (currentSpan) {
+            // Posisi normal: teks baru diletakkan tepat di bawah area pandang
+            gsap.set(newSpan, { y: scrollDistance });
+        } else {
+            // Kasus Khusus: Teks pertama kali muncul
+            // Mulai dari bawah area pandang
+            gsap.set(newSpan, { y: scrollDistance });
+        }
+
+        // --- Buat Timeline Animasi ---
+        const tl = gsap.timeline({
+            onComplete: () => {
+                if (currentSpan) {
+                    currentSpan.remove(); // Hapus span lama setelah selesai
+                }
+                index = nextIndex; // Update index
+                isAnimating = false; // Reset flag animasi
+            }
+        });
+
+        // Animasikan:
+        // 1. Teks lama (jika ada) bergerak ke atas (-scrollDistance)
+        // 2. Teks baru bergerak ke posisi tengah (0) dari bawah (scrollDistance)
+        // Keduanya bergerak bersamaan sejauh scrollDistance
+        if (currentSpan) {
+             // Animasikan kedua span naik bersamaan
+            tl.to([currentSpan, newSpan], {
+                y: `-=${scrollDistance}`, // Bergerak ke atas sejauh tinggi container
+                duration: animationDuration,
+                ease: "power1.inOut" // Easing yang lebih smooth
+                // ease: "none" // Atau coba linear untuk efek ticker konstan
+            });
+        } else {
+             // Hanya animasikan teks baru masuk (untuk pertama kali)
+            tl.to(newSpan, {
+                y: 0, // Bergerak ke tengah
+                duration: animationDuration,
+                ease: "power1.out" // Easing masuk
+            });
+        }
+    }
+
+    // Saat halaman dimuat
+    window.addEventListener("load", () => {
+      // Tampilkan teks pertama
+      changeText(); // Gunakan changeText untuk handle kasus awal juga
+
+      // Atur interval untuk mengganti teks
+      setInterval(changeText, delayBetweenTexts);
+    });
+  </script>
+</body>
+</html>

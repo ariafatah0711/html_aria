@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smooth Scroll Text Animation</title>
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="overlay"></div>
+  <div class="container">
+      <h1 id="my_text"></h1>
+  </div>
+  <!-- <main hidden>
+    content
+  </main> -->
+  <main hidden>
+    <!-- <h2>Konten dari Website Lain (via Iframe)</h2> -->
+    <!-- <iframe src="https://ariaf.my.id" style="width:100%; height:100%; border:none;"></iframe> -->
+    <iframe src="https://ariaf.my.id/portofolio_v.2/" style="width:100%; height:100%; border:none;"></iframe>
+  </main>
+
+  <script src="https://unpkg.com/gsap@3.12.2/dist/gsap.min.js"></script>
+  <script>
+    const texts = [
+      "Front-End Developer",
+      "Back-End Developer",
+      "Full-Stack Developer",
+      "Aria Fatah"
+    ];
+
+    const el = document.getElementById("my_text");
+    const el_main = document.querySelector("main")
+    const overlay = document.querySelector(".overlay");
+    let index = 0;
+    const animationDuration = 0.6;
+    const delayBetweenTexts = 1000;
+    let isAnimating = false;
+
+    function changeText() {
+        if (isAnimating) return;
+        isAnimating = true;
+
+        const currentSpan = el.querySelector("span");
+        let nextIndex = (index + 1) % texts.length;
+        if (!currentSpan) nextIndex = 0;
+        const nextText = texts[nextIndex];
+
+        const newSpan = document.createElement("span");
+        newSpan.textContent = nextText;
+        el.appendChild(newSpan);
+
+        const scrollDistance = el.offsetHeight;
+
+        if (currentSpan) {
+            gsap.set(newSpan, { y: scrollDistance });
+        } else {
+            gsap.set(newSpan, { y: scrollDistance });
+        }
+
+        const tl = gsap.timeline({
+            onComplete: () => {
+                if (currentSpan) {
+                    currentSpan.remove();
+                }
+                index = nextIndex;
+                isAnimating = false;
+            }
+        });
+
+        if (currentSpan) {
+            tl.to([currentSpan, newSpan], {
+                y: `-=${scrollDistance}`,
+                duration: animationDuration,
+                ease: "power1.inOut"
+            });
+        } else {
+            tl.to(newSpan, {
+                y: 0,
+                duration: animationDuration,
+                ease: "power1.out"
+            });
+        }
+    }
+
+    window.addEventListener("load", () => {
+        console.log("Window loaded");
+
+        // Efek fade out pada overlay setelah 1 detik
+        setTimeout(() => {
+            console.log("Starting overlay fade out");
+
+            // Pastikan elemen overlay ada sebelum mencoba menggunakannya
+            if (overlay) {
+                overlay.classList.add("fade-out");
+
+                // Setelah overlay benar-benar hilang (transisi opacity selesai)
+                overlay.addEventListener('transitionend', () => {
+                    console.log("Overlay fade out completed. Starting text sequence timer.");
+
+                    // Pastikan elemen teks ada sebelum mencoba menampilkan teks
+                    if (el) {
+                        // Set opasitas elemen teks menjadi 1 (atau tampilkan) agar terlihat
+                        el.style.opacity = '1'; // Asumsi Anda menggunakan opacity untuk menyembunyikan sebelumnya
+                        // atau el.style.display = 'block';
+
+                        // >>> MULAI ANIMASI TEKS <<<
+                        console.log("Starting initial text display.");
+                        changeText(); // Tampilkan teks pertama kali segera
+
+                        // Set interval untuk mengganti teks berikutnya
+                        // textAnimationIntervalId menyimpan ID interval ini
+                        console.log(`Setting interval to change text every ${delayBetweenTexts}ms.`);
+                        textAnimationIntervalId = setInterval(changeText, delayBetweenTexts);
+
+                        // >>> SET TIMER UNTUK MENGHENTIKAN DAN MENGHILANGKAN TEKS SETELAH 4 DETIK <<<
+                        const totalTextDisplayDuration = 4000; // 4000 ms = 4 detik
+                        console.log(`Setting timeout to stop text animation and hide text after ${totalTextDisplayDuration}ms.`);
+
+                        setTimeout(() => {
+                            console.log("Stopping text animation and hiding text.");
+                            // Hentikan interval pengganti teks
+                            clearInterval(textAnimationIntervalId);
+
+                            // Sembunyikan atau hilangkan elemen teks
+                            // el.style.opacity = '0'; // Contoh: Sembunyikan dengan opacity
+                            el.remove()
+                            el_main.hidden = false;
+
+                            // atau el.style.display = 'none';
+                            // atau el.remove(); // Menghilangkan elemen sepenuhnya
+
+                        }, totalTextDisplayDuration); // Timeout akan berjalan setelah 4 detik
+
+                    } else {
+                        console.error("Text element (el) not found!");
+                    }
+
+                }, { once: true }); // Pastikan event listener transitionend hanya berjalan sekali
+
+            } else {
+                console.error("Overlay element (overlay) not found!");
+            }
+
+        }, 500); // Delay 1 detik sebelum fade out overlay
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,77 @@
+* {
+    font-family: 'Courier New', Courier, monospace;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Bebas Neue', sans-serif;
+    /* background: #fefae0; */
+    background: rgb(235 235 235/var(1));
+    /* Warna latar belakang terang */
+    color: #000;
+    /* Warna teks gelap */
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 100vh;
+    overflow: hidden;
+}
+
+main {
+    display: flex;
+    /* height: 100%; */
+    width: 100vw;
+}
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000;
+    z-index: 10;
+    /* Pastikan di atas konten lain */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 1;
+    transition: opacity 1s ease-out;
+    /* Efek fade out */
+}
+
+.overlay.fade-out {
+    opacity: 0;
+    pointer-events: none;
+    /* Agar tidak menghalangi interaksi setelah fade out */
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+h1#my_text {
+    position: absolute;
+    font-size: clamp(3rem, 3vw + 1rem, 7rem);
+    text-transform: uppercase;
+    line-height: 1;
+    height: calc(1em * 1);
+    overflow: hidden;
+    position: relative;
+    text-align: center;
+    width: 100vw;
+    height: 100px;
+    z-index: 20;
+    /* Pastikan di atas overlay */
+}
+
+h1#my_text span {
+    display: block;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    /* y (transform) akan diatur oleh GSAP */
+}
