@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trail Cursor - MageUI</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+      cursor: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .info-text {
+      position: fixed;
+      top: 40px;
+      left: 40px;
+      z-index: 100;
+      color: #e0e7ff;
+      font-weight: 500;
+    }
+
+    .info-text h2 {
+      margin: 0 0 5px 0;
+      font-size: 1.3em;
+      background: linear-gradient(135deg, #ec4899 0%, #f43f5e 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .info-text p {
+      margin: 0;
+      opacity: 0.6;
+      font-size: 0.9em;
+    }
+
+    .back-btn {
+      position: fixed;
+      bottom: 40px;
+      left: 40px;
+      z-index: 100;
+      padding: 10px 20px;
+      background: rgba(236, 72, 153, 0.1);
+      border: 1px solid rgba(236, 72, 153, 0.4);
+      color: #ec4899;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: rgba(236, 72, 153, 0.2);
+      border-color: rgba(236, 72, 153, 0.6);
+    }
+  </style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div class="info-text">
+  <h2>Trail Cursor</h2>
+  <p>Classic particle trail effect</p>
+</div>
+
+<a href="./index.html" class="back-btn">← Back</a>
+
+<script>
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  const cursor = { x: canvas.width / 2, y: canvas.height / 2 };
+  const particles = [];
+
+  class TrailParticle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.vx = (Math.random() - 0.5) * 4;
+      this.vy = (Math.random() - 0.5) * 4;
+      this.life = 1;
+      this.size = Math.random() * 6 + 2;
+      this.hue = 330 + Math.random() * 30; // Pink to red
+    }
+
+    update() {
+      this.vx *= 0.95;
+      this.vy *= 0.95;
+      this.vy += 0.15; // Light gravity
+
+      this.x += this.vx;
+      this.y += this.vy;
+
+      this.life -= 0.01;
+      this.size *= 0.97;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = `hsla(${this.hue}, 100%, 50%, ${this.life})`;
+      ctx.fill();
+
+      // Glow
+      ctx.strokeStyle = `hsla(${this.hue}, 100%, 60%, ${this.life * 0.5})`;
+      ctx.lineWidth = 1;
+      ctx.stroke();
+    }
+  }
+
+  let lastX = cursor.x;
+  let lastY = cursor.y;
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
+
+    const dx = cursor.x - lastX;
+    const dy = cursor.y - lastY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist > 3) {
+      for (let i = 0; i < 2; i++) {
+        particles.push(new TrailParticle(
+          cursor.x + (Math.random() - 0.5) * 10,
+          cursor.y + (Math.random() - 0.5) * 10
+        ));
+      }
+      lastX = cursor.x;
+      lastY = cursor.y;
+    }
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    ctx.fillStyle = "rgba(15, 20, 25, 0.1)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    for (let i = particles.length - 1; i >= 0; i--) {
+      particles[i].update();
+      particles[i].draw();
+      if (particles[i].life <= 0) {
+        particles.splice(i, 1);
+      }
+    }
+
+    // Cursor
+    ctx.beginPath();
+    ctx.arc(cursor.x, cursor.y, 5, 0, Math.PI * 2);
+    ctx.fillStyle = "#ec4899";
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.arc(cursor.x, cursor.y, 10, 0, Math.PI * 2);
+    ctx.strokeStyle = "rgba(236, 72, 153, 0.4)";
+    ctx.lineWidth = 1.5;
+    ctx.stroke();
+  }
+
+  animate();
+</script>
+
+</body>
+</html>

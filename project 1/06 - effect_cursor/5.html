@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Splash Cursor Effect</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+      cursor: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .info-text {
+      position: fixed;
+      top: 40px;
+      left: 40px;
+      z-index: 100;
+      color: #e0e7ff;
+      font-weight: 500;
+    }
+
+    .info-text h2 {
+      margin: 0 0 5px 0;
+      font-size: 1.3em;
+      background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .info-text p {
+      margin: 0;
+      opacity: 0.6;
+      font-size: 0.9em;
+    }
+  </style>
+</head>
+
+<body>
+<canvas id="canvas"></canvas>
+
+<div class="info-text">
+  <h2>Splash Cursor</h2>
+  <p>Liquid fluid effect on cursor movement</p>
+</div>
+
+<script>
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  const cursor = { x: canvas.width / 2, y: canvas.height / 2 };
+  const particles = [];
+
+  // Particle class untuk splash effect
+  class SplashParticle {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.vx = (Math.random() - 0.5) * 10;
+      this.vy = (Math.random() - 0.5) * 10 - 5;
+      this.life = 1;
+      this.size = Math.random() * 8 + 3;
+
+      // Warna liquid - blue-purple gradient
+      const hue = 240 + Math.random() * 60;
+      this.color = `hsla(${hue}, 85%, 50%, `;
+    }
+
+    update() {
+      this.vx *= 0.98;
+      this.vy *= 0.98;
+      this.vy += 0.3; // Gravity
+
+      this.x += this.vx;
+      this.y += this.vy;
+
+      this.life -= 0.015;
+      this.size *= 0.96;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fillStyle = this.color + Math.max(0, this.life) + ")";
+      ctx.fill();
+    }
+  }
+
+  // Trail untuk liquid effect
+  class LiquidTrail {
+    constructor(x, y) {
+      this.x = x;
+      this.y = y;
+      this.age = 0;
+      this.maxAge = 60;
+      this.radius = 15;
+    }
+
+    update() {
+      this.age++;
+    }
+
+    draw() {
+      const progress = this.age / this.maxAge;
+      const opacity = Math.max(0, 1 - progress);
+      const gradient = ctx.createRadialGradient(this.x, this.y, 0, this.x, this.y, this.radius);
+
+      gradient.addColorStop(0, `rgba(99, 102, 241, ${opacity * 0.4})`);
+      gradient.addColorStop(0.5, `rgba(139, 92, 246, ${opacity * 0.2})`);
+      gradient.addColorStop(1, `rgba(168, 85, 247, 0)`);
+
+      ctx.fillStyle = gradient;
+      ctx.fillRect(this.x - this.radius, this.y - this.radius, this.radius * 2, this.radius * 2);
+    }
+
+    isAlive() {
+      return this.age < this.maxAge;
+    }
+  }
+
+  const trails = [];
+  let lastX = cursor.x;
+  let lastY = cursor.y;
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
+
+    // Create trail berdasarkan jarak gerakan
+    const dx = cursor.x - lastX;
+    const dy = cursor.y - lastY;
+    const dist = Math.sqrt(dx * dx + dy * dy);
+
+    if (dist > 5) {
+      // Spawn multiple particles untuk liquid splash
+      for (let i = 0; i < 3; i++) {
+        particles.push(new SplashParticle(
+          cursor.x + (Math.random() - 0.5) * 20,
+          cursor.y + (Math.random() - 0.5) * 20
+        ));
+      }
+      trails.push(new LiquidTrail(cursor.x, cursor.y));
+      lastX = cursor.x;
+      lastY = cursor.y;
+    }
+  });
+
+  // Click splash effect
+  document.addEventListener("mousedown", (e) => {
+    for (let i = 0; i < 15; i++) {
+      particles.push(new SplashParticle(cursor.x, cursor.y));
+    }
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // Dark background dengan soft fade
+    ctx.fillStyle = "rgba(15, 20, 25, 0.15)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Update dan draw trails
+    for (let i = trails.length - 1; i >= 0; i--) {
+      trails[i].update();
+      trails[i].draw();
+      if (!trails[i].isAlive()) {
+        trails.splice(i, 1);
+      }
+    }
+
+    // Update dan draw particles
+    for (let i = particles.length - 1; i >= 0; i--) {
+      particles[i].update();
+      particles[i].draw();
+      if (particles[i].life <= 0) {
+        particles.splice(i, 1);
+      }
+    }
+
+    // Draw cursor dot
+    ctx.beginPath();
+    ctx.arc(cursor.x, cursor.y, 6, 0, Math.PI * 2);
+    ctx.fillStyle = "#6366f1";
+    ctx.fill();
+
+    // Cursor glow
+    const glowGrad = ctx.createRadialGradient(cursor.x, cursor.y, 0, cursor.x, cursor.y, 20);
+    glowGrad.addColorStop(0, "rgba(99, 102, 241, 0.3)");
+    glowGrad.addColorStop(1, "rgba(99, 102, 241, 0)");
+    ctx.fillStyle = glowGrad;
+    ctx.fillRect(cursor.x - 20, cursor.y - 20, 40, 40);
+  }
+
+  animate();
+</script>
+
+</body>
+</html>

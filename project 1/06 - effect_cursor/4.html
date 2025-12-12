@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Smooth Cursor Effects Enhanced</title>
+
+<style>
+  html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+    background: linear-gradient(135deg, #eef1f7 0%, #e0e7ff 100%);
+    cursor: none;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+  /* Cursor Dot Center */
+  #cursor-dot {
+    position: fixed;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #ff4d00;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    box-shadow: 0 0 12px #ff4d00, 0 0 24px #ff6b2088;
+  }
+
+  /* Outer Ring */
+  #cursor-ring {
+    position: fixed;
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgba(255, 77, 0, 0.6);
+    border-radius: 50%;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+  }
+
+  /* Text Content */
+  .container {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 10;
+    color: #1a1a2e;
+  }
+
+  h1 {
+    font-size: 3em;
+    margin: 0;
+    font-weight: 700;
+    background: linear-gradient(135deg, #ff4d00 0%, #ff6b20 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  p {
+    font-size: 1.2em;
+    opacity: 0.7;
+    margin-top: 10px;
+  }
+</style>
+</head>
+<body>
+
+<canvas id="canvas"></canvas>
+<div id="cursor-dot"></div>
+<div id="cursor-ring"></div>
+
+<div class="container">
+  <h1>Smooth Cursor Effect</h1>
+  <p>Gerakin cursor mu di sini~</p>
+</div>
+
+<script>
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+
+  // CURSOR POSITION
+  const cursor = { x: w / 2, y: h / 2 };
+  const cursorRing = { x: w / 2, y: h / 2 };
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
+
+    const dot = document.getElementById("cursor-dot");
+    dot.style.left = cursor.x + "px";
+    dot.style.top = cursor.y + "px";
+  });
+
+  // Smooth ring animation
+  function animateRing() {
+    requestAnimationFrame(animateRing);
+
+    const dx = cursor.x - cursorRing.x;
+    const dy = cursor.y - cursorRing.y;
+
+    cursorRing.x += dx * 0.15;
+    cursorRing.y += dy * 0.15;
+
+    const ring = document.getElementById("cursor-ring");
+    ring.style.left = cursorRing.x + "px";
+    ring.style.top = cursorRing.y + "px";
+  }
+  animateRing();
+
+  // PARTICLE TRAILS
+  const trails = [];
+
+  class SmoothTrail {
+    constructor() {
+      this.x = cursor.x;
+      this.y = cursor.y;
+
+      this.vx = (Math.random() - 0.5) * 4;
+      this.vy = (Math.random() - 0.5) * 4;
+
+      this.life = 1;
+
+      const hue = 200 + Math.random() * 70;
+      this.color = `hsla(${hue}, 90%, 60%, `;
+    }
+
+    update() {
+      const dx = cursor.x - this.x;
+      const dy = cursor.y - this.y;
+
+      this.vx += dx * 0.008;
+      this.vy += dy * 0.008;
+
+      this.vx *= 0.90;
+      this.vy *= 0.90;
+
+      this.x += this.vx;
+      this.y += this.vy;
+
+      this.life -= 0.008;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.lineWidth = 1.5;
+      ctx.strokeStyle = this.color + this.life + ")";
+      ctx.moveTo(this.x, this.y);
+      ctx.lineTo(this.x - this.vx * 3, this.y - this.vy * 3);
+      ctx.stroke();
+    }
+  }
+
+  // ANIMATE
+  function animate() {
+    requestAnimationFrame(animate);
+
+    ctx.fillStyle = "rgba(238, 241, 247, 0.05)";
+    ctx.fillRect(0, 0, w, h);
+
+    if (Math.random() > 0.3) trails.push(new SmoothTrail());
+    if (Math.random() > 0.7) trails.push(new SmoothTrail());
+
+    while (trails.length > 600) trails.shift();
+
+    for (let t of trails) {
+      t.update();
+      t.draw();
+    }
+  }
+
+  animate();
+</script>
+
+</body>
+</html>

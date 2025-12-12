@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mage UI - Splash Cursor Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+
+        .container {
+            text-align: center;
+            max-width: 600px;
+            padding: 40px;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin: 10px;
+            background: rgba(255,255,255,0.2);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            border: 2px solid white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-size: 1em;
+        }
+
+        .btn:hover {
+            background: rgba(255,255,255,0.3);
+            transform: scale(1.05);
+        }
+
+        .btn-primary {
+            background: white;
+            color: #667eea;
+            border-color: white;
+        }
+
+        .btn-primary:hover {
+            background: rgba(255,255,255,0.9);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎨 Mage UI</h1>
+        <p>Splash Cursor Effect Demo</p>
+        <p>Coba gerakkan cursor mu dan klik di area manapun!</p>
+        <button class="btn btn-primary">Klik Aku!</button>
+        <button class="btn">Hover Aku!</button>
+    </div>
+
+    <!-- Mage UI - Splash Cursor Script Langsung -->
+    <script>
+        // Simple Splash Cursor Effect tanpa library
+        class SplashCursor {
+            constructor(options = {}) {
+                this.canvas = document.createElement('canvas');
+                this.ctx = this.canvas.getContext('2d');
+                this.canvas.style.position = 'fixed';
+                this.canvas.style.top = '0';
+                this.canvas.style.left = '0';
+                this.canvas.style.pointerEvents = 'none';
+                this.canvas.style.zIndex = '9999';
+                document.body.appendChild(this.canvas);
+
+                this.resize();
+                window.addEventListener('resize', () => this.resize());
+
+                this.particles = [];
+                this.size = options.size || 40;
+                this.color = options.color || '#fff';
+
+                document.addEventListener('mousemove', (e) => this.createParticles(e));
+                document.addEventListener('click', (e) => this.createParticles(e, true));
+
+                this.animate();
+            }
+
+            resize() {
+                this.canvas.width = window.innerWidth;
+                this.canvas.height = window.innerHeight;
+            }
+
+            createParticles(e, isClick = false) {
+                const count = isClick ? 15 : 3;
+                for (let i = 0; i < count; i++) {
+                    const angle = (Math.PI * 2 * i) / count;
+                    const velocity = isClick ? 3 : 2;
+                    this.particles.push({
+                        x: e.clientX,
+                        y: e.clientY,
+                        vx: Math.cos(angle) * velocity,
+                        vy: Math.sin(angle) * velocity,
+                        life: 1,
+                        size: isClick ? 8 : 4
+                    });
+                }
+            }
+
+            animate() {
+                this.ctx.clearRect(0, 0, this.canvas.width, this.canvas.height);
+
+                this.particles = this.particles.filter(p => p.life > 0);
+
+                this.particles.forEach(p => {
+                    p.x += p.vx;
+                    p.y += p.vy;
+                    p.vy += 0.2; // gravity
+                    p.life -= 0.02;
+
+                    this.ctx.globalAlpha = p.life;
+                    this.ctx.fillStyle = this.color;
+                    this.ctx.beginPath();
+                    this.ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+                    this.ctx.fill();
+                });
+
+                this.ctx.globalAlpha = 1;
+                requestAnimationFrame(() => this.animate());
+            }
+        }
+
+        // Inisialisasi
+        const splashCursor = new SplashCursor({
+            size: 40,
+            color: '#fff'
+        });
+    </script>
+</body>
+</html>

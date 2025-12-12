@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>All Cursor Effects</title>
+
+  <!-- https://github.com/tholman/cursor-effects -->
+   <!-- https://tholman.com/cursor-effects/ -->
+
+  <!-- Cursor Effects Library -->
+  <script src="https://unpkg.com/cursor-effects@latest/dist/browser.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 40px;
+      background: #fafafa;
+      font-family: Arial, sans-serif;
+    }
+    h1 {
+      margin-bottom: 8px;
+    }
+    p {
+      opacity: .75;
+    }
+    .info {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px #0001;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="info">
+    <h1>All Cursor Effects Enabled</h1>
+    <p>Selamat datang! Semua efek dari library <b>cursor-effects</b> aktif di halaman ini.</p>
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+
+      // 1. Rainbow Cursor
+      new cursoreffects.rainbowCursor({
+        length: 6,
+        colors: ["red","orange","yellow","green","blue","purple"],
+        size: 3
+      });
+
+      // 2. Emoji Rain
+      new cursoreffects.emojiCursor({
+        emoji: ["🔥", "⭐", "💀", "💧"],
+        delay: 16
+      });
+
+      // 3. Springy Emoji
+      new cursoreffects.springyEmojiCursor({ emoji: "✨" });
+
+      // 4. Ghost Cursor
+      new cursoreffects.ghostCursor();
+
+      // 5. Trailing Cursor
+      new cursoreffects.trailingCursor({
+        particles: 15,
+        rate: 0.8
+      });
+
+      // 6. Text Flag Cursor
+      new cursoreffects.textFlag({
+        text: "CPES",
+        color: ["#FF6800"]
+      });
+
+      // 7. Following Dot Cursor
+      new cursoreffects.followingDotCursor({ color: ["#323232a6"] });
+
+      // 8. Bubble Cursor
+      new cursoreffects.bubbleCursor({
+        fillColor: "#a0d9ff",
+        strokeColor: "#ffffff"
+      });
+
+      // 9. Snowflake Particles
+      new cursoreffects.snowflakeCursor();
+
+      // 10. Fairy Dust Cursor
+      new cursoreffects.fairyDustCursor({
+        colors: ["#ff0000", "#00ff00", "#0000ff"],
+        fairySymbol: "★"
+      });
+
+      // 11. Clock Cursor
+      new cursoreffects.clockCursor();
+
+      // 12. Character Cursor
+      new cursoreffects.characterCursor({
+        characters: ["C", "P", "E", "S"],
+        font: "16px serif",
+        colors: ["#6622CC", "#A755C2", "#B07C9E", "#D2A1B8"]
+      });
+
+    });
+  </script>
+
+</body>
+</html>

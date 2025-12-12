@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cursor Effects - MageUI Collection</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      height: 100%;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      overflow-x: hidden;
+    }
+
+    .container {
+      min-height: 100vh;
+      padding: 60px 40px;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 80px;
+    }
+
+    h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .subtitle {
+      font-size: 1.3em;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 10px;
+    }
+
+    .description {
+      color: rgba(255, 255, 255, 0.5);
+      font-size: 1em;
+      max-width: 600px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+
+    .card {
+      background: rgba(99, 102, 241, 0.05);
+      border: 1px solid rgba(99, 102, 241, 0.2);
+      border-radius: 16px;
+      padding: 30px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .card:hover {
+      background: rgba(99, 102, 241, 0.1);
+      border-color: rgba(99, 102, 241, 0.4);
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      font-size: 1.5em;
+      color: #e0e7ff;
+      margin-bottom: 12px;
+      background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .card p {
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 20px;
+      font-size: 0.95em;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .card a:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px rgba(99, 102, 241, 0.5);
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 6px 12px;
+      background: rgba(99, 102, 241, 0.2);
+      color: #a78bfa;
+      border-radius: 6px;
+      font-size: 0.75em;
+      margin-bottom: 15px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 2em;
+      }
+
+      .container {
+        padding: 40px 20px;
+      }
+
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <header>
+      <h1>Cursor Effects</h1>
+      <p class="subtitle">MageUI Collection</p>
+      <p class="description">Koleksi cursor effects yang smooth dan elegant. Setiap effect dirancang dengan perhatian terhadap detail dan performa.</p>
+    </header>
+
+    <div class="grid">
+      <!-- Splash Cursor -->
+      <div class="card">
+        <span class="badge">LIQUID</span>
+        <h3>Splash Cursor</h3>
+        <p>Liquid splash effect dengan particles yang mengikuti cursor movement.</p>
+        <a href="./splash.html">View Demo</a>
+      </div>
+
+      <!-- Smooth Cursor -->
+      <div class="card">
+        <span class="badge">PHYSICS</span>
+        <h3>Smooth Cursor</h3>
+        <p>Physics-based smooth cursor dengan spring animation dan rotation.</p>
+        <a href="./smooth.html">View Demo</a>
+      </div>
+
+      <!-- Neon Cursor -->
+      <div class="card">
+        <span class="badge">GLOW</span>
+        <h3>Neon Cursor</h3>
+        <p>Neon glow effect dengan trailing lines dan color transitions.</p>
+        <a href="./neon.html">View Demo</a>
+      </div>
+
+      <!-- Spotlight Cursor -->
+      <div class="card">
+        <span class="badge">LIGHT</span>
+        <h3>Spotlight Cursor</h3>
+        <p>Spotlight effect yang menerangi area sekitar cursor dengan gradual fade.</p>
+        <a href="./spotlight.html">View Demo</a>
+      </div>
+
+      <!-- Trail Cursor -->
+      <div class="card">
+        <span class="badge">TRAIL</span>
+        <h3>Trail Cursor</h3>
+        <p>Classic trail effect dengan particles yang mengikuti path cursor.</p>
+        <a href="./trail.html">View Demo</a>
+      </div>
+
+      <!-- Glitch Cursor -->
+      <div class="card">
+        <span class="badge">EFFECT</span>
+        <h3>Glitch Cursor</h3>
+        <p>Glitch effect dengan RGB displacement dan distortion animation.</p>
+        <a href="./glitch.html">View Demo</a>
+      </div>
+    </div>
+
+    <div style="text-align: center; padding-top: 40px; border-top: 1px solid rgba(99, 102, 241, 0.2);">
+      <p style="color: rgba(255, 255, 255, 0.5); font-size: 0.9em;">
+        Inspired by <strong>MageUI</strong> Component Library
+      </p>
+    </div>
+  </div>
+</body>
+
+</html>

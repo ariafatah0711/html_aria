@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Real MageUI Orbit Cursor</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #eef1f7;
+      cursor: none;
+      font-family: sans-serif;
+    }
+
+    /* titik kecil pusat cursor */
+    #cursor-dot {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff4d00;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 8px #ff4d00aa;
+    }
+  </style>
+</head>
+
+<body>
+<canvas id="canvas"></canvas>
+<div id="cursor-dot"></div>
+
+<script>
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+
+  // POSISI CURSOR
+  const cursor = { x: w / 2, y: h / 2 };
+  document.addEventListener("mousemove", (e) => {
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
+
+    const dot = document.getElementById("cursor-dot");
+    dot.style.left = cursor.x + "px";
+    dot.style.top = cursor.y + "px";
+  });
+
+  // TRAIL CHAOS
+  const trails = [];
+
+  class OrbitTrail {
+    constructor() {
+      this.x = cursor.x;
+      this.y = cursor.y;
+
+      // random orbit velocity
+      this.vx = (Math.random() - 0.5) * 6;
+      this.vy = (Math.random() - 0.5) * 6;
+
+      // MageUI: rotate spin
+      this.spin = (Math.random() - 0.5) * 0.2;
+
+      this.life = 1;
+
+      // warna neon MageUI (blue-purple-cyan)
+      const hue = 200 + Math.random() * 60;
+      this.color = `hsla(${hue}, 95%, 65%, `;
+    }
+
+    update() {
+      const dx = cursor.x - this.x;
+      const dy = cursor.y - this.y;
+
+      const dist = Math.sqrt(dx * dx + dy * dy);
+
+      // gaya "orbit" dan tidak langsung menuju cursor
+      const pull = Math.min(0.01, 1 / (dist + 20));
+
+      this.vx += dx * pull;
+      this.vy += dy * pull;
+
+      // efek putaran chaos
+      const temp = this.vx;
+      this.vx = this.vx * Math.cos(this.spin) - this.vy * Math.sin(this.spin);
+      this.vy = temp * Math.sin(this.spin) + this.vy * Math.cos(this.spin);
+
+      // friction
+      this.vx *= 0.92;
+      this.vy *= 0.92;
+
+      this.x += this.vx;
+      this.y += this.vy;
+
+      // smooth fade lifespan
+      this.life -= 0.006;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.lineWidth = 1.4;
+
+      ctx.strokeStyle = this.color + this.life + ")";
+      ctx.moveTo(this.x, this.y);
+      ctx.lineTo(this.x - this.vx * 2.5, this.y - this.vy * 2.5);
+      ctx.stroke();
+    }
+  }
+
+  // ANIMATE
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // Fade tipis untuk jejak panjang
+    ctx.fillStyle = "rgba(238, 241, 247, 0.08)";
+    ctx.fillRect(0, 0, w, h);
+
+    // spawn lebih padat, lebih chaotic
+    trails.push(new OrbitTrail());
+    if (Math.random() > 0.4) trails.push(new OrbitTrail());
+    if (Math.random() > 0.8) trails.push(new OrbitTrail());
+
+    // limit jumlah garis
+    while (trails.length > 1200) trails.shift();
+
+    // update & drawing
+    for (let t of trails) {
+      t.update();
+      t.draw();
+    }
+  }
+
+  animate();
+</script>
+
+</body>
+</html>

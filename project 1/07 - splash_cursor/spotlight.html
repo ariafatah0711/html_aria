@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spotlight Cursor - MageUI</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+      cursor: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    canvas {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .info-text {
+      position: fixed;
+      top: 40px;
+      left: 40px;
+      z-index: 100;
+      color: #e0e7ff;
+      font-weight: 500;
+    }
+
+    .info-text h2 {
+      margin: 0 0 5px 0;
+      font-size: 1.3em;
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .info-text p {
+      margin: 0;
+      opacity: 0.6;
+      font-size: 0.9em;
+    }
+
+    .back-btn {
+      position: fixed;
+      bottom: 40px;
+      left: 40px;
+      z-index: 100;
+      padding: 10px 20px;
+      background: rgba(251, 191, 36, 0.1);
+      border: 1px solid rgba(251, 191, 36, 0.4);
+      color: #fbbf24;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: rgba(251, 191, 36, 0.2);
+      border-color: rgba(251, 191, 36, 0.6);
+    }
+  </style>
+</head>
+
+<body>
+
+<canvas id="canvas"></canvas>
+
+<div class="info-text">
+  <h2>Spotlight Cursor</h2>
+  <p>Light spotlight effect with gradient fade</p>
+</div>
+
+<a href="./index.html" class="back-btn">← Back</a>
+
+<script>
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+  });
+
+  const cursor = { x: canvas.width / 2, y: canvas.height / 2 };
+  const spotlightRadius = 150;
+  const spotlightColor = "rgba(251, 191, 36, ";
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // Dark background with slight fade
+    ctx.fillStyle = "rgba(15, 20, 25, 0.08)";
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    // Main spotlight
+    const mainGradient = ctx.createRadialGradient(
+      cursor.x, cursor.y, 0,
+      cursor.x, cursor.y, spotlightRadius
+    );
+    mainGradient.addColorStop(0, spotlightColor + "0.3)");
+    mainGradient.addColorStop(0.4, spotlightColor + "0.15)");
+    mainGradient.addColorStop(1, spotlightColor + "0)");
+
+    ctx.fillStyle = mainGradient;
+    ctx.fillRect(
+      cursor.x - spotlightRadius,
+      cursor.y - spotlightRadius,
+      spotlightRadius * 2,
+      spotlightRadius * 2
+    );
+
+    // Outer glow
+    const outerGradient = ctx.createRadialGradient(
+      cursor.x, cursor.y, spotlightRadius * 0.5,
+      cursor.x, cursor.y, spotlightRadius * 1.5
+    );
+    outerGradient.addColorStop(0, "rgba(251, 191, 36, 0.05)");
+    outerGradient.addColorStop(1, "rgba(251, 191, 36, 0)");
+
+    ctx.fillStyle = outerGradient;
+    ctx.fillRect(
+      cursor.x - spotlightRadius * 1.5,
+      cursor.y - spotlightRadius * 1.5,
+      spotlightRadius * 3,
+      spotlightRadius * 3
+    );
+
+    // Cursor center
+    ctx.beginPath();
+    ctx.arc(cursor.x, cursor.y, 6, 0, Math.PI * 2);
+    ctx.fillStyle = "#fbbf24";
+    ctx.fill();
+
+    // Ring
+    ctx.beginPath();
+    ctx.arc(cursor.x, cursor.y, 25, 0, Math.PI * 2);
+    ctx.strokeStyle = "rgba(251, 191, 36, 0.4)";
+    ctx.lineWidth = 2;
+    ctx.stroke();
+  }
+
+  animate();
+</script>
+
+</body>
+</html>

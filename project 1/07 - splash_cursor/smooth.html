@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Smooth Cursor - MageUI</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
+      cursor: none;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .cursor {
+      position: fixed;
+      width: 40px;
+      height: 40px;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+
+    .cursor-dot {
+      position: absolute;
+      width: 8px;
+      height: 8px;
+      background: #6366f1;
+      border-radius: 50%;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      box-shadow: 0 0 12px #6366f1;
+    }
+
+    .cursor-ring {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      border: 2px solid rgba(99, 102, 241, 0.4);
+      border-radius: 50%;
+      top: 0;
+      left: 0;
+    }
+
+    .info-text {
+      position: fixed;
+      top: 40px;
+      left: 40px;
+      z-index: 100;
+      color: #e0e7ff;
+      font-weight: 500;
+    }
+
+    .info-text h2 {
+      margin: 0 0 5px 0;
+      font-size: 1.3em;
+      background: linear-gradient(135deg, #6366f1 0%, #a78bfa 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .info-text p {
+      margin: 0;
+      opacity: 0.6;
+      font-size: 0.9em;
+    }
+
+    .back-btn {
+      position: fixed;
+      bottom: 40px;
+      left: 40px;
+      z-index: 100;
+      padding: 10px 20px;
+      background: rgba(99, 102, 241, 0.2);
+      border: 1px solid rgba(99, 102, 241, 0.4);
+      color: #a78bfa;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: rgba(99, 102, 241, 0.4);
+      border-color: rgba(99, 102, 241, 0.6);
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="cursor" id="cursor">
+  <div class="cursor-dot"></div>
+  <div class="cursor-ring"></div>
+</div>
+
+<div class="info-text">
+  <h2>Smooth Cursor</h2>
+  <p>Physics-based smooth cursor with spring animation</p>
+</div>
+
+<a href="./index.html" class="back-btn">← Back</a>
+
+<script>
+  const cursor = document.getElementById("cursor");
+  const cursorDot = cursor.querySelector(".cursor-dot");
+
+  let mouseX = window.innerWidth / 2;
+  let mouseY = window.innerHeight / 2;
+  let cursorX = mouseX;
+  let cursorY = mouseY;
+  let rotation = 0;
+  let lastX = mouseX;
+  let lastY = mouseY;
+
+  // Spring physics
+  const spring = {
+    x: 0,
+    y: 0,
+    vx: 0,
+    vy: 0,
+    friction: 0.85,
+    acceleration: 0.1
+  };
+
+  document.addEventListener("mousemove", (e) => {
+    mouseX = e.clientX;
+    mouseY = e.clientY;
+  });
+
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // Spring physics
+    const dx = mouseX - spring.x;
+    const dy = mouseY - spring.y;
+
+    spring.vx += dx * spring.acceleration;
+    spring.vy += dy * spring.acceleration;
+
+    spring.vx *= spring.friction;
+    spring.vy *= spring.friction;
+
+    spring.x += spring.vx;
+    spring.y += spring.vy;
+
+    // Rotation based on movement
+    const moveX = spring.x - lastX;
+    const moveY = spring.y - lastY;
+
+    if (Math.abs(moveX) > 0.1 || Math.abs(moveY) > 0.1) {
+      rotation = Math.atan2(moveY, moveX) * (180 / Math.PI) + 90;
+    }
+
+    // Update cursor position
+    cursor.style.left = spring.x + "px";
+    cursor.style.top = spring.y + "px";
+    cursor.style.transform = `translate(-50%, -50%) rotate(${rotation}deg)`;
+
+    // Scale effect on fast movement
+    const speed = Math.sqrt(spring.vx * spring.vx + spring.vy * spring.vy);
+    const scale = Math.max(0.8, Math.min(1.2, 1 + speed * 0.01));
+    cursorDot.style.transform = `translate(-50%, -50%) scale(${scale})`;
+
+    lastX = spring.x;
+    lastY = spring.y;
+  }
+
+  animate();
+</script>
+
+</body>
+</html>

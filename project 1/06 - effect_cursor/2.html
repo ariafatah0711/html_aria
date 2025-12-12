@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>MageUI Chaos Orbit Cursor</title>
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background: #eef1f7;
+      cursor: none;
+      font-family: sans-serif;
+    }
+
+    /* titik kecil pusat cursor */
+    #cursor-dot {
+      position: fixed;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #ff4d00;
+      pointer-events: none;
+      z-index: 9999;
+      transform: translate(-50%, -50%);
+    }
+  </style>
+</head>
+
+<body>
+<canvas id="canvas"></canvas>
+<div id="cursor-dot"></div>
+
+<script>
+  const canvas = document.getElementById("canvas");
+  const ctx = canvas.getContext("2d");
+
+  let w = canvas.width = window.innerWidth;
+  let h = canvas.height = window.innerHeight;
+
+  window.addEventListener("resize", () => {
+    w = canvas.width = window.innerWidth;
+    h = canvas.height = window.innerHeight;
+  });
+
+  // POSISI CURSOR
+  const cursor = { x: w / 2, y: h / 2 };
+  document.addEventListener("mousemove", (e) => {
+    cursor.x = e.clientX;
+    cursor.y = e.clientY;
+
+    const dot = document.getElementById("cursor-dot");
+    dot.style.left = cursor.x + "px";
+    dot.style.top = cursor.y + "px";
+  });
+
+  // TRAIL CHAOS
+  const trails = [];
+
+  class OrbitTrail {
+    constructor() {
+      this.x = cursor.x;
+      this.y = cursor.y;
+
+      // start random kecil
+      this.vx = (Math.random() - 0.5) * 2;
+      this.vy = (Math.random() - 0.5) * 2;
+
+      this.life = 1;
+
+      // warna mirip Mage-UI (blue → purple)
+      const hue = 200 + Math.random() * 50;
+      this.color = `hsla(${hue}, 90%, 55%, `;
+    }
+
+    update() {
+      // gaya tarikan chaos ke cursor
+      const dx = cursor.x - this.x;
+      const dy = cursor.y - this.y;
+
+      this.vx += dx * 0.012;
+      this.vy += dy * 0.012;
+
+      // gesekan smooth
+      this.vx *= 0.88;
+      this.vy *= 0.88;
+
+      this.x += this.vx;
+      this.y += this.vy;
+
+      this.life -= 0.007;
+    }
+
+    draw() {
+      ctx.beginPath();
+      ctx.lineWidth = 1.25;
+
+      ctx.strokeStyle = this.color + this.life + ")";
+      ctx.moveTo(this.x, this.y);
+      ctx.lineTo(this.x - this.vx * 4, this.y - this.vy * 4);
+      ctx.stroke();
+    }
+  }
+
+  // ANIMATE
+  function animate() {
+    requestAnimationFrame(animate);
+
+    // Fade tipis untuk jejak panjang
+    ctx.fillStyle = "rgba(238, 241, 247, 0.06)";
+    ctx.fillRect(0, 0, w, h);
+
+    // spawn 2-3 garis tiap frame (lebih padat seperti MageUI)
+    if (Math.random() > 0.2) trails.push(new OrbitTrail());
+    if (Math.random() > 0.8) trails.push(new OrbitTrail());
+
+    // limit jumlah garis
+    while (trails.length > 700) trails.shift();
+
+    // update & drawing
+    for (let t of trails) {
+      t.update();
+      t.draw();
+    }
+  }
+
+  animate();
+</script>
+
+</body>
+</html>
